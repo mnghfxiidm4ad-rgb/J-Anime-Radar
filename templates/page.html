@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="legal">
+  <p class="kicker">{{ kicker }}</p>
+  <h1>{{ heading }}</h1>
+  <p class="tiny">Last updated: {{ updated }}</p>
+  {{ body | safe }}
+</div>
+{% endblock %}

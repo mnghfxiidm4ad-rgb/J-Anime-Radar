@@ -1,0 +1,15 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+_raw_season.json
+_anilist.json
+_anilist_detail.json
+_fetch_detail.py
+_fetch_log.txt
+*.tmp
+.idea/
+.vscode/

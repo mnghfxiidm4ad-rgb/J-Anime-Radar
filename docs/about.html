@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us &amp; Editorial Policy — J-Anime Radar</title>
+  <meta name="description" content="Mission, catalog data policy, and the AI-assisted curatorial process behind J-Anime Radar episode briefings.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://j-animeradar.pages.dev/about.html">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <meta property="og:site_name" content="J-Anime Radar">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Us &amp; Editorial Policy — J-Anime Radar">
+  <meta property="og:description" content="Mission, catalog data policy, and the AI-assisted curatorial process behind J-Anime Radar episode briefings.">
+  <meta property="og:url" content="https://j-animeradar.pages.dev/about.html">
+  <meta property="og:image" content="https://j-animeradar.pages.dev/assets/logo.svg">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us &amp; Editorial Policy — J-Anime Radar">
+  <meta name="twitter:description" content="Mission, catalog data policy, and the AI-assisted curatorial process behind J-Anime Radar episode briefings.">
+  <meta name="twitter:image" content="https://j-animeradar.pages.dev/assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Noto+Sans+JP:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "About Us & Editorial Policy", "url": "https://j-animeradar.pages.dev/about.html", "isPartOf": {"@type": "WebSite", "name": "J-Anime Radar", "url": "https://j-animeradar.pages.dev"}}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" width="36" height="36" alt="">
+        <span>
+          <span class="brand-name">J-Anime Radar</span>
+          <span class="brand-tag">Seasonal Intel Desk</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" data-nav>
+        <a href="index.html" >Home</a>
+        <a href="index.html#top20" >Season Top 20</a>
+        <a href="index.html#latest">Latest Briefings</a>
+        <a href="about.html" class="is-active">About</a>
+        <a href="contact.html" >Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    
+<div class="legal">
+  <p class="kicker">Editorial</p>
+  <h1>About Us &amp; Editorial Policy</h1>
+  <p class="tiny">Last updated: 2026-08-26</p>
+  
+<p><strong>J-Anime Radar</strong> is an overseas-facing intelligence desk for the Japanese television anime season. Our catchphrase is simple: <em>Seasonal Anime Intel, Episode Breakdowns &amp; Japanese Fan Reactions</em>.</p>
+
+<h2>Mission</h2>
+<p>Too much English-language seasonal coverage is either a plot paraphrase or a scoreboard. We publish original briefings that a demanding reader can actually use: how an episode was staged, what Japanese viewers argued about the same night, which performances landed, and where the episode sits in the cour. We exist so international fans can read Japan’s week with context—not a copied synopsis.</p>
+<p>We track the current season’s most-watched cluster (our working set is the live Top 20) and update when a new episode appears. The desk is built as a static site so pages stay fast, archivable, and suitable for long-form reading.</p>
+
+<h2>What “original” means here</h2>
+<p>Each briefing is structured around craft and reception, not a beat-by-beat recap:</p>
+<ul>
+  <li><strong>Story inflection</strong> — turning points, theme, and dramatic function, written as criticism.</li>
+  <li><strong>Sakuga and direction</strong> — animation quality, action grammar, camera, cut density, and studio fingerprint.</li>
+  <li><strong>Story and lore</strong> — adaptation choices, foreshadowing, and how Japanese fans parsed the week.</li>
+  <li><strong>Voice acting</strong> — seiyuu craft, standout line readings, and discussion around the cast.</li>
+  <li><strong>Season takeaway</strong> — why the episode matters to the cour as a whole.</li>
+  <li><strong>Legal watch links</strong> — licensed platforms only. We never host or link to piracy.</li>
+</ul>
+
+<h2>Data sources and official metadata</h2>
+<p>Schedule metadata, popularity order, scores, studios, and poster art are drawn from public catalog APIs—primarily <strong>Jikan</strong> (an unofficial MyAnimeList API) with <strong>AniList</strong> as a reliability fallback when Jikan is unavailable. Those catalogs aggregate community and industry-visible facts (titles, episode counts, broadcast windows). They do not write our criticism.</p>
+<p>We treat catalog scores as a public weather report, not as our grade. A title can sit at rank 14 and still receive a serious briefing if the episode is doing interesting work.</p>
+
+<h2>Curatorial process (human standards + AI assistance)</h2>
+<p>To keep coverage timely across twenty concurrent series, we use a documented pipeline:</p>
+<ol>
+  <li><strong>Detect</strong> newly aired episodes against <code>data/anime_tracker.json</code> so we never regenerate a finished briefing.</li>
+  <li><strong>Ground</strong> the draft in catalog facts: title, episode number, studio, genres, main cast, and licensed platforms.</li>
+  <li><strong>Draft</strong> a long-form English JSON package (500+ words) with Google Gemini (<code>gemini-1.5-flash</code> or a current Flash successor). The model is instructed to refuse thin recaps, to write criticism, and to separate Japanese reception from plot paraphrase.</li>
+  <li><strong>Shape</strong> the draft into article HTML with stable headings, metadata, Open Graph tags, and Schema.org JSON-LD (<em>WebSite</em>, <em>Article</em>, <em>TVEpisode</em>).</li>
+  <li><strong>Publish</strong> as static files. Editors remain responsible for tone, corrections, and takedown requests.</li>
+</ol>
+<p>AI is an acceleration layer, not a hidden authorial identity. We do not present generated text as an interview with a production staffer, and we do not fabricate quotes from named fans. Japanese reaction sections describe patterns typical of the title’s actual fandom (sakuga accounts, broadcast-night timeline talk, seiyuu discussion) rather than invented viral posts.</p>
+
+<h2>Experience, expertise, authoritativeness, trust (E-E-A-T)</h2>
+<p>The desk is built so a reviewer—or a reader—can inspect our method:</p>
+<ul>
+  <li><strong>Experience</strong> — we cover the live season at episode granularity, with Japanese reception as a first-class beat, not a sidebar.</li>
+  <li><strong>Expertise</strong> — briefings are organized the way animators and critics actually talk: sakuga, staging, adaptation, performance.</li>
+  <li><strong>Authoritativeness</strong> — we cite public catalog data, name studios and credited seiyuu, and point only to licensed services.</li>
+  <li><strong>Trust</strong> — Privacy, Contact, and Disclaimer pages are linked in the footer of every document. Copyright complaints have a dedicated path. We label advertising when AdSense is live. We correct errors when they are shown to us.</li>
+</ul>
+
+<h2>Independence</h2>
+<p>J-Anime Radar is not paid by production committees to rank titles. If a sponsored disclosure ever becomes necessary, it will be labeled on the relevant page. Advertisements, when enabled, are visually separate from editorial briefings.</p>
+
+<h2>Operator</h2>
+<p>The publication is operated by the <strong>J-Anime Radar Editorial Project</strong>, an independent media desk covering Japanese television animation for an international audience. We do not claim to represent Kodansha, Shueisha, Kadokawa, any production committee, or any streaming platform.</p>
+<p>Press, corrections, and rights-holder mail: use <a href="contact.html">Contact</a>.</p>
+</div>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <img src="assets/logo.svg" width="28" height="28" alt="">
+        <span>
+          <span class="brand-name">J-Anime Radar</span>
+          <span class="brand-tag">Seasonal Anime Intel, Episode Breakdowns &amp; Japanese Fan Reactions</span>
+        </span>
+      </div>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="about.html">About Us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+      <p class="legal-note">J-Anime Radar is an independent English-language editorial desk. We are not affiliated with any anime production committee, licensor, or streaming platform. All series titles, characters, and key visuals remain the property of their respective rights holders. Coverage is for criticism, commentary, and news reporting.</p>
+      <p class="legal-note">&copy; 2026 J-Anime Radar Editorial Project. All original analysis on this site is our own.</p>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="{{ canonical }}">
+  <link rel="icon" type="image/svg+xml" href="{{ root }}assets/logo.svg">
+  <meta property="og:site_name" content="J-Anime Radar">
+  <meta property="og:type" content="{{ og_type | default('website') }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Noto+Sans+JP:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ root }}css/style.css">
+  {% if json_ld %}
+  <script type="application/ld+json">{{ json_ld | safe }}</script>
+  {% endif %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{ root }}index.html">
+        <img src="{{ root }}assets/logo.svg" width="36" height="36" alt="">
+        <span>
+          <span class="brand-name">J-Anime Radar</span>
+          <span class="brand-tag">Seasonal Intel Desk</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" data-nav>
+        <a href="{{ root }}index.html" {% if nav == 'home' %}class="is-active"{% endif %}>Home</a>
+        <a href="{{ root }}index.html#top20" {% if nav == 'ranking' %}class="is-active"{% endif %}>Season Top 20</a>
+        <a href="{{ root }}index.html#latest">Latest Briefings</a>
+        <a href="{{ root }}about.html" {% if nav == 'about' %}class="is-active"{% endif %}>About</a>
+        <a href="{{ root }}contact.html" {% if nav == 'contact' %}class="is-active"{% endif %}>Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <img src="{{ root }}assets/logo.svg" width="28" height="28" alt="">
+        <span>
+          <span class="brand-name">J-Anime Radar</span>
+          <span class="brand-tag">Seasonal Anime Intel, Episode Breakdowns &amp; Japanese Fan Reactions</span>
+        </span>
+      </div>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="{{ root }}about.html">About Us</a>
+        <a href="{{ root }}privacy.html">Privacy Policy</a>
+        <a href="{{ root }}contact.html">Contact</a>
+        <a href="{{ root }}disclaimer.html">Disclaimer</a>
+      </nav>
+      <p class="legal-note">J-Anime Radar is an independent English-language editorial desk. We are not affiliated with any anime production committee, licensor, or streaming platform. All series titles, characters, and key visuals remain the property of their respective rights holders. Coverage is for criticism, commentary, and news reporting.</p>
+      <p class="legal-note">&copy; {{ year }} J-Anime Radar Editorial Project. All original analysis on this site is our own.</p>
+    </div>
+  </footer>
+  <script src="{{ root }}js/main.js" defer></script>
+</body>
+</html>

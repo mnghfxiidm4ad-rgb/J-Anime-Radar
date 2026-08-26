@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="article-hero" style="background-image:url('{{ post.banner or post.image }}')">
+  <div class="article-hero-inner">
+    <p class="crumbs"><a href="{{ root }}index.html">Home</a> / <a href="{{ root }}index.html#top20">Season Top 20</a> / Episode {{ post.episode }}</p>
+    <p class="kicker">{{ post.studio }} · {{ post.genres | join(' / ') }}</p>
+    <h1>{{ post.anime_title }} — Ep. {{ post.episode }}</h1>
+    <p class="lede">{{ post.episode_title }}</p>
+  </div>
+</section>
+
+<article class="article">
+  <div class="meta-grid">
+    <div><b>Episode</b> {{ post.episode }}{% if post.episode_total %} / {{ post.episode_total }}{% endif %}</div>
+    <div><b>Broadcast</b> {{ post.aired }}</div>
+    <div><b>Public score</b> {% if post.score %}{{ post.score }} / 100{% else %}Unranked{% endif %}</div>
+    <div><b>This week’s vibe</b> {{ post.episode_vibe }}</div>
+  </div>
+
+  <p class="pull">{{ post.pullquote }}</p>
+
+  {% with slot_name='Above the Fold', slot_id='above-fold', extra_class='above-fold-ad' %}
+  {% include '_ad_slot.html' %}
+  {% endwith %}
+
+  <h2>Story inflection, not a recap</h2>
+  {% for p in post.synopsis_paragraphs %}
+  <p>{{ p }}</p>
+  {% endfor %}
+
+  <section class="reaction">
+    <h2>Japanese fan reactions</h2>
+    <h3>Sakuga &amp; direction</h3>
+    {% for p in post.sakuga_paragraphs %}
+    <p>{{ p }}</p>
+    {% endfor %}
+    <h3>Story &amp; lore</h3>
+    {% for p in post.story_paragraphs %}
+    <p>{{ p }}</p>
+    {% endfor %}
+    <h3>Voice acting highlights</h3>
+    {% for p in post.voice_paragraphs %}
+    <p>{{ p }}</p>
+    {% endfor %}
+  </section>
+
+  {% with slot_name='In-Article', slot_id='in-article', extra_class='in-article-ad' %}
+  {% include '_ad_slot.html' %}
+  {% endwith %}
+
+  <h2>Why this episode matters to the season</h2>
+  {% for p in post.takeaway_paragraphs %}
+  <p>{{ p }}</p>
+  {% endfor %}
+
+  {% with slot_name='Below Content', slot_id='below', extra_class='below-content-ad' %}
+  {% include '_ad_slot.html' %}
+  {% endwith %}
+
+  <h2>Where to watch legally</h2>
+  <p>Support the production committee and the original creators. Use a licensed platform in your region rather than unauthorized streams. Availability rotates by territory.</p>
+  <div class="watch-grid">
+    {% for w in post.watch %}
+    <a href="{{ w.url }}" rel="noopener noreferrer" target="_blank">{{ w.name }}</a>
+    {% else %}
+    <a href="https://www.crunchyroll.com/" rel="noopener noreferrer" target="_blank">Crunchyroll</a>
+    <a href="https://www.netflix.com/" rel="noopener noreferrer" target="_blank">Netflix</a>
+    {% endfor %}
+  </div>
+  <p class="tiny">Links point to official or licensed destinations when known. Always confirm local rights. J-Anime Radar does not host video.</p>
+</article>
+{% endblock %}
