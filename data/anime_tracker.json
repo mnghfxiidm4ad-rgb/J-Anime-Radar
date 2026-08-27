@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-08-26T10:54:45Z",
+  "updated_at": "2026-08-27T12:37:44Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -44,6 +44,11 @@
           "slug": "saga-of-tanya-the-evil-season-2-ep6",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "8": {
+          "slug": "saga-of-tanya-the-evil-season-2-ep8",
+          "source": "editorial-seed",
+          "generated_at": "2026-08-27T12:37:44Z"
         }
       }
     },
@@ -144,6 +149,11 @@
           "slug": "trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs-season-2-ep7",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "8": {
+          "slug": "trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs-season-2-ep8",
+          "source": "editorial-seed",
+          "generated_at": "2026-08-27T12:37:44Z"
         }
       }
     },
@@ -174,6 +184,11 @@
           "slug": "clevatess-season-2-ep7",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "8": {
+          "slug": "clevatess-season-2-ep8",
+          "source": "editorial-seed",
+          "generated_at": "2026-08-27T12:37:44Z"
         }
       }
     },
@@ -184,6 +199,11 @@
           "slug": "from-old-country-bumpkin-to-master-swordsman-ii-ep7",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "8": {
+          "slug": "from-old-country-bumpkin-to-master-swordsman-ii-ep8",
+          "source": "editorial-seed",
+          "generated_at": "2026-08-27T12:37:44Z"
         }
       }
     },
