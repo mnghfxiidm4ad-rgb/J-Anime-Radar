@@ -580,8 +580,7 @@ def write_extras(posts: List[dict]) -> None:
         encoding="utf-8",
     )
     (DOCS / "ads.txt").write_text(
-        "# Replace pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID\n"
-        "google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0\n",
+        "google.com, pub-2075840815269276, DIRECT, f08c47fec0942fa0\n",
         encoding="utf-8",
     )
     urls = ["index.html", "about.html", "privacy.html", "contact.html", "disclaimer.html"]
