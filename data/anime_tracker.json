@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-08-27T12:37:44Z",
+  "updated_at": "2026-08-28T14:09:51Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -29,6 +29,11 @@
           "slug": "smoking-behind-the-supermarket-with-you-ep6",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "8": {
+          "slug": "smoking-behind-the-supermarket-with-you-ep8",
+          "source": "editorial-seed",
+          "generated_at": "2026-08-28T14:09:51Z"
         }
       }
     },
@@ -99,6 +104,11 @@
           "slug": "the-exiled-heavy-knight-knows-how-to-game-the-system-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "9": {
+          "slug": "the-exiled-heavy-knight-knows-how-to-game-the-system-ep9",
+          "source": "editorial-seed",
+          "generated_at": "2026-08-28T14:09:51Z"
         }
       }
     },
@@ -164,6 +174,11 @@
           "slug": "from-overshadowed-to-overpowered-second-reincarnation-of-a-talentless-sage-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "10": {
+          "slug": "from-overshadowed-to-overpowered-second-reincarnation-of-a-talentless-sage-ep10",
+          "source": "editorial-seed",
+          "generated_at": "2026-08-28T14:09:51Z"
         }
       }
     },
