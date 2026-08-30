@@ -28,14 +28,14 @@
 
   <div class="layout">
     <section>
-      <h2 class="kicker">Latest episode briefings</h2>
+      <h2 class="kicker">Latest episode briefings · newest first</h2>
       <div class="grid">
         {% for post in posts %}
         <article class="card" data-card data-genres="{{ post.genres | join(' ') }}" data-title="{{ post.anime_title }} {{ post.episode_title }}">
           <a class="card-cover" href="{{ root }}posts/{{ post.slug }}.html" style="background-image:url('{{ post.image }}')" aria-label="{{ post.anime_title }}"></a>
           <span class="badge">EP {{ post.episode }}</span>
           <div class="card-body">
-            <p class="tiny">{{ post.studio }} · {{ post.aired }}</p>
+            <p class="tiny"><time datetime="{{ post.aired }}">{{ post.aired }}</time> · {{ post.studio }}</p>
             <h3><a href="{{ root }}posts/{{ post.slug }}.html">{{ post.anime_title }}</a></h3>
             <p class="meta">{{ post.episode_title }}</p>
             <p class="vibe">{{ post.episode_vibe }}</p>

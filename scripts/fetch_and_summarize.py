@@ -607,12 +607,20 @@ def planned_episodes(anime: dict, rank: int, seed: bool) -> List[int]:
     return eps
 
 
+def _aired_sort_key(post: dict):
+    aired = str(post.get("aired") or "")
+    date = aired[:10] if len(aired) >= 10 and aired[4:5] == "-" else "0000-00-00"
+    episode = int(post.get("episode") or 0)
+    slug = post.get("slug") or ""
+    return (date, episode, slug)
+
+
 def rebuild_from_json() -> List[dict]:
     posts = []
     if POSTS_JSON.exists():
-        for fp in sorted(POSTS_JSON.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True):
+        for fp in POSTS_JSON.glob("*.json"):
             posts.append(json.loads(fp.read_text(encoding="utf-8")))
-    posts.sort(key=lambda p: (p.get("rank") or 99, -int(p.get("episode") or 0)))
+    posts.sort(key=_aired_sort_key, reverse=True)
     return posts
 
 
