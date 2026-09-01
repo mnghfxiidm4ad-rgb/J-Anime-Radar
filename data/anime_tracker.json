@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-08-31T08:23:37Z",
+  "updated_at": "2026-09-01T07:43:28Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -214,6 +214,11 @@
           "slug": "skeleton-knight-in-another-world-season-2-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "9": {
+          "slug": "skeleton-knight-in-another-world-season-2-ep9",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-01T07:36:31Z"
         }
       }
     },
@@ -254,6 +259,11 @@
           "slug": "love-unseen-beneath-the-clear-night-sky-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "9": {
+          "slug": "love-unseen-beneath-the-clear-night-sky-ep9",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-01T07:40:00Z"
         }
       }
     },
@@ -294,6 +304,11 @@
           "slug": "grand-blue-dreaming-season-3-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "9": {
+          "slug": "grand-blue-dreaming-season-3-ep9",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-01T07:43:28Z"
         }
       }
     }

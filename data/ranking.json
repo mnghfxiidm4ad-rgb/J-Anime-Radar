@@ -16,7 +16,7 @@
   {
     "rank": 3,
     "title": "Saga of Tanya the Evil Season 2",
-    "score": 80,
+    "score": 81,
     "mal_id": 49233,
     "latest": 8
   },
@@ -79,7 +79,7 @@
   {
     "rank": 12,
     "title": "THE GHOST IN THE SHELL",
-    "score": 76,
+    "score": 75,
     "mal_id": 58929,
     "latest": 8
   },
@@ -95,7 +95,7 @@
     "title": "Skeleton Knight in Another World Season 2",
     "score": 66,
     "mal_id": 60522,
-    "latest": 8
+    "latest": 9
   },
   {
     "rank": 15,
@@ -116,27 +116,27 @@
     "title": "Love Unseen Beneath the Clear Night Sky",
     "score": 79,
     "mal_id": 62936,
-    "latest": 8
+    "latest": 9
   },
   {
     "rank": 18,
-    "title": "Jaadugar: A Witch in Mongolia",
-    "score": 82,
-    "mal_id": 61483,
-    "latest": 10
-  },
-  {
-    "rank": 19,
     "title": "Rich Girl Caretaker: I'm Secretly the Caregiver of the Most Popular Girl in This Rich Kid School",
     "score": 70,
     "mal_id": 62876,
     "latest": 9
   },
   {
+    "rank": 19,
+    "title": "Jaadugar: A Witch in Mongolia",
+    "score": 82,
+    "mal_id": 61483,
+    "latest": 10
+  },
+  {
     "rank": 20,
     "title": "Grand Blue Dreaming Season 3",
     "score": 82,
     "mal_id": 62542,
-    "latest": 8
+    "latest": 9
   }
 ]
