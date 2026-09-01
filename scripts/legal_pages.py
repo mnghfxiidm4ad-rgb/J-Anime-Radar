@@ -131,7 +131,7 @@ CONTACT_BODY = """
 <p>We aim to review valid notices promptly. Our default is to preserve criticism and to remove or replace assets that are not needed for commentary. We will not keep unauthorized episode video; this site does not host video files.</p>
 
 <h2>Contact form</h2>
-<p>The form below is the public inbox. If the embedded Google Form does not load in your region, use the email address above.</p>
+<p>The form below is the public inbox. If the embedded Google Form does not load, open <a href="https://forms.gle/Eh6uh7b2BC6P3qEz6" rel="noopener noreferrer" target="_blank">the contact form</a> in a new tab.</p>
 {% if form_embed %}
 <iframe class="contact-frame" title="Contact J-Anime Radar" src="{{ form_embed }}" width="100%" height="920" frameborder="0" marginheight="0" marginwidth="0">Loading contact form…</iframe>
 {% else %}

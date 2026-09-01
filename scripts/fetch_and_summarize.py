@@ -465,7 +465,7 @@ def write_html(path: Path, html: str) -> None:
 def render_legal(envj) -> None:
     year = datetime.now().year
     contact_email = env("CONTACT_EMAIL", "editorial@example.com")
-    form_embed = env("GOOGLE_FORM_EMBED_URL")
+    form_embed = env("GOOGLE_FORM_EMBED_URL", 'https://docs.google.com/forms/d/e/1FAIpQLSfqzO3DXp5V8f8FdWfNxgAk_bgJMSXIcMlWHQiFvQkuTMMukA/viewform?embedded=true')
     for spec in page_specs():
         body_src = spec["body"]
         body = envj.from_string(body_src).render(contact_email=contact_email, form_embed=form_embed)
