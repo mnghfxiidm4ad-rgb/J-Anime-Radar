@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="J-Anime Radar genre art: comedy">
+  <rect width="1200" height="675" fill="#161207"/>
+  <circle cx="600" cy="320" r="170" fill="#f0c14b"/>
+  <circle cx="540" cy="290" r="18" fill="#161207"/>
+  <circle cx="660" cy="290" r="18" fill="#161207"/>
+  <path d="M510 380 Q600 460 690 380" fill="none" stroke="#161207" stroke-width="16" stroke-linecap="round"/>
+  <text x="64" y="92" fill="#8b93a7" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">J-ANIME RADAR</text>
+  <text x="64" y="640" fill="#e8eefc" font-family="Arial, sans-serif" font-size="42">COMEDY</text>
+</svg>

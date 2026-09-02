@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="J-Anime Radar genre art: sf">
+  <rect width="1200" height="675" fill="#071018"/>
+  <rect x="40" y="40" width="1120" height="595" fill="none" stroke="#3cf0d0" stroke-width="2" opacity="0.35"/>
+  <g stroke="#3cf0d0" stroke-width="1" opacity="0.35">
+    <path d="M0 225 H1200"/><path d="M0 450 H1200"/>
+    <path d="M300 0 V675"/><path d="M600 0 V675"/><path d="M900 0 V675"/>
+  </g>
+  <circle cx="900" cy="240" r="120" fill="none" stroke="#3cf0d0" stroke-width="8"/>
+  <circle cx="900" cy="240" r="40" fill="#3cf0d0"/>
+  <text x="64" y="92" fill="#8b93a7" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">J-ANIME RADAR</text>
+  <text x="64" y="640" fill="#e8eefc" font-family="Arial, sans-serif" font-size="42">SF / MECHA</text>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "description": "Curated past titles for shortfall fill-ins. Metadata is hydrated at runtime via AniList/Jikan; this file is not scraped HTML.",
+  "lookback_days": 30,
+  "titles": [
+    {"mal_id": 1, "priority": 10, "reason": "genre-staple", "note": "Cowboy Bebop"},
+    {"mal_id": 30, "priority": 10, "reason": "anniversary-staple", "note": "Neon Genesis Evangelion"},
+    {"mal_id": 19, "priority": 9, "reason": "high-score", "note": "Monster"},
+    {"mal_id": 5114, "priority": 10, "reason": "high-score", "note": "Fullmetal Alchemist: Brotherhood"},
+    {"mal_id": 9253, "priority": 10, "reason": "high-score", "note": "Steins;Gate"},
+    {"mal_id": 457, "priority": 8, "reason": "genre-staple", "note": "Mushishi"},
+    {"mal_id": 339, "priority": 8, "reason": "genre-staple", "note": "Serial Experiments Lain"},
+    {"mal_id": 205, "priority": 7, "reason": "genre-staple", "note": "Samurai Champloo"},
+    {"mal_id": 1535, "priority": 8, "reason": "genre-staple", "note": "Death Note"},
+    {"mal_id": 1575, "priority": 7, "reason": "genre-staple", "note": "Code Geass"},
+    {"mal_id": 11061, "priority": 9, "reason": "high-score", "note": "Hunter x Hunter (2011)"},
+    {"mal_id": 16498, "priority": 7, "reason": "genre-staple", "note": "Attack on Titan"},
+    {"mal_id": 9756, "priority": 8, "reason": "genre-staple", "note": "Puella Magi Madoka Magica"},
+    {"mal_id": 32998, "priority": 8, "reason": "high-score", "note": "Made in Abyss"},
+    {"mal_id": 37521, "priority": 8, "reason": "high-score", "note": "Vinland Saga"},
+    {"mal_id": 44511, "priority": 7, "reason": "genre-staple", "note": "Chainsaw Man"},
+    {"mal_id": 47917, "priority": 9, "reason": "high-score", "note": "Bocchi the Rock!"},
+    {"mal_id": 52991, "priority": 10, "reason": "high-score", "note": "Frieren: Beyond Journey's End"},
+    {"mal_id": 918, "priority": 7, "reason": "genre-staple", "note": "Gintama"},
+    {"mal_id": 5081, "priority": 7, "reason": "genre-staple", "note": "Bakemonogatari"},
+    {"mal_id": 7785, "priority": 6, "reason": "genre-staple", "note": "The Tatami Galaxy"},
+    {"mal_id": 22789, "priority": 7, "reason": "high-score", "note": "Mushishi Zoku Shou"},
+    {"mal_id": 28851, "priority": 6, "reason": "high-score", "note": "A Silent Voice"},
+    {"mal_id": 4181, "priority": 7, "reason": "genre-staple", "note": "Clannad: After Story"}
+  ]
+}

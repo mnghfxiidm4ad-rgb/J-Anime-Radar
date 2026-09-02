@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="J-Anime Radar genre art: default">
+  <rect width="1200" height="675" fill="#0c121c"/>
+  <circle cx="640" cy="320" r="210" fill="none" stroke="#3cf0d0" stroke-width="3" opacity="0.35"/>
+  <circle cx="640" cy="320" r="130" fill="none" stroke="#3cf0d0" stroke-width="2" opacity="0.55"/>
+  <circle cx="640" cy="320" r="50" fill="none" stroke="#3cf0d0" stroke-width="2"/>
+  <path d="M640 320 L980 150" stroke="#ff4d6d" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="640" cy="320" r="16" fill="#3cf0d0"/>
+  <text x="64" y="92" fill="#8b93a7" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">J-ANIME RADAR</text>
+  <text x="64" y="640" fill="#e8eefc" font-family="Arial, sans-serif" font-size="42">RECOMMENDED ANIME</text>
+</svg>

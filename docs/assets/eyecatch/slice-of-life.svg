@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="J-Anime Radar genre art: slice of life">
+  <rect width="1200" height="675" fill="#10140c"/>
+  <rect x="160" y="150" width="880" height="360" rx="18" fill="#1c2418" stroke="#f0c14b" stroke-width="3"/>
+  <rect x="210" y="200" width="220" height="160" fill="#f0c14b" opacity="0.35"/>
+  <rect x="470" y="200" width="220" height="160" fill="#3cf0d0" opacity="0.18"/>
+  <rect x="730" y="200" width="220" height="160" fill="#f0c14b" opacity="0.2"/>
+  <text x="64" y="92" fill="#8b93a7" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">J-ANIME RADAR</text>
+  <text x="64" y="640" fill="#e8eefc" font-family="Arial, sans-serif" font-size="42">SLICE OF LIFE</text>
+</svg>

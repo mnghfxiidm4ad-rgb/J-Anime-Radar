@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="J-Anime Radar genre art: romance">
+  <rect width="1200" height="675" fill="#160814"/>
+  <circle cx="430" cy="310" r="150" fill="none" stroke="#ff4d6d" stroke-width="10" opacity="0.85"/>
+  <circle cx="700" cy="310" r="150" fill="none" stroke="#f0c14b" stroke-width="10" opacity="0.7"/>
+  <circle cx="565" cy="310" r="18" fill="#e8eefc"/>
+  <text x="64" y="92" fill="#8b93a7" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">J-ANIME RADAR</text>
+  <text x="64" y="640" fill="#e8eefc" font-family="Arial, sans-serif" font-size="42">ROMANCE</text>
+</svg>

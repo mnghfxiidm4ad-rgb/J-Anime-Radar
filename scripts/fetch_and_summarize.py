@@ -27,6 +27,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from editorial import GEMINI_PROMPT, compose_review  # noqa: E402
 from legal_pages import page_specs  # noqa: E402
+from supplement import daily_target, run_supplement_loop  # noqa: E402
+from cms_wordpress import publish_post as wp_publish  # noqa: E402
 
 DATA = ROOT / "data"
 POSTS_JSON = DATA / "posts"
@@ -37,7 +39,13 @@ UA = "J-Anime-Radar/1.0 (editorial static generator; +https://github.com)"
 
 
 def log(msg: str) -> None:
-    print(msg, flush=True)
+    text = str(msg)
+    try:
+        print(text, flush=True)
+    except UnicodeEncodeError:
+        enc = getattr(sys.stdout, "encoding", None) or "utf-8"
+        sys.stdout.buffer.write((text + "\n").encode(enc, errors="replace"))
+        sys.stdout.flush()
 
 
 def env(name: str, default: str = "") -> str:
@@ -45,7 +53,7 @@ def env(name: str, default: str = "") -> str:
 
 
 def site_url() -> str:
-    return env("SITE_URL", "https://j-animeradar.pages.dev").rstrip("/")
+    return env("SITE_URL", "https://j-animeradar.net").rstrip("/")
 
 
 def http_json(url: str, payload: Optional[dict] = None, timeout: int = 45) -> dict:
@@ -457,6 +465,17 @@ def default_og() -> str:
     return abs_url("assets/logo.svg")
 
 
+def og_image_for(post: dict) -> str:
+    img = (post.get("banner") or post.get("image") or "").strip()
+    if img.startswith("http://") or img.startswith("https://"):
+        return img
+    if img.startswith("/"):
+        return f"{site_url()}{img}"
+    if img:
+        return abs_url(img)
+    return default_og()
+
+
 def write_html(path: Path, html: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(html, encoding="utf-8", newline="\n")
@@ -500,40 +519,49 @@ def render_legal(envj) -> None:
 def render_post(envj, post: dict) -> None:
     year = datetime.now().year
     canonical = abs_url(f"posts/{post['slug']}.html")
-    article_ld = {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebSite",
-                "name": "J-Anime Radar",
-                "url": site_url(),
-                "description": "Seasonal Anime Intel, Episode Breakdowns & Japanese Fan Reactions",
-            },
-            {
-                "@type": "Article",
-                "headline": f"{post['anime_title']} Episode {post['episode']} — {post['episode_title']}",
-                "description": post["episode_title"],
-                "image": post.get("image") or default_og(),
-                "datePublished": post.get("aired"),
-                "inLanguage": "en",
-                "author": {"@type": "Organization", "name": "J-Anime Radar Editorial Project"},
-                "publisher": {"@type": "Organization", "name": "J-Anime Radar", "url": site_url()},
-                "mainEntityOfPage": canonical,
-            },
+    is_feature = (post.get("kind") == "feature")
+    headline = post.get("headline") or post.get("episode_title") or post.get("anime_title")
+    graph = [
+        {
+            "@type": "WebSite",
+            "name": "J-Anime Radar",
+            "url": site_url(),
+            "description": "Seasonal Anime Intel, Episode Breakdowns & Japanese Fan Reactions",
+        },
+        {
+            "@type": "Article",
+            "headline": headline if is_feature else f"{post['anime_title']} Episode {post['episode']} — {post['episode_title']}",
+            "description": headline,
+            "image": og_image_for(post),
+            "datePublished": post.get("aired"),
+            "inLanguage": "en",
+            "author": {"@type": "Organization", "name": "J-Anime Radar Editorial Project"},
+            "publisher": {"@type": "Organization", "name": "J-Anime Radar", "url": site_url()},
+            "mainEntityOfPage": canonical,
+        },
+    ]
+    if not is_feature:
+        graph.append(
             {
                 "@type": "TVEpisode",
                 "name": post["episode_title"],
                 "episodeNumber": post["episode"],
                 "partOfSeries": {"@type": "TVSeries", "name": post["anime_title"]},
-            },
-        ],
-    }
+            }
+        )
+    article_ld = {"@context": "https://schema.org", "@graph": graph}
+    if is_feature:
+        title = f"{headline} — J-Anime Radar"
+        description = f"Original series guide: appeal, spoiler-light synopsis, watch points, and legal streaming notes for {post['anime_title']}."
+    else:
+        title = f"{post['anime_title']} Ep. {post['episode']} — J-Anime Radar"
+        description = f"Original episode briefing: sakuga, Japanese fan reaction, and legal watch links for {post['anime_title']} episode {post['episode']}."
     html = envj.get_template("post.html").render(
-        title=f"{post['anime_title']} Ep. {post['episode']} — J-Anime Radar",
-        description=f"Original episode briefing: sakuga, Japanese fan reaction, and legal watch links for {post['anime_title']} episode {post['episode']}.",
+        title=title,
+        description=description,
         canonical=canonical,
         og_type="article",
-        og_image=post.get("banner") or post.get("image") or default_og(),
+        og_image=og_image_for(post),
         root="../",
         nav="home",
         year=year,
@@ -628,9 +656,12 @@ def main() -> int:
     load_dotenv(ROOT / ".env")
     parser = argparse.ArgumentParser(description="Build J-Anime Radar static site")
     parser.add_argument("--rebuild-only", action="store_true", help="Do not call APIs; rewrite HTML from data/posts")
-    parser.add_argument("--max-new", type=int, default=30, help="Max new Gemini/editorial articles this run")
+    parser.add_argument("--max-new", type=int, default=30, help="Max new rank-20 episode articles this run")
+    parser.add_argument("--daily-target", type=int, default=None, help="Target total new posts per run (default DAILY_TARGET_COUNT or 3)")
+    parser.add_argument("--skip-supplement", action="store_true", help="Do not generate complementary feature articles")
     parser.add_argument("--no-seed-extra", action="store_true", help="Only latest episode per title")
     args = parser.parse_args()
+    target = args.daily_target if args.daily_target is not None else daily_target()
 
     DATA.mkdir(parents=True, exist_ok=True)
     POSTS_JSON.mkdir(parents=True, exist_ok=True)
@@ -679,13 +710,23 @@ def main() -> int:
                 created += 1
         (DATA / "ranking.json").write_text(json.dumps(ranking_meta, ensure_ascii=False, indent=2), encoding="utf-8")
         save_tracker(tr)
-        log(f"new briefings this run: {created}")
+        log(f"new rank-20 episode briefings this run: {created}")
+        shortfall = max(0, int(target) - int(created))
+        new_features = []
+        if not args.skip_supplement and shortfall > 0:
+            new_features = run_supplement_loop(shortfall, ranking_meta) or []
+        else:
+            log(f"complementary features skipped (shortfall={shortfall})")
 
+    if args.rebuild_only:
+        new_features = []
     posts = rebuild_from_json()
     ranking_path = DATA / "ranking.json"
     ranking = json.loads(ranking_path.read_text(encoding="utf-8")) if ranking_path.exists() else []
     latest_by_mal = {}
     for p in posts:
+        if p.get("kind") == "feature":
+            continue
         mid = str(p.get("mal_id"))
         if mid not in latest_by_mal or int(p.get("episode") or 0) > int(latest_by_mal[mid].get("episode") or 0):
             latest_by_mal[mid] = p
@@ -699,6 +740,20 @@ def main() -> int:
     render_index(envj, posts, ranking)
     render_legal(envj)
     write_extras(posts)
+    for post in new_features:
+        try:
+            html_path = DOCS / "posts" / f"{post['slug']}.html"
+            html = html_path.read_text(encoding="utf-8") if html_path.exists() else ""
+            wp_publish(
+                post,
+                html,
+                eyecatch={
+                    "featured_media": post.get("featured_media") or 0,
+                    "eyecatch_source": post.get("eyecatch_source"),
+                },
+            )
+        except Exception as e:
+            log(f"  WordPress post-render skipped: {e}")
     log("done")
     return 0
 

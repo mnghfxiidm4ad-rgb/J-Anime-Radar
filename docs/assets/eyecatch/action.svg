@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="J-Anime Radar genre art: action">
+  <rect width="1200" height="675" fill="#12080c"/>
+  <polygon points="80,600 420,80 520,80 180,600" fill="#ff4d6d" opacity="0.85"/>
+  <polygon points="500,620 980,40 1120,40 640,620" fill="#3cf0d0" opacity="0.22"/>
+  <circle cx="980" cy="140" r="90" fill="none" stroke="#3cf0d0" stroke-width="6"/>
+  <text x="64" y="92" fill="#8b93a7" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">J-ANIME RADAR</text>
+  <text x="64" y="640" fill="#e8eefc" font-family="Arial, sans-serif" font-size="42">BATTLE / ACTION</text>
+</svg>

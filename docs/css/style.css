@@ -197,6 +197,7 @@ button, input, select { font-family: inherit; }
   padding: 4px 8px;
   border-radius: 999px;
 }
+.badge-feature { color: var(--gold); border-color: rgba(240, 193, 75, 0.45); }
 .card-body { padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .card h3 {
   font-family: var(--display);
@@ -330,6 +331,28 @@ button, input, select { font-family: inherit; }
   font-weight: 600;
 }
 .watch-grid a:hover { background: var(--cyan); color: #04110e; }
+
+.official-embed-wrap {
+  margin: 8px 0 22px;
+}
+.official-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 360px;
+  border: 0;
+  border-radius: 14px;
+  background: #05070c;
+}
+.official-x { color: var(--text-dim); }
+.rights-credit {
+  margin-top: 28px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-family: var(--sans);
+}
 
 .legal {
   width: min(840px, calc(100% - 32px));

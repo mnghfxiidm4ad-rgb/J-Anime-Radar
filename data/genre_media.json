@@ -1,0 +1,10 @@
+{
+  "_comment": "featured_media is a WordPress media attachment ID (0 = omit). asset is the static-site fallback under docs/.",
+  "default": {"key": "default", "asset": "assets/eyecatch/default.svg", "featured_media": 0, "label": "General"},
+  "action": {"key": "action", "asset": "assets/eyecatch/action.svg", "featured_media": 0, "label": "Battle / Action"},
+  "sf": {"key": "sf", "asset": "assets/eyecatch/sf.svg", "featured_media": 0, "label": "SF / Mecha"},
+  "romance": {"key": "romance", "asset": "assets/eyecatch/romance.svg", "featured_media": 0, "label": "Romance"},
+  "slice-of-life": {"key": "slice-of-life", "asset": "assets/eyecatch/slice-of-life.svg", "featured_media": 0, "label": "Slice of Life"},
+  "comedy": {"key": "comedy", "asset": "assets/eyecatch/comedy.svg", "featured_media": 0, "label": "Comedy"},
+  "fantasy": {"key": "fantasy", "asset": "assets/eyecatch/fantasy.svg", "featured_media": 0, "label": "Fantasy"}
+}

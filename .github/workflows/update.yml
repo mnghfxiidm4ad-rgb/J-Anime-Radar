@@ -24,15 +24,31 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Detect new episodes, summarize, rebuild docs/
+      - name: Detect new episodes, summarize, fill shortfall, rebuild docs/
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           SITE_URL: ${{ vars.SITE_URL }}
           GOOGLE_FORM_EMBED_URL: ${{ secrets.GOOGLE_FORM_EMBED_URL }}
           CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+          DAILY_TARGET_COUNT: ${{ vars.DAILY_TARGET_COUNT }}
+          SUPPLEMENT_LOOKBACK_DAYS: ${{ vars.SUPPLEMENT_LOOKBACK_DAYS }}
+          WP_URL: ${{ secrets.WP_URL }}
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          WP_STATUS: ${{ vars.WP_STATUS }}
+          WP_CATEGORY_EPISODE: ${{ vars.WP_CATEGORY_EPISODE }}
+          WP_CATEGORY_FEATURE: ${{ vars.WP_CATEGORY_FEATURE }}
+          WP_TAG_IDS: ${{ vars.WP_TAG_IDS }}
+          WP_GENRE_MEDIA_ACTION: ${{ vars.WP_GENRE_MEDIA_ACTION }}
+          WP_GENRE_MEDIA_SF: ${{ vars.WP_GENRE_MEDIA_SF }}
+          WP_GENRE_MEDIA_ROMANCE: ${{ vars.WP_GENRE_MEDIA_ROMANCE }}
+          WP_GENRE_MEDIA_SLICE_OF_LIFE: ${{ vars.WP_GENRE_MEDIA_SLICE_OF_LIFE }}
+          WP_GENRE_MEDIA_COMEDY: ${{ vars.WP_GENRE_MEDIA_COMEDY }}
+          WP_GENRE_MEDIA_FANTASY: ${{ vars.WP_GENRE_MEDIA_FANTASY }}
+          WP_GENRE_MEDIA_DEFAULT: ${{ vars.WP_GENRE_MEDIA_DEFAULT }}
           TZ: Asia/Tokyo
-        run: python scripts/fetch_and_summarize.py --max-new 12
+        run: python scripts/fetch_and_summarize.py --max-new 3 --no-seed-extra
 
       - name: Commit and push if the desk moved
         run: |
@@ -42,6 +58,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No site changes."
           else
-            git commit -m "chore: publish new seasonal episode intel"
+            git commit -m "chore: publish daily radar posts"
             git push
           fi
