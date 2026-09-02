@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-01T07:43:28Z",
+  "updated_at": "2026-09-02T07:20:55Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -164,6 +164,11 @@
           "slug": "i-want-to-love-you-till-your-dying-day-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "9": {
+          "slug": "i-want-to-love-you-till-your-dying-day-ep9",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-02T07:10:47Z"
         }
       }
     },
@@ -174,6 +179,11 @@
           "slug": "the-ghost-in-the-shell-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "9": {
+          "slug": "the-ghost-in-the-shell-ep9",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-02T07:20:55Z"
         }
       }
     },
