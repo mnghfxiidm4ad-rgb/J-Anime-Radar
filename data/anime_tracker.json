@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-02T07:20:55Z",
+  "updated_at": "2026-09-03T07:09:07Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -59,6 +59,11 @@
           "slug": "saga-of-tanya-the-evil-season-2-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-27T12:37:44Z"
+        },
+        "9": {
+          "slug": "saga-of-tanya-the-evil-season-2-ep9",
+          "source": "gemini",
+          "generated_at": "2026-09-03T07:01:45Z"
         }
       }
     },
@@ -199,6 +204,11 @@
           "slug": "trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs-season-2-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-27T12:37:44Z"
+        },
+        "9": {
+          "slug": "trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs-season-2-ep9",
+          "source": "gemini",
+          "generated_at": "2026-09-03T07:04:06Z"
         }
       }
     },
@@ -244,6 +254,11 @@
           "slug": "clevatess-season-2-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-27T12:37:44Z"
+        },
+        "9": {
+          "slug": "clevatess-season-2-ep9",
+          "source": "gemini",
+          "generated_at": "2026-09-03T07:09:07Z"
         }
       }
     },
