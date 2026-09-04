@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-03T07:09:07Z",
+  "updated_at": "2026-09-04T07:28:15Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -39,6 +39,11 @@
           "slug": "smoking-behind-the-supermarket-with-you-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-28T14:09:51Z"
+        },
+        "9": {
+          "slug": "smoking-behind-the-supermarket-with-you-ep9",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-04T07:15:53Z"
         }
       }
     },
@@ -99,6 +104,11 @@
           "slug": "chainsmoker-cat-ep7",
           "source": "editorial-seed",
           "generated_at": "2026-08-26T10:54:45Z"
+        },
+        "9": {
+          "slug": "chainsmoker-cat-ep9",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-04T07:19:51Z"
         }
       }
     },
@@ -129,6 +139,11 @@
           "slug": "the-exiled-heavy-knight-knows-how-to-game-the-system-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-08-28T14:09:51Z"
+        },
+        "10": {
+          "slug": "the-exiled-heavy-knight-knows-how-to-game-the-system-ep10",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-04T07:28:15Z"
         }
       }
     },
