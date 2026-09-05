@@ -38,8 +38,8 @@ TEMPLATES = ROOT / "templates"
 UA = "J-Anime-Radar/1.0 (editorial static generator; +https://github.com)"
 DESK_SIZE = 30
 RANKING_SOURCE_LABELS = {
-    "anilist": "AniList currently-airing popularity (POPULARITY_DESC), not a Japanese TV ratings chart.",
-    "jikan": "MyAnimeList current-season listing via Jikan API (TV/ONA, typically member/popularity order), not a Japanese TV ratings chart.",
+    "anilist": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
+    "jikan": "MyAnimeList current-season listing via Jikan (TV/ONA, continuing=true so 2-cour holdovers are included). Not a Japanese TV ratings chart.",
 }
 
 
@@ -55,6 +55,14 @@ def current_season(now=None):
     else:
         season = "FALL"
     return season, now.year
+
+
+def previous_season(season: str, year: int):
+    order = ["WINTER", "SPRING", "SUMMER", "FALL"]
+    i = order.index(season)
+    if i == 0:
+        return "FALL", year - 1
+    return order[i - 1], year
 
 
 def public_score(raw):
@@ -179,7 +187,7 @@ def fetch_jikan_season(limit: int = DESK_SIZE) -> List[dict]:
     page = 1
     while len(rows) < limit and page <= 3:
         def _pull(p=page):
-            return http_json(f"https://api.jikan.moe/v4/seasons/now?filter=tv&sfw=true&page={p}&limit=25")
+            return http_json(f"https://api.jikan.moe/v4/seasons/now?filter=tv&sfw=true&continuing=true&page={p}&limit=25")
 
         data = with_retries(_pull)
         batch = data.get("data") or []
@@ -226,14 +234,22 @@ def normalize_jikan(a: dict) -> dict:
     }
 
 
-def fetch_anilist_season(limit: int = DESK_SIZE) -> List[dict]:
-    season, year = current_season()
-    query = """
+ANILIST_SEASON_QUERY = """
     query ($season: MediaSeason, $seasonYear: Int, $perPage: Int) {
       Page(page: 1, perPage: $perPage) {
-        media(season: $season, seasonYear: $seasonYear, type: ANIME, status: RELEASING, sort: POPULARITY_DESC) {
+        media(
+          season: $season
+          seasonYear: $seasonYear
+          type: ANIME
+          status: RELEASING
+          format_in: [TV, ONA, TV_SHORT]
+          sort: POPULARITY_DESC
+        ) {
           id
           idMal
+          format
+          season
+          seasonYear
           title { romaji english native }
           averageScore
           popularity
@@ -257,55 +273,89 @@ def fetch_anilist_season(limit: int = DESK_SIZE) -> List[dict]:
       }
     }
     """
+
+
+def _anilist_row(m: dict) -> dict:
+    nxt = m.get("nextAiringEpisode") or {}
+    latest = (nxt.get("episode") or 1) - 1
+    if latest < 1:
+        latest = 1
+    links = m.get("externalLinks") or []
+    watch = guess_watch(links)
+    cast = []
+    for e in ((m.get("characters") or {}).get("edges") or []):
+        nm = ((e.get("node") or {}).get("name") or {}).get("full")
+        vas = e.get("voiceActors") or []
+        va = ((vas[0].get("name") or {}).get("full") if vas else "")
+        if nm:
+            cast.append(f"{nm} / {va}" if va else nm)
+    studios = [n.get("name") for n in ((m.get("studios") or {}).get("nodes") or []) if n.get("name")]
+    return {
+        "mal_id": m.get("idMal") or m.get("id"),
+        "anilist_id": m.get("id"),
+        "title": (m.get("title") or {}).get("romaji"),
+        "title_english": (m.get("title") or {}).get("english") or (m.get("title") or {}).get("romaji"),
+        "title_romaji": (m.get("title") or {}).get("romaji"),
+        "title_native": (m.get("title") or {}).get("native") or "",
+        "score": m.get("averageScore"),
+        "members": m.get("popularity") or 0,
+        "episodes": m.get("episodes"),
+        "genres": m.get("genres") or [],
+        "studio": studios[0] if studios else "",
+        "studios": studios,
+        "image": (m.get("coverImage") or {}).get("extraLarge") or "",
+        "banner": m.get("bannerImage") or "",
+        "description": m.get("description") or "",
+        "source": m.get("source") or "",
+        "site_url": m.get("siteUrl") or "",
+        "watch": watch,
+        "cast": cast,
+        "next_episode": nxt.get("episode"),
+        "next_airing_at": nxt.get("airingAt"),
+        "latest_episode": latest,
+        "origin": "anilist",
+        "season_tag": m.get("season"),
+        "season_year_tag": m.get("seasonYear"),
+    }
+
+
+def _fetch_anilist_window(season: str, year: int, per_page: int = 50) -> List[dict]:
     data = with_retries(
         lambda: http_json(
             "https://graphql.anilist.co",
-            {"query": query, "variables": {"season": season, "seasonYear": year, "perPage": int(limit)}},
+            {
+                "query": ANILIST_SEASON_QUERY,
+                "variables": {"season": season, "seasonYear": year, "perPage": int(per_page)},
+            },
         )
     )
     media = (((data.get("data") or {}).get("Page") or {}).get("media")) or []
-    out = []
-    for m in media[:limit]:
-        nxt = m.get("nextAiringEpisode") or {}
-        latest = (nxt.get("episode") or 1) - 1
-        if latest < 1:
-            latest = 1
-        links = m.get("externalLinks") or []
-        watch = guess_watch(links)
-        cast = []
-        for e in ((m.get("characters") or {}).get("edges") or []):
-            nm = ((e.get("node") or {}).get("name") or {}).get("full")
-            vas = e.get("voiceActors") or []
-            va = ((vas[0].get("name") or {}).get("full") if vas else "")
-            if nm:
-                cast.append(f"{nm} / {va}" if va else nm)
-        studios = [n.get("name") for n in ((m.get("studios") or {}).get("nodes") or []) if n.get("name")]
-        out.append({
-            "mal_id": m.get("idMal") or m.get("id"),
-            "anilist_id": m.get("id"),
-            "title": (m.get("title") or {}).get("romaji"),
-            "title_english": (m.get("title") or {}).get("english") or (m.get("title") or {}).get("romaji"),
-            "title_romaji": (m.get("title") or {}).get("romaji"),
-            "title_native": (m.get("title") or {}).get("native") or "",
-            "score": m.get("averageScore"),
-            "members": m.get("popularity") or 0,
-            "episodes": m.get("episodes"),
-            "genres": m.get("genres") or [],
-            "studio": studios[0] if studios else "",
-            "studios": studios,
-            "image": (m.get("coverImage") or {}).get("extraLarge") or "",
-            "banner": m.get("bannerImage") or "",
-            "description": m.get("description") or "",
-            "source": m.get("source") or "",
-            "site_url": m.get("siteUrl") or "",
-            "watch": watch,
-            "cast": cast,
-            "next_episode": nxt.get("episode"),
-            "next_airing_at": nxt.get("airingAt"),
-            "latest_episode": latest,
-            "origin": "anilist",
-        })
-    return out
+    return [_anilist_row(m) for m in media]
+
+
+def fetch_anilist_season(limit: int = DESK_SIZE) -> List[dict]:
+    """Current cour plus previous cour still RELEASING (2-cour holdovers).
+
+    AniList `season` is the start cour. A Spring-start 2-cour is tagged SPRING
+    even while it is still broadcasting in Summer, so a current-season-only
+    query drops those titles.
+    """
+    season, year = current_season()
+    windows = [(season, year)]
+    windows.append(previous_season(season, year))
+    merged: Dict[str, dict] = {}
+    for s, y in windows:
+        log(f"  AniList window {s} {y}")
+        for row in _fetch_anilist_window(s, y, per_page=50):
+            key = str(row.get("anilist_id") or row.get("mal_id") or "")
+            if not key:
+                continue
+            prev = merged.get(key)
+            if prev is None or int(row.get("members") or 0) >= int(prev.get("members") or 0):
+                merged[key] = row
+    rows = sorted(merged.values(), key=lambda r: int(r.get("members") or 0), reverse=True)
+    log(f"  AniList merged pool {len(rows)} (current+previous cour)")
+    return rows[:limit]
 
 
 def guess_watch(links: List[dict]) -> List[dict]:

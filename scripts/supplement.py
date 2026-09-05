@@ -258,7 +258,7 @@ def fetch_anilist_offrank() -> List[dict]:
     query = """
     query ($season: MediaSeason, $seasonYear: Int) {
       Page(page: 2, perPage: 30) {  # page 1 is Top 30
-        media(season: $season, seasonYear: $seasonYear, type: ANIME, status: RELEASING, sort: POPULARITY_DESC) {
+        media(season: $season, seasonYear: $seasonYear, type: ANIME, status: RELEASING, format_in: [TV, ONA, TV_SHORT], sort: POPULARITY_DESC) {
           id
           idMal
           title { romaji english native }
@@ -300,7 +300,7 @@ def fetch_anilist_offrank() -> List[dict]:
 
 def fetch_jikan_offrank() -> List[dict]:
     def _pull():
-        return http_json("https://api.jikan.moe/v4/seasons/now?filter=tv&sfw=true&page=2&limit=25")
+        return http_json("https://api.jikan.moe/v4/seasons/now?filter=tv&sfw=true&continuing=true&page=2&limit=25")
 
     data = with_retries(_pull, tries=2)
     rows = []

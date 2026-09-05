@@ -1,8 +1,8 @@
 {
   "source": "anilist",
-  "source_label": "AniList currently-airing popularity (POPULARITY_DESC), not a Japanese TV ratings chart.",
+  "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-05T15:38:15Z",
+  "updated_at": "2026-09-05T15:49:08Z",
   "items": [
     {
       "rank": 1,
@@ -14,6 +14,30 @@
     },
     {
       "rank": 2,
+      "title": "Re:ZERO -Starting Life in Another World- Season 4",
+      "score": 90,
+      "mal_id": 61316,
+      "latest": 15,
+      "origin": "anilist"
+    },
+    {
+      "rank": 3,
+      "title": "Daemons of the Shadow Realm",
+      "score": 78,
+      "mal_id": 62001,
+      "latest": 22,
+      "origin": "anilist"
+    },
+    {
+      "rank": 4,
+      "title": "That Time I Got Reincarnated as a Slime Season 4",
+      "score": 83,
+      "mal_id": 59970,
+      "latest": 21,
+      "origin": "anilist"
+    },
+    {
+      "rank": 5,
       "title": "Smoking Behind the Supermarket with You",
       "score": 82,
       "mal_id": 62076,
@@ -21,7 +45,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 3,
+      "rank": 6,
       "title": "Saga of Tanya the Evil Season 2",
       "score": 80,
       "mal_id": 49233,
@@ -29,7 +53,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 4,
+      "rank": 7,
       "title": "BLEACH: Thousand-Year Blood War - The Calamity",
       "score": 90,
       "mal_id": 60636,
@@ -37,7 +61,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 5,
+      "rank": 8,
       "title": "Chainsmoker Cat",
       "score": 67,
       "mal_id": 63403,
@@ -45,7 +69,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 6,
+      "rank": 9,
       "title": "BLACK TORCH",
       "score": 70,
       "mal_id": 61169,
@@ -53,7 +77,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 7,
+      "rank": 10,
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 66,
       "mal_id": 59741,
@@ -61,7 +85,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 8,
+      "rank": 11,
       "title": "You and I Are Polar Opposites Season 2",
       "score": 82,
       "mal_id": 63832,
@@ -69,7 +93,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 9,
+      "rank": 12,
       "title": "Sparks of Tomorrow",
       "score": 76,
       "mal_id": 62856,
@@ -77,7 +101,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 10,
+      "rank": 13,
       "title": "I Want to Love You Till Your Dying Day",
       "score": 74,
       "mal_id": 61126,
@@ -85,7 +109,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 11,
+      "rank": 14,
       "title": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs Season 2",
       "score": 68,
       "mal_id": 54000,
@@ -93,7 +117,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 12,
+      "rank": 15,
       "title": "THE GHOST IN THE SHELL",
       "score": 75,
       "mal_id": 58929,
@@ -101,7 +125,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 13,
+      "rank": 16,
       "title": "From Overshadowed to Overpowered: Second Reincarnation of a Talentless Sage",
       "score": 62,
       "mal_id": 63508,
@@ -109,7 +133,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 14,
+      "rank": 17,
       "title": "Skeleton Knight in Another World Season 2",
       "score": 66,
       "mal_id": 60522,
@@ -117,7 +141,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 15,
+      "rank": 18,
       "title": "Clevatess Season 2",
       "score": 75,
       "mal_id": 62513,
@@ -125,7 +149,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 16,
+      "rank": 19,
       "title": "Love Unseen Beneath the Clear Night Sky",
       "score": 79,
       "mal_id": 62936,
@@ -133,7 +157,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 17,
+      "rank": 20,
       "title": "From Old Country Bumpkin to Master Swordsman II",
       "score": 70,
       "mal_id": 61897,
@@ -141,7 +165,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 18,
+      "rank": 21,
+      "title": "LIAR GAME",
+      "score": 62,
+      "mal_id": 62331,
+      "latest": 22,
+      "origin": "anilist"
+    },
+    {
+      "rank": 22,
       "title": "Rich Girl Caretaker: I'm Secretly the Caregiver of the Most Popular Girl in This Rich Kid School",
       "score": 70,
       "mal_id": 62876,
@@ -149,7 +181,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 19,
+      "rank": 23,
       "title": "Jaadugar: A Witch in Mongolia",
       "score": 82,
       "mal_id": 61483,
@@ -157,7 +189,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 20,
+      "rank": 24,
+      "title": "Welcome to Demon School! Iruma-kun Season 4",
+      "score": 80,
+      "mal_id": 60310,
+      "latest": 21,
+      "origin": "anilist"
+    },
+    {
+      "rank": 25,
       "title": "Grand Blue Dreaming Season 3",
       "score": 82,
       "mal_id": 62542,
@@ -165,7 +205,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 21,
+      "rank": 26,
       "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
       "score": 79,
       "mal_id": 62811,
@@ -173,7 +213,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 22,
+      "rank": 27,
       "title": "I Became a Legend After My 10 Year-Long Last Stand",
       "score": 63,
       "mal_id": 62617,
@@ -181,7 +221,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 23,
+      "rank": 28,
       "title": "Oh Boy, Was I Wrong About Her",
       "score": 70,
       "mal_id": 56735,
@@ -189,7 +229,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 24,
+      "rank": 29,
       "title": "Though I Am an Inept Villainess",
       "score": 77,
       "mal_id": 61240,
@@ -197,51 +237,11 @@
       "origin": "anilist"
     },
     {
-      "rank": 25,
-      "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
-      "score": 72,
-      "mal_id": 63817,
-      "latest": 10,
-      "origin": "anilist"
-    },
-    {
-      "rank": 26,
-      "title": "KAIJU GIRL CARAMELISE",
-      "score": 74,
-      "mal_id": 63150,
-      "latest": 10,
-      "origin": "anilist"
-    },
-    {
-      "rank": 27,
-      "title": "The Villager of Level 999",
-      "score": 60,
-      "mal_id": 62322,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 28,
-      "title": "Goodbye, Lara",
-      "score": 76,
-      "mal_id": 58878,
-      "latest": 9,
-      "origin": "anilist"
-    },
-    {
-      "rank": 29,
-      "title": "The Frontier Lord Begins with Zero Subjects",
-      "score": 66,
-      "mal_id": 62078,
-      "latest": 10,
-      "origin": "anilist"
-    },
-    {
       "rank": 30,
-      "title": "Young Ladies Don't Play Fighting Games",
-      "score": 74,
-      "mal_id": 46488,
-      "latest": 9,
+      "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
+      "score": 76,
+      "mal_id": 57466,
+      "latest": 20,
       "origin": "anilist"
     }
   ]
