@@ -23,7 +23,8 @@ POSTS_JSON = DATA / "posts"
 TRACKER_PATH = DATA / "anime_tracker.json"
 SUPPLEMENT_LOG = DATA / "supplement_log.json"
 ARCHIVE_CATALOG = DATA / "archive_catalog.json"
-OFFRANK_START = 31  # desk is Top 30; complementary offrank starts here
+ARTICLE_PRIORITY = 20
+OFFRANK_START = 21  # ranks 21-30 plus further offrank, then archive, fill the daily quota
 UA = "J-Anime-Radar/1.0 (editorial static generator; +https://github.com)"
 
 
@@ -390,15 +391,52 @@ def select_targets(shortfall: int, ranking: List[dict], posts: Optional[List[dic
     blocked = recent_mal_ids(posts)
     for row in ranking or []:
         try:
-            blocked.add(int(row.get("mal_id") or 0))
+            rank = int(row.get("rank") or 0)
+            mid = int(row.get("mal_id") or 0)
         except (TypeError, ValueError):
-            pass
+            continue
+        if mid and rank and rank <= ARTICLE_PRIORITY:
+            blocked.add(mid)
     blocked.discard(0)
     picks: List[dict] = []
+    seen: Set[int] = set()
+
+    tail = []
+    for row in ranking or []:
+        try:
+            rank = int(row.get("rank") or 0)
+            mid = int(row.get("mal_id") or 0)
+        except (TypeError, ValueError):
+            continue
+        if mid and rank > ARTICLE_PRIORITY:
+            tail.append(row)
+    tail.sort(key=lambda r: int(r.get("rank") or 0))
+    if tail:
+        log(f"Filling shortfall from ranking ranks {ARTICLE_PRIORITY + 1}+ first")
+    for row in tail:
+        if len(picks) >= shortfall:
+            break
+        try:
+            mid = int(row.get("mal_id") or 0)
+        except (TypeError, ValueError):
+            continue
+        if not mid or mid in blocked or mid in seen:
+            continue
+        hydrated = hydrate_mal(mid)
+        if not hydrated:
+            continue
+        hydrated["feature_kind"] = "offrank"
+        hydrated["is_archive"] = False
+        hydrated["rank"] = row.get("rank")
+        picks.append(hydrated)
+        seen.add(mid)
+        time.sleep(0.4)
 
     offrank: List[dict] = []
+    if len(picks) >= shortfall:
+        return picks[:shortfall]
     try:
-        log("Fetching off-rank seasonal titles (approx. 21–50)…")
+        log("Fetching further off-rank seasonal titles…")
         offrank = fetch_anilist_offrank()
         if len(offrank) < 8:
             log("  AniList offrank thin; trying Jikan page 2")
@@ -411,7 +449,6 @@ def select_targets(shortfall: int, ranking: List[dict], posts: Optional[List[dic
             log(f"  Jikan offrank failed ({e2})")
             offrank = []
 
-    seen: Set[int] = set()
     for anime in offrank:
         if len(picks) >= shortfall:
             break

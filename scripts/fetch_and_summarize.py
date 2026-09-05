@@ -37,6 +37,7 @@ DOCS = ROOT / "docs"
 TEMPLATES = ROOT / "templates"
 UA = "J-Anime-Radar/1.0 (editorial static generator; +https://github.com)"
 DESK_SIZE = 30
+ARTICLE_PRIORITY = 20  # episode briefs: ranks 1-20; 21-30 are ranking-only unless the daily quota is short
 RANKING_SOURCE_LABELS = {
     "anilist": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
     "jikan": "MyAnimeList current-season listing via Jikan (TV/ONA, continuing=true so 2-cour holdovers are included). Not a Japanese TV ratings chart.",
@@ -772,7 +773,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Build J-Anime Radar static site")
     parser.add_argument("--rebuild-only", action="store_true", help="Do not call APIs; rewrite HTML from data/posts")
     parser.add_argument("--ranking-only", action="store_true", help="Refresh the Top 30 ranking sidebar without writing episode articles")
-    parser.add_argument("--max-new", type=int, default=30, help="Max new desk episode articles this run")
+    parser.add_argument("--max-new", type=int, default=30, help="Max new Top-20 episode articles this run")
     parser.add_argument("--daily-target", type=int, default=None, help="Target total new posts per run (default DAILY_TARGET_COUNT or 3)")
     parser.add_argument("--skip-supplement", action="store_true", help="Do not generate complementary feature articles")
     parser.add_argument("--no-seed-extra", action="store_true", help="Only latest episode per title")
@@ -828,6 +829,8 @@ def main() -> int:
                     "origin": anime.get("origin"),
                 }
             )
+            if rank > ARTICLE_PRIORITY:
+                continue
             seed = not args.no_seed_extra
             for ep in planned_episodes(anime, rank, seed=seed):
                 if already_done(tr, int(anime["mal_id"]), ep):
