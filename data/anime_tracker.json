@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-04T07:28:15Z",
+  "updated_at": "2026-09-05T06:53:08Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -239,6 +239,11 @@
           "slug": "from-overshadowed-to-overpowered-second-reincarnation-of-a-talentless-sage-ep10",
           "source": "editorial-seed",
           "generated_at": "2026-08-28T14:09:51Z"
+        },
+        "11": {
+          "slug": "from-overshadowed-to-overpowered-second-reincarnation-of-a-talentless-sage-ep11",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-05T06:52:45Z"
         }
       }
     },
@@ -289,6 +294,11 @@
           "slug": "from-old-country-bumpkin-to-master-swordsman-ii-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-08-27T12:37:44Z"
+        },
+        "9": {
+          "slug": "from-old-country-bumpkin-to-master-swordsman-ii-ep9",
+          "source": "gemini",
+          "generated_at": "2026-09-05T06:53:08Z"
         }
       }
     },
