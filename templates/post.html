@@ -8,7 +8,7 @@
     <h1>{{ post.headline or post.episode_title }}</h1>
     <p class="lede">{{ post.anime_title }}{% if post.title_native %} / {{ post.title_native }}{% endif %}</p>
     {% else %}
-    <p class="crumbs"><a href="{{ root }}index.html">Home</a> / <a href="{{ root }}index.html#top20">Season Top 20</a> / Episode {{ post.episode }}</p>
+    <p class="crumbs"><a href="{{ root }}index.html">Home</a> / <a href="{{ root }}index.html#top30">Season Top 30</a> / Episode {{ post.episode }}</p>
     <p class="kicker">{{ post.studio }} · {{ post.genres | join(' / ') }}</p>
     <h1>{{ post.anime_title }} — Ep. {{ post.episode }}</h1>
     <p class="lede">{{ post.episode_title }}</p>

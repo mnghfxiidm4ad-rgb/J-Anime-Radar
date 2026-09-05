@@ -36,6 +36,58 @@ TRACKER_PATH = DATA / "anime_tracker.json"
 DOCS = ROOT / "docs"
 TEMPLATES = ROOT / "templates"
 UA = "J-Anime-Radar/1.0 (editorial static generator; +https://github.com)"
+DESK_SIZE = 30
+RANKING_SOURCE_LABELS = {
+    "anilist": "AniList currently-airing popularity (POPULARITY_DESC), not a Japanese TV ratings chart.",
+    "jikan": "MyAnimeList current-season listing via Jikan API (TV/ONA, typically member/popularity order), not a Japanese TV ratings chart.",
+}
+
+
+def current_season(now=None):
+    now = now or datetime.now(timezone.utc)
+    m = now.month
+    if m in (1, 2, 3):
+        season = "WINTER"
+    elif m in (4, 5, 6):
+        season = "SPRING"
+    elif m in (7, 8, 9):
+        season = "SUMMER"
+    else:
+        season = "FALL"
+    return season, now.year
+
+
+def public_score(raw):
+    if raw is None or raw == "":
+        return None
+    try:
+        s = float(raw)
+    except (TypeError, ValueError):
+        return None
+    if s <= 10:
+        return int(round(s * 10))
+    return int(round(s))
+
+
+def save_ranking(items, source: str) -> None:
+    payload = {
+        "source": source,
+        "source_label": RANKING_SOURCE_LABELS.get(source, source),
+        "desk_size": DESK_SIZE,
+        "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "items": items,
+    }
+    (DATA / "ranking.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_ranking():
+    path = DATA / "ranking.json"
+    if not path.exists():
+        return [], {}
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(raw, list):
+        return raw, {}
+    return list(raw.get("items") or []), raw
 
 
 def log(msg: str) -> None:
@@ -122,20 +174,26 @@ def mark_done(tr: dict, anime: dict, episode: int, slug: str, source: str) -> No
     }
 
 
-def fetch_jikan_top20() -> List[dict]:
-    def _pull():
-        return http_json("https://api.jikan.moe/v4/seasons/now?filter=tv&sfw=true&limit=25")
-
-    data = with_retries(_pull)
+def fetch_jikan_season(limit: int = DESK_SIZE) -> List[dict]:
     rows = []
-    for a in data.get("data") or []:
-        if (a.get("type") or "").upper() not in {"TV", "ONA", ""}:
-            continue
-        rows.append(normalize_jikan(a))
-        if len(rows) >= 20:
+    page = 1
+    while len(rows) < limit and page <= 3:
+        def _pull(p=page):
+            return http_json(f"https://api.jikan.moe/v4/seasons/now?filter=tv&sfw=true&page={p}&limit=25")
+
+        data = with_retries(_pull)
+        batch = data.get("data") or []
+        if not batch:
             break
+        for a in batch:
+            if (a.get("type") or "").upper() not in {"TV", "ONA", ""}:
+                continue
+            rows.append(normalize_jikan(a))
+            if len(rows) >= limit:
+                break
+        page += 1
         time.sleep(0.4)
-    return rows[:20]
+    return rows[:limit]
 
 
 def normalize_jikan(a: dict) -> dict:
@@ -168,11 +226,12 @@ def normalize_jikan(a: dict) -> dict:
     }
 
 
-def fetch_anilist_top20() -> List[dict]:
+def fetch_anilist_season(limit: int = DESK_SIZE) -> List[dict]:
+    season, year = current_season()
     query = """
-    query {
-      Page(page: 1, perPage: 20) {
-        media(season: SUMMER, seasonYear: 2026, type: ANIME, status: RELEASING, sort: POPULARITY_DESC) {
+    query ($season: MediaSeason, $seasonYear: Int, $perPage: Int) {
+      Page(page: 1, perPage: $perPage) {
+        media(season: $season, seasonYear: $seasonYear, type: ANIME, status: RELEASING, sort: POPULARITY_DESC) {
           id
           idMal
           title { romaji english native }
@@ -198,10 +257,15 @@ def fetch_anilist_top20() -> List[dict]:
       }
     }
     """
-    data = with_retries(lambda: http_json("https://graphql.anilist.co", {"query": query}))
+    data = with_retries(
+        lambda: http_json(
+            "https://graphql.anilist.co",
+            {"query": query, "variables": {"season": season, "seasonYear": year, "perPage": int(limit)}},
+        )
+    )
     media = (((data.get("data") or {}).get("Page") or {}).get("media")) or []
     out = []
-    for m in media:
+    for m in media[:limit]:
         nxt = m.get("nextAiringEpisode") or {}
         latest = (nxt.get("episode") or 1) - 1
         if latest < 1:
@@ -309,10 +373,10 @@ def enrich_jikan_episodes(anime: dict) -> dict:
 
 
 def fetch_season() -> List[dict]:
-    log("Fetching season Top 20 via Jikan…")
+    log(f"Fetching season Top {DESK_SIZE} via Jikan…")
     try:
-        rows = fetch_jikan_top20()
-        if len(rows) >= 15:
+        rows = fetch_jikan_season(DESK_SIZE)
+        if len(rows) >= max(15, DESK_SIZE // 2):
             log(f"  Jikan OK ({len(rows)})")
             out = []
             for i, a in enumerate(rows, 1):
@@ -322,8 +386,8 @@ def fetch_season() -> List[dict]:
         log("  Jikan returned too few rows; falling back")
     except Exception as e:
         log(f"  Jikan unavailable ({e}); using AniList fallback")
-    log("Fetching season Top 20 via AniList…")
-    return fetch_anilist_top20()
+    log(f"Fetching season Top {DESK_SIZE} via AniList…")
+    return fetch_anilist_season(DESK_SIZE)
 
 
 def gemini_review(anime: dict, episode: int) -> Optional[dict]:
@@ -571,7 +635,7 @@ def render_post(envj, post: dict) -> None:
     write_html(DOCS / "posts" / f"{post['slug']}.html", html)
 
 
-def render_index(envj, posts: List[dict], ranking: List[dict]) -> None:
+def render_index(envj, posts: List[dict], ranking: List[dict], ranking_note: str = "") -> None:
     year = datetime.now().year
     genres = sorted({g for p in posts for g in (p.get("genres") or [])})
     website_ld = {
@@ -585,7 +649,7 @@ def render_index(envj, posts: List[dict], ranking: List[dict]) -> None:
     }
     html = envj.get_template("index.html").render(
         title="J-Anime Radar — Seasonal Anime Intel, Episode Breakdowns & Japanese Fan Reactions",
-        description="Original English briefings on this season’s Top 20 anime: sakuga analysis, Japanese fan reactions, seiyuu notes, and legal streaming links.",
+        description="Original English briefings on this season’s Top 30 anime: sakuga analysis, Japanese fan reactions, seiyuu notes, and legal streaming links.",
         canonical=abs_url("index.html"),
         og_type="website",
         og_image=default_og(),
@@ -593,10 +657,11 @@ def render_index(envj, posts: List[dict], ranking: List[dict]) -> None:
         nav="home",
         year=year,
         season_label="Summer 2026",
-        stats={"titles": len(ranking) or 20, "articles": len(posts), "season": "2026 S"},
+        stats={"titles": len(ranking) or DESK_SIZE, "articles": len(posts), "season": "2026 S"},
         genres=genres,
         posts=posts,
         ranking=ranking,
+        ranking_note=ranking_note or RANKING_SOURCE_LABELS["anilist"],
         json_ld=json.dumps(website_ld, ensure_ascii=False),
     )
     write_html(DOCS / "index.html", html)
@@ -656,7 +721,8 @@ def main() -> int:
     load_dotenv(ROOT / ".env")
     parser = argparse.ArgumentParser(description="Build J-Anime Radar static site")
     parser.add_argument("--rebuild-only", action="store_true", help="Do not call APIs; rewrite HTML from data/posts")
-    parser.add_argument("--max-new", type=int, default=30, help="Max new rank-20 episode articles this run")
+    parser.add_argument("--ranking-only", action="store_true", help="Refresh the Top 30 ranking sidebar without writing episode articles")
+    parser.add_argument("--max-new", type=int, default=30, help="Max new desk episode articles this run")
     parser.add_argument("--daily-target", type=int, default=None, help="Target total new posts per run (default DAILY_TARGET_COUNT or 3)")
     parser.add_argument("--skip-supplement", action="store_true", help="Do not generate complementary feature articles")
     parser.add_argument("--no-seed-extra", action="store_true", help="Only latest episode per title")
@@ -670,7 +736,33 @@ def main() -> int:
     envj = jinja_env()
     tr = load_tracker()
 
-    if not args.rebuild_only:
+    if args.ranking_only:
+        log(f"Refreshing Top {DESK_SIZE} ranking only")
+        source = "anilist"
+        try:
+            catalog = fetch_anilist_season(DESK_SIZE)
+            if len(catalog) < max(15, DESK_SIZE // 2):
+                raise ValueError(f"only {len(catalog)} rows")
+        except Exception as e:
+            log(f"  AniList ranking failed ({e}); trying Jikan")
+            catalog = fetch_jikan_season(DESK_SIZE)
+            source = "jikan"
+        ranking_meta = []
+        for rank, anime in enumerate(catalog[:DESK_SIZE], 1):
+            ranking_meta.append(
+                {
+                    "rank": rank,
+                    "title": anime.get("title_english") or anime.get("title"),
+                    "score": public_score(anime.get("score")),
+                    "mal_id": anime.get("mal_id"),
+                    "latest": anime.get("latest_episode"),
+                    "origin": anime.get("origin") or source,
+                }
+            )
+        save_ranking(ranking_meta, source)
+        log(f"ranking rows: {len(ranking_meta)} source={source}")
+        new_features = []
+    elif not args.rebuild_only:
         catalog = fetch_season()
         tr["season"] = "2026-SUMMER"
         created = 0
@@ -680,9 +772,10 @@ def main() -> int:
                 {
                     "rank": rank,
                     "title": anime.get("title_english") or anime.get("title"),
-                    "score": anime.get("score"),
+                    "score": public_score(anime.get("score")),
                     "mal_id": anime.get("mal_id"),
                     "latest": anime.get("latest_episode"),
+                    "origin": anime.get("origin"),
                 }
             )
             seed = not args.no_seed_extra
@@ -708,9 +801,10 @@ def main() -> int:
                 )
                 mark_done(tr, anime, ep, post["slug"], source)
                 created += 1
-        (DATA / "ranking.json").write_text(json.dumps(ranking_meta, ensure_ascii=False, indent=2), encoding="utf-8")
+        desk_origin = (catalog[0].get("origin") if catalog else "anilist") or "anilist"
+        save_ranking(ranking_meta, desk_origin)
         save_tracker(tr)
-        log(f"new rank-20 episode briefings this run: {created}")
+        log(f"new desk episode briefings this run: {created}")
         shortfall = max(0, int(target) - int(created))
         new_features = []
         if not args.skip_supplement and shortfall > 0:
@@ -721,8 +815,7 @@ def main() -> int:
     if args.rebuild_only:
         new_features = []
     posts = rebuild_from_json()
-    ranking_path = DATA / "ranking.json"
-    ranking = json.loads(ranking_path.read_text(encoding="utf-8")) if ranking_path.exists() else []
+    ranking, ranking_doc = load_ranking()
     latest_by_mal = {}
     for p in posts:
         if p.get("kind") == "feature":
@@ -732,12 +825,15 @@ def main() -> int:
             latest_by_mal[mid] = p
     for row in ranking:
         p = latest_by_mal.get(str(row.get("mal_id")))
-        row["href"] = f"posts/{p['slug']}.html" if p else "index.html#top20"
+        row["href"] = f"posts/{p['slug']}.html" if p else "index.html#top30"
 
-    log(f"rendering {len(posts)} posts + legal + index")
-    for post in posts:
-        render_post(envj, post)
-    render_index(envj, posts, ranking)
+    if args.ranking_only:
+        log(f"rendering index + legal with {len(ranking)} ranking rows")
+    else:
+        log(f"rendering {len(posts)} posts + legal + index")
+        for post in posts:
+            render_post(envj, post)
+    render_index(envj, posts, ranking, ranking_note=(ranking_doc or {}).get("source_label") or "")
     render_legal(envj)
     write_extras(posts)
     for post in new_features:

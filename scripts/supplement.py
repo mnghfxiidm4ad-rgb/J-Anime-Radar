@@ -23,6 +23,7 @@ POSTS_JSON = DATA / "posts"
 TRACKER_PATH = DATA / "anime_tracker.json"
 SUPPLEMENT_LOG = DATA / "supplement_log.json"
 ARCHIVE_CATALOG = DATA / "archive_catalog.json"
+OFFRANK_START = 31  # desk is Top 30; complementary offrank starts here
 UA = "J-Anime-Radar/1.0 (editorial static generator; +https://github.com)"
 
 
@@ -256,7 +257,7 @@ def fetch_anilist_offrank() -> List[dict]:
     season, year = current_season()
     query = """
     query ($season: MediaSeason, $seasonYear: Int) {
-      Page(page: 2, perPage: 30) {
+      Page(page: 2, perPage: 30) {  # page 1 is Top 30
         media(season: $season, seasonYear: $seasonYear, type: ANIME, status: RELEASING, sort: POPULARITY_DESC) {
           id
           idMal
@@ -288,7 +289,7 @@ def fetch_anilist_offrank() -> List[dict]:
     )
     media = (((data.get("data") or {}).get("Page") or {}).get("media")) or []
     out = []
-    for i, m in enumerate(media, 21):
+    for i, m in enumerate(media, OFFRANK_START):
         row = normalize_anilist(m, rank=i)
         if row.get("mal_id"):
             out.append(row)
