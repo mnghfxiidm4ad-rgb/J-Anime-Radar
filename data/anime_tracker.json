@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-05T06:53:08Z",
+  "updated_at": "2026-09-06T07:02:00Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -359,6 +359,36 @@
           "slug": "grand-blue-dreaming-season-3-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-09-01T07:43:28Z"
+        }
+      }
+    },
+    "61316": {
+      "title": "Re:ZERO -Starting Life in Another World- Season 4",
+      "episodes": {
+        "15": {
+          "slug": "re-zero-starting-life-in-another-world-season-4-ep15",
+          "source": "gemini",
+          "generated_at": "2026-09-06T07:00:12Z"
+        }
+      }
+    },
+    "62001": {
+      "title": "Daemons of the Shadow Realm",
+      "episodes": {
+        "22": {
+          "slug": "daemons-of-the-shadow-realm-ep22",
+          "source": "gemini",
+          "generated_at": "2026-09-06T07:01:29Z"
+        }
+      }
+    },
+    "59970": {
+      "title": "That Time I Got Reincarnated as a Slime Season 4",
+      "episodes": {
+        "21": {
+          "slug": "that-time-i-got-reincarnated-as-a-slime-season-4-ep21",
+          "source": "gemini",
+          "generated_at": "2026-09-06T07:02:00Z"
         }
       }
     }
