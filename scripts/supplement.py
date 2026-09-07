@@ -12,7 +12,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
 from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
+
+import requests
 
 from eyecatch import resolve_eyecatch, site_url
 from feature_editorial import compose_feature_review, gemini_feature_review
@@ -26,6 +27,7 @@ ARCHIVE_CATALOG = DATA / "archive_catalog.json"
 ARTICLE_PRIORITY = 20
 OFFRANK_START = 21  # ranks 21-30 plus further offrank, then archive, fill the daily quota
 UA = "J-Anime-Radar/1.0 (editorial static generator; +https://github.com)"
+TENRAI_DEFAULT = "https://api.tenrai.org/v1"
 
 
 def log(msg: str) -> None:
@@ -40,6 +42,10 @@ def log(msg: str) -> None:
 
 def env(name: str, default: str = "") -> str:
     return (os.environ.get(name) or default).strip()
+
+
+def tenrai_base() -> str:
+    return env("TENRAI_BASE", TENRAI_DEFAULT).rstrip("/")
 
 
 def daily_target() -> int:
@@ -58,15 +64,44 @@ def lookback_days() -> int:
     return max(1, n)
 
 
+def _error_body_detail(raw: bytes) -> str:
+    if not raw:
+        return ""
+    text = raw.decode("utf-8", errors="replace").strip()
+    try:
+        parsed = json.loads(text)
+    except json.JSONDecodeError:
+        return text[:300]
+    if not isinstance(parsed, dict):
+        return text[:300]
+    errs = parsed.get("errors")
+    if isinstance(errs, list) and errs:
+        first = errs[0] if isinstance(errs[0], dict) else {}
+        return str((first.get("message") if isinstance(first, dict) else first) or first)[:400]
+    if parsed.get("message"):
+        return str(parsed.get("message"))[:400]
+    return text[:300]
+
+
 def http_json(url: str, payload: Optional[dict] = None, timeout: int = 45) -> dict:
     headers = {"User-Agent": UA, "Accept": "application/json"}
-    data = None
-    if payload is not None:
-        data = json.dumps(payload).encode("utf-8")
-        headers["Content-Type"] = "application/json"
-    req = Request(url, data=data, headers=headers)
-    with urlopen(req, timeout=timeout) as res:
-        return json.loads(res.read().decode("utf-8"))
+    try:
+        if payload is not None:
+            res = requests.post(url, json=payload, headers=headers, timeout=timeout)
+        else:
+            res = requests.get(url, headers=headers, timeout=timeout)
+    except requests.RequestException as e:
+        raise URLError(str(e)) from e
+    if res.status_code >= 400:
+        detail = _error_body_detail(res.content or b"")
+        reason = res.reason or "Error"
+        if detail:
+            reason = f"{reason}: {detail}"
+        raise HTTPError(url, res.status_code, reason, res.headers, None)
+    try:
+        return res.json()
+    except ValueError as e:
+        raise json.JSONDecodeError(str(e), res.text or "", 0) from e
 
 
 def with_retries(fn, tries: int = 4, sleep_s: float = 2.0, retry_http=(429, 500, 502, 503, 504)):
@@ -299,9 +334,11 @@ def fetch_anilist_offrank() -> List[dict]:
     return out
 
 
-def fetch_jikan_offrank() -> List[dict]:
+def fetch_tenrai_offrank() -> List[dict]:
+    base = tenrai_base()
+
     def _pull():
-        return http_json("https://api.jikan.moe/v4/seasons/now?filter=tv&sfw=true&continuing=true&page=2&limit=25")
+        return http_json(f"{base}/seasons/now?filter=tv&sfw=true&continuing=true&page=2&limit=25")
 
     data = with_retries(_pull, tries=2)
     rows = []
@@ -329,8 +366,9 @@ def fetch_jikan_offrank() -> List[dict]:
                 "watch": guess_watch([]),
                 "external_links": [],
                 "trailer": trailer,
+                "image": ((a.get("images") or {}).get("jpg") or {}).get("large_image_url") or "",
                 "rank": rank,
-                "origin": "jikan",
+                "origin": "tenrai",
             }
         )
         rank += 1
@@ -340,7 +378,46 @@ def fetch_jikan_offrank() -> List[dict]:
     return rows
 
 
+def hydrate_tenrai(mal_id: int) -> Optional[dict]:
+    base = tenrai_base()
+    try:
+        data = with_retries(lambda: http_json(f"{base}/anime/{int(mal_id)}/full"), tries=2)
+        a = data.get("data") or {}
+        if not a:
+            return None
+        genres = [g.get("name") for g in (a.get("genres") or []) if g.get("name")]
+        studios = [s.get("name") for s in (a.get("studios") or []) if s.get("name")]
+        img = ((a.get("images") or {}).get("jpg") or {})
+        return {
+            "mal_id": a.get("mal_id") or mal_id,
+            "title": a.get("title"),
+            "title_english": a.get("title_english") or a.get("title"),
+            "title_romaji": a.get("title"),
+            "title_native": a.get("title_japanese") or "",
+            "score": a.get("score"),
+            "episodes": a.get("episodes"),
+            "genres": genres,
+            "studio": studios[0] if studios else "",
+            "studios": studios,
+            "description": a.get("synopsis") or "",
+            "source": a.get("source") or "",
+            "site_url": a.get("url") or "",
+            "watch": guess_watch([]),
+            "external_links": [],
+            "trailer": a.get("trailer") or {},
+            "image": img.get("large_image_url") or img.get("image_url") or "",
+            "banner": "",
+            "origin": "tenrai",
+        }
+    except Exception as e:
+        log(f"  tenrai hydrate {mal_id} failed: {e}")
+        return None
+
+
 def hydrate_mal(mal_id: int) -> Optional[dict]:
+    row = hydrate_tenrai(mal_id)
+    if row:
+        return row
     query = """
     query ($id: Int) {
       Media(idMal: $id, type: ANIME) {
@@ -370,12 +447,11 @@ def hydrate_mal(mal_id: int) -> Optional[dict]:
             tries=2,
         )
         m = ((data.get("data") or {}).get("Media")) or None
-        if not m:
-            return None
-        return normalize_anilist(m, rank=None)
+        if m:
+            return normalize_anilist(m, rank=None)
     except Exception as e:
-        log(f"  archive hydrate {mal_id} failed: {e}")
-        return None
+        log(f"  archive hydrate AniList {mal_id} failed: {e}")
+    return None
 
 
 def load_archive_catalog() -> List[dict]:
@@ -437,16 +513,19 @@ def select_targets(shortfall: int, ranking: List[dict], posts: Optional[List[dic
         return picks[:shortfall]
     try:
         log("Fetching further off-rank seasonal titles…")
-        offrank = fetch_anilist_offrank()
+        offrank = fetch_tenrai_offrank()
         if len(offrank) < 8:
-            log("  AniList offrank thin; trying Jikan page 2")
-            offrank = offrank + fetch_jikan_offrank()
+            log("  Tenrai offrank thin; trying AniList page 2")
+            try:
+                offrank = offrank + fetch_anilist_offrank()
+            except Exception as e:
+                log(f"  AniList offrank failed ({e})")
     except Exception as e:
-        log(f"  offrank fetch failed ({e}); archive-only")
+        log(f"  Tenrai offrank failed ({e}); trying AniList")
         try:
-            offrank = fetch_jikan_offrank()
+            offrank = fetch_anilist_offrank()
         except Exception as e2:
-            log(f"  Jikan offrank failed ({e2})")
+            log(f"  AniList offrank failed ({e2})")
             offrank = []
 
     for anime in offrank:
@@ -502,7 +581,9 @@ def rights_credit(anime: dict, review: dict) -> str:
     studio = anime.get("studio") or ""
     hint = (review.get("credit_hint") or "").strip()
     holder = hint or studio or "the original rights holders"
-    origin = "AniList" if anime.get("origin") == "anilist" else ("MyAnimeList/Jikan" if anime.get("origin") == "jikan" else "public catalog metadata")
+    origin = "AniList" if anime.get("origin") == "anilist" else (
+        "MyAnimeList/Tenrai" if anime.get("origin") in {"tenrai", "jikan"} else "public catalog metadata"
+    )
     return f"© {holder} / Source: {origin}. Key visuals and footage remain the property of the production committee and licensors. J-Anime Radar does not claim those assets."
 
 

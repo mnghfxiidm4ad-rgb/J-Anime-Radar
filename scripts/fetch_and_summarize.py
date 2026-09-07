@@ -14,7 +14,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
+
+import requests
 
 try:
     from dotenv import load_dotenv
@@ -36,9 +37,11 @@ TRACKER_PATH = DATA / "anime_tracker.json"
 DOCS = ROOT / "docs"
 TEMPLATES = ROOT / "templates"
 UA = "J-Anime-Radar/1.0 (editorial static generator; +https://github.com)"
+TENRAI_DEFAULT = "https://api.tenrai.org/v1"
 DESK_SIZE = 30
 ARTICLE_PRIORITY = 20  # episode briefs: ranks 1-20; 21-30 are ranking-only unless the daily quota is short
 RANKING_SOURCE_LABELS = {
+    "tenrai": "MyAnimeList current-season listing via Tenrai (TV/ONA, continuing=true so 2-cour holdovers are included). Not a Japanese TV ratings chart.",
     "anilist": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
     "jikan": "MyAnimeList current-season listing via Jikan (TV/ONA, continuing=true so 2-cour holdovers are included). Not a Japanese TV ratings chart.",
 }
@@ -117,15 +120,64 @@ def site_url() -> str:
     return env("SITE_URL", "https://j-animeradar.net").rstrip("/")
 
 
+def tenrai_base() -> str:
+    return env("TENRAI_BASE", TENRAI_DEFAULT).rstrip("/")
+
+
+def ranking_rows(catalog: List[dict]) -> List[dict]:
+    rows = []
+    for rank, anime in enumerate(catalog[:DESK_SIZE], 1):
+        rows.append(
+            {
+                "rank": rank,
+                "title": anime.get("title_english") or anime.get("title"),
+                "score": public_score(anime.get("score")),
+                "mal_id": anime.get("mal_id"),
+                "latest": anime.get("latest_episode"),
+                "origin": anime.get("origin"),
+            }
+        )
+    return rows
+
+
+def _error_body_detail(raw: bytes) -> str:
+    if not raw:
+        return ""
+    text = raw.decode("utf-8", errors="replace").strip()
+    try:
+        parsed = json.loads(text)
+    except json.JSONDecodeError:
+        return text[:300]
+    if not isinstance(parsed, dict):
+        return text[:300]
+    errs = parsed.get("errors")
+    if isinstance(errs, list) and errs:
+        first = errs[0] if isinstance(errs[0], dict) else {}
+        return str((first.get("message") if isinstance(first, dict) else first) or first)[:400]
+    if parsed.get("message"):
+        return str(parsed.get("message"))[:400]
+    return text[:300]
+
+
 def http_json(url: str, payload: Optional[dict] = None, timeout: int = 45) -> dict:
     headers = {"User-Agent": UA, "Accept": "application/json"}
-    data = None
-    if payload is not None:
-        data = json.dumps(payload).encode("utf-8")
-        headers["Content-Type"] = "application/json"
-    req = Request(url, data=data, headers=headers)
-    with urlopen(req, timeout=timeout) as res:
-        return json.loads(res.read().decode("utf-8"))
+    try:
+        if payload is not None:
+            res = requests.post(url, json=payload, headers=headers, timeout=timeout)
+        else:
+            res = requests.get(url, headers=headers, timeout=timeout)
+    except requests.RequestException as e:
+        raise URLError(str(e)) from e
+    if res.status_code >= 400:
+        detail = _error_body_detail(res.content or b"")
+        reason = res.reason or "Error"
+        if detail:
+            reason = f"{reason}: {detail}"
+        raise HTTPError(url, res.status_code, reason, res.headers, None)
+    try:
+        return res.json()
+    except ValueError as e:
+        raise json.JSONDecodeError(str(e), res.text or "", 0) from e
 
 
 def with_retries(fn, tries: int = 4, sleep_s: float = 2.0, retry_http=(429, 500, 502, 503, 504)):
@@ -183,12 +235,13 @@ def mark_done(tr: dict, anime: dict, episode: int, slug: str, source: str) -> No
     }
 
 
-def fetch_jikan_season(limit: int = DESK_SIZE) -> List[dict]:
+def fetch_tenrai_season(limit: int = DESK_SIZE) -> List[dict]:
     rows = []
     page = 1
+    base = tenrai_base()
     while len(rows) < limit and page <= 3:
         def _pull(p=page):
-            return http_json(f"https://api.jikan.moe/v4/seasons/now?filter=tv&sfw=true&continuing=true&page={p}&limit=25")
+            return http_json(f"{base}/seasons/now?filter=tv&sfw=true&continuing=true&page={p}&limit=25")
 
         data = with_retries(_pull)
         batch = data.get("data") or []
@@ -197,7 +250,7 @@ def fetch_jikan_season(limit: int = DESK_SIZE) -> List[dict]:
         for a in batch:
             if (a.get("type") or "").upper() not in {"TV", "ONA", ""}:
                 continue
-            rows.append(normalize_jikan(a))
+            rows.append(normalize_jikan(a, origin="tenrai"))
             if len(rows) >= limit:
                 break
         page += 1
@@ -205,7 +258,7 @@ def fetch_jikan_season(limit: int = DESK_SIZE) -> List[dict]:
     return rows[:limit]
 
 
-def normalize_jikan(a: dict) -> dict:
+def normalize_jikan(a: dict, origin: str = "tenrai") -> dict:
     genres = [g.get("name") for g in (a.get("genres") or []) if g.get("name")]
     studios = [s.get("name") for s in (a.get("studios") or []) if s.get("name")]
     img = ((a.get("images") or {}).get("jpg") or {})
@@ -231,7 +284,7 @@ def normalize_jikan(a: dict) -> dict:
         "cast": [],
         "next_episode": None,
         "latest_episode": None,
-        "origin": "jikan",
+        "origin": origin,
     }
 
 
@@ -391,13 +444,14 @@ def guess_watch(links: List[dict]) -> List[dict]:
     return found[:6]
 
 
-def enrich_jikan_episodes(anime: dict) -> dict:
+def enrich_mal_episodes(anime: dict) -> dict:
     mal = anime.get("mal_id")
     if not mal:
         return anime
+    base = tenrai_base()
     try:
-        time.sleep(0.85)
-        data = with_retries(lambda: http_json(f"https://api.jikan.moe/v4/anime/{mal}/full"), tries=2)
+        time.sleep(0.4)
+        data = with_retries(lambda: http_json(f"{base}/anime/{mal}/full"), tries=2)
         body = data.get("data") or {}
         anime["score"] = anime.get("score") or body.get("score")
         anime["episodes"] = anime.get("episodes") or body.get("episodes")
@@ -405,8 +459,8 @@ def enrich_jikan_episodes(anime: dict) -> dict:
         streaming = body.get("streaming") or []
         if streaming:
             anime["watch"] = [{"name": s.get("name"), "url": s.get("url")} for s in streaming if s.get("name")]
-        time.sleep(0.85)
-        eps = with_retries(lambda: http_json(f"https://api.jikan.moe/v4/anime/{mal}/episodes?page=1"), tries=2)
+        time.sleep(0.4)
+        eps = with_retries(lambda: http_json(f"{base}/anime/{mal}/episodes?page=1"), tries=2)
         last = 0
         for ep in (eps.get("data") or []):
             n = ep.get("mal_id") or ep.get("episode") or 0
@@ -417,28 +471,42 @@ def enrich_jikan_episodes(anime: dict) -> dict:
         if last:
             anime["latest_episode"] = last
     except Exception as e:
-        log(f"  jikan enrich failed for {mal}: {e}")
+        log(f"  catalog enrich failed for {mal}: {e}")
     if not anime.get("latest_episode"):
         anime["latest_episode"] = 1
     return anime
 
 
-def fetch_season() -> List[dict]:
-    log(f"Fetching season Top {DESK_SIZE} via Jikan…")
+def fetch_season(enrich: bool = True) -> Optional[List[dict]]:
+    min_ok = max(15, DESK_SIZE // 2)
+    log(f"Fetching season Top {DESK_SIZE} via Tenrai…")
     try:
-        rows = fetch_jikan_season(DESK_SIZE)
-        if len(rows) >= max(15, DESK_SIZE // 2):
-            log(f"  Jikan OK ({len(rows)})")
+        rows = fetch_tenrai_season(DESK_SIZE)
+        if len(rows) >= min_ok:
+            log(f"  Tenrai OK ({len(rows)})")
+            if not enrich:
+                for a in rows:
+                    if not a.get("latest_episode"):
+                        a["latest_episode"] = 1
+                return rows
             out = []
             for i, a in enumerate(rows, 1):
                 log(f"  enrich {i}/{len(rows)} {a.get('title_english')}")
-                out.append(enrich_jikan_episodes(a))
+                out.append(enrich_mal_episodes(a))
             return out
-        log("  Jikan returned too few rows; falling back")
+        log(f"  Tenrai returned too few rows ({len(rows)}); falling back")
     except Exception as e:
-        log(f"  Jikan unavailable ({e}); using AniList fallback")
+        log(f"  Tenrai unavailable ({e}); using AniList fallback")
     log(f"Fetching season Top {DESK_SIZE} via AniList…")
-    return fetch_anilist_season(DESK_SIZE)
+    try:
+        rows = fetch_anilist_season(DESK_SIZE)
+        if len(rows) >= min_ok:
+            log(f"  AniList OK ({len(rows)})")
+            return rows
+        log(f"  AniList returned too few rows ({len(rows)})")
+    except Exception as e:
+        log(f"  AniList unavailable ({e})")
+    return None
 
 
 def gemini_review(anime: dict, episode: int) -> Optional[dict]:
@@ -712,7 +780,7 @@ def render_index(envj, posts: List[dict], ranking: List[dict], ranking_note: str
         genres=genres,
         posts=posts,
         ranking=ranking,
-        ranking_note=ranking_note or RANKING_SOURCE_LABELS["anilist"],
+        ranking_note=ranking_note or RANKING_SOURCE_LABELS["tenrai"],
         json_ld=json.dumps(website_ld, ensure_ascii=False),
     )
     write_html(DOCS / "index.html", html)
@@ -786,87 +854,65 @@ def main() -> int:
 
     envj = jinja_env()
     tr = load_tracker()
+    new_features: List[dict] = []
 
     if args.ranking_only:
         log(f"Refreshing Top {DESK_SIZE} ranking only")
-        source = "anilist"
-        try:
-            catalog = fetch_anilist_season(DESK_SIZE)
-            if len(catalog) < max(15, DESK_SIZE // 2):
-                raise ValueError(f"only {len(catalog)} rows")
-        except Exception as e:
-            log(f"  AniList ranking failed ({e}); trying Jikan")
-            catalog = fetch_jikan_season(DESK_SIZE)
-            source = "jikan"
-        ranking_meta = []
-        for rank, anime in enumerate(catalog[:DESK_SIZE], 1):
-            ranking_meta.append(
-                {
-                    "rank": rank,
-                    "title": anime.get("title_english") or anime.get("title"),
-                    "score": public_score(anime.get("score")),
-                    "mal_id": anime.get("mal_id"),
-                    "latest": anime.get("latest_episode"),
-                    "origin": anime.get("origin") or source,
-                }
-            )
-        save_ranking(ranking_meta, source)
-        log(f"ranking rows: {len(ranking_meta)} source={source}")
-        new_features = []
+        catalog = fetch_season(enrich=False)
+        if not catalog:
+            log("  live ranking unavailable; keeping existing ranking.json")
+        else:
+            ranking_meta = ranking_rows(catalog)
+            source = (catalog[0].get("origin") if catalog else "tenrai") or "tenrai"
+            save_ranking(ranking_meta, source)
+            log(f"ranking rows: {len(ranking_meta)} source={source}")
     elif not args.rebuild_only:
         catalog = fetch_season()
-        tr["season"] = "2026-SUMMER"
-        created = 0
-        ranking_meta = []
-        for rank, anime in enumerate(catalog, 1):
-            ranking_meta.append(
-                {
-                    "rank": rank,
-                    "title": anime.get("title_english") or anime.get("title"),
-                    "score": public_score(anime.get("score")),
-                    "mal_id": anime.get("mal_id"),
-                    "latest": anime.get("latest_episode"),
-                    "origin": anime.get("origin"),
-                }
-            )
-            if rank > ARTICLE_PRIORITY:
-                continue
-            seed = not args.no_seed_extra
-            for ep in planned_episodes(anime, rank, seed=seed):
-                if already_done(tr, int(anime["mal_id"]), ep):
-                    log(f"skip {anime.get('title_english')} ep{ep}")
-                    continue
-                if created >= args.max_new:
-                    continue
-                log(f"brief {anime.get('title_english')} ep{ep}")
-                review = gemini_review(anime, ep)
-                source = "gemini"
-                if review is None:
-                    review = compose_review(anime, ep)
-                    source = "editorial-seed"
-                    review["_source"] = source
-                    log(f"  editorial seed ({review.get('_word_count')} words)")
-                else:
-                    review["_source"] = source
-                post = build_post_record(anime, ep, review, rank)
-                (POSTS_JSON / f"{post['slug']}.json").write_text(
-                    json.dumps(post, ensure_ascii=False, indent=2), encoding="utf-8"
-                )
-                mark_done(tr, anime, ep, post["slug"], source)
-                created += 1
-        desk_origin = (catalog[0].get("origin") if catalog else "anilist") or "anilist"
-        save_ranking(ranking_meta, desk_origin)
-        save_tracker(tr)
-        log(f"new desk episode briefings this run: {created}")
-        shortfall = max(0, int(target) - int(created))
-        new_features = []
-        if not args.skip_supplement and shortfall > 0:
-            new_features = run_supplement_loop(shortfall, ranking_meta) or []
+        if not catalog:
+            log("  live catalog unavailable; rebuilding site from existing posts/ranking")
         else:
-            log(f"complementary features skipped (shortfall={shortfall})")
-
-    if args.rebuild_only:
-        new_features = []
+            tr["season"] = "2026-SUMMER"
+            created = 0
+            ranking_meta = ranking_rows(catalog)
+            for rank, anime in enumerate(catalog, 1):
+                if rank > ARTICLE_PRIORITY:
+                    continue
+                seed = not args.no_seed_extra
+                for ep in planned_episodes(anime, rank, seed=seed):
+                    if already_done(tr, int(anime["mal_id"]), ep):
+                        log(f"skip {anime.get('title_english')} ep{ep}")
+                        continue
+                    if created >= args.max_new:
+                        continue
+                    log(f"brief {anime.get('title_english')} ep{ep}")
+                    review = gemini_review(anime, ep)
+                    source = "gemini"
+                    if review is None:
+                        review = compose_review(anime, ep)
+                        source = "editorial-seed"
+                        review["_source"] = source
+                        log(f"  editorial seed ({review.get('_word_count')} words)")
+                    else:
+                        review["_source"] = source
+                    post = build_post_record(anime, ep, review, rank)
+                    (POSTS_JSON / f"{post['slug']}.json").write_text(
+                        json.dumps(post, ensure_ascii=False, indent=2), encoding="utf-8"
+                    )
+                    mark_done(tr, anime, ep, post["slug"], source)
+                    created += 1
+            desk_origin = (catalog[0].get("origin") if catalog else "tenrai") or "tenrai"
+            save_ranking(ranking_meta, desk_origin)
+            save_tracker(tr)
+            log(f"new desk episode briefings this run: {created}")
+            shortfall = max(0, int(target) - int(created))
+            if not args.skip_supplement and shortfall > 0:
+                try:
+                    new_features = run_supplement_loop(shortfall, ranking_meta) or []
+                except Exception as e:
+                    log(f"  complementary features skipped ({e})")
+                    new_features = []
+            else:
+                log(f"complementary features skipped (shortfall={shortfall})")
     posts = rebuild_from_json()
     ranking, ranking_doc = load_ranking()
     latest_by_mal = {}
