@@ -30,6 +30,14 @@ UA = "J-Anime-Radar/1.0 (editorial static generator; +https://github.com)"
 TENRAI_DEFAULT = "https://api.tenrai.org/v1"
 
 
+class HttpStatusError(URLError):
+    def __init__(self, url: str, code: int, reason: str):
+        super().__init__(f"HTTP {code} {reason}")
+        self.code = code
+        self.url = url
+        self.reason = reason
+
+
 def log(msg: str) -> None:
     text = str(msg)
     try:
@@ -97,7 +105,7 @@ def http_json(url: str, payload: Optional[dict] = None, timeout: int = 45) -> di
         reason = res.reason or "Error"
         if detail:
             reason = f"{reason}: {detail}"
-        raise HTTPError(url, res.status_code, reason, res.headers, None)
+        raise HttpStatusError(url, res.status_code, reason)
     try:
         return res.json()
     except ValueError as e:
@@ -109,7 +117,7 @@ def with_retries(fn, tries: int = 4, sleep_s: float = 2.0, retry_http=(429, 500,
     for i in range(tries):
         try:
             return fn()
-        except HTTPError as e:
+        except (HTTPError, HttpStatusError) as e:
             last = e
             if e.code not in retry_http:
                 raise
@@ -144,6 +152,32 @@ def current_season(now: Optional[datetime] = None):
     else:
         season = "FALL"
     return season, now.year
+
+
+def previous_season(season: str, year: int):
+    order = ["WINTER", "SPRING", "SUMMER", "FALL"]
+    i = order.index(season)
+    if i == 0:
+        return "FALL", year - 1
+    return order[i - 1], year
+
+
+def season_window_keys(now: Optional[datetime] = None):
+    season, year = current_season(now)
+    prev_season, prev_year = previous_season(season, year)
+    return {(season.lower(), year), (prev_season.lower(), prev_year)}
+
+
+def in_desk_window(row: dict, now: Optional[datetime] = None) -> bool:
+    season = (row.get("season") or row.get("season_tag") or "").lower()
+    year = row.get("year") if row.get("year") not in (None, "") else row.get("season_year")
+    try:
+        year = int(year) if year not in (None, "") else None
+    except (TypeError, ValueError):
+        year = None
+    if not season or year is None:
+        return False
+    return (season, year) in season_window_keys(now)
 
 
 def guess_watch(links: List[dict]) -> List[dict]:
@@ -334,29 +368,39 @@ def fetch_anilist_offrank() -> List[dict]:
     return out
 
 
-def fetch_tenrai_offrank() -> List[dict]:
+def fetch_tenrai_seasonal_pool(limit: int = 80) -> List[dict]:
+    pool: List[dict] = []
+    seen: Set[int] = set()
+    page = 1
     base = tenrai_base()
+    while page <= 6:
+        def _pull(p=page):
+            return http_json(f"{base}/seasons/now?filter=tv&sfw=true&continuing=true&page={p}&limit=25")
 
-    def _pull():
-        return http_json(f"{base}/seasons/now?filter=tv&sfw=true&continuing=true&page=2&limit=25")
-
-    data = with_retries(_pull, tries=2)
-    rows = []
-    rank = 21
-    for a in data.get("data") or []:
-        if (a.get("type") or "").upper() not in {"TV", "ONA", ""}:
-            continue
-        genres = [g.get("name") for g in (a.get("genres") or []) if g.get("name")]
-        studios = [s.get("name") for s in (a.get("studios") or []) if s.get("name")]
-        trailer = a.get("trailer") or {}
-        rows.append(
-            {
-                "mal_id": a.get("mal_id"),
+        data = with_retries(_pull, tries=2)
+        batch = data.get("data") or []
+        if not batch:
+            break
+        for a in batch:
+            if (a.get("type") or "").upper() not in {"TV", "ONA", ""}:
+                continue
+            try:
+                mid = int(a.get("mal_id") or 0)
+            except (TypeError, ValueError):
+                mid = 0
+            if not mid or mid in seen:
+                continue
+            genres = [g.get("name") for g in (a.get("genres") or []) if g.get("name")]
+            studios = [s.get("name") for s in (a.get("studios") or []) if s.get("name")]
+            trailer = a.get("trailer") or {}
+            row = {
+                "mal_id": mid,
                 "title": a.get("title"),
                 "title_english": a.get("title_english") or a.get("title"),
                 "title_romaji": a.get("title"),
                 "title_native": a.get("title_japanese") or "",
                 "score": a.get("score"),
+                "members": a.get("members") or 0,
                 "genres": genres,
                 "studio": studios[0] if studios else "",
                 "studios": studios,
@@ -367,15 +411,33 @@ def fetch_tenrai_offrank() -> List[dict]:
                 "external_links": [],
                 "trailer": trailer,
                 "image": ((a.get("images") or {}).get("jpg") or {}).get("large_image_url") or "",
-                "rank": rank,
+                "year": a.get("year"),
+                "season": (a.get("season") or "").lower(),
                 "origin": "tenrai",
             }
-        )
-        rank += 1
-        if len(rows) >= 30:
-            break
+            if not in_desk_window(row):
+                continue
+            seen.add(mid)
+            pool.append(row)
+        page += 1
         time.sleep(0.35)
-    return rows
+    pool.sort(key=lambda r: int(r.get("members") or 0), reverse=True)
+    log(f"  Tenrai seasonal pool {len(pool)} (off-rank uses ranks {ARTICLE_PRIORITY + 1}+)")
+    return pool[:limit]
+
+
+def fetch_tenrai_offrank() -> List[dict]:
+    pool = fetch_tenrai_seasonal_pool(limit=60)
+    out = []
+    for rank, row in enumerate(pool, 1):
+        if rank <= ARTICLE_PRIORITY:
+            continue
+        row = dict(row)
+        row["rank"] = rank
+        out.append(row)
+        if len(out) >= 30:
+            break
+    return out
 
 
 def hydrate_tenrai(mal_id: int) -> Optional[dict]:
