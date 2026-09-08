@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-08T07:15:21Z",
+  "updated_at": "2026-09-08T14:40:23Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -164,6 +164,11 @@
           "slug": "you-and-i-are-polar-opposites-season-2-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-08-30T08:05:19Z"
+        },
+        "10": {
+          "slug": "you-and-i-are-polar-opposites-season-2-ep10",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-08T14:26:46Z"
         }
       }
     },
@@ -414,6 +419,26 @@
           "slug": "case-closed-ep100",
           "source": "editorial-seed",
           "generated_at": "2026-09-08T07:11:52Z"
+        }
+      }
+    },
+    "60310": {
+      "title": "Welcome to Demon School! Iruma-kun Season 4",
+      "episodes": {
+        "21": {
+          "slug": "welcome-to-demon-school-iruma-kun-season-4-ep21",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-08T14:36:54Z"
+        }
+      }
+    },
+    "57466": {
+      "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
+      "episodes": {
+        "20": {
+          "slug": "ascendance-of-a-bookworm-adopted-daughter-of-an-archduke-ep20",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-08T14:40:23Z"
         }
       }
     }
