@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-08T14:40:23Z",
+  "updated_at": "2026-09-08T14:59:07Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -184,6 +184,11 @@
           "slug": "sparks-of-tomorrow-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-08-31T08:23:37Z"
+        },
+        "10": {
+          "slug": "sparks-of-tomorrow-ep10",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-08T14:59:07Z"
         }
       }
     },
