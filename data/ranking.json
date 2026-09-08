@@ -1,248 +1,248 @@
 {
-  "source": "anilist",
-  "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
+  "source": "tenrai",
+  "source_label": "MyAnimeList current-season listing via Tenrai (TV/ONA, continuing=true so 2-cour holdovers are included). Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-06T07:02:00Z",
+  "updated_at": "2026-09-08T07:15:21Z",
   "items": [
     {
       "rank": 1,
-      "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
-      "score": 84,
-      "mal_id": 59193,
-      "latest": 10,
-      "origin": "anilist"
+      "title": "One Piece",
+      "score": 87,
+      "mal_id": 21,
+      "latest": 100,
+      "origin": "tenrai"
     },
     {
       "rank": 2,
-      "title": "Re:ZERO -Starting Life in Another World- Season 4",
-      "score": 90,
-      "mal_id": 61316,
-      "latest": 15,
-      "origin": "anilist"
+      "title": "Case Closed",
+      "score": 82,
+      "mal_id": 235,
+      "latest": 100,
+      "origin": "tenrai"
     },
     {
       "rank": 3,
+      "title": "Re:ZERO -Starting Life in Another World- Season 4",
+      "score": 91,
+      "mal_id": 61316,
+      "latest": 15,
+      "origin": "tenrai"
+    },
+    {
+      "rank": 4,
+      "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
+      "score": 85,
+      "mal_id": 59193,
+      "latest": 11,
+      "origin": "tenrai"
+    },
+    {
+      "rank": 5,
+      "title": "Saga of Tanya the Evil II",
+      "score": 83,
+      "mal_id": 49233,
+      "latest": 9,
+      "origin": "tenrai"
+    },
+    {
+      "rank": 6,
+      "title": "That Time I Got Reincarnated as a Slime Season 4",
+      "score": 82,
+      "mal_id": 59970,
+      "latest": 21,
+      "origin": "tenrai"
+    },
+    {
+      "rank": 7,
       "title": "Daemons of the Shadow Realm",
       "score": 78,
       "mal_id": 62001,
       "latest": 22,
-      "origin": "anilist"
-    },
-    {
-      "rank": 4,
-      "title": "That Time I Got Reincarnated as a Slime Season 4",
-      "score": 83,
-      "mal_id": 59970,
-      "latest": 21,
-      "origin": "anilist"
-    },
-    {
-      "rank": 5,
-      "title": "Smoking Behind the Supermarket with You",
-      "score": 82,
-      "mal_id": 62076,
-      "latest": 9,
-      "origin": "anilist"
-    },
-    {
-      "rank": 6,
-      "title": "Saga of Tanya the Evil Season 2",
-      "score": 80,
-      "mal_id": 49233,
-      "latest": 9,
-      "origin": "anilist"
-    },
-    {
-      "rank": 7,
-      "title": "BLEACH: Thousand-Year Blood War - The Calamity",
-      "score": 90,
-      "mal_id": 60636,
-      "latest": 7,
-      "origin": "anilist"
+      "origin": "tenrai"
     },
     {
       "rank": 8,
-      "title": "Chainsmoker Cat",
-      "score": 67,
-      "mal_id": 63403,
+      "title": "Smoking Behind the Supermarket with You",
+      "score": 83,
+      "mal_id": 62076,
       "latest": 9,
-      "origin": "anilist"
+      "origin": "tenrai"
     },
     {
       "rank": 9,
-      "title": "BLACK TORCH",
-      "score": 70,
-      "mal_id": 61169,
-      "latest": 10,
-      "origin": "anilist"
+      "title": "Bleach: Thousand-Year Blood War - The Calamity",
+      "score": 91,
+      "mal_id": 60636,
+      "latest": 6,
+      "origin": "tenrai"
     },
     {
       "rank": 10,
-      "title": "The Exiled Heavy Knight Knows How to Game the System",
-      "score": 66,
-      "mal_id": 59741,
-      "latest": 10,
-      "origin": "anilist"
+      "title": "Chainsmoker Cat",
+      "score": 71,
+      "mal_id": 63403,
+      "latest": 9,
+      "origin": "tenrai"
     },
     {
       "rank": 11,
       "title": "You and I Are Polar Opposites Season 2",
-      "score": 82,
+      "score": 85,
       "mal_id": 63832,
-      "latest": 9,
-      "origin": "anilist"
+      "latest": 10,
+      "origin": "tenrai"
     },
     {
       "rank": 12,
-      "title": "Sparks of Tomorrow",
-      "score": 76,
-      "mal_id": 62856,
+      "title": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs 2",
+      "score": 67,
+      "mal_id": 54000,
       "latest": 9,
-      "origin": "anilist"
+      "origin": "tenrai"
     },
     {
       "rank": 13,
-      "title": "I Want to Love You Till Your Dying Day",
-      "score": 74,
-      "mal_id": 61126,
+      "title": "Grand Blue Dreaming Season 3",
+      "score": 84,
+      "mal_id": 62542,
       "latest": 9,
-      "origin": "anilist"
+      "origin": "tenrai"
     },
     {
       "rank": 14,
-      "title": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs Season 2",
-      "score": 68,
-      "mal_id": 54000,
-      "latest": 9,
-      "origin": "anilist"
+      "title": "Shin Chan",
+      "score": 78,
+      "mal_id": 966,
+      "latest": 100,
+      "origin": "tenrai"
     },
     {
       "rank": 15,
-      "title": "THE GHOST IN THE SHELL",
-      "score": 75,
-      "mal_id": 58929,
+      "title": "Black Torch",
+      "score": 69,
+      "mal_id": 61169,
       "latest": 9,
-      "origin": "anilist"
+      "origin": "tenrai"
     },
     {
       "rank": 16,
-      "title": "From Overshadowed to Overpowered: Second Reincarnation of a Talentless Sage",
-      "score": 62,
-      "mal_id": 63508,
-      "latest": 11,
-      "origin": "anilist"
+      "title": "The Ghost in the Shell",
+      "score": 79,
+      "mal_id": 58929,
+      "latest": 9,
+      "origin": "tenrai"
     },
     {
       "rank": 17,
-      "title": "Skeleton Knight in Another World Season 2",
-      "score": 66,
-      "mal_id": 60522,
-      "latest": 9,
-      "origin": "anilist"
+      "title": "Welcome to Demon School! Iruma-kun Season 4",
+      "score": 81,
+      "mal_id": 60310,
+      "latest": 21,
+      "origin": "tenrai"
     },
     {
       "rank": 18,
-      "title": "Clevatess Season 2",
-      "score": 75,
-      "mal_id": 62513,
-      "latest": 9,
-      "origin": "anilist"
+      "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
+      "score": 78,
+      "mal_id": 57466,
+      "latest": 20,
+      "origin": "tenrai"
     },
     {
       "rank": 19,
-      "title": "Love Unseen Beneath the Clear Night Sky",
-      "score": 79,
-      "mal_id": 62936,
-      "latest": 9,
-      "origin": "anilist"
+      "title": "Skeleton Knight in Another World II",
+      "score": 65,
+      "mal_id": 60522,
+      "latest": 5,
+      "origin": "tenrai"
     },
     {
       "rank": 20,
-      "title": "From Old Country Bumpkin to Master Swordsman II",
-      "score": 70,
-      "mal_id": 61897,
+      "title": "I Want to Love You Till Your Dying Day",
+      "score": 78,
+      "mal_id": 61126,
       "latest": 9,
-      "origin": "anilist"
+      "origin": "tenrai"
     },
     {
       "rank": 21,
-      "title": "LIAR GAME",
-      "score": 62,
-      "mal_id": 62331,
-      "latest": 22,
-      "origin": "anilist"
+      "title": "Sparks of Tomorrow",
+      "score": 76,
+      "mal_id": 62856,
+      "latest": 10,
+      "origin": "tenrai"
     },
     {
       "rank": 22,
-      "title": "Rich Girl Caretaker: I'm Secretly the Caregiver of the Most Popular Girl in This Rich Kid School",
-      "score": 70,
-      "mal_id": 62876,
+      "title": "The Exiled Heavy Knight Knows How to Game the System",
+      "score": 67,
+      "mal_id": 59741,
       "latest": 10,
-      "origin": "anilist"
+      "origin": "tenrai"
     },
     {
       "rank": 23,
-      "title": "Jaadugar: A Witch in Mongolia",
-      "score": 82,
-      "mal_id": 61483,
-      "latest": 11,
-      "origin": "anilist"
+      "title": "Clevatess Season 2",
+      "score": 77,
+      "mal_id": 62513,
+      "latest": 9,
+      "origin": "tenrai"
     },
     {
       "rank": 24,
-      "title": "Welcome to Demon School! Iruma-kun Season 4",
-      "score": 80,
-      "mal_id": 60310,
-      "latest": 21,
-      "origin": "anilist"
+      "title": "Jaadugar: A Witch in Mongolia",
+      "score": 84,
+      "mal_id": 61483,
+      "latest": 10,
+      "origin": "tenrai"
     },
     {
       "rank": 25,
-      "title": "Grand Blue Dreaming Season 3",
-      "score": 82,
-      "mal_id": 62542,
+      "title": "Love Unseen Beneath the Clear Night Sky",
+      "score": 80,
+      "mal_id": 62936,
       "latest": 9,
-      "origin": "anilist"
+      "origin": "tenrai"
     },
     {
       "rank": 26,
-      "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
-      "score": 79,
+      "title": "The 100 Girlfriends Who Really, Really, Really, Really, Really Love You Season 3",
+      "score": 81,
       "mal_id": 62811,
       "latest": 9,
-      "origin": "anilist"
+      "origin": "tenrai"
     },
     {
       "rank": 27,
-      "title": "I Became a Legend After My 10 Year-Long Last Stand",
-      "score": 63,
-      "mal_id": 62617,
-      "latest": 10,
-      "origin": "anilist"
+      "title": "Liar Game",
+      "score": 64,
+      "mal_id": 62331,
+      "latest": 23,
+      "origin": "tenrai"
     },
     {
       "rank": 28,
-      "title": "Oh Boy, Was I Wrong About Her",
-      "score": 70,
-      "mal_id": 56735,
+      "title": "Though I Am an Inept Villainess",
+      "score": 82,
+      "mal_id": 61240,
       "latest": 9,
-      "origin": "anilist"
+      "origin": "tenrai"
     },
     {
       "rank": 29,
-      "title": "Though I Am an Inept Villainess",
-      "score": 77,
-      "mal_id": 61240,
-      "latest": 8,
-      "origin": "anilist"
+      "title": "From Old Country Bumpkin to Master Swordsman Season 2",
+      "score": 72,
+      "mal_id": 61897,
+      "latest": 9,
+      "origin": "tenrai"
     },
     {
       "rank": 30,
-      "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
-      "score": 76,
-      "mal_id": 57466,
-      "latest": 20,
-      "origin": "anilist"
+      "title": "Kaiju Girl Caramelise",
+      "score": 75,
+      "mal_id": 63150,
+      "latest": 10,
+      "origin": "tenrai"
     }
   ]
 }

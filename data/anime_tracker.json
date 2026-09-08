@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-06T07:02:00Z",
+  "updated_at": "2026-09-08T07:15:21Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -19,6 +19,11 @@
           "slug": "mushoku-tensei-jobless-reincarnation-season-3-ep10",
           "source": "editorial-seed",
           "generated_at": "2026-08-31T08:23:37Z"
+        },
+        "11": {
+          "slug": "mushoku-tensei-jobless-reincarnation-season-3-ep11",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-08T07:15:21Z"
         }
       }
     },
@@ -389,6 +394,26 @@
           "slug": "that-time-i-got-reincarnated-as-a-slime-season-4-ep21",
           "source": "gemini",
           "generated_at": "2026-09-06T07:02:00Z"
+        }
+      }
+    },
+    "21": {
+      "title": "One Piece",
+      "episodes": {
+        "100": {
+          "slug": "one-piece-ep100",
+          "source": "gemini",
+          "generated_at": "2026-09-08T07:07:16Z"
+        }
+      }
+    },
+    "235": {
+      "title": "Case Closed",
+      "episodes": {
+        "100": {
+          "slug": "case-closed-ep100",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-08T07:11:52Z"
         }
       }
     }
