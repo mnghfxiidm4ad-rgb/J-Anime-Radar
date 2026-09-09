@@ -2,7 +2,7 @@
   "source": "tenrai",
   "source_label": "MyAnimeList current-season listing via Tenrai (TV/ONA, continuing=true so 2-cour holdovers are included). Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-08T14:59:07Z",
+  "updated_at": "2026-09-09T07:13:15Z",
   "items": [
     {
       "rank": 1,
@@ -134,18 +134,18 @@
     },
     {
       "rank": 17,
-      "title": "I Want to Love You Till Your Dying Day",
-      "score": 78,
-      "mal_id": 61126,
-      "latest": 9,
-      "origin": "tenrai"
-    },
-    {
-      "rank": 18,
       "title": "Sparks of Tomorrow",
       "score": 76,
       "mal_id": 62856,
       "latest": 10,
+      "origin": "tenrai"
+    },
+    {
+      "rank": 18,
+      "title": "I Want to Love You Till Your Dying Day",
+      "score": 78,
+      "mal_id": 61126,
+      "latest": 9,
       "origin": "tenrai"
     },
     {
@@ -177,7 +177,7 @@
       "title": "Love Unseen Beneath the Clear Night Sky",
       "score": 80,
       "mal_id": 62936,
-      "latest": 9,
+      "latest": 10,
       "origin": "tenrai"
     },
     {
@@ -233,7 +233,7 @@
       "title": "Oh Boy, Was I Wrong About Her",
       "score": 69,
       "mal_id": 56735,
-      "latest": 9,
+      "latest": 10,
       "origin": "tenrai"
     },
     {
