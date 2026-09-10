@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-09T07:13:15Z",
+  "updated_at": "2026-09-10T07:28:56Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -204,6 +204,11 @@
           "slug": "i-want-to-love-you-till-your-dying-day-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-09-02T07:10:47Z"
+        },
+        "10": {
+          "slug": "i-want-to-love-you-till-your-dying-day-ep10",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-10T07:25:27Z"
         }
       }
     },
@@ -219,6 +224,11 @@
           "slug": "the-ghost-in-the-shell-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-09-02T07:20:55Z"
+        },
+        "10": {
+          "slug": "the-ghost-in-the-shell-ep10",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-10T07:21:16Z"
         }
       }
     },
@@ -294,6 +304,11 @@
           "slug": "clevatess-season-2-ep9",
           "source": "gemini",
           "generated_at": "2026-09-03T07:09:07Z"
+        },
+        "10": {
+          "slug": "clevatess-season-2-ep10",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-10T07:28:56Z"
         }
       }
     },
