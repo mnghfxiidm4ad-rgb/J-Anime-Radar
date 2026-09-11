@@ -2,14 +2,14 @@
   "source": "tenrai",
   "source_label": "MyAnimeList current-season listing via Tenrai (TV/ONA, continuing=true so 2-cour holdovers are included). Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-10T07:28:56Z",
+  "updated_at": "2026-09-11T07:16:53Z",
   "items": [
     {
       "rank": 1,
       "title": "Re:ZERO -Starting Life in Another World- Season 4",
       "score": 91,
       "mal_id": 61316,
-      "latest": 15,
+      "latest": 16,
       "origin": "tenrai"
     },
     {
@@ -25,7 +25,7 @@
       "title": "Saga of Tanya the Evil II",
       "score": 83,
       "mal_id": 49233,
-      "latest": 9,
+      "latest": 10,
       "origin": "tenrai"
     },
     {
@@ -81,7 +81,7 @@
       "title": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs 2",
       "score": 67,
       "mal_id": 54000,
-      "latest": 9,
+      "latest": 10,
       "origin": "tenrai"
     },
     {
@@ -89,7 +89,7 @@
       "title": "Grand Blue Dreaming Season 3",
       "score": 84,
       "mal_id": 62542,
-      "latest": 9,
+      "latest": 10,
       "origin": "tenrai"
     },
     {
@@ -97,7 +97,7 @@
       "title": "Black Torch",
       "score": 69,
       "mal_id": 61169,
-      "latest": 9,
+      "latest": 10,
       "origin": "tenrai"
     },
     {
@@ -151,7 +151,7 @@
     {
       "rank": 19,
       "title": "The Exiled Heavy Knight Knows How to Game the System",
-      "score": 67,
+      "score": 68,
       "mal_id": 59741,
       "latest": 10,
       "origin": "tenrai"
@@ -169,7 +169,7 @@
       "title": "Jaadugar: A Witch in Mongolia",
       "score": 84,
       "mal_id": 61483,
-      "latest": 10,
+      "latest": 11,
       "origin": "tenrai"
     },
     {
@@ -185,7 +185,7 @@
       "title": "The 100 Girlfriends Who Really, Really, Really, Really, Really Love You Season 3",
       "score": 81,
       "mal_id": 62811,
-      "latest": 9,
+      "latest": 10,
       "origin": "tenrai"
     },
     {
@@ -209,23 +209,23 @@
       "title": "From Old Country Bumpkin to Master Swordsman Season 2",
       "score": 72,
       "mal_id": 61897,
-      "latest": 9,
-      "origin": "tenrai"
-    },
-    {
-      "rank": 27,
-      "title": "Kaiju Girl Caramelise",
-      "score": 75,
-      "mal_id": 63150,
       "latest": 10,
       "origin": "tenrai"
     },
     {
-      "rank": 28,
+      "rank": 27,
       "title": "From Overshadowed to Overpowered: Second Reincarnation of a Talentless Sage",
       "score": 62,
       "mal_id": 63508,
       "latest": 1,
+      "origin": "tenrai"
+    },
+    {
+      "rank": 28,
+      "title": "Kaiju Girl Caramelise",
+      "score": 75,
+      "mal_id": 63150,
+      "latest": 11,
       "origin": "tenrai"
     },
     {

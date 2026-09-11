@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-10T07:28:56Z",
+  "updated_at": "2026-09-11T07:16:53Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -74,6 +74,11 @@
           "slug": "saga-of-tanya-the-evil-season-2-ep9",
           "source": "gemini",
           "generated_at": "2026-09-03T07:01:45Z"
+        },
+        "10": {
+          "slug": "saga-of-tanya-the-evil-ii-ep10",
+          "source": "gemini",
+          "generated_at": "2026-09-11T07:12:11Z"
         }
       }
     },
@@ -249,6 +254,11 @@
           "slug": "trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs-season-2-ep9",
           "source": "gemini",
           "generated_at": "2026-09-03T07:04:06Z"
+        },
+        "10": {
+          "slug": "trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs-2-ep10",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-11T07:16:53Z"
         }
       }
     },
@@ -399,6 +409,11 @@
           "slug": "re-zero-starting-life-in-another-world-season-4-ep15",
           "source": "gemini",
           "generated_at": "2026-09-06T07:00:12Z"
+        },
+        "16": {
+          "slug": "re-zero-starting-life-in-another-world-season-4-ep16",
+          "source": "gemini",
+          "generated_at": "2026-09-11T07:10:11Z"
         }
       }
     },
