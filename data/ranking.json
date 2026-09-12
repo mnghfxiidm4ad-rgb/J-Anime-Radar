@@ -2,7 +2,7 @@
   "source": "tenrai",
   "source_label": "MyAnimeList current-season listing via Tenrai (TV/ONA, continuing=true so 2-cour holdovers are included). Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-11T07:16:53Z",
+  "updated_at": "2026-09-12T07:02:09Z",
   "items": [
     {
       "rank": 1,
@@ -169,7 +169,7 @@
       "title": "Jaadugar: A Witch in Mongolia",
       "score": 84,
       "mal_id": 61483,
-      "latest": 11,
+      "latest": 12,
       "origin": "tenrai"
     },
     {
