@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-12T07:02:09Z",
+  "updated_at": "2026-09-13T07:25:08Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -49,6 +49,11 @@
           "slug": "smoking-behind-the-supermarket-with-you-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-09-04T07:15:53Z"
+        },
+        "10": {
+          "slug": "smoking-behind-the-supermarket-with-you-ep10",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-13T07:25:08Z"
         }
       }
     },
@@ -434,6 +439,11 @@
           "slug": "daemons-of-the-shadow-realm-ep22",
           "source": "gemini",
           "generated_at": "2026-09-06T07:01:29Z"
+        },
+        "23": {
+          "slug": "daemons-of-the-shadow-realm-ep23",
+          "source": "gemini",
+          "generated_at": "2026-09-13T07:22:35Z"
         }
       }
     },
@@ -444,6 +454,11 @@
           "slug": "that-time-i-got-reincarnated-as-a-slime-season-4-ep21",
           "source": "gemini",
           "generated_at": "2026-09-06T07:02:00Z"
+        },
+        "22": {
+          "slug": "that-time-i-got-reincarnated-as-a-slime-season-4-ep22",
+          "source": "gemini",
+          "generated_at": "2026-09-13T07:23:49Z"
         }
       }
     },
