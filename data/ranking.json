@@ -2,14 +2,14 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-13T07:25:08Z",
+  "updated_at": "2026-09-14T07:57:08Z",
   "items": [
     {
       "rank": 1,
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
       "score": 84,
       "mal_id": 59193,
-      "latest": 11,
+      "latest": 12,
       "origin": "anilist"
     },
     {
@@ -79,7 +79,7 @@
     {
       "rank": 10,
       "title": "The Exiled Heavy Knight Knows How to Game the System",
-      "score": 66,
+      "score": 67,
       "mal_id": 59741,
       "latest": 11,
       "origin": "anilist"
@@ -89,7 +89,7 @@
       "title": "You and I Are Polar Opposites Season 2",
       "score": 82,
       "mal_id": 63832,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -97,7 +97,7 @@
       "title": "Sparks of Tomorrow",
       "score": 76,
       "mal_id": 62856,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -185,7 +185,7 @@
       "title": "Though I Am an Inept Villainess",
       "score": 78,
       "mal_id": 61240,
-      "latest": 9,
+      "latest": 10,
       "origin": "anilist"
     },
     {
@@ -206,17 +206,17 @@
     },
     {
       "rank": 26,
-      "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
-      "score": 79,
-      "mal_id": 62811,
-      "latest": 10,
+      "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
+      "score": 72,
+      "mal_id": 63817,
+      "latest": 11,
       "origin": "anilist"
     },
     {
       "rank": 27,
-      "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
-      "score": 72,
-      "mal_id": 63817,
+      "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
+      "score": 79,
+      "mal_id": 62811,
       "latest": 11,
       "origin": "anilist"
     },
@@ -241,7 +241,7 @@
       "title": "Goodbye, Lara",
       "score": 76,
       "mal_id": 58878,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     }
   ]

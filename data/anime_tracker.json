@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-13T07:25:08Z",
+  "updated_at": "2026-09-14T07:57:08Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -24,6 +24,11 @@
           "slug": "mushoku-tensei-jobless-reincarnation-season-3-ep11",
           "source": "editorial-seed",
           "generated_at": "2026-09-08T07:15:21Z"
+        },
+        "12": {
+          "slug": "mushoku-tensei-jobless-reincarnation-season-3-ep12",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-14T07:45:11Z"
         }
       }
     },
@@ -104,6 +109,11 @@
           "slug": "bleach-thousand-year-blood-war-the-calamity-ep6",
           "source": "editorial-seed",
           "generated_at": "2026-08-30T08:05:19Z"
+        },
+        "8": {
+          "slug": "bleach-thousand-year-blood-war-the-calamity-ep8",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-14T07:56:41Z"
         }
       }
     },
@@ -124,6 +134,11 @@
           "slug": "chainsmoker-cat-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-09-04T07:19:51Z"
+        },
+        "10": {
+          "slug": "chainsmoker-cat-ep10",
+          "source": "gemini",
+          "generated_at": "2026-09-14T07:57:08Z"
         }
       }
     },
