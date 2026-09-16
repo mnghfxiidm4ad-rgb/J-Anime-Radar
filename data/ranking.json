@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-14T07:57:08Z",
+  "updated_at": "2026-09-16T06:12:28Z",
   "items": [
     {
       "rank": 1,
@@ -105,7 +105,7 @@
       "title": "I Want to Love You Till Your Dying Day",
       "score": 74,
       "mal_id": 61126,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -119,9 +119,9 @@
     {
       "rank": 15,
       "title": "Skeleton Knight in Another World Season 2",
-      "score": 66,
+      "score": 65,
       "mal_id": 60522,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -129,7 +129,7 @@
       "title": "Love Unseen Beneath the Clear Night Sky",
       "score": 79,
       "mal_id": 62936,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -153,7 +153,7 @@
       "title": "LIAR GAME",
       "score": 62,
       "mal_id": 62331,
-      "latest": 23,
+      "latest": 24,
       "origin": "anilist"
     },
     {
@@ -174,14 +174,6 @@
     },
     {
       "rank": 22,
-      "title": "Grand Blue Dreaming Season 3",
-      "score": 82,
-      "mal_id": 62542,
-      "latest": 10,
-      "origin": "anilist"
-    },
-    {
-      "rank": 23,
       "title": "Though I Am an Inept Villainess",
       "score": 78,
       "mal_id": 61240,
@@ -189,18 +181,26 @@
       "origin": "anilist"
     },
     {
+      "rank": 23,
+      "title": "Grand Blue Dreaming Season 3",
+      "score": 82,
+      "mal_id": 62542,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
       "rank": 24,
       "title": "Oh Boy, Was I Wrong About Her",
       "score": 70,
       "mal_id": 56735,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
       "rank": 25,
-      "title": "I Became a Legend After My 10 Year-Long Last Stand",
-      "score": 62,
-      "mal_id": 62617,
+      "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
+      "score": 79,
+      "mal_id": 62811,
       "latest": 11,
       "origin": "anilist"
     },
@@ -214,9 +214,9 @@
     },
     {
       "rank": 27,
-      "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
-      "score": 79,
-      "mal_id": 62811,
+      "title": "I Became a Legend After My 10 Year-Long Last Stand",
+      "score": 62,
+      "mal_id": 62617,
       "latest": 11,
       "origin": "anilist"
     },

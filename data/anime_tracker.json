@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-14T07:57:08Z",
+  "updated_at": "2026-09-16T06:12:28Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -159,6 +159,11 @@
           "slug": "black-torch-ep10",
           "source": "gemini",
           "generated_at": "2026-09-12T07:02:09Z"
+        },
+        "11": {
+          "slug": "black-torch-ep11",
+          "source": "gemini",
+          "generated_at": "2026-09-16T06:10:50Z"
         }
       }
     },
@@ -179,6 +184,11 @@
           "slug": "the-exiled-heavy-knight-knows-how-to-game-the-system-ep10",
           "source": "editorial-seed",
           "generated_at": "2026-09-04T07:28:15Z"
+        },
+        "11": {
+          "slug": "the-exiled-heavy-knight-knows-how-to-game-the-system-ep11",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-16T06:11:10Z"
         }
       }
     },
@@ -199,6 +209,11 @@
           "slug": "you-and-i-are-polar-opposites-season-2-ep10",
           "source": "editorial-seed",
           "generated_at": "2026-09-08T14:26:46Z"
+        },
+        "11": {
+          "slug": "you-and-i-are-polar-opposites-season-2-ep11",
+          "source": "gemini",
+          "generated_at": "2026-09-16T06:12:28Z"
         }
       }
     },
