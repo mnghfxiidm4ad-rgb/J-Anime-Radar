@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-16T06:12:28Z",
+  "updated_at": "2026-09-16T07:45:11Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -234,6 +234,11 @@
           "slug": "sparks-of-tomorrow-ep10",
           "source": "editorial-seed",
           "generated_at": "2026-09-08T14:59:07Z"
+        },
+        "11": {
+          "slug": "sparks-of-tomorrow-ep11",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-16T07:38:14Z"
         }
       }
     },
@@ -254,6 +259,11 @@
           "slug": "i-want-to-love-you-till-your-dying-day-ep10",
           "source": "editorial-seed",
           "generated_at": "2026-09-10T07:25:27Z"
+        },
+        "11": {
+          "slug": "i-want-to-love-you-till-your-dying-day-ep11",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-16T07:41:43Z"
         }
       }
     },
@@ -334,6 +344,11 @@
           "slug": "skeleton-knight-in-another-world-season-2-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-09-01T07:36:31Z"
+        },
+        "11": {
+          "slug": "skeleton-knight-in-another-world-season-2-ep11",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-16T07:45:11Z"
         }
       }
     },
