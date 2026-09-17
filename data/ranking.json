@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-16T07:45:11Z",
+  "updated_at": "2026-09-17T07:33:01Z",
   "items": [
     {
       "rank": 1,
@@ -17,7 +17,7 @@
       "title": "Re:ZERO -Starting Life in Another World- Season 4",
       "score": 90,
       "mal_id": 61316,
-      "latest": 16,
+      "latest": 17,
       "origin": "anilist"
     },
     {
@@ -49,7 +49,7 @@
       "title": "Saga of Tanya the Evil Season 2",
       "score": 80,
       "mal_id": 49233,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -113,7 +113,7 @@
       "title": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs Season 2",
       "score": 68,
       "mal_id": 54000,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -137,7 +137,7 @@
       "title": "Clevatess Season 2",
       "score": 76,
       "mal_id": 62513,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -145,7 +145,7 @@
       "title": "From Old Country Bumpkin to Master Swordsman II",
       "score": 70,
       "mal_id": 61897,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -166,18 +166,18 @@
     },
     {
       "rank": 21,
-      "title": "Welcome to Demon School! Iruma-kun Season 4",
-      "score": 80,
-      "mal_id": 60310,
-      "latest": 22,
-      "origin": "anilist"
-    },
-    {
-      "rank": 22,
       "title": "Though I Am an Inept Villainess",
       "score": 78,
       "mal_id": 61240,
       "latest": 10,
+      "origin": "anilist"
+    },
+    {
+      "rank": 22,
+      "title": "Welcome to Demon School! Iruma-kun Season 4",
+      "score": 80,
+      "mal_id": 60310,
+      "latest": 22,
       "origin": "anilist"
     },
     {
@@ -198,17 +198,17 @@
     },
     {
       "rank": 25,
-      "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
-      "score": 79,
-      "mal_id": 62811,
+      "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
+      "score": 72,
+      "mal_id": 63817,
       "latest": 11,
       "origin": "anilist"
     },
     {
       "rank": 26,
-      "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
-      "score": 72,
-      "mal_id": 63817,
+      "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
+      "score": 79,
+      "mal_id": 62811,
       "latest": 11,
       "origin": "anilist"
     },
