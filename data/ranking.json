@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-17T07:33:01Z",
+  "updated_at": "2026-09-18T07:23:16Z",
   "items": [
     {
       "rank": 1,
@@ -41,7 +41,7 @@
       "title": "Smoking Behind the Supermarket with You",
       "score": 82,
       "mal_id": 62076,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -65,7 +65,7 @@
       "title": "Chainsmoker Cat",
       "score": 67,
       "mal_id": 63403,
-      "latest": 10,
+      "latest": 11,
       "origin": "anilist"
     },
     {
@@ -81,7 +81,7 @@
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 67,
       "mal_id": 59741,
-      "latest": 11,
+      "latest": 12,
       "origin": "anilist"
     },
     {
@@ -222,14 +222,6 @@
     },
     {
       "rank": 28,
-      "title": "KAIJU GIRL CARAMELISE",
-      "score": 74,
-      "mal_id": 63150,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 29,
       "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
       "score": 76,
       "mal_id": 57466,
@@ -237,10 +229,18 @@
       "origin": "anilist"
     },
     {
-      "rank": 30,
+      "rank": 29,
       "title": "Goodbye, Lara",
       "score": 76,
       "mal_id": 58878,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
+      "rank": 30,
+      "title": "The Frontier Lord Begins with Zero Subjects",
+      "score": 66,
+      "mal_id": 62078,
       "latest": 11,
       "origin": "anilist"
     }
