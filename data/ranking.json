@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-18T07:23:16Z",
+  "updated_at": "2026-09-19T07:17:06Z",
   "items": [
     {
       "rank": 1,
@@ -33,7 +33,7 @@
       "title": "That Time I Got Reincarnated as a Slime Season 4",
       "score": 83,
       "mal_id": 59970,
-      "latest": 22,
+      "latest": 23,
       "origin": "anilist"
     },
     {
@@ -191,7 +191,7 @@
     {
       "rank": 24,
       "title": "Oh Boy, Was I Wrong About Her",
-      "score": 70,
+      "score": 69,
       "mal_id": 56735,
       "latest": 11,
       "origin": "anilist"
@@ -199,9 +199,9 @@
     {
       "rank": 25,
       "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
-      "score": 72,
+      "score": 71,
       "mal_id": 63817,
-      "latest": 11,
+      "latest": 12,
       "origin": "anilist"
     },
     {
@@ -214,14 +214,6 @@
     },
     {
       "rank": 27,
-      "title": "I Became a Legend After My 10 Year-Long Last Stand",
-      "score": 62,
-      "mal_id": 62617,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 28,
       "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
       "score": 76,
       "mal_id": 57466,
@@ -229,7 +221,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 29,
+      "rank": 28,
       "title": "Goodbye, Lara",
       "score": 76,
       "mal_id": 58878,
@@ -237,10 +229,18 @@
       "origin": "anilist"
     },
     {
+      "rank": 29,
+      "title": "Young Ladies Don't Play Fighting Games",
+      "score": 74,
+      "mal_id": 46488,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
       "rank": 30,
-      "title": "The Frontier Lord Begins with Zero Subjects",
-      "score": 66,
-      "mal_id": 62078,
+      "title": "The World's Strongest Rearguard",
+      "score": 55,
+      "mal_id": 62435,
       "latest": 11,
       "origin": "anilist"
     }

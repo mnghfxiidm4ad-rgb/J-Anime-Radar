@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-18T07:23:16Z",
+  "updated_at": "2026-09-19T07:17:06Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -399,6 +399,11 @@
           "slug": "clevatess-season-2-ep10",
           "source": "editorial-seed",
           "generated_at": "2026-09-10T07:28:56Z"
+        },
+        "11": {
+          "slug": "clevatess-season-2-ep11",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-19T07:17:06Z"
         }
       }
     },
@@ -434,6 +439,11 @@
           "slug": "love-unseen-beneath-the-clear-night-sky-ep9",
           "source": "editorial-seed",
           "generated_at": "2026-09-01T07:40:00Z"
+        },
+        "11": {
+          "slug": "love-unseen-beneath-the-clear-night-sky-ep11",
+          "source": "gemini",
+          "generated_at": "2026-09-19T07:12:38Z"
         }
       }
     },
@@ -534,6 +544,11 @@
           "slug": "that-time-i-got-reincarnated-as-a-slime-season-4-ep22",
           "source": "gemini",
           "generated_at": "2026-09-13T07:23:49Z"
+        },
+        "23": {
+          "slug": "that-time-i-got-reincarnated-as-a-slime-season-4-ep23",
+          "source": "gemini",
+          "generated_at": "2026-09-19T07:12:05Z"
         }
       }
     },
