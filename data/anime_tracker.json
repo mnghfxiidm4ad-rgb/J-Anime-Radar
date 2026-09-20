@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-19T07:17:06Z",
+  "updated_at": "2026-09-20T07:41:58Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -424,6 +424,11 @@
           "slug": "from-old-country-bumpkin-to-master-swordsman-ii-ep9",
           "source": "gemini",
           "generated_at": "2026-09-05T06:53:08Z"
+        },
+        "11": {
+          "slug": "from-old-country-bumpkin-to-master-swordsman-ii-ep11",
+          "source": "gemini",
+          "generated_at": "2026-09-20T07:35:50Z"
         }
       }
     },
@@ -589,6 +594,26 @@
           "slug": "ascendance-of-a-bookworm-adopted-daughter-of-an-archduke-ep20",
           "source": "editorial-seed",
           "generated_at": "2026-09-08T14:40:23Z"
+        }
+      }
+    },
+    "62331": {
+      "title": "LIAR GAME",
+      "episodes": {
+        "24": {
+          "slug": "liar-game-ep24",
+          "source": "gemini",
+          "generated_at": "2026-09-20T07:37:57Z"
+        }
+      }
+    },
+    "61240": {
+      "title": "Though I Am an Inept Villainess",
+      "episodes": {
+        "10": {
+          "slug": "though-i-am-an-inept-villainess-ep10",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-20T07:41:58Z"
         }
       }
     }
