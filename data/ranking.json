@@ -2,14 +2,14 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-20T07:41:58Z",
+  "updated_at": "2026-09-21T07:56:03Z",
   "items": [
     {
       "rank": 1,
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
       "score": 84,
       "mal_id": 59193,
-      "latest": 12,
+      "latest": 13,
       "origin": "anilist"
     },
     {
@@ -81,7 +81,7 @@
       "title": "Sparks of Tomorrow",
       "score": 76,
       "mal_id": 62856,
-      "latest": 11,
+      "latest": 12,
       "origin": "anilist"
     },
     {
@@ -142,14 +142,6 @@
     },
     {
       "rank": 18,
-      "title": "Though I Am an Inept Villainess",
-      "score": 78,
-      "mal_id": 61240,
-      "latest": 10,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
       "title": "Welcome to Demon School! Iruma-kun Season 4",
       "score": 80,
       "mal_id": 60310,
@@ -157,11 +149,19 @@
       "origin": "anilist"
     },
     {
-      "rank": 20,
+      "rank": 19,
       "title": "Grand Blue Dreaming Season 3",
       "score": 82,
       "mal_id": 62542,
       "latest": 11,
+      "origin": "anilist"
+    },
+    {
+      "rank": 20,
+      "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
+      "score": 71,
+      "mal_id": 63817,
+      "latest": 12,
       "origin": "anilist"
     },
     {
@@ -174,22 +174,6 @@
     },
     {
       "rank": 22,
-      "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
-      "score": 71,
-      "mal_id": 63817,
-      "latest": 12,
-      "origin": "anilist"
-    },
-    {
-      "rank": 23,
-      "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
-      "score": 79,
-      "mal_id": 62811,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 24,
       "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
       "score": 76,
       "mal_id": 57466,
@@ -197,15 +181,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 25,
-      "title": "Goodbye, Lara",
-      "score": 76,
-      "mal_id": 58878,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 26,
+      "rank": 23,
       "title": "Young Ladies Don't Play Fighting Games",
       "score": 74,
       "mal_id": 46488,
@@ -213,15 +189,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 27,
-      "title": "The World's Strongest Rearguard",
-      "score": 55,
-      "mal_id": 62435,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 28,
+      "rank": 24,
       "title": "The Elusive Samurai Season 2",
       "score": 76,
       "mal_id": 60059,
@@ -229,7 +197,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 29,
+      "rank": 25,
       "title": "The Insipid Prince's Furtive Grab for the Throne",
       "score": 58,
       "mal_id": 56736,
@@ -237,10 +205,42 @@
       "origin": "anilist"
     },
     {
-      "rank": 30,
+      "rank": 26,
       "title": "Hanaori-san Still Wants to Fight in the Next Life",
       "score": 69,
       "mal_id": 62535,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
+      "rank": 27,
+      "title": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+      "score": 67,
+      "mal_id": 62289,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
+      "rank": 28,
+      "title": "The World Is Dancing",
+      "score": 71,
+      "mal_id": 63347,
+      "latest": 12,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
+      "title": "MAO",
+      "score": 65,
+      "mal_id": 62048,
+      "latest": 25,
+      "origin": "anilist"
+    },
+    {
+      "rank": 30,
+      "title": "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
+      "score": 61,
+      "mal_id": 63752,
       "latest": 11,
       "origin": "anilist"
     }

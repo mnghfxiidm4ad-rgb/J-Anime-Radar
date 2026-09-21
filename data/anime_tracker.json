@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-20T07:41:58Z",
+  "updated_at": "2026-09-21T07:56:03Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -29,6 +29,11 @@
           "slug": "mushoku-tensei-jobless-reincarnation-season-3-ep12",
           "source": "editorial-seed",
           "generated_at": "2026-09-14T07:45:11Z"
+        },
+        "13": {
+          "slug": "mushoku-tensei-jobless-reincarnation-season-3-ep13",
+          "source": "gemini",
+          "generated_at": "2026-09-21T07:50:13Z"
         }
       }
     },
@@ -259,6 +264,11 @@
           "slug": "sparks-of-tomorrow-ep11",
           "source": "editorial-seed",
           "generated_at": "2026-09-16T07:38:14Z"
+        },
+        "12": {
+          "slug": "sparks-of-tomorrow-ep12",
+          "source": "gemini",
+          "generated_at": "2026-09-21T07:52:31Z"
         }
       }
     },
@@ -584,6 +594,11 @@
           "slug": "welcome-to-demon-school-iruma-kun-season-4-ep21",
           "source": "editorial-seed",
           "generated_at": "2026-09-08T14:36:54Z"
+        },
+        "23": {
+          "slug": "welcome-to-demon-school-iruma-kun-season-4-ep23",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-21T07:56:03Z"
         }
       }
     },
