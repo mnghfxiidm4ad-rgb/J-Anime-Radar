@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-21T07:56:03Z",
+  "updated_at": "2026-09-22T07:37:45Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -609,6 +609,11 @@
           "slug": "ascendance-of-a-bookworm-adopted-daughter-of-an-archduke-ep20",
           "source": "editorial-seed",
           "generated_at": "2026-09-08T14:40:23Z"
+        },
+        "22": {
+          "slug": "ascendance-of-a-bookworm-adopted-daughter-of-an-archduke-ep22",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-22T07:37:45Z"
         }
       }
     },
@@ -619,6 +624,11 @@
           "slug": "liar-game-ep24",
           "source": "gemini",
           "generated_at": "2026-09-20T07:37:57Z"
+        },
+        "25": {
+          "slug": "liar-game-ep25",
+          "source": "gemini",
+          "generated_at": "2026-09-22T07:31:13Z"
         }
       }
     },
@@ -629,6 +639,16 @@
           "slug": "though-i-am-an-inept-villainess-ep10",
           "source": "editorial-seed",
           "generated_at": "2026-09-20T07:41:58Z"
+        }
+      }
+    },
+    "63817": {
+      "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
+      "episodes": {
+        "12": {
+          "slug": "hell-mode-the-hardcore-gamer-dominates-in-another-world-with-garbage-balancing-s-ep12",
+          "source": "gemini",
+          "generated_at": "2026-09-22T07:34:13Z"
         }
       }
     }

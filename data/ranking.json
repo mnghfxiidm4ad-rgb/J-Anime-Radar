@@ -2,12 +2,12 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-21T07:56:03Z",
+  "updated_at": "2026-09-22T07:37:45Z",
   "items": [
     {
       "rank": 1,
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
-      "score": 84,
+      "score": 85,
       "mal_id": 59193,
       "latest": 13,
       "origin": "anilist"
@@ -102,22 +102,6 @@
     },
     {
       "rank": 13,
-      "title": "Skeleton Knight in Another World Season 2",
-      "score": 65,
-      "mal_id": 60522,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 14,
-      "title": "Love Unseen Beneath the Clear Night Sky",
-      "score": 79,
-      "mal_id": 62936,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 15,
       "title": "Clevatess Season 2",
       "score": 76,
       "mal_id": 62513,
@@ -125,7 +109,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 16,
+      "rank": 14,
       "title": "From Old Country Bumpkin to Master Swordsman II",
       "score": 70,
       "mal_id": 61897,
@@ -133,15 +117,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 17,
+      "rank": 15,
       "title": "LIAR GAME",
       "score": 62,
       "mal_id": 62331,
-      "latest": 24,
+      "latest": 25,
       "origin": "anilist"
     },
     {
-      "rank": 18,
+      "rank": 16,
       "title": "Welcome to Demon School! Iruma-kun Season 4",
       "score": 80,
       "mal_id": 60310,
@@ -149,15 +133,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 19,
-      "title": "Grand Blue Dreaming Season 3",
-      "score": 82,
-      "mal_id": 62542,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 20,
+      "rank": 17,
       "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
       "score": 71,
       "mal_id": 63817,
@@ -165,15 +141,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 21,
-      "title": "Oh Boy, Was I Wrong About Her",
-      "score": 69,
-      "mal_id": 56735,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 22,
+      "rank": 18,
       "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
       "score": 76,
       "mal_id": 57466,
@@ -181,7 +149,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 23,
+      "rank": 19,
       "title": "Young Ladies Don't Play Fighting Games",
       "score": 74,
       "mal_id": 46488,
@@ -189,7 +157,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 24,
+      "rank": 20,
       "title": "The Elusive Samurai Season 2",
       "score": 76,
       "mal_id": 60059,
@@ -197,15 +165,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 25,
-      "title": "The Insipid Prince's Furtive Grab for the Throne",
-      "score": 58,
-      "mal_id": 56736,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 26,
+      "rank": 21,
       "title": "Hanaori-san Still Wants to Fight in the Next Life",
       "score": 69,
       "mal_id": 62535,
@@ -213,23 +173,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 27,
-      "title": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
-      "score": 67,
-      "mal_id": 62289,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 28,
-      "title": "The World Is Dancing",
-      "score": 71,
-      "mal_id": 63347,
-      "latest": 12,
-      "origin": "anilist"
-    },
-    {
-      "rank": 29,
+      "rank": 22,
       "title": "MAO",
       "score": 65,
       "mal_id": 62048,
@@ -237,10 +181,66 @@
       "origin": "anilist"
     },
     {
+      "rank": 23,
+      "title": "Dara-san of the Reiwa Era",
+      "score": 66,
+      "mal_id": 63082,
+      "latest": 12,
+      "origin": "anilist"
+    },
+    {
+      "rank": 24,
+      "title": "My Stepmother and Stepsisters Aren’t Wicked",
+      "score": 64,
+      "mal_id": 62102,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
+      "rank": 25,
+      "title": "Draw This, Then Die!",
+      "score": 78,
+      "mal_id": 61280,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
+      "rank": 26,
+      "title": "Red River",
+      "score": 62,
+      "mal_id": 63489,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
+      "rank": 27,
+      "title": "Please Excuse My Younger Brothers",
+      "score": 68,
+      "mal_id": 63061,
+      "latest": 12,
+      "origin": "anilist"
+    },
+    {
+      "rank": 28,
+      "title": "Grow Up Show",
+      "score": 71,
+      "mal_id": 62051,
+      "latest": 12,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
+      "title": "Mebius Dust",
+      "score": 48,
+      "mal_id": 63802,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
       "rank": 30,
-      "title": "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
-      "score": 61,
-      "mal_id": 63752,
+      "title": "Magilumiere Magical Girls Inc. Season 2",
+      "score": 64,
+      "mal_id": 60552,
       "latest": 11,
       "origin": "anilist"
     }
