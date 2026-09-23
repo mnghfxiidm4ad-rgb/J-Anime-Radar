@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-22T07:37:45Z",
+  "updated_at": "2026-09-23T07:42:59Z",
   "items": [
     {
       "rank": 1,
@@ -89,7 +89,7 @@
       "title": "I Want to Love You Till Your Dying Day",
       "score": 74,
       "mal_id": 61126,
-      "latest": 11,
+      "latest": 12,
       "origin": "anilist"
     },
     {
@@ -150,14 +150,6 @@
     },
     {
       "rank": 19,
-      "title": "Young Ladies Don't Play Fighting Games",
-      "score": 74,
-      "mal_id": 46488,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 20,
       "title": "The Elusive Samurai Season 2",
       "score": 76,
       "mal_id": 60059,
@@ -165,7 +157,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 21,
+      "rank": 20,
       "title": "Hanaori-san Still Wants to Fight in the Next Life",
       "score": 69,
       "mal_id": 62535,
@@ -173,7 +165,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 22,
+      "rank": 21,
       "title": "MAO",
       "score": 65,
       "mal_id": 62048,
@@ -181,7 +173,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 23,
+      "rank": 22,
       "title": "Dara-san of the Reiwa Era",
       "score": 66,
       "mal_id": 63082,
@@ -189,7 +181,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 24,
+      "rank": 23,
       "title": "My Stepmother and Stepsisters Aren’t Wicked",
       "score": 64,
       "mal_id": 62102,
@@ -197,7 +189,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 25,
+      "rank": 24,
       "title": "Draw This, Then Die!",
       "score": 78,
       "mal_id": 61280,
@@ -205,15 +197,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 26,
+      "rank": 25,
       "title": "Red River",
-      "score": 62,
+      "score": 61,
       "mal_id": 63489,
-      "latest": 11,
+      "latest": 12,
       "origin": "anilist"
     },
     {
-      "rank": 27,
+      "rank": 26,
       "title": "Please Excuse My Younger Brothers",
       "score": 68,
       "mal_id": 63061,
@@ -221,7 +213,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 28,
+      "rank": 27,
       "title": "Grow Up Show",
       "score": 71,
       "mal_id": 62051,
@@ -229,7 +221,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 29,
+      "rank": 28,
       "title": "Mebius Dust",
       "score": 48,
       "mal_id": 63802,
@@ -237,10 +229,18 @@
       "origin": "anilist"
     },
     {
-      "rank": 30,
+      "rank": 29,
       "title": "Magilumiere Magical Girls Inc. Season 2",
       "score": 64,
       "mal_id": 60552,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
+      "rank": 30,
+      "title": "Let's go KAIKIGUMI",
+      "score": 56,
+      "mal_id": 62683,
       "latest": 11,
       "origin": "anilist"
     }
