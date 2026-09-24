@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-23T07:42:59Z",
+  "updated_at": "2026-09-24T07:36:28Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -419,6 +419,11 @@
           "slug": "clevatess-season-2-ep11",
           "source": "editorial-seed",
           "generated_at": "2026-09-19T07:17:06Z"
+        },
+        "12": {
+          "slug": "clevatess-season-2-ep12",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-24T07:33:00Z"
         }
       }
     },
@@ -534,6 +539,11 @@
           "slug": "re-zero-starting-life-in-another-world-season-4-ep17",
           "source": "gemini",
           "generated_at": "2026-09-17T07:23:46Z"
+        },
+        "18": {
+          "slug": "re-zero-starting-life-in-another-world-season-4-ep18",
+          "source": "gemini",
+          "generated_at": "2026-09-24T07:26:30Z"
         }
       }
     },
@@ -674,6 +684,16 @@
           "slug": "hanaori-san-still-wants-to-fight-in-the-next-life-ep11",
           "source": "editorial-seed",
           "generated_at": "2026-09-23T07:42:59Z"
+        }
+      }
+    },
+    "62048": {
+      "title": "MAO",
+      "episodes": {
+        "25": {
+          "slug": "mao-ep25",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-24T07:36:28Z"
         }
       }
     }
