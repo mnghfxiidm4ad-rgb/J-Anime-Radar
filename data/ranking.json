@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-24T07:36:28Z",
+  "updated_at": "2026-09-25T07:26:05Z",
   "items": [
     {
       "rank": 1,
@@ -30,14 +30,6 @@
     },
     {
       "rank": 4,
-      "title": "Smoking Behind the Supermarket with You",
-      "score": 81,
-      "mal_id": 62076,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 5,
       "title": "BLEACH: Thousand-Year Blood War - The Calamity",
       "score": 90,
       "mal_id": 60636,
@@ -45,23 +37,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 6,
-      "title": "Chainsmoker Cat",
-      "score": 67,
-      "mal_id": 63403,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 7,
+      "rank": 5,
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 67,
       "mal_id": 59741,
-      "latest": 12,
+      "latest": 13,
       "origin": "anilist"
     },
     {
-      "rank": 8,
+      "rank": 6,
       "title": "You and I Are Polar Opposites Season 2",
       "score": 82,
       "mal_id": 63832,
@@ -69,7 +53,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 9,
+      "rank": 7,
       "title": "Sparks of Tomorrow",
       "score": 76,
       "mal_id": 62856,
@@ -77,7 +61,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 10,
+      "rank": 8,
       "title": "I Want to Love You Till Your Dying Day",
       "score": 74,
       "mal_id": 61126,
@@ -85,7 +69,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 11,
+      "rank": 9,
       "title": "Clevatess Season 2",
       "score": 76,
       "mal_id": 62513,
@@ -93,7 +77,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 12,
+      "rank": 10,
       "title": "LIAR GAME",
       "score": 62,
       "mal_id": 62331,
@@ -101,7 +85,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 13,
+      "rank": 11,
       "title": "Welcome to Demon School! Iruma-kun Season 4",
       "score": 80,
       "mal_id": 60310,
@@ -109,7 +93,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 14,
+      "rank": 12,
       "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
       "score": 71,
       "mal_id": 63817,
@@ -117,7 +101,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 15,
+      "rank": 13,
       "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
       "score": 76,
       "mal_id": 57466,
@@ -125,7 +109,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 16,
+      "rank": 14,
       "title": "The Elusive Samurai Season 2",
       "score": 76,
       "mal_id": 60059,
@@ -133,7 +117,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 17,
+      "rank": 15,
       "title": "Hanaori-san Still Wants to Fight in the Next Life",
       "score": 69,
       "mal_id": 62535,
@@ -141,7 +125,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 18,
+      "rank": 16,
       "title": "MAO",
       "score": 65,
       "mal_id": 62048,
@@ -149,15 +133,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 19,
-      "title": "Dara-san of the Reiwa Era",
-      "score": 66,
-      "mal_id": 63082,
-      "latest": 12,
-      "origin": "anilist"
-    },
-    {
-      "rank": 20,
+      "rank": 17,
       "title": "My Stepmother and Stepsisters Aren’t Wicked",
       "score": 64,
       "mal_id": 62102,
@@ -165,7 +141,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 21,
+      "rank": 18,
       "title": "Draw This, Then Die!",
       "score": 78,
       "mal_id": 61280,
@@ -173,15 +149,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 22,
+      "rank": 19,
       "title": "Red River",
-      "score": 61,
+      "score": 62,
       "mal_id": 63489,
       "latest": 12,
       "origin": "anilist"
     },
     {
-      "rank": 23,
+      "rank": 20,
       "title": "Please Excuse My Younger Brothers",
       "score": 68,
       "mal_id": 63061,
@@ -189,7 +165,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 24,
+      "rank": 21,
       "title": "Grow Up Show",
       "score": 71,
       "mal_id": 62051,
@@ -197,15 +173,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 25,
-      "title": "Mebius Dust",
-      "score": 48,
-      "mal_id": 63802,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 26,
+      "rank": 22,
       "title": "Magilumiere Magical Girls Inc. Season 2",
       "score": 64,
       "mal_id": 60552,
@@ -213,35 +181,67 @@
       "origin": "anilist"
     },
     {
-      "rank": 27,
+      "rank": 23,
       "title": "Let's go KAIKIGUMI",
-      "score": 56,
+      "score": 57,
       "mal_id": 62683,
       "latest": 11,
       "origin": "anilist"
     },
     {
-      "rank": 28,
+      "rank": 24,
       "title": "Re:Zero kara Hajimeru Kyuukei Jikan (Break Time) 4th Season",
-      "score": 68,
+      "score": 69,
       "mal_id": 63830,
       "latest": 18,
       "origin": "anilist"
     },
     {
-      "rank": 29,
+      "rank": 25,
       "title": "Thunder 3",
       "score": 52,
       "mal_id": 63418,
+      "latest": 11,
+      "origin": "anilist"
+    },
+    {
+      "rank": 26,
+      "title": "RILAKKUMA",
+      "score": 62,
+      "mal_id": 60153,
+      "latest": 25,
+      "origin": "anilist"
+    },
+    {
+      "rank": 27,
+      "title": "Ghost Meets Gal!",
+      "score": null,
+      "mal_id": 64718,
+      "latest": 3,
+      "origin": "anilist"
+    },
+    {
+      "rank": 28,
+      "title": "Onegai AiPri",
+      "score": 55,
+      "mal_id": 63352,
+      "latest": 25,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
+      "title": "Otaku no Boku ga Ichigun Gal to Tsukiaeru Made no Hanashi",
+      "score": 59,
+      "mal_id": 64128,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 30,
-      "title": "RILAKKUMA",
-      "score": 62,
-      "mal_id": 60153,
-      "latest": 25,
+      "title": "Little Shark's Day Out Season 2",
+      "score": null,
+      "mal_id": 63125,
+      "latest": 24,
       "origin": "anilist"
     }
   ]

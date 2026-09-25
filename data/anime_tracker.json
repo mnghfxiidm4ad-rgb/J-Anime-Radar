@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-24T07:36:28Z",
+  "updated_at": "2026-09-25T07:26:05Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -214,6 +214,11 @@
           "slug": "the-exiled-heavy-knight-knows-how-to-game-the-system-ep12",
           "source": "editorial-seed",
           "generated_at": "2026-09-18T07:23:16Z"
+        },
+        "13": {
+          "slug": "the-exiled-heavy-knight-knows-how-to-game-the-system-ep13",
+          "source": "gemini",
+          "generated_at": "2026-09-25T07:24:09Z"
         }
       }
     },
@@ -694,6 +699,26 @@
           "slug": "mao-ep25",
           "source": "editorial-seed",
           "generated_at": "2026-09-24T07:36:28Z"
+        }
+      }
+    },
+    "62102": {
+      "title": "My Stepmother and Stepsisters Aren’t Wicked",
+      "episodes": {
+        "11": {
+          "slug": "my-stepmother-and-stepsisters-aren-t-wicked-ep11",
+          "source": "gemini",
+          "generated_at": "2026-09-25T07:25:16Z"
+        }
+      }
+    },
+    "61280": {
+      "title": "Draw This, Then Die!",
+      "episodes": {
+        "11": {
+          "slug": "draw-this-then-die-ep11",
+          "source": "gemini",
+          "generated_at": "2026-09-25T07:26:05Z"
         }
       }
     }
