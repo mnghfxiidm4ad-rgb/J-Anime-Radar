@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-26T07:20:25Z",
+  "updated_at": "2026-09-27T07:56:09Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -634,6 +634,11 @@
           "slug": "ascendance-of-a-bookworm-adopted-daughter-of-an-archduke-ep22",
           "source": "editorial-seed",
           "generated_at": "2026-09-22T07:37:45Z"
+        },
+        "23": {
+          "slug": "ascendance-of-a-bookworm-adopted-daughter-of-an-archduke-ep23",
+          "source": "gemini",
+          "generated_at": "2026-09-27T07:50:15Z"
         }
       }
     },
@@ -744,6 +749,26 @@
           "slug": "please-excuse-my-younger-brothers-ep12",
           "source": "gemini",
           "generated_at": "2026-09-26T07:20:25Z"
+        }
+      }
+    },
+    "63830": {
+      "title": "Re:Zero kara Hajimeru Kyuukei Jikan (Break Time) 4th Season",
+      "episodes": {
+        "18": {
+          "slug": "re-zero-kara-hajimeru-kyuukei-jikan-break-time-4th-season-ep18",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-27T07:55:41Z"
+        }
+      }
+    },
+    "63418": {
+      "title": "Thunder 3",
+      "episodes": {
+        "11": {
+          "slug": "thunder-3-ep11",
+          "source": "gemini",
+          "generated_at": "2026-09-27T07:56:09Z"
         }
       }
     }

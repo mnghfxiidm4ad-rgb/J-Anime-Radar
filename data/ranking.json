@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-26T07:20:25Z",
+  "updated_at": "2026-09-27T07:56:09Z",
   "items": [
     {
       "rank": 1,
@@ -78,22 +78,14 @@
     },
     {
       "rank": 10,
-      "title": "Welcome to Demon School! Iruma-kun Season 4",
-      "score": 80,
-      "mal_id": 60310,
+      "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
+      "score": 76,
+      "mal_id": 57466,
       "latest": 23,
       "origin": "anilist"
     },
     {
       "rank": 11,
-      "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
-      "score": 76,
-      "mal_id": 57466,
-      "latest": 22,
-      "origin": "anilist"
-    },
-    {
-      "rank": 12,
       "title": "The Elusive Samurai Season 2",
       "score": 76,
       "mal_id": 60059,
@@ -101,23 +93,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 13,
-      "title": "Hanaori-san Still Wants to Fight in the Next Life",
-      "score": 69,
-      "mal_id": 62535,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 14,
-      "title": "MAO",
-      "score": 65,
-      "mal_id": 62048,
-      "latest": 25,
-      "origin": "anilist"
-    },
-    {
-      "rank": 15,
+      "rank": 12,
       "title": "Red River",
       "score": 62,
       "mal_id": 63489,
@@ -125,7 +101,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 16,
+      "rank": 13,
       "title": "Please Excuse My Younger Brothers",
       "score": 68,
       "mal_id": 63061,
@@ -133,31 +109,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 17,
-      "title": "Grow Up Show",
-      "score": 71,
-      "mal_id": 62051,
-      "latest": 12,
-      "origin": "anilist"
-    },
-    {
-      "rank": 18,
-      "title": "Magilumiere Magical Girls Inc. Season 2",
-      "score": 64,
-      "mal_id": 60552,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
-      "title": "Let's go KAIKIGUMI",
-      "score": 56,
-      "mal_id": 62683,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 20,
+      "rank": 14,
       "title": "Re:Zero kara Hajimeru Kyuukei Jikan (Break Time) 4th Season",
       "score": 69,
       "mal_id": 63830,
@@ -165,7 +117,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 21,
+      "rank": 15,
       "title": "Thunder 3",
       "score": 52,
       "mal_id": 63418,
@@ -173,15 +125,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 22,
+      "rank": 16,
       "title": "RILAKKUMA",
       "score": 62,
       "mal_id": 60153,
-      "latest": 26,
+      "latest": 25,
       "origin": "anilist"
     },
     {
-      "rank": 23,
+      "rank": 17,
       "title": "Ghost Meets Gal!",
       "score": null,
       "mal_id": 64718,
@@ -189,15 +141,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 24,
+      "rank": 18,
       "title": "Onegai AiPri",
       "score": 55,
       "mal_id": 63352,
-      "latest": 25,
+      "latest": 26,
       "origin": "anilist"
     },
     {
-      "rank": 25,
+      "rank": 19,
       "title": "Otaku no Boku ga Ichigun Gal to Tsukiaeru Made no Hanashi",
       "score": 59,
       "mal_id": 64128,
@@ -205,15 +157,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 26,
+      "rank": 20,
       "title": "Little Shark's Day Out Season 2",
       "score": null,
       "mal_id": 63125,
-      "latest": 24,
+      "latest": 25,
       "origin": "anilist"
     },
     {
-      "rank": 27,
+      "rank": 21,
       "title": "Theatre of Darkness: Yamishibai 17",
       "score": null,
       "mal_id": 64435,
@@ -221,15 +173,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 28,
-      "title": "Plannosaurus Gachi Koseibutsu-bu",
-      "score": null,
-      "mal_id": 63641,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 29,
+      "rank": 22,
       "title": "Hokuto no Ken: Kenou-gun Zako-tachi no Banka Part 2",
       "score": null,
       "mal_id": 64378,
@@ -237,11 +181,67 @@
       "origin": "anilist"
     },
     {
-      "rank": 30,
+      "rank": 23,
       "title": "PetitCure: Precure Fairies Season 3",
       "score": null,
       "mal_id": 63773,
       "latest": 27,
+      "origin": "anilist"
+    },
+    {
+      "rank": 24,
+      "title": "Pan no Akachan (TV)",
+      "score": null,
+      "mal_id": 64210,
+      "latest": 13,
+      "origin": "anilist"
+    },
+    {
+      "rank": 25,
+      "title": "Fate/Grand Order: Fujimaru Ritsuka wa Wakaranai Season 4",
+      "score": null,
+      "mal_id": 64725,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 26,
+      "title": "Transformers: Wild King W",
+      "score": null,
+      "mal_id": 64181,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 27,
+      "title": "Looney Tunes Gokko",
+      "score": null,
+      "mal_id": 64079,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 28,
+      "title": "PokéOki SEASON 2",
+      "score": null,
+      "mal_id": 64965,
+      "latest": 3,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
+      "title": "Shou 3 Ashibe QQ Goma-chan",
+      "score": null,
+      "mal_id": 62933,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 30,
+      "title": "Oushun Jogakuen no Danyuu",
+      "score": null,
+      "mal_id": 214551,
+      "latest": 1,
       "origin": "anilist"
     }
   ]
