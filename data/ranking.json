@@ -2,18 +2,10 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-09-27T07:56:09Z",
+  "updated_at": "2026-09-28T08:33:45Z",
   "items": [
     {
       "rank": 1,
-      "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
-      "score": 85,
-      "mal_id": 59193,
-      "latest": 13,
-      "origin": "anilist"
-    },
-    {
-      "rank": 2,
       "title": "Re:ZERO -Starting Life in Another World- Season 4",
       "score": 90,
       "mal_id": 61316,
@@ -21,7 +13,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 3,
+      "rank": 2,
       "title": "BLEACH: Thousand-Year Blood War - The Calamity",
       "score": 90,
       "mal_id": 60636,
@@ -29,7 +21,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 4,
+      "rank": 3,
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 67,
       "mal_id": 59741,
@@ -37,23 +29,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 5,
+      "rank": 4,
       "title": "You and I Are Polar Opposites Season 2",
       "score": 82,
       "mal_id": 63832,
-      "latest": 11,
-      "origin": "anilist"
-    },
-    {
-      "rank": 6,
-      "title": "Sparks of Tomorrow",
-      "score": 76,
-      "mal_id": 62856,
       "latest": 12,
       "origin": "anilist"
     },
     {
-      "rank": 7,
+      "rank": 5,
       "title": "I Want to Love You Till Your Dying Day",
       "score": 74,
       "mal_id": 61126,
@@ -61,7 +45,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 8,
+      "rank": 6,
       "title": "Clevatess Season 2",
       "score": 76,
       "mal_id": 62513,
@@ -69,7 +53,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 9,
+      "rank": 7,
       "title": "LIAR GAME",
       "score": 62,
       "mal_id": 62331,
@@ -77,7 +61,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 10,
+      "rank": 8,
       "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
       "score": 76,
       "mal_id": 57466,
@@ -85,7 +69,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 11,
+      "rank": 9,
       "title": "The Elusive Samurai Season 2",
       "score": 76,
       "mal_id": 60059,
@@ -93,7 +77,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 12,
+      "rank": 10,
       "title": "Red River",
       "score": 62,
       "mal_id": 63489,
@@ -101,7 +85,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 13,
+      "rank": 11,
       "title": "Please Excuse My Younger Brothers",
       "score": 68,
       "mal_id": 63061,
@@ -109,7 +93,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 14,
+      "rank": 12,
       "title": "Re:Zero kara Hajimeru Kyuukei Jikan (Break Time) 4th Season",
       "score": 69,
       "mal_id": 63830,
@@ -117,7 +101,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 15,
+      "rank": 13,
       "title": "Thunder 3",
       "score": 52,
       "mal_id": 63418,
@@ -125,7 +109,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 16,
+      "rank": 14,
       "title": "RILAKKUMA",
       "score": 62,
       "mal_id": 60153,
@@ -133,7 +117,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 17,
+      "rank": 15,
       "title": "Ghost Meets Gal!",
       "score": null,
       "mal_id": 64718,
@@ -141,15 +125,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 18,
+      "rank": 16,
       "title": "Onegai AiPri",
-      "score": 55,
+      "score": 54,
       "mal_id": 63352,
       "latest": 26,
       "origin": "anilist"
     },
     {
-      "rank": 19,
+      "rank": 17,
       "title": "Otaku no Boku ga Ichigun Gal to Tsukiaeru Made no Hanashi",
       "score": 59,
       "mal_id": 64128,
@@ -157,7 +141,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 20,
+      "rank": 18,
       "title": "Little Shark's Day Out Season 2",
       "score": null,
       "mal_id": 63125,
@@ -165,15 +149,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 21,
+      "rank": 19,
       "title": "Theatre of Darkness: Yamishibai 17",
       "score": null,
       "mal_id": 64435,
-      "latest": 11,
+      "latest": 12,
       "origin": "anilist"
     },
     {
-      "rank": 22,
+      "rank": 20,
       "title": "Hokuto no Ken: Kenou-gun Zako-tachi no Banka Part 2",
       "score": null,
       "mal_id": 64378,
@@ -181,7 +165,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 23,
+      "rank": 21,
       "title": "PetitCure: Precure Fairies Season 3",
       "score": null,
       "mal_id": 63773,
@@ -189,7 +173,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 24,
+      "rank": 22,
       "title": "Pan no Akachan (TV)",
       "score": null,
       "mal_id": 64210,
@@ -197,7 +181,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 25,
+      "rank": 23,
       "title": "Fate/Grand Order: Fujimaru Ritsuka wa Wakaranai Season 4",
       "score": null,
       "mal_id": 64725,
@@ -205,7 +189,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 26,
+      "rank": 24,
       "title": "Transformers: Wild King W",
       "score": null,
       "mal_id": 64181,
@@ -213,7 +197,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 27,
+      "rank": 25,
       "title": "Looney Tunes Gokko",
       "score": null,
       "mal_id": 64079,
@@ -221,15 +205,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 28,
-      "title": "PokéOki SEASON 2",
-      "score": null,
-      "mal_id": 64965,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
-      "rank": 29,
+      "rank": 26,
       "title": "Shou 3 Ashibe QQ Goma-chan",
       "score": null,
       "mal_id": 62933,
@@ -237,10 +213,34 @@
       "origin": "anilist"
     },
     {
-      "rank": 30,
+      "rank": 27,
       "title": "Oushun Jogakuen no Danyuu",
       "score": null,
       "mal_id": 214551,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 28,
+      "title": "Oshiri Dandy the Young",
+      "score": null,
+      "mal_id": 201910,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
+      "title": "Pie no Mi: Oshi no Mori e Youkoso!",
+      "score": null,
+      "mal_id": 64325,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 30,
+      "title": "TOMICA & TOM Season 2",
+      "score": null,
+      "mal_id": 64357,
       "latest": 1,
       "origin": "anilist"
     }

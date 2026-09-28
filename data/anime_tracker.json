@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-27T07:56:09Z",
+  "updated_at": "2026-09-28T08:33:45Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -244,6 +244,11 @@
           "slug": "you-and-i-are-polar-opposites-season-2-ep11",
           "source": "gemini",
           "generated_at": "2026-09-16T06:12:28Z"
+        },
+        "12": {
+          "slug": "you-and-i-are-polar-opposites-season-2-ep12",
+          "source": "gemini",
+          "generated_at": "2026-09-28T08:27:31Z"
         }
       }
     },
@@ -769,6 +774,26 @@
           "slug": "thunder-3-ep11",
           "source": "gemini",
           "generated_at": "2026-09-27T07:56:09Z"
+        }
+      }
+    },
+    "60153": {
+      "title": "RILAKKUMA",
+      "episodes": {
+        "25": {
+          "slug": "rilakkuma-ep25",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-28T08:29:50Z"
+        }
+      }
+    },
+    "64718": {
+      "title": "Ghost Meets Gal!",
+      "episodes": {
+        "4": {
+          "slug": "ghost-meets-gal-ep4",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-28T08:33:45Z"
         }
       }
     }
