@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="hero">
+<section class="hero" aria-labelledby="site-intro">
   <div class="wrap">
     <p class="kicker">{{ season_label }} · Live tracking desk</p>
-    <h1>Seasonal anime intel, not recycled synopses.</h1>
-    <p class="lede">J-Anime Radar tracks the current season’s most-watched titles and publishes original episode briefings: sakuga and direction, Japanese fan reaction, voice-acting notes, and legal watch links. Built for overseas readers who want the week’s signal from Japan.</p>
+    <h1 id="site-intro">Seasonal anime intel, not recycled synopses.</h1>
+    <p class="lede">J-Anime Radar curates the season by craft rather than by recycled plot. We choose episodes where staging, a Japanese fan argument, or a performance changes how the cour should be read, then publish an original briefing with legal watch links for overseas readers.</p>
+    <p class="hero-note">Hidden favorites and loud sequels get the same test: did the camera, the cast, or the domestic conversation do something a synopsis cannot capture? Each card below leads with that argument, so you can decide what is worth opening.</p>
     <div class="stat-row">
       <div class="stat"><b>{{ stats.titles }}</b><span>Titles in the Top 30 desk</span></div>
       <div class="stat"><b>{{ stats.articles }}</b><span>Original episode briefings</span></div>
@@ -14,11 +15,64 @@
 </section>
 
 <div class="wrap">
+  {% if featured %}
+  <section class="featured" aria-labelledby="featured-heading">
+    <p class="kicker">Editor’s desk</p>
+    <h2 id="featured-heading">Featured briefings</h2>
+    <p class="section-intro">The newest pieces we would hand a reader first. Open one for the full craft note, Japanese reception, and licensed watch links.</p>
+    <div class="featured-grid{% if featured|length < 2 %} featured-single{% endif %}">
+      {% for post in featured %}
+      <article class="feature-card">
+        <a class="feature-media" href="{{ root }}posts/{{ post.slug }}.html">
+          {% if post.image %}
+          <img src="{{ post.image }}" alt="{{ post.anime_title }}" width="960" height="540" {% if loop.first %}loading="eager"{% else %}loading="lazy"{% endif %} decoding="async">
+          {% else %}
+          <span class="cover-fallback">{{ post.anime_title }}</span>
+          {% endif %}
+        </a>
+        <div class="feature-body">
+          <p class="tag-row">
+            {% if post.kind == 'feature' %}
+            <span class="tag">{% if post.feature_kind == 'archive' %}Archive{% else %}Guide{% endif %}</span>
+            {% else %}
+            <span class="tag">Episode {{ post.episode }}</span>
+            {% endif %}
+            {% for g in post.genres[:2] %}
+            <span class="tag">{{ g }}</span>
+            {% endfor %}
+            {% if post.episode_vibe %}
+            <span class="tag tag-vibe">{{ post.episode_vibe }}</span>
+            {% endif %}
+            {% if post.score %}
+            <span class="tag">Score {{ post.score }}</span>
+            {% endif %}
+          </p>
+          <h3><a href="{{ root }}posts/{{ post.slug }}.html">{{ post.anime_title }}</a></h3>
+          <p class="excerpt">{{ post.lead }}</p>
+          <p class="tiny">
+            {% if post.published_iso %}
+            Published <time datetime="{{ post.published_iso }}">{{ post.published_iso }}</time>
+            {% else %}
+            <span>{{ post.published_label }}</span>
+            {% endif %}
+            {% if post.updated_iso and post.updated_iso != post.published_iso %}
+            · Updated <time datetime="{{ post.updated_iso }}">{{ post.updated_iso }}</time>
+            {% endif %}
+            · {{ post.studio }}
+          </p>
+          <a class="read-more" href="{{ root }}posts/{{ post.slug }}.html">Read the briefing</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
   {% with slot_name='Header Banner (Top)', slot_id='header', extra_class='header-banner-ad' %}
   {% include '_ad_slot.html' %}
   {% endwith %}
 
-  <div class="toolbar" id="latest">
+  <div class="toolbar">
     <button class="chip is-on" type="button" data-genre="all">All genres</button>
     {% for g in genres %}
     <button class="chip" type="button" data-genre="{{ g | lower }}">{{ g }}</button>
@@ -27,22 +81,48 @@
   </div>
 
   <div class="layout">
-    <section>
-      <h2 class="kicker">Latest episode briefings · newest first</h2>
+    <section id="latest" aria-labelledby="latest-heading">
+      <p class="kicker">Newest first</p>
+      <h2 id="latest-heading">Latest episode briefings</h2>
+      <p class="section-intro">Every briefing is an original desk note: what the episode is doing formally, how Japanese viewers argued about it, and where to watch it legally. The excerpt is the argument, not a poster caption.</p>
       <div class="grid">
-        {% for post in posts %}
-        <article class="card" data-card data-genres="{{ post.genres | join(' ') }}" data-title="{{ post.anime_title }} {{ post.episode_title }} {{ post.headline }}">
-          <a class="card-cover" href="{{ root }}posts/{{ post.slug }}.html" style="background-image:url('{{ post.image }}')" aria-label="{{ post.anime_title }}"></a>
-          {% if post.kind == 'feature' %}
-          <span class="badge badge-feature">{% if post.feature_kind == 'archive' %}ARCHIVE{% else %}GUIDE{% endif %}</span>
-          {% else %}
-          <span class="badge">EP {{ post.episode }}</span>
-          {% endif %}
+        {% for post in listing %}
+        <article class="card" data-card data-genres="{{ post.genres | join(' ') }}" data-title="{{ post.anime_title }} {{ post.episode_title }} {{ post.headline }} {{ post.card_excerpt }}">
+          <a class="card-cover" href="{{ root }}posts/{{ post.slug }}.html">
+            {% if post.image %}
+            <img src="{{ post.image }}" alt="" width="640" height="400" loading="lazy" decoding="async">
+            {% else %}
+            <span class="cover-fallback">{{ post.anime_title }}</span>
+            {% endif %}
+          </a>
           <div class="card-body">
-            <p class="tiny"><time datetime="{{ post.aired }}">{{ post.aired }}</time> · {{ post.studio }}</p>
+            <p class="tag-row">
+              {% if post.kind == 'feature' %}
+              <span class="tag">{% if post.feature_kind == 'archive' %}Archive{% else %}Guide{% endif %}</span>
+              {% else %}
+              <span class="tag">Episode {{ post.episode }}</span>
+              {% endif %}
+              {% for g in post.genres[:2] %}
+              <span class="tag">{{ g }}</span>
+              {% endfor %}
+              {% if post.score %}
+              <span class="tag">Score {{ post.score }}</span>
+              {% endif %}
+            </p>
             <h3><a href="{{ root }}posts/{{ post.slug }}.html">{{ post.anime_title }}</a></h3>
-            <p class="meta">{{ post.headline or post.episode_title }}</p>
-            <p class="vibe">{{ post.episode_vibe }}</p>
+            <p class="excerpt">{{ post.card_excerpt }}</p>
+            <p class="tiny">
+              {% if post.published_iso %}
+              <time datetime="{{ post.published_iso }}">{{ post.published_iso }}</time>
+              {% else %}
+              <span>{{ post.published_label }}</span>
+              {% endif %}
+              {% if post.updated_iso and post.updated_iso != post.published_iso %}
+              · Updated <time datetime="{{ post.updated_iso }}">{{ post.updated_iso }}</time>
+              {% endif %}
+              · {{ post.studio }}
+            </p>
+            <a class="read-more" href="{{ root }}posts/{{ post.slug }}.html">Continue reading</a>
           </div>
         </article>
         {% endfor %}

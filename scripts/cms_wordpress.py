@@ -43,7 +43,7 @@ def build_wp_payload(post: dict, html: str, eyecatch: dict) -> Dict[str, Any]:
     """Map a Radar post to WP REST /wp/v2/posts fields, including featured_media fallback."""
     kind = post.get("kind") or "episode"
     title = post.get("headline") or (
-        f"{post.get('anime_title')} Episode {post.get('episode')} — {post.get('episode_title')}"
+        f"{post.get('anime_title')} Episode {post.get('episode')} Analysis: {post.get('episode_title')}"
     )
     cat = _int_env("WP_CATEGORY_FEATURE") if kind == "feature" else _int_env("WP_CATEGORY_EPISODE")
     tags: List[int] = []

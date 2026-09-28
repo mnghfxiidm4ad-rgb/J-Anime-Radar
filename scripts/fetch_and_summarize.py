@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import os
 import re
@@ -26,7 +27,15 @@ except ImportError:  # pragma: no cover
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from editorial import GEMINI_PROMPT, compose_review  # noqa: E402
+from editorial import (  # noqa: E402
+    GEMINI_GENERATION_CONFIG,
+    GEMINI_SYSTEM_INSTRUCTION,
+    build_gemini_prompt,
+    compose_review,
+    markdown_fragment,
+    normalize_cast_pairs,
+    parse_gemini_review,
+)
 from legal_pages import page_specs  # noqa: E402
 from supplement import daily_target, run_supplement_loop  # noqa: E402
 from cms_wordpress import publish_post as wp_publish  # noqa: E402
@@ -38,6 +47,7 @@ DOCS = ROOT / "docs"
 TEMPLATES = ROOT / "templates"
 UA = "J-Anime-Radar/1.0 (editorial static generator; +https://github.com)"
 TENRAI_DEFAULT = "https://api.tenrai.org/v1"
+JIKAN_PUBLIC = "https://api.jikan.moe/v4"
 DESK_SIZE = 30
 ARTICLE_PRIORITY = 20  # episode briefs: ranks 1-20; 21-30 are ranking-only unless the daily quota is short
 
@@ -425,7 +435,7 @@ def _anilist_row(m: dict) -> dict:
         vas = e.get("voiceActors") or []
         va = ((vas[0].get("name") or {}).get("full") if vas else "")
         if nm:
-            cast.append(f"{nm} / {va}" if va else nm)
+            cast.append(f"{nm} - {va}" if va else nm)
     studios = [n.get("name") for n in ((m.get("studios") or {}).get("nodes") or []) if n.get("name")]
     return {
         "mal_id": m.get("idMal") or m.get("id"),
@@ -527,6 +537,163 @@ def guess_watch(links: List[dict]) -> List[dict]:
     return found[:6]
 
 
+_STAFF_ROLES = (
+    "Director",
+    "Chief Director",
+    "Series Director",
+    "Series Composition",
+    "Character Design",
+    "Chief Animation Director",
+    "Animation Director",
+    "Art Director",
+    "Director of Photography",
+    "Sound Director",
+    "Music",
+    "Original Creator",
+    "Original Work",
+)
+_STAFF_RANK = {name.lower(): i for i, name in enumerate(_STAFF_ROLES)}
+_MULTI_STAFF_ROLES = {"animation director"}
+
+
+def _payload_rows(data: Any) -> List[dict]:
+    if isinstance(data, list):
+        return [row for row in data if isinstance(row, dict)]
+    if isinstance(data, dict):
+        rows = data.get("data")
+        if isinstance(rows, list):
+            return [row for row in rows if isinstance(row, dict)]
+    return []
+
+
+def _westernize_person_name(raw: str) -> str:
+    text = (raw or "").strip()
+    if "," in text:
+        family, given = [p.strip() for p in text.split(",", 1)]
+        if given:
+            return f"{given} {family}"
+    return text
+
+
+def extract_cast_pairs_from_jikan(payload: Any, *, limit: int = 24) -> List[str]:
+    """Jikan/Tenrai `/anime/{id}/characters` → 'Character - Voice Actor'."""
+    main: List[str] = []
+    supporting: List[str] = []
+    seen = set()
+    for item in _payload_rows(payload):
+        ch = item.get("character") or {}
+        char_name = _westernize_person_name(ch.get("name") or "")
+        if not char_name:
+            continue
+        va_name = ""
+        for va in item.get("voice_actors") or []:
+            if (va.get("language") or "").lower() != "japanese":
+                continue
+            va_name = _westernize_person_name(((va.get("person") or {}).get("name") or ""))
+            if va_name:
+                break
+        if va_name:
+            line = f"{char_name} - {va_name}"
+        else:
+            line = f"{char_name} — Japanese voice actor not listed in catalog (do not invent a name)"
+        key = line.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        role = (item.get("role") or "").lower()
+        (main if role == "main" else supporting).append(line)
+    return (main + supporting)[:limit]
+
+
+def extract_staff_from_jikan(payload: Any, *, limit: int = 16) -> List[str]:
+    """Jikan/Tenrai `/anime/{id}/staff` → 'Role: Name' for key production credits."""
+    picked: List[tuple] = []
+    seen = set()
+    for item in _payload_rows(payload):
+        name = _westernize_person_name(((item.get("person") or {}).get("name") or ""))
+        if not name:
+            continue
+        for pos in item.get("positions") or []:
+            rank = _STAFF_RANK.get((pos or "").lower())
+            if rank is None:
+                continue
+            key = (name.lower(), (pos or "").lower())
+            if key in seen:
+                continue
+            seen.add(key)
+            picked.append((rank, f"{pos}: {name}"))
+    picked.sort(key=lambda row: row[0])
+    out: List[str] = []
+    seen_pos: set = set()
+    for _, line in picked:
+        pos = line.split(":", 1)[0].strip().lower()
+        if pos not in _MULTI_STAFF_ROLES and pos in seen_pos:
+            continue
+        if pos not in _MULTI_STAFF_ROLES:
+            seen_pos.add(pos)
+        out.append(line)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _catalog_json(path: str) -> Optional[dict]:
+    """GET a Jikan-compatible path from Tenrai, then public Jikan."""
+    bases: List[str] = []
+    for base in (tenrai_base(), JIKAN_PUBLIC):
+        if base and base not in bases:
+            bases.append(base)
+    last_err = None
+    for base in bases:
+        url = f"{base.rstrip('/')}{path}"
+        try:
+            time.sleep(0.4)
+            data = with_retries(lambda u=url: http_json(u), tries=2)
+            if data:
+                return data
+        except Exception as e:
+            last_err = e
+            log(f"  catalog {path} via {base} failed: {e}")
+    if last_err:
+        log(f"  catalog {path} unavailable ({last_err})")
+    return None
+
+
+def fetch_verified_cast(mal_id: int) -> List[str]:
+    data = _catalog_json(f"/anime/{int(mal_id)}/characters")
+    return extract_cast_pairs_from_jikan(data) if data else []
+
+
+def fetch_verified_staff(mal_id: int) -> List[str]:
+    data = _catalog_json(f"/anime/{int(mal_id)}/staff")
+    return extract_staff_from_jikan(data) if data else []
+
+
+def ensure_verified_credits(anime: dict) -> dict:
+    """Attach catalog-backed character–VA pairs and key staff. Never invent names."""
+    if anime.get("_credits_hydrated"):
+        return anime
+    existing = normalize_cast_pairs(anime.get("cast_pairs") or anime.get("cast") or [])
+    pairs = list(existing)
+    staff = [str(s).strip() for s in (anime.get("staff_credits") or []) if str(s).strip()]
+    try:
+        mal = int(anime.get("mal_id") or 0)
+    except (TypeError, ValueError):
+        mal = 0
+    if mal:
+        fetched_cast = fetch_verified_cast(mal)
+        if fetched_cast:
+            pairs = fetched_cast
+        if not staff:
+            staff = fetch_verified_staff(mal)
+    anime["cast_pairs"] = pairs
+    anime["cast"] = pairs
+    anime["staff_credits"] = staff
+    anime["_credits_hydrated"] = True
+    log(f"  verified credits: {len(pairs)} cast pairs, {len(staff)} staff")
+    return anime
+
+
 def enrich_mal_episodes(anime: dict) -> dict:
     mal = anime.get("mal_id")
     if not mal:
@@ -613,36 +780,22 @@ def gemini_review(anime: dict, episode: int) -> Optional[dict]:
         if m and m not in models:
             models.append(m)
 
-    user = {
-        "title_english": anime.get("title_english"),
-        "title_romaji": anime.get("title_romaji"),
-        "title_native": anime.get("title_native"),
-        "episode": episode,
-        "episodes_total": anime.get("episodes"),
-        "studio": anime.get("studio"),
-        "genres": anime.get("genres"),
-        "score": anime.get("score"),
-        "source": anime.get("source"),
-        "description": (anime.get("description") or "")[:900],
-        "cast": anime.get("cast"),
-        "licensed_platforms": anime.get("watch"),
-    }
-    prompt = GEMINI_PROMPT + "\n\nSERIES CONTEXT:\n" + json.dumps(user, ensure_ascii=False)
+    ensure_verified_credits(anime)
+    prompt = build_gemini_prompt(anime, episode)
 
     last_err = None
     for model_name in models:
         for attempt in range(4):
             try:
-                model = genai.GenerativeModel(model_name)
+                model = genai.GenerativeModel(
+                    model_name,
+                    system_instruction=GEMINI_SYSTEM_INSTRUCTION,
+                )
                 resp = model.generate_content(
                     prompt,
-                    generation_config={"temperature": 0.7, "max_output_tokens": 4096},
+                    generation_config=GEMINI_GENERATION_CONFIG,
                 )
-                text = (resp.text or "").strip()
-                text = re.sub(r"^```json\s*|\s*```$", "", text, flags=re.I | re.M)
-                data = json.loads(text)
-                if "episode_synopsis_analysis" not in data:
-                    raise ValueError("missing keys")
+                data = parse_gemini_review(resp.text or "", anime, episode)
                 data.setdefault("where_to_watch", anime.get("watch") or [])
                 log(f"  Gemini OK ({model_name})")
                 time.sleep(8)
@@ -725,10 +878,12 @@ def build_post_record(anime: dict, episode: int, review: dict, rank: int) -> dic
 def jinja_env():
     from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-    return Environment(
+    envj = Environment(
         loader=FileSystemLoader(str(TEMPLATES)),
         autoescape=select_autoescape(["html"]),
     )
+    envj.filters["md"] = markdown_fragment
+    return envj
 
 
 def abs_url(path: str) -> str:
@@ -804,7 +959,7 @@ def render_post(envj, post: dict) -> None:
         },
         {
             "@type": "Article",
-            "headline": headline if is_feature else f"{post['anime_title']} Episode {post['episode']} — {post['episode_title']}",
+            "headline": headline if is_feature else f"{post['anime_title']} Episode {post['episode']} Analysis: {post['episode_title']}",
             "description": headline,
             "image": og_image_for(post),
             "datePublished": post.get("aired"),
@@ -828,8 +983,8 @@ def render_post(envj, post: dict) -> None:
         title = f"{headline} — J-Anime Radar"
         description = f"Original series guide: appeal, spoiler-light synopsis, watch points, and legal streaming notes for {post['anime_title']}."
     else:
-        title = f"{post['anime_title']} Ep. {post['episode']} — J-Anime Radar"
-        description = f"Original episode briefing: sakuga, Japanese fan reaction, and legal watch links for {post['anime_title']} episode {post['episode']}."
+        title = f"{post['anime_title']} Episode {post['episode']} Analysis — J-Anime Radar"
+        description = f"Original episode analysis: sakuga and direction, Japanese fan reception, seiyuu craft, and legal watch links for {post['anime_title']} episode {post['episode']}."
     html = envj.get_template("post.html").render(
         title=title,
         description=description,
@@ -845,8 +1000,140 @@ def render_post(envj, post: dict) -> None:
     write_html(DOCS / "posts" / f"{post['slug']}.html", html)
 
 
+def _plain(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, list):
+        value = " ".join(str(x) for x in value if x)
+    text = re.sub(r"<[^>]+>", " ", str(value))
+    text = text.replace("&nbsp;", " ")
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _iso_date(value: str) -> str:
+    value = (value or "").strip()
+    if re.match(r"^\d{4}-\d{2}-\d{2}", value):
+        return value[:10]
+    return ""
+
+
+def _source_chunks(post: dict) -> List[str]:
+    chunks: List[str] = []
+    for key in ("excerpt", "description", "summary"):
+        chunks.append(_plain(post.get(key)))
+    for key in ("synopsis_paragraphs", "sakuga_paragraphs", "takeaway_paragraphs", "story_paragraphs"):
+        for part in post.get(key) or []:
+            chunks.append(_plain(part))
+    chunks.append(_plain(post.get("pullquote")))
+    chunks.append(_plain(post.get("headline") or post.get("episode_title")))
+    seen = set()
+    unique: List[str] = []
+    for chunk in chunks:
+        if not chunk or chunk in seen:
+            continue
+        seen.add(chunk)
+        unique.append(chunk)
+    return unique
+
+
+def listing_excerpt(post: dict, lo: int, hi: int) -> str:
+    """Build a readable excerpt from description/excerpt/summary, then article body."""
+    words: List[str] = []
+    for chunk in _source_chunks(post):
+        words.extend(chunk.split())
+        if len(words) >= hi:
+            break
+    if len(words) < lo:
+        title = _plain(post.get("anime_title")) or "this title"
+        vibe = _plain(post.get("episode_vibe")) or "the week’s craft problem"
+        pad = (
+            f"J-Anime Radar reads {title} for {vibe}: what the staging argues, "
+            "how Japanese viewers received the night, and which licensed platform carries the episode."
+        )
+        words.extend(pad.split())
+    if len(words) > hi:
+        return " ".join(words[:hi]).rstrip(".,;:") + "…"
+    return " ".join(words)
+
+
+def annotate_post_listing(post: dict) -> None:
+    published = _iso_date(str(post.get("aired") or ""))
+    updated = _iso_date(str(post.get("generated_at") or post.get("updated") or ""))
+    if not published:
+        published = updated
+    post["published_iso"] = published
+    post["published_label"] = published or str(post.get("aired") or "Undated")
+    post["updated_iso"] = updated
+    post["card_excerpt"] = listing_excerpt(post, 30, 40)
+    post["lead"] = listing_excerpt(post, 40, 55)
+
+
+def render_sitemap(envj, posts: List[dict]) -> None:
+    year = datetime.now().year
+    static_pages = [
+        ("index.html", "Home"),
+        ("about.html", "About"),
+        ("privacy.html", "Privacy Policy"),
+        ("contact.html", "Contact"),
+        ("disclaimer.html", "Disclaimer"),
+        ("sitemap.html", "Sitemap"),
+    ]
+    pages = "\n".join(
+        f'  <li><a href="{href}">{html.escape(label)}</a></li>' for href, label in static_pages
+    )
+    briefings = []
+    for post in posts:
+        title = _plain(post.get("anime_title") or post.get("headline") or post.get("slug"))
+        if post.get("kind") == "feature":
+            label = title
+        else:
+            label = f"{title} — Episode {post.get('episode')}"
+        briefings.append(
+            f'  <li><a href="posts/{html.escape(str(post.get("slug") or ""))}.html">{html.escape(label)}</a></li>'
+        )
+    body = (
+        "<p>Every public page on J-Anime Radar. Briefings are original episode notes and series guides, "
+        "not a poster catalog.</p>"
+        "<h2>Site pages</h2>\n<ul>\n"
+        f"{pages}\n</ul>\n"
+        "<h2>Briefings</h2>\n<ul>\n"
+        + "\n".join(briefings)
+        + "\n</ul>"
+    )
+    html_page = envj.get_template("page.html").render(
+        title="Sitemap — J-Anime Radar",
+        description="HTML sitemap of J-Anime Radar: about, privacy, contact, and every original episode briefing.",
+        canonical=abs_url("sitemap.html"),
+        og_type="website",
+        og_image=default_og(),
+        root="",
+        nav="",
+        year=year,
+        kicker="Index",
+        heading="Sitemap",
+        updated=datetime.now().strftime("%Y-%m-%d"),
+        body=body,
+        json_ld=json.dumps(
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Sitemap",
+                "url": abs_url("sitemap.html"),
+                "isPartOf": {"@type": "WebSite", "name": "J-Anime Radar", "url": site_url()},
+            },
+            ensure_ascii=False,
+        ),
+    )
+    write_html(DOCS / "sitemap.html", html_page)
+
+
 def render_index(envj, posts: List[dict], ranking: List[dict], ranking_note: str = "") -> None:
     year = datetime.now().year
+    for post in posts:
+        annotate_post_listing(post)
+    featured = posts[:2]
+    featured_slugs = {p.get("slug") for p in featured}
+    listing = [p for p in posts if p.get("slug") not in featured_slugs] if len(posts) > 2 else posts
     genres = sorted({g for p in posts for g in (p.get("genres") or [])})
     website_ld = {
         "@context": "https://schema.org",
@@ -870,6 +1157,8 @@ def render_index(envj, posts: List[dict], ranking: List[dict], ranking_note: str
         stats={"titles": len(ranking) or DESK_SIZE, "articles": len(posts), "season": "2026 S"},
         genres=genres,
         posts=posts,
+        featured=featured,
+        listing=listing,
         ranking=ranking,
         ranking_note=ranking_note or RANKING_SOURCE_LABELS["tenrai"],
         json_ld=json.dumps(website_ld, ensure_ascii=False),
@@ -886,7 +1175,7 @@ def write_extras(posts: List[dict]) -> None:
         "google.com, pub-2075840815269276, DIRECT, f08c47fec0942fa0\n",
         encoding="utf-8",
     )
-    urls = ["index.html", "about.html", "privacy.html", "contact.html", "disclaimer.html"]
+    urls = ["index.html", "about.html", "privacy.html", "contact.html", "disclaimer.html", "sitemap.html"]
     urls += [f"posts/{p['slug']}.html" for p in posts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
@@ -998,6 +1287,7 @@ def main() -> int:
                     if created >= args.max_new:
                         continue
                     log(f"brief {anime.get('title_english')} ep{ep}")
+                    ensure_verified_credits(anime)
                     review = gemini_review(anime, ep)
                     source = "gemini"
                     if review is None:
@@ -1048,6 +1338,7 @@ def main() -> int:
             render_post(envj, post)
     render_index(envj, posts, ranking, ranking_note=(ranking_doc or {}).get("source_label") or "")
     render_legal(envj)
+    render_sitemap(envj, posts)
     write_extras(posts)
     for post in new_episode_posts + new_features:
         try:

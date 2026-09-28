@@ -199,7 +199,7 @@ def gemini_feature_review(anime: dict, *, feature_kind: str) -> Optional[dict]:
                 model = genai.GenerativeModel(model_name)
                 resp = model.generate_content(
                     prompt,
-                    generation_config={"temperature": 0.7, "max_output_tokens": 4096},
+                    generation_config={"temperature": 0.55, "max_output_tokens": 4096},
                 )
                 data = parse_feature_json(resp.text or "")
                 data.setdefault("vibe", "Recommended Anime")

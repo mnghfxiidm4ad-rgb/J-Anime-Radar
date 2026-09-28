@@ -9,7 +9,7 @@
   }
 
   const chips = Array.from(document.querySelectorAll("[data-genre]"));
-  const cards = Array.from(document.querySelectorAll("[data-card]"));
+  const cards = Array.from(document.querySelectorAll(".grid [data-card]"));
   const search = document.querySelector("[data-search]");
 
   function applyFilters() {

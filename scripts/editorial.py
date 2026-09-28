@@ -3,8 +3,12 @@
 
 from __future__ import annotations
 
+import html
+import json
 import re
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
+
+from markupsafe import Markup
 
 
 def _clean(text: str) -> str:
@@ -240,8 +244,8 @@ def compose_review(anime: Dict[str, Any], episode: int) -> Dict[str, Any]:
     native = anime.get("title_native") or ""
     studio = anime.get("studio") or "an uncredited seasonal pipeline"
     genres = ", ".join(anime.get("genres") or []) or "unclassified seasonal TV"
-    cast = anime.get("cast") or []
-    cast_line = "; ".join(cast[:4]) if cast else "the credited principal cast"
+    cast = normalize_cast_pairs(anime.get("cast_pairs") or anime.get("cast") or [])
+    cast_line = "; ".join(cast[:6]) if cast else "the credited principal cast"
     score = anime.get("score")
     total = anime.get("episodes")
     stage = _stage(episode, total)
@@ -291,6 +295,7 @@ def compose_review(anime: Dict[str, Any], episode: int) -> Dict[str, Any]:
         f"Source-aware Japanese viewers treat episode {episode} as a checksum against {source} material: compression, reordered reveals, original-anime glue. "
         f"Anime-only viewers treat it as weather. Both are covering the same broadcast. "
         f"Our lore section refuses fake ‘leaked tweets.’ The pattern around this title is consistent with a fandom that cares about {genres.lower()} obligations—who is allowed to win, who is allowed to rest, whether the world has rules on Tuesday as well as on Saturday."
+        f'\n\n> “Did the week change anyone’s obligations, or was it only a demonstration?” — a typical same-night register on Japanese timelines, not a named account.\n'
     )
 
     voice_graf = (
@@ -336,17 +341,265 @@ def compose_review(anime: Dict[str, Any], episode: int) -> Dict[str, Any]:
     return payload
 
 
-GEMINI_PROMPT = """You are a senior critic at J-Anime Radar, an English-language desk covering currently airing Japanese TV anime for overseas readers.
+GEMINI_SYSTEM_INSTRUCTION = """You are a senior anime cultural analyst and Sakuga (animation) critic writing for "J-Anime Radar" — an exclusive English desk delivering authentic Japanese anime insights to global fans.
 
-Write ORIGINAL criticism. Do not paste official synopses. Do not invent named fan accounts, fake viral tweets, or fabricated interviews. Describe Japanese reception as patterns (broadcast-night timelines, sakuga accounts, seiyuu clip culture, NicoNico/streaming chart talk) consistent with this title's real fandom.
+### Editorial Tone & Guidelines:
+1. Analytical & Insightful: Avoid superficial recaps. Focus on *how* scenes are constructed, directed, animated, and perceived. Analyze spatial clarity, camera work (Ekonte), physical inertia, lighting, and pacing.
+2. Cultural Bridge: Contextualize Japanese nuances, production terminology (Sakuga, Genga, Ma, Seiyuu nuances), and authentic fan discourse that global viewers might miss.
+3. Tone of Voice: Intelligent, observant, respectful of the craft, and engaging (similar to Sakugabooru articles or high-end animation essays). Avoid cheap internet slang or empty hype words.
+4. Formatting: Output in clean, highly readable Markdown with structured H2/H3 headers, bullet points for breakdowns, and blockquotes for Japanese fan reactions.
+5. Language: Natural, sophisticated English suitable for anime connoisseurs and industry followers.
+6. Strict Factuality: Do not hallucinate staff or voice actor names. Strictly rely on the provided metadata for credits.
+"""
 
-Return ONLY compact JSON with these keys:
-- episode_title (string; English editorial subtitle, optional romaji in parentheses)
-- episode_synopsis_analysis (string; 150-200 words; turning points and theme, NOT a recap)
-- japan_fan_reactions (object with sakuga_and_direction, story_and_lore, voice_acting_highlights; each a substantial paragraph)
-- deep_dive_takeaway (string; 150+ words on why this episode matters to the cour)
-- episode_vibe (short string; e.g. "Emotional Peak & Tearjerker", "High-Octane Battle", "Slow-Burn Mystery")
+GEMINI_GENERATION_CONFIG = {
+    "temperature": 0.55,
+    "max_output_tokens": 4096,
+}
+
+GEMINI_PROMPT = """Write an ORIGINAL J-Anime Radar episode analysis for the series context below.
+
+Do not paste official synopses. Do not invent named fan accounts, fake viral tweets, or fabricated interviews. Describe Japanese reception as patterns (X/Twitter same-night timelines, 5ch and textboard threads, sakuga accounts, seiyuu clip culture, NicoNico/streaming chart talk) consistent with this title's real fandom. A blockquote may synthesize a typical anonymous register and must never be attributed to a named person. Name voice actors and staff ONLY when they appear in [VERIFIED CAST & PRODUCTION DATA]; never guess credits.
+
+The published article must follow this Markdown outline:
+
+# [Anime Title] Episode [XX] Analysis: [Catchy Subtitle focusing on direction or theme]
+
+## 1. Core Verdict: Deconstructing the Episode
+Quick critique of narrative construction and emotional impact. Analyze *how* the episode works — not a beat-by-beat recap.
+
+## 2. Sakuga & Directional Highlights
+Layouts, key animation (genga), FX, pacing, camera work (ekonte), spatial clarity, physical inertia, lighting. Use bullets for concrete cuts or sequences.
+
+## 3. Domestic Fan Reception: Voices from Japan
+Synthesis of Japanese X/5ch reactions. Include at least one Markdown blockquote translating a typical anonymous reaction, then interpret what it reveals.
+
+## 4. Cast Performance & Subtext
+Vocal acting nuance, emotional control, audio direction, and seiyuu craft. Listen for breath, hesitation, and register shifts — not catchphrases. Cite a seiyuu or character by name only if that pair is in the verified cast list.
+
+## 5. Streaming & Forward Look
+Official streaming pointers (use ONLY the licensed platforms provided) and narrative/technical expectations for the next episode.
+
+Because the desk stores a JSON package, return ONLY compact JSON (no markdown fences, no preamble) whose string fields are the Markdown *bodies* of those sections:
+
+- episode_title (string; the catchy subtitle ONLY — the text after "Analysis:")
+- episode_synopsis_analysis (string; Markdown body of section 1; 150-220 words)
+- japan_fan_reactions (object):
+  - sakuga_and_direction (Markdown body of section 2; substantial)
+  - story_and_lore (Markdown body of section 3; must include a > blockquote)
+  - voice_acting_highlights (Markdown body of section 4; substantial)
+- deep_dive_takeaway (string; Markdown body of section 5; 150+ words)
+- episode_vibe (short craft-focused label, e.g. "Layout Clarity & Aftermath Silence")
 - where_to_watch (array of {"name": platform, "url": url} using ONLY the licensed platforms provided)
 
-Total original prose must exceed 500 words. No markdown. No preamble.
+Each Markdown body may use H3s, bullet lists, and blockquotes. Do not repeat the H1/H2 titles inside the bodies. Total original prose must exceed 500 words.
 """
+
+_ARTICLE_H2 = (
+    ("episode_synopsis_analysis", ("core verdict", "deconstructing")),
+    ("sakuga_and_direction", ("sakuga", "directional")),
+    ("story_and_lore", ("domestic fan", "voices from japan", "fan reception")),
+    ("voice_acting_highlights", ("cast performance", "subtext", "voice")),
+    ("deep_dive_takeaway", ("streaming", "forward look")),
+)
+
+
+def normalize_cast_pairs(cast: Any) -> List[str]:
+    """Turn catalog cast payloads into 'Character - Voice Actor' strings."""
+    out: List[str] = []
+    seen = set()
+    for item in cast or []:
+        line = ""
+        if isinstance(item, dict):
+            ch = str(item.get("character") or item.get("name") or "").strip()
+            va = str(item.get("voice_actor") or item.get("seiyuu") or item.get("va") or "").strip()
+            if ch and va:
+                line = f"{ch} - {va}"
+            elif ch:
+                line = ch
+        else:
+            s = str(item).strip()
+            if " - " in s:
+                line = s
+            elif " / " in s:
+                ch, va = s.split(" / ", 1)
+                ch, va = ch.strip(), va.strip()
+                line = f"{ch} - {va}" if ch and va else ch
+            else:
+                line = s
+        key = line.lower()
+        if line and key not in seen:
+            seen.add(key)
+            out.append(line)
+    return out
+
+
+def format_verified_cast_list(anime: Dict[str, Any]) -> str:
+    """Ground-truth credit block injected into the Gemini user prompt."""
+    pairs = normalize_cast_pairs(anime.get("cast_pairs") or anime.get("cast") or [])
+    staff = [str(s).strip() for s in (anime.get("staff_credits") or []) if str(s).strip()]
+    studio = (anime.get("studio") or "").strip()
+    lines: List[str] = []
+    if pairs:
+        lines.append("Verified character – voice actor pairs:")
+        lines.extend(f"- {p}" for p in pairs)
+    else:
+        lines.append("Verified character – voice actor pairs: NONE AVAILABLE.")
+        lines.append("Do not name any voice actor. Discuss vocal delivery and direction without attaching names.")
+    if staff:
+        lines.append("Verified production credits:")
+        lines.extend(f"- {s}" for s in staff)
+    else:
+        if studio:
+            lines.append(f"Verified studio (only production credit allowed beyond the cast list): {studio}")
+        lines.append("No additional verified staff names. Do not invent directors, episode directors, or key animators.")
+    return "\n".join(lines)
+
+
+def format_verified_credits_block(anime: Dict[str, Any]) -> str:
+    formatted = format_verified_cast_list(anime)
+    return (
+        "[VERIFIED CAST & PRODUCTION DATA]\n"
+        "Below is the official cast list for this series. You MUST strictly adhere to these facts:\n"
+        f"{formatted}\n"
+        "\n"
+        "CRITICAL RULES FOR FACTUAL ACCURACY:\n"
+        "- Only reference voice actors (Seiyuu) and characters that are explicitly present in the verified list above.\n"
+        "- NEVER invent, assume, or guess voice actors for characters not listed here.\n"
+        "- If a character's actor is not in the list, discuss the character's vocal delivery and direction generally without attaching an unverified actor's name.\n"
+        "- Factual hallucinations regarding cast credits are strictly forbidden."
+    )
+
+
+def build_series_context(anime: Dict[str, Any], episode: int) -> Dict[str, Any]:
+    """Catalog facts passed to Gemini. Keep this payload JSON-serializable."""
+    title = anime.get("title_english") or anime.get("title") or "Untitled"
+    verified_cast = normalize_cast_pairs(anime.get("cast_pairs") or anime.get("cast") or [])
+    verified_staff = [str(s).strip() for s in (anime.get("staff_credits") or []) if str(s).strip()]
+    return {
+        "title_english": anime.get("title_english"),
+        "title_romaji": anime.get("title_romaji"),
+        "title_native": anime.get("title_native"),
+        "episode": episode,
+        "episodes_total": anime.get("episodes"),
+        "studio": anime.get("studio"),
+        "genres": anime.get("genres"),
+        "score": anime.get("score"),
+        "source": anime.get("source"),
+        "description": (anime.get("description") or "")[:900],
+        "cast": verified_cast,
+        "verified_cast": verified_cast,
+        "verified_staff": verified_staff,
+        "licensed_platforms": anime.get("watch"),
+        "article_h1_shape": f"{title} Episode {episode} Analysis: [Catchy Subtitle focusing on direction or theme]",
+    }
+
+
+def build_gemini_prompt(anime: Dict[str, Any], episode: int) -> str:
+    """User prompt: article template + verified credits + grounded series context."""
+    context = build_series_context(anime, episode)
+    return (
+        GEMINI_PROMPT.strip()
+        + "\n\n"
+        + format_verified_credits_block(anime)
+        + "\n\nSERIES CONTEXT:\n"
+        + json.dumps(context, ensure_ascii=False)
+    )
+
+
+def _strip_code_fence(text: str) -> str:
+    return re.sub(r"^```(?:json|markdown|md)?\s*|\s*```$", "", (text or "").strip(), flags=re.I | re.M).strip()
+
+
+def _match_section(header: str) -> Optional[str]:
+    header = (header or "").lower()
+    for key, needles in _ARTICLE_H2:
+        if any(n in header for n in needles):
+            return key
+    return None
+
+
+def _subtitle_from_h1(raw: str) -> str:
+    raw = (raw or "").strip()
+    m = re.search(r"Analysis:\s*(.+)$", raw, re.I)
+    return (m.group(1) if m else raw).strip()
+
+
+def parse_markdown_article(text: str, anime: Dict[str, Any], episode: int) -> Dict[str, Any]:
+    """Fallback when the model emits the Markdown outline instead of JSON."""
+    buckets: Dict[str, str] = {key: "" for key, _ in _ARTICLE_H2}
+    episode_title = ""
+    h1 = re.search(r"^#\s+(.+)$", text, re.M)
+    if h1:
+        episode_title = _subtitle_from_h1(h1.group(1))
+    parts = re.split(r"^##\s+", text, flags=re.M)
+    for part in parts[1:]:
+        lines = part.splitlines()
+        header = (lines[0] if lines else "").strip()
+        body = "\n".join(lines[1:]).strip()
+        key = _match_section(header)
+        if key and body:
+            buckets[key] = body
+    if not buckets["episode_synopsis_analysis"]:
+        raise ValueError("missing keys")
+    return {
+        "episode_title": episode_title or f"Episode {episode} Analysis",
+        "episode_synopsis_analysis": buckets["episode_synopsis_analysis"],
+        "japan_fan_reactions": {
+            "sakuga_and_direction": buckets["sakuga_and_direction"],
+            "story_and_lore": buckets["story_and_lore"],
+            "voice_acting_highlights": buckets["voice_acting_highlights"],
+        },
+        "deep_dive_takeaway": buckets["deep_dive_takeaway"],
+        "episode_vibe": "Seasonal Pressure Test",
+        "where_to_watch": anime.get("watch") or [],
+    }
+
+
+def _inline_md(text: str) -> str:
+    escaped = html.escape(text or "")
+    escaped = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
+    escaped = re.sub(r"(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)", r"<em>\1</em>", escaped)
+    return escaped
+
+
+def markdown_fragment(text: str) -> Markup:
+    """Turn one Markdown block (paragraph, list, quote, or H3) into an HTML fragment."""
+    text = (text or "").strip()
+    if not text:
+        return Markup("")
+    lines = text.splitlines()
+    nonempty = [ln for ln in lines if ln.strip()]
+    if nonempty and all(re.match(r"^>\s?", ln) or not ln.strip() for ln in lines):
+        inner = " ".join(re.sub(r"^>\s?", "", ln).strip() for ln in nonempty)
+        return Markup(f"<blockquote><p>{_inline_md(inner)}</p></blockquote>")
+    if nonempty and all(re.match(r"^[-*]\s+", ln) for ln in nonempty):
+        items = [re.sub(r"^[-*]\s+", "", ln).strip() for ln in nonempty]
+        lis = "".join(f"<li>{_inline_md(item)}</li>" for item in items)
+        return Markup(f"<ul>{lis}</ul>")
+    if text.startswith("### "):
+        return Markup(f"<h3>{_inline_md(text[4:].strip())}</h3>")
+    return Markup(f"<p>{_inline_md(text)}</p>")
+
+
+def parse_gemini_review(text: str, anime: Dict[str, Any], episode: int) -> Dict[str, Any]:
+    """Accept JSON (preferred) or the Markdown article template."""
+    stripped = _strip_code_fence(text)
+    candidates = [stripped]
+    blob = re.search(r"\{[\s\S]*\}", stripped)
+    if blob:
+        candidates.append(blob.group(0))
+    for candidate in candidates:
+        try:
+            data = json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(data, dict) and "episode_synopsis_analysis" in data:
+            data.setdefault("where_to_watch", anime.get("watch") or [])
+            data.setdefault("episode_title", f"Episode {episode} Analysis")
+            data.setdefault("episode_vibe", "Seasonal Pressure Test")
+            reactions = data.get("japan_fan_reactions")
+            if not isinstance(reactions, dict):
+                data["japan_fan_reactions"] = {}
+            return data
+    return parse_markdown_article(stripped, anime, episode)

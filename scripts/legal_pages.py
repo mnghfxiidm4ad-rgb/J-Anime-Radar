@@ -73,11 +73,11 @@ ABOUT_BODY = """
 <h2>What “original” means here</h2>
 <p>Each briefing is structured around craft and reception, not a beat-by-beat recap:</p>
 <ul>
-  <li><strong>Story inflection</strong> — turning points, theme, and dramatic function, written as criticism.</li>
-  <li><strong>Sakuga and direction</strong> — animation quality, action grammar, camera, cut density, and studio fingerprint.</li>
-  <li><strong>Story and lore</strong> — adaptation choices, foreshadowing, and how Japanese fans parsed the week.</li>
-  <li><strong>Voice acting</strong> — seiyuu craft, standout line readings, and discussion around the cast.</li>
-  <li><strong>Season takeaway</strong> — why the episode matters to the cour as a whole.</li>
+  <li><strong>Core verdict</strong> — how the episode is constructed, and what it does to narrative and emotion.</li>
+  <li><strong>Sakuga and directional highlights</strong> — layouts, key animation, FX, camera work (ekonte), inertia, lighting, and pacing.</li>
+  <li><strong>Domestic fan reception</strong> — a synthesis of Japanese X and textboard talk, with translated reaction as blockquote.</li>
+  <li><strong>Cast performance and subtext</strong> — seiyuu nuance, emotional control, and audio direction.</li>
+  <li><strong>Streaming and forward look</strong> — licensed platforms and what the next episode owes the cour.</li>
   <li><strong>Legal watch links</strong> — licensed platforms only. We never host or link to piracy.</li>
 </ul>
 

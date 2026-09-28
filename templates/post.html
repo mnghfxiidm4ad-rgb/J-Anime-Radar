@@ -10,8 +10,8 @@
     {% else %}
     <p class="crumbs"><a href="{{ root }}index.html">Home</a> / <a href="{{ root }}index.html#top30">Season Top 30</a> / Episode {{ post.episode }}</p>
     <p class="kicker">{{ post.studio }} · {{ post.genres | join(' / ') }}</p>
-    <h1>{{ post.anime_title }} — Ep. {{ post.episode }}</h1>
-    <p class="lede">{{ post.episode_title }}</p>
+    <h1>{{ post.anime_title }} Episode {{ post.episode }} Analysis: {{ post.episode_title }}</h1>
+    <p class="lede">{% if post.title_native %}{{ post.title_native }}{% else %}{{ post.anime_title }}{% endif %}</p>
     {% endif %}
   </div>
 </section>
@@ -92,24 +92,23 @@
   {% include '_ad_slot.html' %}
   {% endwith %}
 
-  <h2>Story inflection, not a recap</h2>
+  <h2>Core Verdict: Deconstructing the Episode</h2>
   {% for p in post.synopsis_paragraphs %}
-  <p>{{ p }}</p>
+  {{ p | md }}
   {% endfor %}
 
   <section class="reaction">
-    <h2>Japanese fan reactions</h2>
-    <h3>Sakuga &amp; direction</h3>
+    <h2>Sakuga &amp; Directional Highlights</h2>
     {% for p in post.sakuga_paragraphs %}
-    <p>{{ p }}</p>
+    {{ p | md }}
     {% endfor %}
-    <h3>Story &amp; lore</h3>
+    <h2>Domestic Fan Reception: Voices from Japan</h2>
     {% for p in post.story_paragraphs %}
-    <p>{{ p }}</p>
+    {{ p | md }}
     {% endfor %}
-    <h3>Voice acting highlights</h3>
+    <h2>Cast Performance &amp; Subtext</h2>
     {% for p in post.voice_paragraphs %}
-    <p>{{ p }}</p>
+    {{ p | md }}
     {% endfor %}
   </section>
 
@@ -117,9 +116,9 @@
   {% include '_ad_slot.html' %}
   {% endwith %}
 
-  <h2>Why this episode matters to the season</h2>
+  <h2>Streaming &amp; Forward Look</h2>
   {% for p in post.takeaway_paragraphs %}
-  <p>{{ p }}</p>
+  {{ p | md }}
   {% endfor %}
 
   {% with slot_name='Below Content', slot_id='below', extra_class='below-content-ad' %}
