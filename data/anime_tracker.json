@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-28T08:33:45Z",
+  "updated_at": "2026-09-29T08:24:33Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -794,6 +794,36 @@
           "slug": "ghost-meets-gal-ep4",
           "source": "editorial-seed",
           "generated_at": "2026-09-28T08:33:45Z"
+        }
+      }
+    },
+    "63352": {
+      "title": "Onegai AiPri",
+      "episodes": {
+        "26": {
+          "slug": "onegai-aipri-ep26",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-29T08:16:13Z"
+        }
+      }
+    },
+    "64128": {
+      "title": "Otaku no Boku ga Ichigun Gal to Tsukiaeru Made no Hanashi",
+      "episodes": {
+        "1": {
+          "slug": "otaku-no-boku-ga-ichigun-gal-to-tsukiaeru-made-no-hanashi-ep1",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-29T08:20:58Z"
+        }
+      }
+    },
+    "63125": {
+      "title": "Little Shark's Day Out Season 2",
+      "episodes": {
+        "25": {
+          "slug": "little-shark-s-day-out-season-2-ep25",
+          "source": "editorial-seed",
+          "generated_at": "2026-09-29T08:24:33Z"
         }
       }
     }
