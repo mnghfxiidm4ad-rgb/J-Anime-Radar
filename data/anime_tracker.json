@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-09-30T08:27:49Z",
+  "updated_at": "2026-10-01T08:47:43Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -849,6 +849,36 @@
           "slug": "hokuto-no-ken-kenou-gun-zako-tachi-no-banka-part-2-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-09-30T08:27:49Z"
+        }
+      }
+    },
+    "53913": {
+      "title": "Reincarnated as a Sword Season 2",
+      "episodes": {
+        "1": {
+          "slug": "reincarnated-as-a-sword-season-2-ep1",
+          "source": "editorial-seed",
+          "generated_at": "2026-10-01T08:40:36Z"
+        }
+      }
+    },
+    "61469": {
+      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+      "episodes": {
+        "1": {
+          "slug": "steel-ball-run-jojo-s-bizarre-adventure-2nd-3rd-stage-ep1",
+          "source": "editorial-seed",
+          "generated_at": "2026-10-01T08:44:07Z"
+        }
+      }
+    },
+    "64340": {
+      "title": "Overgeared",
+      "episodes": {
+        "1": {
+          "slug": "overgeared-ep1",
+          "source": "editorial-seed",
+          "generated_at": "2026-10-01T08:47:43Z"
         }
       }
     }
