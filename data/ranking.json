@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-01T08:47:43Z",
+  "updated_at": "2026-10-02T08:13:36Z",
   "items": [
     {
       "rank": 1,
@@ -17,13 +17,13 @@
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 67,
       "mal_id": 59741,
-      "latest": 13,
+      "latest": 14,
       "origin": "anilist"
     },
     {
       "rank": 3,
       "title": "You and I Are Polar Opposites Season 2",
-      "score": 82,
+      "score": 83,
       "mal_id": 63832,
       "latest": 12,
       "origin": "anilist"
@@ -31,7 +31,7 @@
     {
       "rank": 4,
       "title": "Reincarnated as a Sword Season 2",
-      "score": null,
+      "score": 74,
       "mal_id": 53913,
       "latest": 1,
       "origin": "anilist"
@@ -41,7 +41,7 @@
       "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
       "score": 85,
       "mal_id": 61469,
-      "latest": 1,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -54,6 +54,14 @@
     },
     {
       "rank": 7,
+      "title": "The Ramparts of Ice Season 2",
+      "score": null,
+      "mal_id": 64534,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 8,
       "title": "Overgeared",
       "score": 74,
       "mal_id": 64340,
@@ -61,15 +69,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 8,
+      "rank": 9,
       "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
-      "score": 71,
+      "score": 70,
       "mal_id": 60601,
       "latest": 1,
       "origin": "anilist"
     },
     {
-      "rank": 9,
+      "rank": 10,
       "title": "A Wild Last Boss Appeared! Season 2",
       "score": 71,
       "mal_id": 63140,
@@ -77,7 +85,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 10,
+      "rank": 11,
       "title": "Red River",
       "score": 62,
       "mal_id": 63489,
@@ -85,7 +93,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 11,
+      "rank": 12,
       "title": "Please Excuse My Younger Brothers",
       "score": 68,
       "mal_id": 63061,
@@ -93,15 +101,23 @@
       "origin": "anilist"
     },
     {
-      "rank": 12,
+      "rank": 13,
       "title": "Magical Explorer",
-      "score": 58,
+      "score": 59,
       "mal_id": 56733,
       "latest": 1,
       "origin": "anilist"
     },
     {
-      "rank": 13,
+      "rank": 14,
+      "title": "FX Fighter Kurumi-chan",
+      "score": null,
+      "mal_id": 63337,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 15,
       "title": "Umayuru: Full Gate!",
       "score": 62,
       "mal_id": 64867,
@@ -109,7 +125,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 14,
+      "rank": 16,
+      "title": "Kizu darake Seijo yori Houfuku wo Komete Season2",
+      "score": null,
+      "mal_id": 64180,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 17,
       "title": "Ghost Meets Gal!",
       "score": null,
       "mal_id": 64718,
@@ -117,7 +141,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 15,
+      "rank": 18,
       "title": "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
       "score": null,
       "mal_id": 62534,
@@ -125,7 +149,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 16,
+      "rank": 19,
       "title": "Theatre of Darkness: Yamishibai 17",
       "score": null,
       "mal_id": 64435,
@@ -133,7 +157,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 17,
+      "rank": 20,
       "title": "Hokuto no Ken: Kenou-gun Zako-tachi no Banka Part 2",
       "score": null,
       "mal_id": 64378,
@@ -141,7 +165,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 18,
+      "rank": 21,
       "title": "Pan no Akachan (TV)",
       "score": null,
       "mal_id": 64210,
@@ -149,7 +173,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 19,
+      "rank": 22,
       "title": "Fate/Grand Order: Fujimaru Ritsuka wa Wakaranai Season 4",
       "score": null,
       "mal_id": 64725,
@@ -157,7 +181,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 20,
+      "rank": 23,
       "title": "Oushun Jogakuen no Danyuu",
       "score": null,
       "mal_id": 214551,
@@ -165,7 +189,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 21,
+      "rank": 24,
       "title": "Delivery Kitten Unyan",
       "score": null,
       "mal_id": 65079,
@@ -173,7 +197,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 22,
+      "rank": 25,
       "title": "Pie no Mi: Oshi no Mori e Youkoso!",
       "score": null,
       "mal_id": 64325,
@@ -181,7 +205,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 23,
+      "rank": 26,
       "title": "TOMICA & TOM Season 2",
       "score": null,
       "mal_id": 64357,
@@ -189,7 +213,7 @@
       "origin": "anilist"
     },
     {
-      "rank": 24,
+      "rank": 27,
       "title": "Chikyuu Daisuki! Kikkun",
       "score": null,
       "mal_id": 64578,
@@ -197,10 +221,26 @@
       "origin": "anilist"
     },
     {
-      "rank": 25,
+      "rank": 28,
       "title": "Matsuken Anime: Kore Seibaishite mo Ii desu ka?",
       "score": null,
       "mal_id": 64873,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
+      "title": "Mazenchu",
+      "score": null,
+      "mal_id": 65007,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 30,
+      "title": "PetitCure: Precure Fairies Season 4",
+      "score": null,
+      "mal_id": 217624,
       "latest": 1,
       "origin": "anilist"
     }
