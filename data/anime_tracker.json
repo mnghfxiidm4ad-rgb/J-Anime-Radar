@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-02T08:13:36Z",
+  "updated_at": "2026-10-03T07:55:55Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -899,6 +899,36 @@
           "slug": "the-ramparts-of-ice-season-2-ep1",
           "source": "gemini",
           "generated_at": "2026-10-02T08:13:36Z"
+        }
+      }
+    },
+    "61987": {
+      "title": "The Apothecary Diaries Season 3",
+      "episodes": {
+        "1": {
+          "slug": "the-apothecary-diaries-season-3-ep1",
+          "source": "gemini",
+          "generated_at": "2026-10-03T07:50:11Z"
+        }
+      }
+    },
+    "59088": {
+      "title": "Tokyo Revengers: Santen Sensou-hen",
+      "episodes": {
+        "1": {
+          "slug": "tokyo-revengers-santen-sensou-hen-ep1",
+          "source": "gemini",
+          "generated_at": "2026-10-03T07:52:18Z"
+        }
+      }
+    },
+    "60601": {
+      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
+      "episodes": {
+        "1": {
+          "slug": "as-a-reincarnated-aristocrat-i-ll-use-my-appraisal-skill-to-rise-in-the-world-se-ep1",
+          "source": "editorial-seed",
+          "generated_at": "2026-10-03T07:55:55Z"
         }
       }
     }
