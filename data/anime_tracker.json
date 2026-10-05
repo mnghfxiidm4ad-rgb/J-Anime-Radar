@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-04T08:04:40Z",
+  "updated_at": "2026-10-05T08:43:56Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -889,6 +889,11 @@
           "slug": "overgeared-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-01T08:47:43Z"
+        },
+        "2": {
+          "slug": "overgeared-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-05T08:42:37Z"
         }
       }
     },
@@ -929,6 +934,11 @@
           "slug": "as-a-reincarnated-aristocrat-i-ll-use-my-appraisal-skill-to-rise-in-the-world-se-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-03T07:55:55Z"
+        },
+        "2": {
+          "slug": "as-a-reincarnated-aristocrat-i-ll-use-my-appraisal-skill-to-rise-in-the-world-se-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-05T08:43:56Z"
         }
       }
     },
@@ -959,6 +969,16 @@
           "slug": "even-the-student-council-has-its-holes-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-04T08:04:40Z"
+        }
+      }
+    },
+    "63293": {
+      "title": "Firefly Wedding",
+      "episodes": {
+        "1": {
+          "slug": "firefly-wedding-ep1",
+          "source": "gemini",
+          "generated_at": "2026-10-05T08:43:23Z"
         }
       }
     }

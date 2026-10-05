@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-04T08:04:40Z",
+  "updated_at": "2026-10-05T08:43:56Z",
   "items": [
     {
       "rank": 1,
@@ -23,7 +23,7 @@
     {
       "rank": 3,
       "title": "Black Clover Season 2",
-      "score": null,
+      "score": 87,
       "mal_id": 61967,
       "latest": 1,
       "origin": "anilist"
@@ -38,14 +38,6 @@
     },
     {
       "rank": 5,
-      "title": "You and I Are Polar Opposites Season 2",
-      "score": 83,
-      "mal_id": 63832,
-      "latest": 12,
-      "origin": "anilist"
-    },
-    {
-      "rank": 6,
       "title": "Reincarnated as a Sword Season 2",
       "score": 74,
       "mal_id": 53913,
@@ -53,15 +45,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 7,
+      "rank": 6,
       "title": "Blue Box Season 2",
-      "score": null,
+      "score": 79,
       "mal_id": 61323,
       "latest": 1,
       "origin": "anilist"
     },
     {
-      "rank": 8,
+      "rank": 7,
       "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
       "score": 85,
       "mal_id": 61469,
@@ -69,15 +61,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 9,
+      "rank": 8,
       "title": "Tokyo Revengers: Santen Sensou-hen",
-      "score": 75,
+      "score": 76,
       "mal_id": 59088,
       "latest": 1,
       "origin": "anilist"
     },
     {
-      "rank": 10,
+      "rank": 9,
       "title": "The Ramparts of Ice Season 2",
       "score": 82,
       "mal_id": 64534,
@@ -85,67 +77,75 @@
       "origin": "anilist"
     },
     {
-      "rank": 11,
+      "rank": 10,
       "title": "Overgeared",
       "score": 74,
       "mal_id": 64340,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
+      "rank": 11,
+      "title": "Firefly Wedding",
+      "score": null,
+      "mal_id": 63293,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 12,
-      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
-      "score": 71,
-      "mal_id": 60601,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
-      "rank": 13,
       "title": "Even the Student Council Has Its Holes!",
-      "score": null,
+      "score": 72,
       "mal_id": 61578,
       "latest": 1,
       "origin": "anilist"
     },
     {
-      "rank": 14,
-      "title": "A Wild Last Boss Appeared! Season 2",
+      "rank": 13,
+      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
       "score": 71,
+      "mal_id": 60601,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
+      "rank": 14,
+      "title": "Aoashi Season 2",
+      "score": null,
+      "mal_id": 61603,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 15,
+      "title": "A Wild Last Boss Appeared! Season 2",
+      "score": 73,
       "mal_id": 63140,
       "latest": 2,
       "origin": "anilist"
     },
     {
-      "rank": 15,
+      "rank": 16,
       "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 69,
+      "score": 70,
       "mal_id": 63181,
       "latest": 1,
       "origin": "anilist"
     },
     {
-      "rank": 16,
+      "rank": 17,
       "title": "Ranma1/2 (2024) Season 3",
-      "score": null,
+      "score": 73,
       "mal_id": 63801,
       "latest": 1,
       "origin": "anilist"
     },
     {
-      "rank": 17,
-      "title": "Red River",
-      "score": 62,
-      "mal_id": 63489,
-      "latest": 13,
-      "origin": "anilist"
-    },
-    {
       "rank": 18,
-      "title": "Please Excuse My Younger Brothers",
-      "score": 68,
-      "mal_id": 63061,
-      "latest": 13,
+      "title": "Magical Explorer",
+      "score": 67,
+      "mal_id": 56733,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -158,89 +158,89 @@
     },
     {
       "rank": 20,
-      "title": "Magical Explorer",
-      "score": 58,
-      "mal_id": 56733,
-      "latest": 2,
+      "title": "Red River",
+      "score": 62,
+      "mal_id": 63489,
+      "latest": 13,
       "origin": "anilist"
     },
     {
       "rank": 21,
       "title": "A Tale of the Secret Saint",
-      "score": null,
+      "score": 65,
       "mal_id": 61153,
       "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 22,
-      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "score": null,
-      "mal_id": 62922,
-      "latest": 1,
+      "title": "Please Excuse My Younger Brothers",
+      "score": 68,
+      "mal_id": 63061,
+      "latest": 13,
       "origin": "anilist"
     },
     {
       "rank": 23,
-      "title": "#I'm Looking For a Zombie",
+      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": null,
-      "mal_id": 62524,
+      "mal_id": 60948,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 24,
-      "title": "Romelia War Chronicle",
+      "title": "I'm Dating a Dark Summoner",
       "score": null,
-      "mal_id": 59787,
+      "mal_id": 63509,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 25,
-      "title": "The Lonely Snow Widow and the Cursed Ring",
-      "score": null,
-      "mal_id": 64298,
+      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+      "score": 59,
+      "mal_id": 62922,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 26,
-      "title": "TANK CHAIR: Sensha Isu",
-      "score": null,
-      "mal_id": 63751,
+      "title": "#I'm Looking For a Zombie",
+      "score": 60,
+      "mal_id": 62524,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 27,
-      "title": "Gensou Suikoden",
-      "score": null,
-      "mal_id": 61140,
+      "title": "Romelia War Chronicle",
+      "score": 66,
+      "mal_id": 59787,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 28,
-      "title": "The Seven Knights of the Marronnier Kingdom",
+      "title": "My Girlfriend's Friend",
       "score": null,
-      "mal_id": 64326,
+      "mal_id": 64131,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 29,
-      "title": "VERTEX FORCE",
+      "title": "Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé",
       "score": null,
-      "mal_id": 63764,
+      "mal_id": 62753,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 30,
-      "title": "Umayuru: Full Gate!",
-      "score": 63,
-      "mal_id": 64867,
+      "title": "Gensou Suikoden",
+      "score": 59,
+      "mal_id": 61140,
       "latest": 1,
       "origin": "anilist"
     }
