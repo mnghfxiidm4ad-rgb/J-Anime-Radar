@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-05T08:43:56Z",
+  "updated_at": "2026-10-06T09:05:31Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -979,6 +979,36 @@
           "slug": "firefly-wedding-ep1",
           "source": "gemini",
           "generated_at": "2026-10-05T08:43:23Z"
+        }
+      }
+    },
+    "61603": {
+      "title": "Aoashi Season 2",
+      "episodes": {
+        "1": {
+          "slug": "aoashi-season-2-ep1",
+          "source": "gemini",
+          "generated_at": "2026-10-06T08:49:34Z"
+        }
+      }
+    },
+    "63140": {
+      "title": "A Wild Last Boss Appeared! Season 2",
+      "episodes": {
+        "2": {
+          "slug": "a-wild-last-boss-appeared-season-2-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-06T08:55:22Z"
+        }
+      }
+    },
+    "63181": {
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "episodes": {
+        "1": {
+          "slug": "tougen-anki-nikko-kegon-falls-arc-ep1",
+          "source": "editorial-seed",
+          "generated_at": "2026-10-06T09:05:31Z"
         }
       }
     }
