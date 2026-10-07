@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-06T09:05:31Z",
+  "updated_at": "2026-10-07T08:45:02Z",
   "items": [
     {
       "rank": 1,
@@ -62,8 +62,8 @@
     },
     {
       "rank": 8,
-      "title": "Tokyo Revengers: Santen Sensou-hen",
-      "score": 75,
+      "title": "Tokyo Revengers: War of the Three Titans Arc",
+      "score": 76,
       "mal_id": 59088,
       "latest": 1,
       "origin": "anilist"
@@ -126,30 +126,14 @@
     },
     {
       "rank": 16,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 71,
-      "mal_id": 63181,
+      "title": "I'm Dating a Dark Summoner",
+      "score": 67,
+      "mal_id": 63509,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 17,
-      "title": "Ranma1/2 (2024) Season 3",
-      "score": 75,
-      "mal_id": 63801,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
-      "rank": 18,
-      "title": "Magical Explorer",
-      "score": 68,
-      "mal_id": 56733,
-      "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 68,
       "mal_id": 60948,
@@ -157,23 +141,55 @@
       "origin": "anilist"
     },
     {
-      "rank": 20,
-      "title": "I'm Dating a Dark Summoner",
-      "score": 66,
-      "mal_id": 63509,
+      "rank": 18,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "score": 71,
+      "mal_id": 63181,
       "latest": 1,
       "origin": "anilist"
     },
     {
+      "rank": 19,
+      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+      "score": 68,
+      "mal_id": 63409,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 20,
+      "title": "Magical Explorer",
+      "score": 69,
+      "mal_id": 56733,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
       "rank": 21,
+      "title": "Ranma1/2 (2024) Season 3",
+      "score": 75,
+      "mal_id": 63801,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 22,
+      "title": "PSYREN",
+      "score": 71,
+      "mal_id": 63098,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 23,
       "title": "A Tale of the Secret Saint",
-      "score": 66,
+      "score": 67,
       "mal_id": 61153,
       "latest": 2,
       "origin": "anilist"
     },
     {
-      "rank": 22,
+      "rank": 24,
       "title": "FX Fighter Kurumi-chan",
       "score": 69,
       "mal_id": 63337,
@@ -181,31 +197,23 @@
       "origin": "anilist"
     },
     {
-      "rank": 23,
-      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "score": null,
-      "mal_id": 63409,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
-      "rank": 24,
-      "title": "Red River",
-      "score": 62,
-      "mal_id": 63489,
-      "latest": 13,
-      "origin": "anilist"
-    },
-    {
       "rank": 25,
       "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "score": 59,
+      "score": 60,
       "mal_id": 62922,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 26,
+      "title": "Red River",
+      "score": 62,
+      "mal_id": 63489,
+      "latest": 14,
+      "origin": "anilist"
+    },
+    {
+      "rank": 27,
       "title": "Please Excuse My Younger Brothers",
       "score": 68,
       "mal_id": 63061,
@@ -213,34 +221,26 @@
       "origin": "anilist"
     },
     {
-      "rank": 27,
-      "title": "PSYREN",
-      "score": null,
-      "mal_id": 63098,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
       "rank": 28,
-      "title": "Romelia War Chronicle",
-      "score": 67,
-      "mal_id": 59787,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": null,
+      "mal_id": 63382,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 29,
-      "title": "My Girlfriend's Friend",
-      "score": 51,
-      "mal_id": 64131,
+      "title": "The Cold Sato-san is Only Sweet to Me",
+      "score": null,
+      "mal_id": 63754,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 30,
-      "title": "#I'm Looking For a Zombie",
-      "score": 60,
-      "mal_id": 62524,
+      "title": "My Girlfriend's Friend",
+      "score": 51,
+      "mal_id": 64131,
       "latest": 1,
       "origin": "anilist"
     }

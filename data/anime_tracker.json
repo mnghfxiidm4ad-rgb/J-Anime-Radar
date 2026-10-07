@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-06T09:05:31Z",
+  "updated_at": "2026-10-07T08:45:02Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1009,6 +1009,36 @@
           "slug": "tougen-anki-nikko-kegon-falls-arc-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-06T09:05:31Z"
+        }
+      }
+    },
+    "63509": {
+      "title": "I'm Dating a Dark Summoner",
+      "episodes": {
+        "1": {
+          "slug": "i-m-dating-a-dark-summoner-ep1",
+          "source": "gemini",
+          "generated_at": "2026-10-07T08:24:44Z"
+        }
+      }
+    },
+    "60948": {
+      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+      "episodes": {
+        "1": {
+          "slug": "reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-ep1",
+          "source": "editorial-seed",
+          "generated_at": "2026-10-07T08:34:53Z"
+        }
+      }
+    },
+    "63409": {
+      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+      "episodes": {
+        "1": {
+          "slug": "hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion-ep1",
+          "source": "editorial-seed",
+          "generated_at": "2026-10-07T08:45:02Z"
         }
       }
     }
