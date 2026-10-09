@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-08T09:02:03Z",
+  "updated_at": "2026-10-09T08:46:51Z",
   "items": [
     {
       "rank": 1,
@@ -23,7 +23,7 @@
     {
       "rank": 3,
       "title": "Black Clover Season 2",
-      "score": 87,
+      "score": 86,
       "mal_id": 61967,
       "latest": 1,
       "origin": "anilist"
@@ -33,13 +33,13 @@
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 67,
       "mal_id": 59741,
-      "latest": 14,
+      "latest": 15,
       "origin": "anilist"
     },
     {
       "rank": 5,
       "title": "Reincarnated as a Sword Season 2",
-      "score": 74,
+      "score": 75,
       "mal_id": 53913,
       "latest": 2,
       "origin": "anilist"
@@ -57,7 +57,7 @@
       "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
       "score": 85,
       "mal_id": 61469,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -81,19 +81,27 @@
       "title": "The Ramparts of Ice Season 2",
       "score": 82,
       "mal_id": 64534,
-      "latest": 1,
+      "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 11,
       "title": "Even the Student Council Has Its Holes!",
-      "score": 73,
+      "score": 72,
       "mal_id": 61578,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 12,
+      "title": "A Returner's Magic Should be Special Season 2",
+      "score": 68,
+      "mal_id": 57612,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 13,
       "title": "Firefly Wedding",
       "score": 62,
       "mal_id": 63293,
@@ -101,27 +109,19 @@
       "origin": "anilist"
     },
     {
-      "rank": 13,
-      "title": "A Returner's Magic Should be Special Season 2",
-      "score": null,
-      "mal_id": 57612,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
       "rank": 14,
-      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
-      "score": 71,
-      "mal_id": 60601,
-      "latest": 2,
+      "title": "The Detective Is Already Dead Season 2",
+      "score": 73,
+      "mal_id": 52480,
+      "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 15,
-      "title": "The Detective Is Already Dead Season 2",
-      "score": null,
-      "mal_id": 52480,
-      "latest": 1,
+      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
+      "score": 71,
+      "mal_id": 60601,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -142,14 +142,22 @@
     },
     {
       "rank": 18,
-      "title": "I'm Dating a Dark Summoner",
-      "score": 68,
-      "mal_id": 63509,
+      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+      "score": 72,
+      "mal_id": 63431,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 19,
+      "title": "I'm Dating a Dark Summoner",
+      "score": 67,
+      "mal_id": 63509,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 20,
       "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
       "score": 69,
       "mal_id": 63409,
@@ -157,18 +165,10 @@
       "origin": "anilist"
     },
     {
-      "rank": 20,
+      "rank": 21,
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 68,
       "mal_id": 60948,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
-      "rank": 21,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 71,
-      "mal_id": 63181,
       "latest": 1,
       "origin": "anilist"
     },
@@ -190,6 +190,22 @@
     },
     {
       "rank": 24,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "score": 71,
+      "mal_id": 63181,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 25,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 74,
+      "mal_id": 63382,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 26,
       "title": "Ranma1/2 (2024) Season 3",
       "score": 76,
       "mal_id": 63801,
@@ -197,27 +213,11 @@
       "origin": "anilist"
     },
     {
-      "rank": 25,
-      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
-      "score": 71,
-      "mal_id": 63431,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
-      "rank": 26,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 73,
-      "mal_id": 63382,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
       "rank": 27,
-      "title": "A Tale of the Secret Saint",
+      "title": "The Cold Sato-san is Only Sweet to Me",
       "score": 67,
-      "mal_id": 61153,
-      "latest": 2,
+      "mal_id": 63754,
+      "latest": 1,
       "origin": "anilist"
     },
     {
@@ -230,18 +230,18 @@
     },
     {
       "rank": 29,
-      "title": "FX Fighter Kurumi-chan",
-      "score": 69,
-      "mal_id": 63337,
-      "latest": 1,
+      "title": "A Tale of the Secret Saint",
+      "score": 67,
+      "mal_id": 61153,
+      "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 30,
-      "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 67,
-      "mal_id": 63754,
-      "latest": 1,
+      "title": "FX Fighter Kurumi-chan",
+      "score": 69,
+      "mal_id": 63337,
+      "latest": 2,
       "origin": "anilist"
     }
   ]
