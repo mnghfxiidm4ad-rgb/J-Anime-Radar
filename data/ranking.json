@@ -2,10 +2,18 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-09T08:46:51Z",
+  "updated_at": "2026-10-10T08:26:13Z",
   "items": [
     {
       "rank": 1,
+      "title": "The Apothecary Diaries Season 3",
+      "score": 85,
+      "mal_id": 61987,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
+      "rank": 2,
       "title": "BLEACH: Thousand-Year Blood War - The Calamity",
       "score": 89,
       "mal_id": 60636,
@@ -13,17 +21,9 @@
       "origin": "anilist"
     },
     {
-      "rank": 2,
-      "title": "The Apothecary Diaries Season 3",
-      "score": 85,
-      "mal_id": 61987,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
       "rank": 3,
       "title": "Black Clover Season 2",
-      "score": 86,
+      "score": 87,
       "mal_id": 61967,
       "latest": 1,
       "origin": "anilist"
@@ -31,7 +31,7 @@
     {
       "rank": 4,
       "title": "The Exiled Heavy Knight Knows How to Game the System",
-      "score": 67,
+      "score": 68,
       "mal_id": 59741,
       "latest": 15,
       "origin": "anilist"
@@ -62,14 +62,6 @@
     },
     {
       "rank": 8,
-      "title": "Tokyo Revengers: War of the Three Titans Arc",
-      "score": 76,
-      "mal_id": 59088,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
-      "rank": 9,
       "title": "Overgeared",
       "score": 75,
       "mal_id": 64340,
@@ -77,9 +69,17 @@
       "origin": "anilist"
     },
     {
+      "rank": 9,
+      "title": "Tokyo Revengers: War of the Three Titans Arc",
+      "score": 76,
+      "mal_id": 59088,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
       "rank": 10,
       "title": "The Ramparts of Ice Season 2",
-      "score": 82,
+      "score": 81,
       "mal_id": 64534,
       "latest": 2,
       "origin": "anilist"
@@ -87,7 +87,7 @@
     {
       "rank": 11,
       "title": "Even the Student Council Has Its Holes!",
-      "score": 72,
+      "score": 73,
       "mal_id": 61578,
       "latest": 1,
       "origin": "anilist"
@@ -95,7 +95,7 @@
     {
       "rank": 12,
       "title": "A Returner's Magic Should be Special Season 2",
-      "score": 68,
+      "score": 69,
       "mal_id": 57612,
       "latest": 1,
       "origin": "anilist"
@@ -134,14 +134,6 @@
     },
     {
       "rank": 17,
-      "title": "A Wild Last Boss Appeared! Season 2",
-      "score": 72,
-      "mal_id": 63140,
-      "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 18,
       "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
       "score": 72,
       "mal_id": 63431,
@@ -149,9 +141,17 @@
       "origin": "anilist"
     },
     {
+      "rank": 18,
+      "title": "A Wild Last Boss Appeared! Season 2",
+      "score": 72,
+      "mal_id": 63140,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
       "rank": 19,
       "title": "I'm Dating a Dark Summoner",
-      "score": 67,
+      "score": 68,
       "mal_id": 63509,
       "latest": 1,
       "origin": "anilist"
@@ -174,10 +174,10 @@
     },
     {
       "rank": 22,
-      "title": "Magical Explorer",
-      "score": 69,
-      "mal_id": 56733,
-      "latest": 2,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 74,
+      "mal_id": 63382,
+      "latest": 1,
       "origin": "anilist"
     },
     {
@@ -190,18 +190,18 @@
     },
     {
       "rank": 24,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 71,
-      "mal_id": 63181,
-      "latest": 1,
+      "title": "Magical Explorer",
+      "score": 69,
+      "mal_id": 56733,
+      "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 25,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 74,
-      "mal_id": 63382,
-      "latest": 1,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "score": 71,
+      "mal_id": 63181,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -215,7 +215,7 @@
     {
       "rank": 27,
       "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 67,
+      "score": 68,
       "mal_id": 63754,
       "latest": 1,
       "origin": "anilist"
@@ -230,10 +230,10 @@
     },
     {
       "rank": 29,
-      "title": "A Tale of the Secret Saint",
-      "score": 67,
-      "mal_id": 61153,
-      "latest": 2,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 66,
+      "mal_id": 64254,
+      "latest": 1,
       "origin": "anilist"
     },
     {

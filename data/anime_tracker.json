@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-09T08:46:51Z",
+  "updated_at": "2026-10-10T08:26:13Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -934,6 +934,11 @@
           "slug": "the-apothecary-diaries-season-3-ep1",
           "source": "gemini",
           "generated_at": "2026-10-03T07:50:11Z"
+        },
+        "2": {
+          "slug": "the-apothecary-diaries-season-3-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-10T08:19:53Z"
         }
       }
     },
@@ -944,6 +949,11 @@
           "slug": "tokyo-revengers-santen-sensou-hen-ep1",
           "source": "gemini",
           "generated_at": "2026-10-03T07:52:18Z"
+        },
+        "2": {
+          "slug": "tokyo-revengers-war-of-the-three-titans-arc-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-10T08:23:10Z"
         }
       }
     },
@@ -1079,6 +1089,16 @@
           "slug": "the-detective-is-already-dead-season-2-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-08T09:02:03Z"
+        }
+      }
+    },
+    "63431": {
+      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+      "episodes": {
+        "1": {
+          "slug": "the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-ep1",
+          "source": "gemini",
+          "generated_at": "2026-10-10T08:26:13Z"
         }
       }
     }
