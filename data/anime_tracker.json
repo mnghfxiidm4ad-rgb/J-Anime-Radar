@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-10T08:26:13Z",
+  "updated_at": "2026-10-11T08:32:30Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -979,6 +979,11 @@
           "slug": "black-clover-season-2-ep1",
           "source": "gemini",
           "generated_at": "2026-10-04T07:57:34Z"
+        },
+        "2": {
+          "slug": "black-clover-season-2-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-11T08:31:14Z"
         }
       }
     },
@@ -989,6 +994,11 @@
           "slug": "blue-box-season-2-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-04T08:00:56Z"
+        },
+        "2": {
+          "slug": "blue-box-season-2-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-11T08:31:53Z"
         }
       }
     },
@@ -999,6 +1009,11 @@
           "slug": "even-the-student-council-has-its-holes-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-04T08:04:40Z"
+        },
+        "2": {
+          "slug": "even-the-student-council-has-its-holes-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-11T08:32:30Z"
         }
       }
     },

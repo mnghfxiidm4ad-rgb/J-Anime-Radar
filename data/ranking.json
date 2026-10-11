@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-10T08:26:13Z",
+  "updated_at": "2026-10-11T08:32:30Z",
   "items": [
     {
       "rank": 1,
@@ -23,9 +23,9 @@
     {
       "rank": 3,
       "title": "Black Clover Season 2",
-      "score": 87,
+      "score": 86,
       "mal_id": 61967,
-      "latest": 1,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -49,7 +49,7 @@
       "title": "Blue Box Season 2",
       "score": 80,
       "mal_id": 61323,
-      "latest": 1,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -78,6 +78,14 @@
     },
     {
       "rank": 10,
+      "title": "Even the Student Council Has Its Holes!",
+      "score": 73,
+      "mal_id": 61578,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
+      "rank": 11,
       "title": "The Ramparts of Ice Season 2",
       "score": 81,
       "mal_id": 64534,
@@ -85,15 +93,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 11,
-      "title": "Even the Student Council Has Its Holes!",
-      "score": 73,
-      "mal_id": 61578,
+      "rank": 12,
+      "title": "Firefly Wedding",
+      "score": 74,
+      "mal_id": 63293,
       "latest": 1,
       "origin": "anilist"
     },
     {
-      "rank": 12,
+      "rank": 13,
       "title": "A Returner's Magic Should be Special Season 2",
       "score": 69,
       "mal_id": 57612,
@@ -101,23 +109,23 @@
       "origin": "anilist"
     },
     {
-      "rank": 13,
-      "title": "Firefly Wedding",
-      "score": 62,
-      "mal_id": 63293,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
       "rank": 14,
       "title": "The Detective Is Already Dead Season 2",
-      "score": 73,
+      "score": 72,
       "mal_id": 52480,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 15,
+      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+      "score": 73,
+      "mal_id": 63431,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 16,
       "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
       "score": 71,
       "mal_id": 60601,
@@ -125,19 +133,11 @@
       "origin": "anilist"
     },
     {
-      "rank": 16,
+      "rank": 17,
       "title": "Aoashi Season 2",
       "score": 78,
       "mal_id": 61603,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
-      "rank": 17,
-      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
-      "score": 72,
-      "mal_id": 63431,
-      "latest": 1,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -145,7 +145,7 @@
       "title": "A Wild Last Boss Appeared! Season 2",
       "score": 72,
       "mal_id": 63140,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -190,14 +190,6 @@
     },
     {
       "rank": 24,
-      "title": "Magical Explorer",
-      "score": 69,
-      "mal_id": 56733,
-      "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 25,
       "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
       "score": 71,
       "mal_id": 63181,
@@ -205,10 +197,18 @@
       "origin": "anilist"
     },
     {
+      "rank": 25,
+      "title": "Magical Explorer",
+      "score": 68,
+      "mal_id": 56733,
+      "latest": 3,
+      "origin": "anilist"
+    },
+    {
       "rank": 26,
-      "title": "Ranma1/2 (2024) Season 3",
-      "score": 76,
-      "mal_id": 63801,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 67,
+      "mal_id": 64254,
       "latest": 1,
       "origin": "anilist"
     },
@@ -222,18 +222,18 @@
     },
     {
       "rank": 28,
-      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "score": 60,
-      "mal_id": 62922,
-      "latest": 1,
+      "title": "Ranma1/2 (2024) Season 3",
+      "score": 76,
+      "mal_id": 63801,
+      "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 29,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 66,
-      "mal_id": 64254,
-      "latest": 1,
+      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+      "score": 60,
+      "mal_id": 62922,
+      "latest": 2,
       "origin": "anilist"
     },
     {
