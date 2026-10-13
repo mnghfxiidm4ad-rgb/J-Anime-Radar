@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-12T08:53:44Z",
+  "updated_at": "2026-10-13T09:26:52Z",
   "items": [
     {
       "rank": 1,
@@ -23,7 +23,7 @@
     {
       "rank": 3,
       "title": "Black Clover Season 2",
-      "score": 87,
+      "score": 86,
       "mal_id": 61967,
       "latest": 2,
       "origin": "anilist"
@@ -70,17 +70,17 @@
     },
     {
       "rank": 9,
-      "title": "Tokyo Revengers: War of the Three Titans Arc",
-      "score": 76,
-      "mal_id": 59088,
+      "title": "Even the Student Council Has Its Holes!",
+      "score": 73,
+      "mal_id": 61578,
       "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 10,
-      "title": "Even the Student Council Has Its Holes!",
-      "score": 73,
-      "mal_id": 61578,
+      "title": "Tokyo Revengers: War of the Three Titans Arc",
+      "score": 76,
+      "mal_id": 59088,
       "latest": 2,
       "origin": "anilist"
     },
@@ -127,7 +127,7 @@
     {
       "rank": 16,
       "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
-      "score": 71,
+      "score": 70,
       "mal_id": 60601,
       "latest": 3,
       "origin": "anilist"
@@ -142,14 +142,6 @@
     },
     {
       "rank": 18,
-      "title": "A Wild Last Boss Appeared! Season 2",
-      "score": 73,
-      "mal_id": 63140,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
       "title": "I'm Dating a Dark Summoner",
       "score": 68,
       "mal_id": 63509,
@@ -157,15 +149,15 @@
       "origin": "anilist"
     },
     {
-      "rank": 20,
-      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "score": 69,
-      "mal_id": 63409,
-      "latest": 1,
+      "rank": 19,
+      "title": "A Wild Last Boss Appeared! Season 2",
+      "score": 73,
+      "mal_id": 63140,
+      "latest": 3,
       "origin": "anilist"
     },
     {
-      "rank": 21,
+      "rank": 20,
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 68,
       "mal_id": 60948,
@@ -173,10 +165,18 @@
       "origin": "anilist"
     },
     {
+      "rank": 21,
+      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+      "score": 69,
+      "mal_id": 63409,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
       "rank": 22,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 74,
-      "mal_id": 63382,
+      "title": "Dragon Ball Super: Beerus",
+      "score": 80,
+      "mal_id": 63367,
       "latest": 1,
       "origin": "anilist"
     },
@@ -190,26 +190,26 @@
     },
     {
       "rank": 24,
-      "title": "PSYREN",
-      "score": 71,
-      "mal_id": 63098,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 74,
+      "mal_id": 63382,
       "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 25,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "title": "PSYREN",
       "score": 71,
-      "mal_id": 63181,
+      "mal_id": 63098,
       "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 26,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 67,
-      "mal_id": 64254,
-      "latest": 1,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "score": 71,
+      "mal_id": 63181,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -222,6 +222,14 @@
     },
     {
       "rank": 28,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 67,
+      "mal_id": 64254,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
       "title": "The Cold Sato-san is Only Sweet to Me",
       "score": 68,
       "mal_id": 63754,
@@ -229,18 +237,10 @@
       "origin": "anilist"
     },
     {
-      "rank": 29,
+      "rank": 30,
       "title": "Ranma1/2 (2024) Season 3",
       "score": 77,
       "mal_id": 63801,
-      "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 30,
-      "title": "FX Fighter Kurumi-chan",
-      "score": 69,
-      "mal_id": 63337,
       "latest": 2,
       "origin": "anilist"
     }

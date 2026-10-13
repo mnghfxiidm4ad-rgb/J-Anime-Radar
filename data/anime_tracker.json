@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-12T08:53:44Z",
+  "updated_at": "2026-10-13T09:26:52Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1059,6 +1059,11 @@
           "slug": "a-wild-last-boss-appeared-season-2-ep2",
           "source": "gemini",
           "generated_at": "2026-10-06T08:55:22Z"
+        },
+        "3": {
+          "slug": "a-wild-last-boss-appeared-season-2-ep3",
+          "source": "editorial-seed",
+          "generated_at": "2026-10-13T09:23:08Z"
         }
       }
     },
@@ -1079,6 +1084,11 @@
           "slug": "i-m-dating-a-dark-summoner-ep1",
           "source": "gemini",
           "generated_at": "2026-10-07T08:24:44Z"
+        },
+        "2": {
+          "slug": "i-m-dating-a-dark-summoner-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-13T09:12:02Z"
         }
       }
     },
@@ -1089,6 +1099,11 @@
           "slug": "reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-07T08:34:53Z"
+        },
+        "2": {
+          "slug": "reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-13T09:26:52Z"
         }
       }
     },
