@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-13T09:26:52Z",
+  "updated_at": "2026-10-14T07:25:18Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1114,6 +1114,11 @@
           "slug": "hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-07T08:45:02Z"
+        },
+        "2": {
+          "slug": "hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-14T07:22:19Z"
         }
       }
     },
@@ -1144,6 +1149,21 @@
           "slug": "the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-ep1",
           "source": "gemini",
           "generated_at": "2026-10-10T08:26:13Z"
+        },
+        "2": {
+          "slug": "the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-14T07:19:52Z"
+        }
+      }
+    },
+    "63367": {
+      "title": "Dragon Ball Super: Beerus",
+      "episodes": {
+        "1": {
+          "slug": "dragon-ball-super-beerus-ep1",
+          "source": "gemini",
+          "generated_at": "2026-10-14T07:25:18Z"
         }
       }
     }

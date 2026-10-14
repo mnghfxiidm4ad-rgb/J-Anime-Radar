@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-13T09:26:52Z",
+  "updated_at": "2026-10-14T07:25:18Z",
   "items": [
     {
       "rank": 1,
@@ -78,6 +78,14 @@
     },
     {
       "rank": 10,
+      "title": "Firefly Wedding",
+      "score": 75,
+      "mal_id": 63293,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 11,
       "title": "Tokyo Revengers: War of the Three Titans Arc",
       "score": 76,
       "mal_id": 59088,
@@ -85,19 +93,11 @@
       "origin": "anilist"
     },
     {
-      "rank": 11,
+      "rank": 12,
       "title": "The Ramparts of Ice Season 2",
       "score": 81,
       "mal_id": 64534,
       "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 12,
-      "title": "Firefly Wedding",
-      "score": 75,
-      "mal_id": 63293,
-      "latest": 1,
       "origin": "anilist"
     },
     {
@@ -113,19 +113,11 @@
       "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
       "score": 73,
       "mal_id": 63431,
-      "latest": 1,
+      "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 15,
-      "title": "The Detective Is Already Dead Season 2",
-      "score": 72,
-      "mal_id": 52480,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
-      "rank": 16,
       "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
       "score": 70,
       "mal_id": 60601,
@@ -133,9 +125,17 @@
       "origin": "anilist"
     },
     {
+      "rank": 16,
+      "title": "The Detective Is Already Dead Season 2",
+      "score": 72,
+      "mal_id": 52480,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
       "rank": 17,
       "title": "Aoashi Season 2",
-      "score": 78,
+      "score": 79,
       "mal_id": 61603,
       "latest": 2,
       "origin": "anilist"
@@ -143,13 +143,29 @@
     {
       "rank": 18,
       "title": "I'm Dating a Dark Summoner",
-      "score": 68,
+      "score": 67,
       "mal_id": 63509,
       "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 19,
+      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+      "score": 70,
+      "mal_id": 63409,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
+      "rank": 20,
+      "title": "Dragon Ball Super: Beerus",
+      "score": 80,
+      "mal_id": 63367,
+      "latest": 1,
+      "origin": "anilist"
+    },
+    {
+      "rank": 21,
       "title": "A Wild Last Boss Appeared! Season 2",
       "score": 73,
       "mal_id": 63140,
@@ -157,27 +173,11 @@
       "origin": "anilist"
     },
     {
-      "rank": 20,
+      "rank": 22,
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 68,
       "mal_id": 60948,
       "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 21,
-      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "score": 69,
-      "mal_id": 63409,
-      "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 22,
-      "title": "Dragon Ball Super: Beerus",
-      "score": 80,
-      "mal_id": 63367,
-      "latest": 1,
       "origin": "anilist"
     },
     {
@@ -193,30 +193,30 @@
       "title": "Nia Liston: The Merciless Maiden",
       "score": 74,
       "mal_id": 63382,
-      "latest": 1,
+      "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 25,
       "title": "PSYREN",
-      "score": 71,
+      "score": 70,
       "mal_id": 63098,
       "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 26,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 71,
-      "mal_id": 63181,
+      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+      "score": 60,
+      "mal_id": 62922,
       "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 27,
-      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "score": 60,
-      "mal_id": 62922,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "score": 71,
+      "mal_id": 63181,
       "latest": 2,
       "origin": "anilist"
     },
@@ -230,17 +230,17 @@
     },
     {
       "rank": 29,
-      "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 68,
-      "mal_id": 63754,
-      "latest": 1,
+      "title": "So What's Wrong with Getting Reborn as a Goblin?",
+      "score": 67,
+      "mal_id": 63712,
+      "latest": 3,
       "origin": "anilist"
     },
     {
       "rank": 30,
-      "title": "Ranma1/2 (2024) Season 3",
-      "score": 77,
-      "mal_id": 63801,
+      "title": "The Cold Sato-san is Only Sweet to Me",
+      "score": 68,
+      "mal_id": 63754,
       "latest": 2,
       "origin": "anilist"
     }
