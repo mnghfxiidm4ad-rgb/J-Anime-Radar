@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-14T07:25:18Z",
+  "updated_at": "2026-10-15T07:11:49Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -874,6 +874,11 @@
           "slug": "reincarnated-as-a-sword-season-2-ep2",
           "source": "editorial-seed",
           "generated_at": "2026-10-08T08:46:22Z"
+        },
+        "3": {
+          "slug": "reincarnated-as-a-sword-season-2-ep3",
+          "source": "gemini",
+          "generated_at": "2026-10-15T07:09:56Z"
         }
       }
     },
@@ -1129,6 +1134,11 @@
           "slug": "a-returner-s-magic-should-be-special-season-2-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-08T08:56:32Z"
+        },
+        "2": {
+          "slug": "a-returner-s-magic-should-be-special-season-2-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-15T07:11:00Z"
         }
       }
     },
@@ -1139,6 +1149,11 @@
           "slug": "the-detective-is-already-dead-season-2-ep1",
           "source": "editorial-seed",
           "generated_at": "2026-10-08T09:02:03Z"
+        },
+        "2": {
+          "slug": "the-detective-is-already-dead-season-2-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-15T07:11:49Z"
         }
       }
     },
