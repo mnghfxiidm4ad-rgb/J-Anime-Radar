@@ -19,14 +19,14 @@ def _words(text: str) -> int:
     return len(re.findall(r"[A-Za-z0-9']+", text or ""))
 
 
-def _stage(episode: int, total: int | None) -> str:
-    if episode <= 3:
-        return "the cour’s opening contract with the audience"
+def _beat(episode: int, total: int | None) -> str:
+    if episode <= 2:
+        return "early in the season, while the show is still teaching you how it wants to be watched"
     if total and episode >= max(total - 1, 1):
-        return "the endgame where promises have to be paid"
+        return "near the end, when earlier promises have to cash out"
     if episode >= 8:
-        return "late-cour pressure, when habits are no longer enough"
-    return "the mid-cour inflection, where the premise stops being a pitch"
+        return "late enough that charm alone will not carry the week"
+    return "in the middle stretch, where a show either gets specific or starts repeating itself"
 
 
 BRIEFS: Dict[int, Dict[str, Any]] = {
@@ -164,7 +164,7 @@ BRIEFS: Dict[int, Dict[str, Any]] = {
     62936: {
         "vibe": ["Tender Disability Romance & Night Air", "Quiet University Loneliness"],
         "titles": {8: "Fireworks as a Promise, Not a Postcard", 7: "Seeing Without Sight, Speaking Without Noise"},
-        "craft": "Makaria’s assignment is tactile filmmaking: footsteps, wind, the ethics of how a camera looks at a blind heroine. Japanese discourse will (correctly) punish inspiration-porn framing. Craft success is point-of-view sound, not a violin. University spaces should feel underused and specific—cheap restaurants, river wind—not stock “campus.”",
+        "craft": "Makaria’s assignment is to film with your ears: footsteps, wind, and the ethics of how a camera looks at a blind heroine. Japanese discourse will (correctly) punish inspiration-porn framing. Craft success is point-of-view sound, not a violin. University spaces should feel underused and specific—cheap restaurants, river wind—not stock “campus.”",
         "lore": "Kakeru’s avoidance and Koharu’s brightness are a dangerous cliché pair unless the script lets her be inconvenient. The fireworks wish is a motif that can turn saccharine in one cut. Mid-cour should introduce friction that is not pity.",
         "voice": "Miyu Irino and Saori Hayami can over-beautify anything. The interesting Japanese comments will be about restraint. A swallowed word is worth more than a confession speech.",
         "take": "Romance television earns its keep when it changes how you attend to a sidewalk. If this episode did that, it is major. If it only announced feelings, it is furniture.",
@@ -197,11 +197,21 @@ BRIEFS: Dict[int, Dict[str, Any]] = {
 
 
 GENERIC_CRAFT = (
-    "Seasonal television is a lighting and labor story before it is a lore story. "
-    "Japanese first-night reactions—quote tweets from sakuga accounts, NicoNico live comments, "
-    "the slower next-morning recs—usually cluster around three tells: whether action reads, "
-    "whether faces hold, and whether the episode had a second temperature besides the title card. "
-    "Our desk treats those tells as primary sources of reception, not as a substitute for watching."
+    "Look at the unglamorous stuff. Does a hit have weight, or is it just a flash? "
+    "Does a face get to finish a thought before the cut runs away? "
+    "Does the episode have a second temperature besides the title card — a joke that stings, a quiet that is doing work? "
+    "Japanese same-night posts, from sakuga accounts to NicoNico comments to the slower morning recs, "
+    "cluster around those tells. That chatter is the weather report. It is not a substitute for watching."
+)
+
+
+_FALLBACK_SUBS = (
+    "The Cut I Rewound Twice",
+    "Do Not Skip the Quiet Part",
+    "The Second That Changed the Room",
+    "Watch the Hands, Not the Speech",
+    "The Pause Did More Than the Punch",
+    "The Episode You Text Someone About",
 )
 
 
@@ -209,30 +219,110 @@ def _title_for(brief: Dict[str, Any], episode: int, english: str) -> str:
     titles = brief.get("titles") or {}
     if episode in titles:
         return titles[episode]
-    # stable but unique-feeling editorial subtitle
-    return f"Episode {episode} Briefing: {english}"
+    return _FALLBACK_SUBS[episode % len(_FALLBACK_SUBS)]
 
 
+def _watch_names(anime: Dict[str, Any]) -> str:
+    names: List[str] = []
+    for item in anime.get("watch") or []:
+        if isinstance(item, dict):
+            name = str(item.get("name") or "").strip()
+        else:
+            name = str(item).strip()
+        if name and name not in names:
+            names.append(name)
+    return ", ".join(names) if names else "a licensed platform in your region"
 
-def _week_instrument(english: str, episode: int, studio: str) -> str:
-    lenses = [
-        'this week we grade the episode as a close-up problem: who is allowed to occupy the frame without a power effect, and whether {studio} trusts a face longer than a title card',
-        'this week we grade crowd and logistics: extras, radio chatter, the unglamorous walk between set pieces that tells you if {studio} still has a world or only a battleground',
-        'this week we grade weapons and tools as character: blades, cigarettes, orbs, phones, textbooks — the prop that gets the most honest lighting is the actual protagonist',
-        'this week we grade sound: not the OP, but whether silence is edited like a threat and whether a laugh is allowed to die in the room',
-        'this week we grade geography: does episode {episode} of {english} remember the last location it promised, or did the cour teleport for convenience',
-        'this week we grade aftermath: the scene after the flex, the smoke after the joke, the paperwork after the raid — late-cour shows reveal themselves in the comedown',
-    ]
-    lens = lenses[episode % len(lenses)].format(english=english, episode=episode, studio=studio)
-    return (
-        f'Radar note unique to episode {episode}: {lens}. '
-        f'Japanese same-night talk usually splits into people who wanted a trailer and people who wanted a scene. '
-        f'We side with the scene. If you are reading this briefing instead of a wiki recap, that is the contract.'
-    )
+
+def _first_sentences(text: str, n: int = 2, limit: int = 320) -> str:
+    parts = re.split(r"(?<=[.!?])\s+", (text or "").strip())
+    picked = " ".join(p.strip() for p in parts[:n] if p.strip())
+    if len(picked) <= limit:
+        return picked
+    return picked[: limit - 1].rstrip(" ,;:") + "."
+
+
+def _fan_lines(english: str, episode: int, genres: str, studio: str) -> List[tuple]:
+    """Typical same-night phrases. Not attributed to a named account or a verified viral post."""
+    g = (genres or "").lower()
+    bank: List[tuple] = []
+    if any(k in g for k in ("action", "adventure", "fantasy", "supernatural")):
+        bank.append(
+            (
+                "作画が勝ち",
+                "The animation won the episode",
+                f"Same-night timelines latch onto this when {studio} spends the budget on a cut you can feel — weight, smear, impact — instead of a slideshow of effects. For {english} episode {episode}, that is the compliment that actually means something.",
+            )
+        )
+        bank.append(
+            (
+                "間がえぐい",
+                "That pause hits way too hard",
+                "「えぐい」 here is not 'gross.' It is otaku slang for a beat that is almost unfair: a held face, a silence before the line, a sword that does not swing yet. Boards light up when the show trusts that pause.",
+            )
+        )
+    if any(k in g for k in ("romance", "slice of life", "drama")):
+        bank.append(
+            (
+                "この間、反則",
+                "That beat of silence should be illegal",
+                f"Romance and drama fans in Japan will forgive a plain board if the timing of a glance is nasty in the best way. Episode {episode} of {english} gets this comment when the cut refuses to rush the feeling.",
+            )
+        )
+        bank.append(
+            (
+                "声のトーン変わった",
+                "Their voice just changed gears",
+                "This is seiyuu-watcher shorthand. Not a catchphrase clip — a register shift. The customer-service voice drops, the joke voice cracks, the cool voice gets tired. That is the post people quote.",
+            )
+        )
+    if "comedy" in g or "ecchi" in g:
+        bank.append(
+            (
+                "テンポ神",
+                "The comic timing is blessed",
+                "A one-word blessing. It means the episode did not step on its own joke. Japanese comedy threads say this when the shout, the silence, and the smash cut are in the right order.",
+            )
+        )
+        bank.append(
+            (
+                "空気読みすぎ",
+                "They played the awkwardness perfectly",
+                "Literally 'read the room too well.' Fans use it when a character's embarrassment is staged instead of explained. The laugh comes from recognition, not from a caption.",
+            )
+        )
+    if "sports" in g:
+        bank.append(
+            (
+                "試合の呼吸がいい",
+                "The match has a real pulse",
+                "Sports viewers complain fast when a game is just pose, pose, score. This line means the episode let you hear the rally, the breath, the bad touch. That is the craft praise.",
+            )
+        )
+    if len(bank) < 2:
+        bank.append(
+            (
+                "今週は顔の回",
+                "This week was a faces episode",
+                f"People say this when {english} stops announcing the plot and lets an expression finish the scene. It is a compliment. It means episode {episode} trusted the viewer.",
+            )
+        )
+        bank.append(
+            (
+                "演出が話してる",
+                "The direction is doing the talking",
+                f"Shorthand for: stop reading the wiki, look at the cut. Camera, sound, and timing are carrying {english} this week, and {studio} is why the scene has a pulse.",
+            )
+        )
+    i = episode % len(bank)
+    j = (episode + 3) % len(bank)
+    if j == i:
+        j = (i + 1) % len(bank)
+    return [bank[i], bank[j]]
 
 
 def _vibe_for(brief: Dict[str, Any], episode: int) -> str:
-    vibes = brief.get("vibe") or ["Seasonal Pressure Test"]
+    vibes = brief.get("vibe") or ["Worth the Rewind", "Quiet, Then the Hit"]
     return vibes[episode % len(vibes)]
 
 
@@ -240,95 +330,122 @@ def compose_review(anime: Dict[str, Any], episode: int) -> Dict[str, Any]:
     mal_id = int(anime.get("mal_id") or 0)
     brief = BRIEFS.get(mal_id, {})
     english = anime.get("title_english") or anime.get("title") or "Untitled"
-    romaji = anime.get("title_romaji") or english
-    native = anime.get("title_native") or ""
+    romaji = (anime.get("title_romaji") or "").strip()
+    native = (anime.get("title_native") or "").strip()
     studio = anime.get("studio") or "an uncredited seasonal pipeline"
     genres = ", ".join(anime.get("genres") or []) or "unclassified seasonal TV"
     cast = normalize_cast_pairs(anime.get("cast_pairs") or anime.get("cast") or [])
     cast_line = "; ".join(cast[:6]) if cast else "the credited principal cast"
-    score = anime.get("score")
     total = anime.get("episodes")
-    stage = _stage(episode, total)
-    desc = _clean(anime.get("description") or "")
-    if len(desc) > 420:
-        desc = desc[:417] + "..."
     source = (anime.get("source") or "original").replace("_", " ").title()
+    where = _beat(episode, total)
+    aliases = []
+    if romaji and romaji.lower() != english.lower():
+        aliases.append(romaji)
+    if native and native.lower() != english.lower() and native not in aliases:
+        aliases.append(native)
+    aka = f" ({' / '.join(aliases)})" if aliases else ""
+    streaming = _watch_names(anime)
 
-    instrument = _week_instrument(english, episode, studio)
     ep_title = _title_for(brief, episode, english)
     vibe = _vibe_for(brief, episode)
 
     craft = brief.get("craft") or GENERIC_CRAFT
+    origin = source.lower()
+    if origin in {"original", "unknown", ""}:
+        origin_line = f"Japanese viewers of {english} are arguing about the only thing that matters this far in: "
+    else:
+        article = "an" if origin[:1] in "aeiou" else "a"
+        origin_line = f"{english} is {article} {origin} adaptation, and Japanese viewers are arguing about the only thing that matters this far in: "
     lore = brief.get("lore") or (
-        f"{english} is being watched as a live product of {source.lower()} adaptation. "
-        "Japanese viewers argue about pacing against the source and about whether new episodes "
-        "add a relationship change or only another demonstration of power."
+        origin_line + "did the episode change a relationship, or did it just demonstrate a power again?"
     )
     voice = brief.get("voice") or (
-        f"Performance talk this week centers on {cast_line}. "
-        "We listen for whether a line reading adds subtext the storyboard did not print."
+        f"The people to listen for are {cast_line}. "
+        "Skip the catchphrase clips. The good weeks are breath, a swallowed word, a voice that drops out of customer-service mode."
     )
     take_core = brief.get("take") or (
-        "A seasonal episode matters when it changes the show’s obligations to next week."
+        f"Episode {episode} of {english} is worth your night if the scene stays with you after the ED."
     )
 
-    synopsis = (
-        f"{english} ({romaji}{f' / {native}' if native else ''}) episode {episode} sits in {stage}. "
-        f"This is not a plot dump. The public catalog pitch is only a floor: {desc or 'a currently airing Japanese television serial with incomplete episode synopses in English catalogs.'} "
-        f"What the week actually asks is whether {studio} used that floor as architecture or as wallpaper. "
-        f"Genres on the tin read {genres}; the useful question is which of those labels got camera time and which were merchandising. "
-        f"Community score currently hovers around {score if score else 'an unranked haze'}, which tells you heat, not craft. "
-        f"We read the episode as a turning-point document: who gained a new obligation, who lost a convenient lie, and whether the cour’s theme got more expensive. "
+    quick_take = _first_sentences(take_core, 2, 340) or (
+        f"Episode {episode} of {english} is the one you rewind for the quiet, not the recap."
+    )
+    verdict = _first_sentences(take_core, 1, 220) or (
+        f"Queue {english} episode {episode} tonight. A synopsis will not tell you why it lands."
+    )
+
+    hook = (
+        f"Let me talk about {english}{aka} episode {episode}, because I am still not normal about it. "
+        f"We are {where}, and {studio} is the crew in the chair. "
+        f"{take_core} "
+        f"Do not come here for a beat sheet. Come here for the second that actually got you.\n\n"
         f"{lore} "
-        f"If you only remember a super move, you watched the trailer inside the episode. If you remember a silence, a blocked doorway, or a joke that hurt, you watched the show. {instrument}"
+        f"The tin says {genres}. Forget the tin. Watch what the camera loves: a face, a prop, a silence, a joke that is allowed to hurt. "
+        f"If you only remember a cool move, you watched the trailer inside the episode. "
+        f"If you remember a held breath, you watched the show."
     )
 
+    genre_blob = genres.lower()
+    if "sports" in genre_blob:
+        sound_detail = "the squeak of a shoe, the breath between points, the gym after the whistle"
+    elif any(k in genre_blob for k in ("romance", "slice of life", "drama")):
+        sound_detail = "the extra second before an answer, a laugh that dies in the room, a door that does not close yet"
+    elif "comedy" in genre_blob:
+        sound_detail = "the beat before the shout, a joke left hanging, the smash cut that waits one frame too long"
+    else:
+        sound_detail = "the inhale before someone swings, metal that has weight, the room after the impact"
+    sound_lens = (
+        "Turn the soundtrack down in your head and listen for the gap. "
+        f"A good episode uses quiet the way other shows use a speech: {sound_detail}. "
+        f"That gap is how episode {episode} makes the feeling bigger than the plot."
+    )
     sakuga = (
-        f"{craft} "
-        f"For episode {episode} specifically, the desk’s sakuga note is structural: {stage} usually exposes whether a studio is spending on the set-piece or on the connective tissue (walks, meals, strategy tables, the extra inhales before violence). "
-        f"Japanese first-night posts still function as a distributed dailies screening. When those posts go quiet, it is not always a pan—sometimes it is a drama week, and drama weeks are graded on faces. "
-        f"When they explode, isolate whether the praise is for a single hero cut or for sequence direction. Only the latter predicts a good cour."
+        f"- **Sound & the pause:** {sound_lens}\n"
+        f"- **Framing & weight:** {craft}\n"
+        f"- **Why the feeling spikes:** {take_core}"
     )
-
-    story = (
-        f"{lore} "
-        f"Source-aware Japanese viewers treat episode {episode} as a checksum against {source} material: compression, reordered reveals, original-anime glue. "
-        f"Anime-only viewers treat it as weather. Both are covering the same broadcast. "
-        f"Our lore section refuses fake ‘leaked tweets.’ The pattern around this title is consistent with a fandom that cares about {genres.lower()} obligations—who is allowed to win, who is allowed to rest, whether the world has rules on Tuesday as well as on Saturday."
-        f'\n\n> “Did the week change anyone’s obligations, or was it only a demonstration?” — a typical same-night register on Japanese timelines, not a named account.\n'
-    )
-
     voice_graf = (
-        f"{voice} "
-        f"Credited principals include {cast_line}. "
-        f"A seiyuu week is real when a clip is about breath and not about a meme face. "
-        f"We also note chorus work and extras: seasonal shows often spend their humanity on unnamed soldiers, customers, or classmates. If those voices are wallpaper, the world is fake."
+        f"- **The voices, not the catchphrases:** {voice} "
+        "A performance week is real when the clip people pass around is about breath, not a meme face. "
+        "Extras count too. If the classmates, customers, or soldiers sound like wallpaper, the room is fake."
+    )
+
+    fans = _fan_lines(english, episode, genres, studio)
+    bullets = []
+    for jp, en, why in fans:
+        bullets.append(f"- **「{jp}」 ({en}):** {why}")
+    story = (
+        f"This is why overseas readers open the page: what Japanese timelines yelled the night {english} episode {episode} aired. "
+        f"Two lines from that {genres.lower()} chatter, the kind you see on X and textboards.\n\n"
+        + "\n".join(bullets)
     )
 
     takeaway = (
-        f"{take_core} "
-        f"Episode {episode} of {english} is a hinge in a {total or 'still-unfinalized'}-episode (or cour-length) machine produced by {studio}. "
-        f"Late Summer 2026 is a noisy market: sequels, new IP, prestige reboots. A briefing has to answer a brutal question: if a reader skipped this week, what debt would they owe the next one? "
-        f"The debt is rarely a recap of attacks. It is a change in relationships, in the cost of a tactic, in the show’s moral bookkeeping. "
-        f"That is why this page is long. Thin content is a recap bot. Useful content is an argument about {stage} and about how Japanese reception—charts, sakuga posts, seiyuu radio spillover—processed the same night. "
-        f"Watch it legally; then argue with us if the craft read is wrong."
+        f"{verdict} "
+        f"Stream episode {episode} on {streaming}. "
+        f"J-Anime Radar does not host the video. If the craft read is wrong, argue with us after you watch it legally."
     )
 
     payload = {
         "episode_title": ep_title,
-        "episode_synopsis_analysis": synopsis.strip(),
+        "quick_take": quick_take.strip(),
+        "episode_synopsis_analysis": hook.strip(),
         "japan_fan_reactions": {
             "sakuga_and_direction": sakuga.strip(),
             "story_and_lore": story.strip(),
             "voice_acting_highlights": voice_graf.strip(),
         },
         "deep_dive_takeaway": takeaway.strip(),
+        "one_sentence_verdict": verdict.strip(),
+        "licensed_streaming": streaming,
         "episode_vibe": vibe,
         "where_to_watch": anime.get("watch") or [],
     }
     blob = " ".join(
         [
             payload["episode_title"],
+            payload["quick_take"],
             payload["episode_synopsis_analysis"],
             payload["japan_fan_reactions"]["sakuga_and_direction"],
             payload["japan_fan_reactions"]["story_and_lore"],
@@ -341,66 +458,66 @@ def compose_review(anime: Dict[str, Any], episode: int) -> Dict[str, Any]:
     return payload
 
 
-GEMINI_SYSTEM_INSTRUCTION = """You are a senior anime cultural analyst and Sakuga (animation) critic writing for "J-Anime Radar" — an exclusive English desk delivering authentic Japanese anime insights to global fans.
+GEMINI_SYSTEM_INSTRUCTION = """You are a Tokyo local and a passionate anime insider writing for "J-Anime Radar" (j-animeradar.net), an English site for overseas fans.
 
-### Editorial Tone & Guidelines:
-1. Analytical & Insightful: Avoid superficial recaps. Focus on *how* scenes are constructed, directed, animated, and perceived. Analyze spatial clarity, camera work (Ekonte), physical inertia, lighting, and pacing.
-2. Cultural Bridge: Contextualize Japanese nuances, production terminology (Sakuga, Genga, Ma, Seiyuu nuances), and authentic fan discourse that global viewers might miss.
-3. Tone of Voice: Intelligent, observant, respectful of the craft, and engaging (similar to Sakugabooru articles or high-end animation essays). Avoid cheap internet slang or empty hype words.
-4. Formatting: Output in clean, highly readable Markdown with structured H2/H3 headers, bullet points for breakdowns, and blockquotes for Japanese fan reactions.
-5. Language: Natural, sophisticated English suitable for anime connoisseurs and industry followers.
-6. Strict Factuality: Do not hallucinate staff or voice actor names. Strictly rely on the provided metadata for credits.
+Voice: a fired-up senior fan who just finished the late-night broadcast and is talking WITH readers on Reddit or Discord. Warm, fast, punchy, concrete. You love direction and animation. You are not a professor and you do not lecture.
+
+Rules:
+1. Talk with the reader. Short, strong sentences. Invite them to look at a cut, a silence, a breath. No film-school jargon.
+2. Never use this vocabulary: "dialectic", "mundane domesticity", "spatial hostility", "sensory disorientation", "tactile labor", "structural hinge", "methodical character establishment", "opening contract", "plot dump", "public catalog pitch".
+3. Never open with a template. No "this is not a plot dump", no "the public pitch is only a floor", no cour-as-machine essays. The first sentence is the feeling or the cut.
+4. Bridge Japanese fans. Quote 1-2 typical same-night phrases in Japanese, give a natural English gloss, and explain the slang. Do not invent a named account, a fake viral tweet, a fake interview, or a claim that a specific post went viral. Say it is the kind of line on X, 5ch, or a roundup thread.
+5. Explain craft in plain words: silence, sound effects, camera, the beat before a drawing lands, why a performance choice makes the scene hit harder. Sakuga is fine. Do not pile on untranslated production jargon.
+6. Name voice actors and staff ONLY when they appear in the verified credits. Never guess a credit.
+7. English only in the prose, except the short Japanese fan phrases.
 """
 
 GEMINI_GENERATION_CONFIG = {
-    "temperature": 0.55,
+    "temperature": 0.7,
     "max_output_tokens": 4096,
 }
 
-GEMINI_PROMPT = """Write an ORIGINAL J-Anime Radar episode analysis for the series context below.
+GEMINI_PROMPT = """Write an ORIGINAL J-Anime Radar episode breakdown for the series context below.
 
-Do not paste official synopses. Do not invent named fan accounts, fake viral tweets, or fabricated interviews. Describe Japanese reception as patterns (X/Twitter same-night timelines, 5ch and textboard threads, sakuga accounts, seiyuu clip culture, NicoNico/streaming chart talk) consistent with this title's real fandom. A blockquote may synthesize a typical anonymous register and must never be attributed to a named person. Name voice actors and staff ONLY when they appear in [VERIFIED CAST & PRODUCTION DATA]; never guess credits.
+Do not paste official synopses. Do not invent plot beats you were not given. If you do not know a specific cut, talk about the craft pressure of this series and this point in the season instead of fabricating a scene. Do not invent named fan accounts, fake viral tweets, or fabricated interviews. Japanese phrases must be typical fandom language, labeled as same-night register, never attributed to a real person.
 
-The published article must follow this Markdown outline:
+The article shape, in English:
 
-# [Anime Title] Episode [XX] Analysis: [Catchy Subtitle focusing on direction or theme]
+# [Anime Title] – Episode [X] Breakdown: [clicky subtitle]
 
-## 1. Core Verdict: Deconstructing the Episode
-Quick critique of narrative construction and emotional impact. Analyze *how* the episode works — not a beat-by-beat recap.
+> The Quick Take: [1-2 punchy sentences a person would screenshot]
 
-## 2. Sakuga & Directional Highlights
-Layouts, key animation (genga), FX, pacing, camera work (ekonte), spatial clarity, physical inertia, lighting. Use bullets for concrete cuts or sequences.
+1. The Hook — start on the feeling or the shocking moment, not a recap. 1-2 short paragraphs.
+2. Under the Hood — 2 or 3 bullets. Each bullet is **Craft point:** plain-language explanation of sound, framing, timing, or performance, and why that choice raised the emotion. Include seiyuu craft here when a verified name exists.
+3. Domestic Radar — 2 bullets shaped exactly like:
+   - **「Japanese phrase」 (English gloss):** why Japanese timelines grab that line.
+4. Verdict — a score from 1 to 100 that matches how hard you would push a friend to watch, one sentence that shoves the reader to press play, and the licensed platforms from context only.
 
-## 3. Domestic Fan Reception: Voices from Japan
-Synthesis of Japanese X/5ch reactions. Include at least one Markdown blockquote translating a typical anonymous reaction, then interpret what it reveals.
+Return ONLY compact JSON (no markdown fences, no preamble):
 
-## 4. Cast Performance & Subtext
-Vocal acting nuance, emotional control, audio direction, and seiyuu craft. Listen for breath, hesitation, and register shifts — not catchphrases. Cite a seiyuu or character by name only if that pair is in the verified cast list.
-
-## 5. Streaming & Forward Look
-Official streaming pointers (use ONLY the licensed platforms provided) and narrative/technical expectations for the next episode.
-
-Because the desk stores a JSON package, return ONLY compact JSON (no markdown fences, no preamble) whose string fields are the Markdown *bodies* of those sections:
-
-- episode_title (string; the catchy subtitle ONLY — the text after "Analysis:")
-- episode_synopsis_analysis (string; Markdown body of section 1; 150-220 words)
+- episode_title (string; subtitle only, after "Breakdown:")
+- quick_take (string; the screenshot line, 1-2 sentences, no label)
+- episode_synopsis_analysis (string; Hook body, markdown, no heading)
 - japan_fan_reactions (object):
-  - sakuga_and_direction (Markdown body of section 2; substantial)
-  - story_and_lore (Markdown body of section 3; must include a > blockquote)
-  - voice_acting_highlights (Markdown body of section 4; substantial)
-- deep_dive_takeaway (string; Markdown body of section 5; 150+ words)
-- episode_vibe (short craft-focused label, e.g. "Layout Clarity & Aftermath Silence")
-- where_to_watch (array of {"name": platform, "url": url} using ONLY the licensed platforms provided)
+  - sakuga_and_direction (markdown bullets for direction, sound, and timing)
+  - voice_acting_highlights (one markdown bullet on performance; names only from verified credits)
+  - story_and_lore (markdown bullets for Domestic Radar, Japanese phrases included)
+- one_sentence_verdict (string)
+- desk_score (integer 1-100)
+- licensed_streaming (string; platform names from the provided list only)
+- deep_dive_takeaway (string; the verdict sentence plus one sentence naming those platforms)
+- episode_vibe (short plain label, e.g. "Silence, Then the Swing")
+- where_to_watch (array of {"name", "url"} using ONLY the licensed platforms provided)
 
-Each Markdown body may use H3s, bullet lists, and blockquotes. Do not repeat the H1/H2 titles inside the bodies. Total original prose must exceed 500 words.
+Do not repeat the H1 or section titles inside the bodies. Total original prose should be at least 450 words, but every sentence has to earn it. No filler.
 """
 
 _ARTICLE_H2 = (
-    ("episode_synopsis_analysis", ("core verdict", "deconstructing")),
-    ("sakuga_and_direction", ("sakuga", "directional")),
-    ("story_and_lore", ("domestic fan", "voices from japan", "fan reception")),
-    ("voice_acting_highlights", ("cast performance", "subtext", "voice")),
-    ("deep_dive_takeaway", ("streaming", "forward look")),
+    ("episode_synopsis_analysis", ("the hook", "unmissable", "core verdict", "deconstructing")),
+    ("sakuga_and_direction", ("under the hood", "direction & craft", "direction and craft", "sakuga", "directional")),
+    ("story_and_lore", ("domestic radar", "screaming", "domestic fan", "voices from japan", "fan reception")),
+    ("voice_acting_highlights", ("cast performance", "subtext", "seiyuu", "voice")),
+    ("deep_dive_takeaway", ("verdict", "intel", "streaming", "forward look")),
 )
 
 
@@ -491,7 +608,7 @@ def build_series_context(anime: Dict[str, Any], episode: int) -> Dict[str, Any]:
         "verified_cast": verified_cast,
         "verified_staff": verified_staff,
         "licensed_platforms": anime.get("watch"),
-        "article_h1_shape": f"{title} Episode {episode} Analysis: [Catchy Subtitle focusing on direction or theme]",
+        "article_h1_shape": f"{title} – Episode {episode} Breakdown: [Catchy subtitle]",
     }
 
 
@@ -521,8 +638,15 @@ def _match_section(header: str) -> Optional[str]:
 
 def _subtitle_from_h1(raw: str) -> str:
     raw = (raw or "").strip()
-    m = re.search(r"Analysis:\s*(.+)$", raw, re.I)
+    m = re.search(r"(?:Analysis|Breakdown):\s*(.+)$", raw, re.I)
     return (m.group(1) if m else raw).strip()
+
+
+def _field_after(label: str, text: str) -> str:
+    match = re.search(rf"{label}:?\**\s*(.+)", text or "", re.I)
+    if not match:
+        return ""
+    return match.group(1).strip().strip("*").strip()
 
 
 def parse_markdown_article(text: str, anime: Dict[str, Any], episode: int) -> Dict[str, Any]:
@@ -532,7 +656,7 @@ def parse_markdown_article(text: str, anime: Dict[str, Any], episode: int) -> Di
     h1 = re.search(r"^#\s+(.+)$", text, re.M)
     if h1:
         episode_title = _subtitle_from_h1(h1.group(1))
-    parts = re.split(r"^##\s+", text, flags=re.M)
+    parts = re.split(r"^#{2,3}\s+", text, flags=re.M)
     for part in parts[1:]:
         lines = part.splitlines()
         header = (lines[0] if lines else "").strip()
@@ -542,8 +666,14 @@ def parse_markdown_article(text: str, anime: Dict[str, Any], episode: int) -> Di
             buckets[key] = body
     if not buckets["episode_synopsis_analysis"]:
         raise ValueError("missing keys")
+    score_raw = _field_after(r"Score", text)
+    score_match = re.search(r"\d{1,3}", score_raw)
+    desk_score = int(score_match.group(0)) if score_match else None
+    if desk_score is not None and not 1 <= desk_score <= 100:
+        desk_score = None
     return {
-        "episode_title": episode_title or f"Episode {episode} Analysis",
+        "episode_title": episode_title or f"Episode {episode} Breakdown",
+        "quick_take": _field_after(r"The Quick Take", text),
         "episode_synopsis_analysis": buckets["episode_synopsis_analysis"],
         "japan_fan_reactions": {
             "sakuga_and_direction": buckets["sakuga_and_direction"],
@@ -551,7 +681,9 @@ def parse_markdown_article(text: str, anime: Dict[str, Any], episode: int) -> Di
             "voice_acting_highlights": buckets["voice_acting_highlights"],
         },
         "deep_dive_takeaway": buckets["deep_dive_takeaway"],
-        "episode_vibe": "Seasonal Pressure Test",
+        "one_sentence_verdict": _field_after(r"One-Sentence Verdict", text),
+        "desk_score": desk_score,
+        "episode_vibe": "Worth the Rewind",
         "where_to_watch": anime.get("watch") or [],
     }
 
@@ -596,8 +728,10 @@ def parse_gemini_review(text: str, anime: Dict[str, Any], episode: int) -> Dict[
             continue
         if isinstance(data, dict) and "episode_synopsis_analysis" in data:
             data.setdefault("where_to_watch", anime.get("watch") or [])
-            data.setdefault("episode_title", f"Episode {episode} Analysis")
-            data.setdefault("episode_vibe", "Seasonal Pressure Test")
+            data.setdefault("episode_title", f"Episode {episode} Breakdown")
+            data.setdefault("episode_vibe", "Worth the Rewind")
+            data.setdefault("quick_take", "")
+            data.setdefault("one_sentence_verdict", "")
             reactions = data.get("japan_fan_reactions")
             if not isinstance(reactions, dict):
                 data["japan_fan_reactions"] = {}

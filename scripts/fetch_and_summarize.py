@@ -775,8 +775,8 @@ def gemini_review(anime: dict, episode: int) -> Optional[dict]:
 
     genai.configure(api_key=api_key)
     models = []
-    preferred = env("GEMINI_MODEL", "gemini-1.5-flash")
-    for m in [preferred, "gemini-1.5-flash", "gemini-2.0-flash", "gemini-2.5-flash", "gemini-flash-latest"]:
+    preferred = env("GEMINI_MODEL", "gemini-flash-latest")
+    for m in [preferred, "gemini-flash-latest", "gemini-3.7-flash", "gemini-3.5-flash"]:
         if m and m not in models:
             models.append(m)
 
@@ -821,6 +821,9 @@ def paragraphs(text: str) -> List[str]:
         return []
     parts = re.split(r"\n\s*\n", text)
     if len(parts) == 1 and len(text) > 420:
+        lines = text.splitlines()
+        if any(re.match(r"^[-*]\s+", ln) for ln in lines):
+            return [text]
         mid = text.rfind(". ", 180, 420)
         if mid != -1:
             return [text[: mid + 1].strip(), text[mid + 1 :].strip()]
@@ -845,7 +848,9 @@ def build_post_record(anime: dict, episode: int, review: dict, rank: int) -> dic
     reactions = review.get("japan_fan_reactions") or {}
     synopsis = review.get("episode_synopsis_analysis") or ""
     take = review.get("deep_dive_takeaway") or ""
-    pull = (review.get("episode_vibe") or "Seasonal intel") + " — original briefing, not a recap."
+    quick = (review.get("quick_take") or "").strip()
+    verdict = (review.get("one_sentence_verdict") or "").strip()
+    pull = quick or verdict or (review.get("episode_vibe") or "This week stays with you.")
     return {
         "slug": slug,
         "rank": rank,
@@ -855,7 +860,7 @@ def build_post_record(anime: dict, episode: int, review: dict, rank: int) -> dic
         "episode": episode,
         "episode_total": anime.get("episodes"),
         "episode_title": review.get("episode_title") or f"Episode {episode}",
-        "episode_vibe": review.get("episode_vibe") or "Seasonal Pressure Test",
+        "episode_vibe": review.get("episode_vibe") or "Worth the Rewind",
         "aired": aired,
         "score": anime.get("score"),
         "studio": anime.get("studio") or "Unknown studio",
@@ -864,6 +869,10 @@ def build_post_record(anime: dict, episode: int, review: dict, rank: int) -> dic
         "banner": anime.get("banner") or anime.get("image") or "",
         "watch": watch,
         "pullquote": pull,
+        "quick_take": quick,
+        "one_sentence_verdict": verdict,
+        "desk_score": review.get("desk_score"),
+        "licensed_streaming": review.get("licensed_streaming") or "",
         "synopsis_paragraphs": paragraphs(synopsis),
         "sakuga_paragraphs": paragraphs(reactions.get("sakuga_and_direction") or ""),
         "story_paragraphs": paragraphs(reactions.get("story_and_lore") or ""),
@@ -959,7 +968,7 @@ def render_post(envj, post: dict) -> None:
         },
         {
             "@type": "Article",
-            "headline": headline if is_feature else f"{post['anime_title']} Episode {post['episode']} Analysis: {post['episode_title']}",
+            "headline": headline if is_feature else f"{post['anime_title']} – Episode {post['episode']} Breakdown: {post['episode_title']}",
             "description": headline,
             "image": og_image_for(post),
             "datePublished": post.get("aired"),
@@ -983,8 +992,8 @@ def render_post(envj, post: dict) -> None:
         title = f"{headline} — J-Anime Radar"
         description = f"Original series guide: appeal, spoiler-light synopsis, watch points, and legal streaming notes for {post['anime_title']}."
     else:
-        title = f"{post['anime_title']} Episode {post['episode']} Analysis — J-Anime Radar"
-        description = f"Original episode analysis: sakuga and direction, Japanese fan reception, seiyuu craft, and legal watch links for {post['anime_title']} episode {post['episode']}."
+        title = f"{post['anime_title']} Episode {post['episode']} Breakdown — J-Anime Radar"
+        description = f"Episode breakdown for {post['anime_title']} episode {post['episode']}: the hook, the craft, what Japanese fans are yelling, and where to stream it legally."
     html = envj.get_template("post.html").render(
         title=title,
         description=description,
@@ -1019,6 +1028,7 @@ def _iso_date(value: str) -> str:
 
 def _source_chunks(post: dict) -> List[str]:
     chunks: List[str] = []
+    chunks.append(_plain(post.get("quick_take")))
     for key in ("excerpt", "description", "summary"):
         chunks.append(_plain(post.get(key)))
     for key in ("synopsis_paragraphs", "sakuga_paragraphs", "takeaway_paragraphs", "story_paragraphs"):

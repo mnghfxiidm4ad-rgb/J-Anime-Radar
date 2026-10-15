@@ -9,11 +9,12 @@ import re
 import time
 from typing import Any, Dict, List, Optional
 
-GEMINI_FEATURE_PROMPT = """You are a senior critic at J-Anime Radar, an English-language desk introducing Japanese anime to overseas readers.
+GEMINI_FEATURE_PROMPT = """You are a Tokyo anime fan writing for J-Anime Radar, talking to overseas readers like a friend who just pressed a show into their hands.
 
 Write an ORIGINAL series-level recommendation. This is NOT an episode recap and NOT a Wikipedia dump.
 Do not paste official synopses verbatim. Do not invent interviews, fake viral tweets, or named fan accounts.
 Keep plot description spoiler-light: premise and tone only, no late-game reveals.
+Sound like a person. Short sentences. No lecture voice. Never write "plot dump", "public catalog pitch", "opening contract", or "only a floor".
 
 Return ONLY compact JSON with these keys:
 - headline (string; follow this shape in English: "【Recommended Anime】The Appeal of 『TITLE』 — Synopsis, Highlights, and Watch Guide")
@@ -102,11 +103,11 @@ def compose_feature_review(anime: dict, *, feature_kind: str) -> dict:
         f"The production committee, original author, and licensors remain the rights holders; this page is criticism and recommendation, not a substitute stream."
     )
     synopsis = (
-        f"Spoiler-light premise only. The public pitch is a floor: {premise} "
-        f"What matters for a first-time viewer is the contract: {english} asks you to care about {genres.lower()} texture—pace, faces, the cost of a choice—rather than a weekly power announcement. "
-        f"Do not hunt late-game twists on this page. The useful question is whether the opening hours teach you the world's rules honestly. "
-        f"If a scene would only make sense after a finale, we leave it off. If a scene explains why someone stays in the room, it belongs in a recommendation. "
-        f"Treat the first cour (or the first film movement) as a thesis statement: tone, visual grammar, and whether the lead is a person or a merchandising silhouette."
+        f"Spoiler-light, promise. Here is the premise and then I will shut up about the plot: {premise} "
+        f"What you actually sign up for is {genres.lower()} with a pulse — pace, faces, and choices that cost something — not a weekly power announcement. "
+        f"Do not hunt the ending on this page. Ask whether the opening hours teach the world's rules honestly. "
+        f"If a scene only makes sense after the finale, it stays off this page. If a scene explains why someone stays in the room, it belongs here. "
+        f"Give the first stretch a real chance: tone, how the camera behaves, and whether the lead feels like a person."
     )
     h1 = {
         "title": "Tone before trivia",
@@ -173,8 +174,8 @@ def gemini_feature_review(anime: dict, *, feature_kind: str) -> Optional[dict]:
 
     genai.configure(api_key=api_key)
     models: List[str] = []
-    preferred = env("GEMINI_MODEL", "gemini-1.5-flash")
-    for m in [preferred, "gemini-1.5-flash", "gemini-2.0-flash", "gemini-2.5-flash", "gemini-flash-latest"]:
+    preferred = env("GEMINI_MODEL", "gemini-flash-latest")
+    for m in [preferred, "gemini-flash-latest", "gemini-3.7-flash", "gemini-3.5-flash"]:
         if m and m not in models:
             models.append(m)
 

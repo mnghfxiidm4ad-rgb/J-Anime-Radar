@@ -4,8 +4,8 @@
   <div class="wrap">
     <p class="kicker">{{ season_label }} · Live tracking desk</p>
     <h1 id="site-intro">Seasonal anime intel, not recycled synopses.</h1>
-    <p class="lede">J-Anime Radar curates the season by craft rather than by recycled plot. We choose episodes where staging, a Japanese fan argument, or a performance changes how the cour should be read, then publish an original briefing with legal watch links for overseas readers.</p>
-    <p class="hero-note">Hidden favorites and loud sequels get the same test: did the camera, the cast, or the domestic conversation do something a synopsis cannot capture? Each card below leads with that argument, so you can decide what is worth opening.</p>
+    <p class="lede">Tokyo overnight, English by morning. We watch the episode, then tell you the cut that slapped, what Japanese timelines are yelling, and where to stream it legally.</p>
+    <p class="hero-note">Quiet favorites and loud sequels get the same test: did the camera, the voice, or the domestic conversation do something a synopsis cannot? Open a card and start at the hook.</p>
     <div class="stat-row">
       <div class="stat"><b>{{ stats.titles }}</b><span>Titles in the Top 30 desk</span></div>
       <div class="stat"><b>{{ stats.articles }}</b><span>Original episode briefings</span></div>
@@ -19,7 +19,7 @@
   <section class="featured" aria-labelledby="featured-heading">
     <p class="kicker">Editor’s desk</p>
     <h2 id="featured-heading">Featured briefings</h2>
-    <p class="section-intro">The newest pieces we would hand a reader first. Open one for the full craft note, Japanese reception, and licensed watch links.</p>
+    <p class="section-intro">The newest pieces we would shove at a friend first. Open one for the hook, the craft, and what Japan is yelling about.</p>
     <div class="featured-grid{% if featured|length < 2 %} featured-single{% endif %}">
       {% for post in featured %}
       <article class="feature-card">
@@ -84,7 +84,7 @@
     <section id="latest" aria-labelledby="latest-heading">
       <p class="kicker">Newest first</p>
       <h2 id="latest-heading">Latest episode briefings</h2>
-      <p class="section-intro">Every briefing is an original desk note: what the episode is doing formally, how Japanese viewers argued about it, and where to watch it legally. The excerpt is the argument, not a poster caption.</p>
+      <p class="section-intro">Every card is an original breakdown: the moment that hit, how it was built, how Japanese fans reacted, and the legal stream. The excerpt is the hook, not a poster caption.</p>
       <div class="grid">
         {% for post in listing %}
         <article class="card" data-card data-genres="{{ post.genres | join(' ') }}" data-title="{{ post.anime_title }} {{ post.episode_title }} {{ post.headline }} {{ post.card_excerpt }}">

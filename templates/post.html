@@ -10,7 +10,7 @@
     {% else %}
     <p class="crumbs"><a href="{{ root }}index.html">Home</a> / <a href="{{ root }}index.html#top30">Season Top 30</a> / Episode {{ post.episode }}</p>
     <p class="kicker">{{ post.studio }} · {{ post.genres | join(' / ') }}</p>
-    <h1>{{ post.anime_title }} Episode {{ post.episode }} Analysis: {{ post.episode_title }}</h1>
+    <h1>{{ post.anime_title }} – Episode {{ post.episode }} Breakdown: {{ post.episode_title }}</h1>
     <p class="lede">{% if post.title_native %}{{ post.title_native }}{% else %}{{ post.anime_title }}{% endif %}</p>
     {% endif %}
   </div>
@@ -82,32 +82,31 @@
   <div class="meta-grid">
     <div><b>Episode</b> {{ post.episode }}{% if post.episode_total %} / {{ post.episode_total }}{% endif %}</div>
     <div><b>Broadcast</b> {{ post.aired }}</div>
-    <div><b>Public score</b> {% if post.score %}{{ post.score }} / 100{% else %}Unranked{% endif %}</div>
+    <div><b>Score</b> {% if post.desk_score %}{{ post.desk_score }} / 100{% elif post.score %}{{ post.score }}{% else %}Unscored{% endif %}</div>
     <div><b>This week’s vibe</b> {{ post.episode_vibe }}</div>
   </div>
 
-  <p class="pull">{{ post.pullquote }}</p>
+  <blockquote class="pull"><strong>The Quick Take:</strong> {{ post.quick_take or post.pullquote }}</blockquote>
 
   {% with slot_name='Above the Fold', slot_id='above-fold', extra_class='above-fold-ad' %}
   {% include '_ad_slot.html' %}
   {% endwith %}
 
-  <h2>Core Verdict: Deconstructing the Episode</h2>
+  <h2>1. The Hook: What Made This Episode Unmissable</h2>
   {% for p in post.synopsis_paragraphs %}
   {{ p | md }}
   {% endfor %}
 
   <section class="reaction">
-    <h2>Sakuga &amp; Directional Highlights</h2>
+    <h2>2. Under the Hood: Direction &amp; Craft That Stole the Show</h2>
     {% for p in post.sakuga_paragraphs %}
     {{ p | md }}
     {% endfor %}
-    <h2>Domestic Fan Reception: Voices from Japan</h2>
-    {% for p in post.story_paragraphs %}
+    {% for p in post.voice_paragraphs %}
     {{ p | md }}
     {% endfor %}
-    <h2>Cast Performance &amp; Subtext</h2>
-    {% for p in post.voice_paragraphs %}
+    <h2>3. Domestic Radar: What Japanese Fans Are Screaming About</h2>
+    {% for p in post.story_paragraphs %}
     {{ p | md }}
     {% endfor %}
   </section>
@@ -116,7 +115,12 @@
   {% include '_ad_slot.html' %}
   {% endwith %}
 
-  <h2>Streaming &amp; Forward Look</h2>
+  <h2>Verdict &amp; Intel</h2>
+  <ul>
+    <li><strong>Score:</strong> {% if post.desk_score %}{{ post.desk_score }} / 100{% elif post.score %}{{ post.score }}{% else %}Unscored{% endif %}</li>
+    <li><strong>One-Sentence Verdict:</strong> {{ post.one_sentence_verdict or post.quick_take or post.pullquote }}</li>
+    <li><strong>Licensed Streaming:</strong> {% if post.licensed_streaming %}{{ post.licensed_streaming }}{% else %}{% for w in post.watch %}{{ w.name }}{% if not loop.last %}, {% endif %}{% else %}Crunchyroll{% endfor %}{% endif %}</li>
+  </ul>
   {% for p in post.takeaway_paragraphs %}
   {{ p | md }}
   {% endfor %}
