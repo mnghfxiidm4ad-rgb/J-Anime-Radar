@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-15T07:11:49Z",
+  "updated_at": "2026-10-16T06:53:40Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -229,6 +229,11 @@
           "slug": "the-exiled-heavy-knight-knows-how-to-game-the-system-ep15",
           "source": "gemini",
           "generated_at": "2026-10-09T08:42:40Z"
+        },
+        "16": {
+          "slug": "the-exiled-heavy-knight-knows-how-to-game-the-system-ep16",
+          "source": "gemini",
+          "generated_at": "2026-10-16T06:53:18Z"
         }
       }
     },
@@ -934,6 +939,11 @@
           "slug": "the-ramparts-of-ice-season-2-ep2",
           "source": "gemini",
           "generated_at": "2026-10-09T08:46:51Z"
+        },
+        "3": {
+          "slug": "the-ramparts-of-ice-season-2-ep3",
+          "source": "gemini",
+          "generated_at": "2026-10-16T06:53:40Z"
         }
       }
     },

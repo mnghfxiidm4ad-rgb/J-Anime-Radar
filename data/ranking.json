@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-15T07:11:49Z",
+  "updated_at": "2026-10-16T06:53:40Z",
   "items": [
     {
       "rank": 1,
@@ -33,7 +33,7 @@
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 68,
       "mal_id": 59741,
-      "latest": 15,
+      "latest": 16,
       "origin": "anilist"
     },
     {
@@ -97,7 +97,7 @@
       "title": "The Ramparts of Ice Season 2",
       "score": 81,
       "mal_id": 64534,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -111,7 +111,7 @@
     {
       "rank": 14,
       "title": "A Returner's Magic Should be Special Season 2",
-      "score": 69,
+      "score": 70,
       "mal_id": 57612,
       "latest": 2,
       "origin": "anilist"
@@ -142,18 +142,18 @@
     },
     {
       "rank": 18,
-      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "score": 71,
-      "mal_id": 63409,
-      "latest": 2,
+      "title": "Dragon Ball Super: Beerus",
+      "score": 81,
+      "mal_id": 63367,
+      "latest": 1,
       "origin": "anilist"
     },
     {
       "rank": 19,
-      "title": "Dragon Ball Super: Beerus",
-      "score": 80,
-      "mal_id": 63367,
-      "latest": 1,
+      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+      "score": 71,
+      "mal_id": 63409,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -174,18 +174,18 @@
     },
     {
       "rank": 22,
-      "title": "A Wild Last Boss Appeared! Season 2",
-      "score": 73,
-      "mal_id": 63140,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
-      "rank": 23,
       "title": "Nia Liston: The Merciless Maiden",
       "score": 75,
       "mal_id": 63382,
       "latest": 2,
+      "origin": "anilist"
+    },
+    {
+      "rank": 23,
+      "title": "A Wild Last Boss Appeared! Season 2",
+      "score": 73,
+      "mal_id": 63140,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -199,7 +199,7 @@
     {
       "rank": 25,
       "title": "PSYREN",
-      "score": 70,
+      "score": 69,
       "mal_id": 63098,
       "latest": 2,
       "origin": "anilist"
@@ -214,22 +214,6 @@
     },
     {
       "rank": 27,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 71,
-      "mal_id": 63181,
-      "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 28,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 67,
-      "mal_id": 64254,
-      "latest": 1,
-      "origin": "anilist"
-    },
-    {
-      "rank": 29,
       "title": "The Cold Sato-san is Only Sweet to Me",
       "score": 68,
       "mal_id": 63754,
@@ -237,9 +221,25 @@
       "origin": "anilist"
     },
     {
+      "rank": 28,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "score": 71,
+      "mal_id": 63181,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 67,
+      "mal_id": 64254,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
       "rank": 30,
       "title": "So What's Wrong with Getting Reborn as a Goblin?",
-      "score": 67,
+      "score": 66,
       "mal_id": 63712,
       "latest": 3,
       "origin": "anilist"
