@@ -2,14 +2,14 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-16T06:53:40Z",
+  "updated_at": "2026-10-17T06:46:09Z",
   "items": [
     {
       "rank": 1,
       "title": "The Apothecary Diaries Season 3",
       "score": 85,
       "mal_id": 61987,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -57,7 +57,7 @@
       "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
       "score": 85,
       "mal_id": 61469,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
@@ -81,7 +81,7 @@
       "title": "Firefly Wedding",
       "score": 75,
       "mal_id": 63293,
-      "latest": 1,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -89,7 +89,7 @@
       "title": "Tokyo Revengers: War of the Three Titans Arc",
       "score": 76,
       "mal_id": 59088,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -103,7 +103,7 @@
     {
       "rank": 13,
       "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
-      "score": 73,
+      "score": 74,
       "mal_id": 63431,
       "latest": 2,
       "origin": "anilist"
@@ -111,7 +111,7 @@
     {
       "rank": 14,
       "title": "A Returner's Magic Should be Special Season 2",
-      "score": 70,
+      "score": 69,
       "mal_id": 57612,
       "latest": 2,
       "origin": "anilist"
@@ -127,7 +127,7 @@
     {
       "rank": 16,
       "title": "The Detective Is Already Dead Season 2",
-      "score": 72,
+      "score": 71,
       "mal_id": 52480,
       "latest": 2,
       "origin": "anilist"
@@ -222,18 +222,18 @@
     },
     {
       "rank": 28,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 71,
-      "mal_id": 63181,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 67,
+      "mal_id": 64254,
       "latest": 2,
       "origin": "anilist"
     },
     {
       "rank": 29,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 67,
-      "mal_id": 64254,
-      "latest": 2,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "score": 71,
+      "mal_id": 63181,
+      "latest": 3,
       "origin": "anilist"
     },
     {
