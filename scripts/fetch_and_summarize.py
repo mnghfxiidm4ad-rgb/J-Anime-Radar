@@ -782,6 +782,9 @@ def gemini_review(anime: dict, episode: int) -> Optional[dict]:
 
     ensure_verified_credits(anime)
     prompt = build_gemini_prompt(anime, episode)
+    from anime_radar_pipeline import market_context_block  # noqa: E402
+
+    prompt += market_context_block(anime)
 
     last_err = None
     for model_name in models:
@@ -1137,7 +1140,15 @@ def render_sitemap(envj, posts: List[dict]) -> None:
     write_html(DOCS / "sitemap.html", html_page)
 
 
-def render_index(envj, posts: List[dict], ranking: List[dict], ranking_note: str = "") -> None:
+def render_index(
+    envj,
+    posts: List[dict],
+    ranking: List[dict],
+    ranking_note: str = "",
+    source_desk: Optional[dict] = None,
+    season_label: str = "",
+    season_short: str = "",
+) -> None:
     year = datetime.now().year
     for post in posts:
         annotate_post_listing(post)
@@ -1163,8 +1174,9 @@ def render_index(envj, posts: List[dict], ranking: List[dict], ranking_note: str
         root="",
         nav="home",
         year=year,
-        season_label="Summer 2026",
-        stats={"titles": len(ranking) or DESK_SIZE, "articles": len(posts), "season": "2026 S"},
+        season_label=season_label,
+        stats={"titles": len(ranking) or DESK_SIZE, "articles": len(posts), "season": season_short},
+        source_desk=source_desk,
         genres=genres,
         posts=posts,
         featured=featured,
@@ -1329,6 +1341,10 @@ def main() -> int:
                 log(f"complementary features skipped (shortfall={shortfall})")
     posts = rebuild_from_json()
     ranking, ranking_doc = load_ranking()
+    from anime_radar_pipeline import attach_sales, season_clock  # noqa: E402
+
+    source_desk = attach_sales(posts, ranking)
+    season_label, season_short = season_clock()
     latest_by_mal = {}
     for p in posts:
         if p.get("kind") == "feature":
@@ -1346,7 +1362,15 @@ def main() -> int:
         log(f"rendering {len(posts)} posts + legal + index")
         for post in posts:
             render_post(envj, post)
-    render_index(envj, posts, ranking, ranking_note=(ranking_doc or {}).get("source_label") or "")
+    render_index(
+        envj,
+        posts,
+        ranking,
+        ranking_note=(ranking_doc or {}).get("source_label") or "",
+        source_desk=source_desk,
+        season_label=season_label,
+        season_short=season_short,
+    )
     render_legal(envj)
     render_sitemap(envj, posts)
     write_extras(posts)

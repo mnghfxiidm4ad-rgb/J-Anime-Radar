@@ -25,11 +25,14 @@
       <article class="feature-card">
         <a class="feature-media" href="{{ root }}posts/{{ post.slug }}.html">
           {% if post.image %}
-          <img src="{{ post.image }}" alt="{{ post.anime_title }}" width="960" height="540" {% if loop.first %}loading="eager"{% else %}loading="lazy"{% endif %} decoding="async">
-          {% else %}
-          <span class="cover-fallback">{{ post.anime_title }}</span>
-          {% endif %}
-        </a>
+            <img src="{{ post.image }}" alt="{{ post.anime_title }}" width="960" height="540" {% if loop.first %}loading="eager"{% else %}loading="lazy"{% endif %} decoding="async">
+            {% else %}
+            <span class="cover-fallback">{{ post.anime_title }}</span>
+            {% endif %}
+            {% if post.sales and post.sales.badge %}
+            <span class="sales-badge">{{ post.sales.badge }}</span>
+            {% endif %}
+          </a>
         <div class="feature-body">
           <p class="tag-row">
             {% if post.kind == 'feature' %}
@@ -94,6 +97,9 @@
             {% else %}
             <span class="cover-fallback">{{ post.anime_title }}</span>
             {% endif %}
+            {% if post.sales and post.sales.badge %}
+            <span class="sales-badge">{{ post.sales.badge }}</span>
+            {% endif %}
           </a>
           <div class="card-body">
             <p class="tag-row">
@@ -138,11 +144,29 @@
         {% for row in ranking %}
         <li>
           <strong>{{ '%02d' % row.rank }}</strong>
-          <a href="{{ row.href }}">{{ row.title }}</a>
+          <div>
+            <a href="{{ row.href }}">{{ row.title }}</a>
+            {% if row.sales and row.sales.badge %}
+            <span class="rank-sales">{{ row.sales.badge }}</span>
+            {% endif %}
+          </div>
           <span class="score">{% if row.score %}{{ row.score }}{% else %}—{% endif %}</span>
         </li>
         {% endfor %}
       </ol>
+      {% if source_desk and source_desk.titles %}
+      <h2>Source radar</h2>
+      <p class="tiny">Original books on the {{ source_desk.label }} desk. Badges appear after the morning Rakuten check.</p>
+      <ul class="source-desk">
+        {% for row in source_desk.titles %}
+        <li>
+          <span>{{ row.en_title }}</span>
+          <span class="tag">{{ row.format_label }}</span>
+          {% if row.badge %}<span class="rank-sales">{{ row.badge }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </aside>
   </div>
 

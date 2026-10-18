@@ -311,6 +311,69 @@ button, input, select { font-family: inherit; }
 .rank-list strong { font-family: var(--mono); color: var(--cyan); }
 .rank-list a { color: var(--text); font-size: 0.92rem; }
 .score { color: var(--gold); font-variant-numeric: tabular-nums; font-size: 0.85rem; }
+.sales-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  max-width: calc(100% - 20px);
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(7, 9, 15, 0.88);
+  border: 1px solid rgba(228, 192, 122, 0.55);
+  color: var(--gold);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+}
+.rank-sales {
+  display: block;
+  margin-top: 3px;
+  color: var(--gold);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+}
+.source-desk { list-style: none; margin: 8px 0 0; padding: 0; }
+.source-desk li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.86rem;
+}
+.source-shelf {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.sales-pill {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(228, 192, 122, 0.55);
+  color: var(--gold);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+.shelf-grid { display: grid; gap: 10px; }
+.shelf-card {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #090d16;
+  color: var(--text);
+}
+.shelf-card img { width: 64px; height: 90px; object-fit: cover; border-radius: 6px; }
+.shelf-card b { display: block; color: var(--cyan); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.shelf-card small { display: block; color: var(--text-dim); font-size: 0.78rem; }
+.shelf-card:hover { border-color: var(--cyan-dim); }
 
 .site-footer {
   border-top: 1px solid var(--line);

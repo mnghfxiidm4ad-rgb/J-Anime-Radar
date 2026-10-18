@@ -1,0 +1,400 @@
+{
+  "overrides": {
+    "61987": {
+      "jp_title": "薬屋のひとりごと",
+      "track_formats": [
+        "manga",
+        "light_novel"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "薬屋のひとりごと"
+    },
+    "60636": {
+      "jp_title": "BLEACH",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "BLEACH"
+    },
+    "61967": {
+      "jp_title": "ブラッククローバー",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "ブラッククローバー"
+    },
+    "59741": {
+      "jp_title": "追放された転生重騎士はゲーム知識で無双する",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "追放された転生重騎士はゲーム知識で無双する"
+    },
+    "53913": {
+      "jp_title": "転生したら剣でした",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "転生したら剣でした"
+    },
+    "61323": {
+      "jp_title": "アオのハコ",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "アオのハコ"
+    },
+    "61469": {
+      "jp_title": "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE"
+    },
+    "64340": {
+      "jp_title": "テムパル〜アイテムの力〜",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "テムパル〜アイテムの力〜"
+    },
+    "61578": {
+      "jp_title": "生徒会にも穴はある！",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "生徒会にも穴はある！"
+    },
+    "63293": {
+      "jp_title": "ホタルの嫁入り",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "ホタルの嫁入り"
+    },
+    "59088": {
+      "jp_title": "東京リベンジャーズ 三天戦争編",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "東京リベンジャーズ 三天戦争編"
+    },
+    "64534": {
+      "jp_title": "氷の城壁",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "氷の城壁"
+    },
+    "63431": {
+      "jp_title": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。　～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。　～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～"
+    },
+    "57612": {
+      "jp_title": "帰還者の魔法は特別です",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "帰還者の魔法は特別です"
+    },
+    "60601": {
+      "jp_title": "転生貴族、鑑定スキルで成り上がる",
+      "track_formats": [
+        "manga",
+        "light_novel"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "転生貴族、鑑定スキルで成り上がる"
+    },
+    "52480": {
+      "jp_title": "探偵はもう、死んでいる。",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "探偵はもう、死んでいる。"
+    },
+    "61603": {
+      "jp_title": "アオアシ",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "アオアシ"
+    },
+    "63409": {
+      "jp_title": "どうも、好きな人に惚れ薬を依頼された魔女です。",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "どうも、好きな人に惚れ薬を依頼された魔女です。"
+    },
+    "63367": {
+      "jp_title": "ドラゴンボール超 ビルス",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "ドラゴンボール超 ビルス"
+    },
+    "63509": {
+      "jp_title": "ダークサモナーとデキている",
+      "track_formats": [
+        "manga"
+      ],
+      "enabled": true,
+      "rakuten_keyword": "ダークサモナーとデキている"
+    }
+  },
+  "seasons": [
+    {
+      "id": "2026-fall",
+      "label": "2026 Fall",
+      "updated_at": "2026-10-18T03:25:27Z",
+      "titles": [
+        {
+          "en_title": "The Apothecary Diaries Season 3",
+          "jp_title": "薬屋のひとりごと",
+          "mal_id": 61987,
+          "rank": 1,
+          "track_formats": [
+            "manga",
+            "light_novel"
+          ],
+          "rakuten_keyword": "薬屋のひとりごと",
+          "enabled": true
+        },
+        {
+          "en_title": "BLEACH: Thousand-Year Blood War - The Calamity",
+          "jp_title": "BLEACH",
+          "mal_id": 60636,
+          "rank": 2,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "BLEACH",
+          "enabled": true
+        },
+        {
+          "en_title": "Black Clover Season 2",
+          "jp_title": "ブラッククローバー",
+          "mal_id": 61967,
+          "rank": 3,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "ブラッククローバー",
+          "enabled": true
+        },
+        {
+          "en_title": "The Exiled Heavy Knight Knows How to Game the System",
+          "jp_title": "追放された転生重騎士はゲーム知識で無双する",
+          "mal_id": 59741,
+          "rank": 4,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "追放された転生重騎士はゲーム知識で無双する",
+          "enabled": true
+        },
+        {
+          "en_title": "Reincarnated as a Sword Season 2",
+          "jp_title": "転生したら剣でした",
+          "mal_id": 53913,
+          "rank": 5,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "転生したら剣でした",
+          "enabled": true
+        },
+        {
+          "en_title": "Blue Box Season 2",
+          "jp_title": "アオのハコ",
+          "mal_id": 61323,
+          "rank": 6,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "アオのハコ",
+          "enabled": true
+        },
+        {
+          "en_title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+          "jp_title": "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE",
+          "mal_id": 61469,
+          "rank": 7,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE",
+          "enabled": true
+        },
+        {
+          "en_title": "Overgeared",
+          "jp_title": "テムパル〜アイテムの力〜",
+          "mal_id": 64340,
+          "rank": 8,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "テムパル〜アイテムの力〜",
+          "enabled": true
+        },
+        {
+          "en_title": "Even the Student Council Has Its Holes!",
+          "jp_title": "生徒会にも穴はある！",
+          "mal_id": 61578,
+          "rank": 9,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "生徒会にも穴はある！",
+          "enabled": true
+        },
+        {
+          "en_title": "Firefly Wedding",
+          "jp_title": "ホタルの嫁入り",
+          "mal_id": 63293,
+          "rank": 10,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "ホタルの嫁入り",
+          "enabled": true
+        },
+        {
+          "en_title": "Tokyo Revengers: War of the Three Titans Arc",
+          "jp_title": "東京リベンジャーズ 三天戦争編",
+          "mal_id": 59088,
+          "rank": 11,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "東京リベンジャーズ 三天戦争編",
+          "enabled": true
+        },
+        {
+          "en_title": "The Ramparts of Ice Season 2",
+          "jp_title": "氷の城壁",
+          "mal_id": 64534,
+          "rank": 12,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "氷の城壁",
+          "enabled": true
+        },
+        {
+          "en_title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+          "jp_title": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。　～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
+          "mal_id": 63431,
+          "rank": 13,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。　～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
+          "enabled": true
+        },
+        {
+          "en_title": "A Returner's Magic Should be Special Season 2",
+          "jp_title": "帰還者の魔法は特別です",
+          "mal_id": 57612,
+          "rank": 14,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "帰還者の魔法は特別です",
+          "enabled": true
+        },
+        {
+          "en_title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
+          "jp_title": "転生貴族、鑑定スキルで成り上がる",
+          "mal_id": 60601,
+          "rank": 15,
+          "track_formats": [
+            "manga",
+            "light_novel"
+          ],
+          "rakuten_keyword": "転生貴族、鑑定スキルで成り上がる",
+          "enabled": true
+        },
+        {
+          "en_title": "The Detective Is Already Dead Season 2",
+          "jp_title": "探偵はもう、死んでいる。",
+          "mal_id": 52480,
+          "rank": 16,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "探偵はもう、死んでいる。",
+          "enabled": true
+        },
+        {
+          "en_title": "Aoashi Season 2",
+          "jp_title": "アオアシ",
+          "mal_id": 61603,
+          "rank": 17,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "アオアシ",
+          "enabled": true
+        },
+        {
+          "en_title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+          "jp_title": "どうも、好きな人に惚れ薬を依頼された魔女です。",
+          "mal_id": 63409,
+          "rank": 18,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "どうも、好きな人に惚れ薬を依頼された魔女です。",
+          "enabled": true
+        },
+        {
+          "en_title": "Dragon Ball Super: Beerus",
+          "jp_title": "ドラゴンボール超 ビルス",
+          "mal_id": 63367,
+          "rank": 19,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "ドラゴンボール超 ビルス",
+          "enabled": true
+        },
+        {
+          "en_title": "I'm Dating a Dark Summoner",
+          "jp_title": "ダークサモナーとデキている",
+          "mal_id": 63509,
+          "rank": 20,
+          "track_formats": [
+            "manga"
+          ],
+          "rakuten_keyword": "ダークサモナーとデキている",
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "how_to_update": "When the cour changes, run: python scripts/anime_radar_pipeline.py --sync-targets. The previous season stays in seasons[]. The active list is rebuilt from the current Top 20. jp_title, track_formats, enabled, and rakuten_keyword you already set are kept. Set enabled to false to stop tracking a title without deleting that choice.",
+  "active_season": "2026-fall",
+  "updated_at": "2026-10-18T03:25:27Z"
+}

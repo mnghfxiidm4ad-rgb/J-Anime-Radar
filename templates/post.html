@@ -109,6 +109,26 @@
     {% for p in post.story_paragraphs %}
     {{ p | md }}
     {% endfor %}
+    {% if post.sales and post.sales.book_list %}
+    <div class="source-shelf">
+      <p class="kicker">Source radar</p>
+      {% if post.sales.badge %}<p class="sales-pill">{{ post.sales.badge }}</p>{% endif %}
+      {% if post.sales.market_line %}<p>{{ post.sales.market_line }}</p>{% endif %}
+      <div class="shelf-grid">
+        {% for book in post.sales.book_list %}
+        <a class="shelf-card" href="{{ book.url }}" rel="noopener noreferrer sponsored" target="_blank">
+          {% if book.image %}<img src="{{ book.image }}" alt="" width="80" height="112" loading="lazy" decoding="async">{% endif %}
+          <span>
+            <b>{{ book.format_label }}{% if book.volume %} · Vol.{{ book.volume }}{% endif %}</b>
+            {{ book.title }}
+            {% if book.review_average %}<small>★ {{ book.review_average }} · {{ book.review_count }} reviews</small>{% endif %}
+            {% if book.price %}<small>{{ book.price }} · Rakuten Books</small>{% endif %}
+          </span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
   </section>
 
   {% with slot_name='In-Article', slot_id='in-article', extra_class='in-article-ad' %}

@@ -1,0 +1,108 @@
+name: Daily source radar
+
+on:
+  schedule:
+    - cron: "0 21 * * *"
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Which step to run
+        required: true
+        type: choice
+        options:
+          - fetch
+          - generate
+          - all
+        default: all
+      title:
+        description: Optional English title filter
+        required: false
+        type: string
+      ep:
+        description: Optional episode number, used with title on generate
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '0 21 * * *')
+      || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'fetch' || inputs.mode == 'all'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Refresh this cour's targets and Rakuten snapshot
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+          RADAR_TITLE: ${{ github.event_name == 'workflow_dispatch' && inputs.title || '' }}
+          TZ: Asia/Tokyo
+        run: |
+          if [ -n "$RADAR_TITLE" ]; then
+            python scripts/anime_radar_pipeline.py --fetch --title "$RADAR_TITLE"
+          else
+            python scripts/anime_radar_pipeline.py --fetch
+          fi
+      - name: Commit radar snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/targets.json data/manga_sales_radar.json
+          if git diff --cached --quiet; then
+            echo "No radar changes."
+          else
+            git commit -m "chore: refresh source sales radar [skip ci]"
+            git push
+          fi
+
+  generate:
+    needs: fetch
+    if: >-
+      always() &&
+      (needs.fetch.result == 'success' || needs.fetch.result == 'skipped') &&
+      ((github.event_name == 'schedule' && github.event.schedule == '0 0 * * *')
+      || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'generate' || inputs.mode == 'all')))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Write market lines and rebuild HTML
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-4o
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          RADAR_TITLE: ${{ github.event_name == 'workflow_dispatch' && inputs.title || '' }}
+          RADAR_EP: ${{ github.event_name == 'workflow_dispatch' && inputs.ep || '' }}
+          TZ: Asia/Tokyo
+        run: |
+          args=(--generate)
+          if [ -n "$RADAR_TITLE" ]; then args+=(--title "$RADAR_TITLE"); fi
+          if [ -n "$RADAR_EP" ]; then args+=(--ep "$RADAR_EP"); fi
+          python scripts/anime_radar_pipeline.py "${args[@]}"
+          python scripts/fetch_and_summarize.py --rebuild-only
+      - name: Commit generated radar copy
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/manga_sales_radar.json docs
+          if [ -d content/briefings ]; then git add content/briefings; fi
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+          else
+            git commit -m "chore: publish source radar lines [skip ci]"
+            git push
+          fi
