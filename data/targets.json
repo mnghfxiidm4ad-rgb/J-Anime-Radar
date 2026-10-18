@@ -167,7 +167,7 @@
     {
       "id": "2026-fall",
       "label": "2026 Fall",
-      "updated_at": "2026-10-18T03:25:27Z",
+      "updated_at": "2026-10-18T07:52:47Z",
       "titles": [
         {
           "en_title": "The Apothecary Diaries Season 3",
@@ -259,25 +259,25 @@
           "enabled": true
         },
         {
-          "en_title": "Even the Student Council Has Its Holes!",
-          "jp_title": "生徒会にも穴はある！",
-          "mal_id": 61578,
+          "en_title": "Firefly Wedding",
+          "jp_title": "ホタルの嫁入り",
+          "mal_id": 63293,
           "rank": 9,
           "track_formats": [
             "manga"
           ],
-          "rakuten_keyword": "生徒会にも穴はある！",
+          "rakuten_keyword": "ホタルの嫁入り",
           "enabled": true
         },
         {
-          "en_title": "Firefly Wedding",
-          "jp_title": "ホタルの嫁入り",
-          "mal_id": 63293,
+          "en_title": "Even the Student Council Has Its Holes!",
+          "jp_title": "生徒会にも穴はある！",
+          "mal_id": 61578,
           "rank": 10,
           "track_formats": [
             "manga"
           ],
-          "rakuten_keyword": "ホタルの嫁入り",
+          "rakuten_keyword": "生徒会にも穴はある！",
           "enabled": true
         },
         {
@@ -359,25 +359,25 @@
           "enabled": true
         },
         {
-          "en_title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-          "jp_title": "どうも、好きな人に惚れ薬を依頼された魔女です。",
-          "mal_id": 63409,
+          "en_title": "Dragon Ball Super: Beerus",
+          "jp_title": "ドラゴンボール超 ビルス",
+          "mal_id": 63367,
           "rank": 18,
           "track_formats": [
             "manga"
           ],
-          "rakuten_keyword": "どうも、好きな人に惚れ薬を依頼された魔女です。",
+          "rakuten_keyword": "ドラゴンボール超 ビルス",
           "enabled": true
         },
         {
-          "en_title": "Dragon Ball Super: Beerus",
-          "jp_title": "ドラゴンボール超 ビルス",
-          "mal_id": 63367,
+          "en_title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+          "jp_title": "どうも、好きな人に惚れ薬を依頼された魔女です。",
+          "mal_id": 63409,
           "rank": 19,
           "track_formats": [
             "manga"
           ],
-          "rakuten_keyword": "ドラゴンボール超 ビルス",
+          "rakuten_keyword": "どうも、好きな人に惚れ薬を依頼された魔女です。",
           "enabled": true
         },
         {
@@ -396,5 +396,5 @@
   ],
   "how_to_update": "When the cour changes, run: python scripts/anime_radar_pipeline.py --sync-targets. The previous season stays in seasons[]. The active list is rebuilt from the current Top 20. jp_title, track_formats, enabled, and rakuten_keyword you already set are kept. Set enabled to false to stop tracking a title without deleting that choice.",
   "active_season": "2026-fall",
-  "updated_at": "2026-10-18T03:25:27Z"
+  "updated_at": "2026-10-18T07:52:47Z"
 }
