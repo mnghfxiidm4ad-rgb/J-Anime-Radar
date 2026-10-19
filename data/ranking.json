@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-18T07:07:29Z",
+  "updated_at": "2026-10-19T07:32:07Z",
   "items": [
     {
       "rank": 1,
@@ -31,7 +31,7 @@
     {
       "rank": 4,
       "title": "The Exiled Heavy Knight Knows How to Game the System",
-      "score": 68,
+      "score": 67,
       "mal_id": 59741,
       "latest": 16,
       "origin": "anilist"
@@ -49,13 +49,13 @@
       "title": "Blue Box Season 2",
       "score": 81,
       "mal_id": 61323,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
       "rank": 7,
       "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-      "score": 85,
+      "score": 86,
       "mal_id": 61469,
       "latest": 4,
       "origin": "anilist"
@@ -65,7 +65,7 @@
       "title": "Overgeared",
       "score": 75,
       "mal_id": 64340,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
@@ -111,7 +111,7 @@
     {
       "rank": 14,
       "title": "A Returner's Magic Should be Special Season 2",
-      "score": 69,
+      "score": 70,
       "mal_id": 57612,
       "latest": 2,
       "origin": "anilist"
@@ -121,13 +121,13 @@
       "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
       "score": 70,
       "mal_id": 60601,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
       "rank": 16,
       "title": "The Detective Is Already Dead Season 2",
-      "score": 71,
+      "score": 72,
       "mal_id": 52480,
       "latest": 2,
       "origin": "anilist"
@@ -137,7 +137,7 @@
       "title": "Aoashi Season 2",
       "score": 79,
       "mal_id": 61603,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -145,7 +145,7 @@
       "title": "Dragon Ball Super: Beerus",
       "score": 81,
       "mal_id": 63367,
-      "latest": 1,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -161,7 +161,7 @@
       "title": "I'm Dating a Dark Summoner",
       "score": 67,
       "mal_id": 63509,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -177,7 +177,7 @@
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 68,
       "mal_id": 60948,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -222,18 +222,18 @@
     },
     {
       "rank": 28,
-      "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 68,
-      "mal_id": 63754,
-      "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 29,
       "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
       "score": 71,
       "mal_id": 63181,
       "latest": 3,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
+      "title": "The Cold Sato-san is Only Sweet to Me",
+      "score": 68,
+      "mal_id": 63754,
+      "latest": 2,
       "origin": "anilist"
     },
     {
