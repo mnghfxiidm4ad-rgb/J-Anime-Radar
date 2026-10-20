@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-19T07:32:07Z",
+  "updated_at": "2026-10-20T07:25:08Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -129,6 +129,11 @@
           "slug": "bleach-thousand-year-blood-war-the-calamity-ep8",
           "source": "editorial-seed",
           "generated_at": "2026-09-14T07:56:41Z"
+        },
+        "9": {
+          "slug": "bleach-thousand-year-blood-war-the-calamity-ep9",
+          "source": "gemini",
+          "generated_at": "2026-10-20T07:21:44Z"
         }
       }
     },
@@ -1109,6 +1114,11 @@
           "slug": "aoashi-season-2-ep2",
           "source": "gemini",
           "generated_at": "2026-10-12T08:53:44Z"
+        },
+        "3": {
+          "slug": "aoashi-season-2-ep3",
+          "source": "gemini",
+          "generated_at": "2026-10-20T07:25:08Z"
         }
       }
     },
@@ -1234,6 +1244,11 @@
           "slug": "dragon-ball-super-beerus-ep1",
           "source": "gemini",
           "generated_at": "2026-10-14T07:25:18Z"
+        },
+        "2": {
+          "slug": "dragon-ball-super-beerus-ep2",
+          "source": "gemini",
+          "generated_at": "2026-10-20T07:23:23Z"
         }
       }
     }

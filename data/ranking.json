@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-19T07:32:07Z",
+  "updated_at": "2026-10-20T07:25:08Z",
   "items": [
     {
       "rank": 1,
@@ -14,24 +14,24 @@
     },
     {
       "rank": 2,
-      "title": "BLEACH: Thousand-Year Blood War - The Calamity",
-      "score": 89,
-      "mal_id": 60636,
-      "latest": 8,
-      "origin": "anilist"
-    },
-    {
-      "rank": 3,
       "title": "Black Clover Season 2",
-      "score": 86,
+      "score": 87,
       "mal_id": 61967,
       "latest": 3,
       "origin": "anilist"
     },
     {
+      "rank": 3,
+      "title": "BLEACH: Thousand-Year Blood War - The Calamity",
+      "score": 89,
+      "mal_id": 60636,
+      "latest": 9,
+      "origin": "anilist"
+    },
+    {
       "rank": 4,
       "title": "The Exiled Heavy Knight Knows How to Game the System",
-      "score": 67,
+      "score": 68,
       "mal_id": 59741,
       "latest": 16,
       "origin": "anilist"
@@ -63,7 +63,7 @@
     {
       "rank": 8,
       "title": "Overgeared",
-      "score": 75,
+      "score": 76,
       "mal_id": 64340,
       "latest": 4,
       "origin": "anilist"
@@ -111,7 +111,7 @@
     {
       "rank": 14,
       "title": "A Returner's Magic Should be Special Season 2",
-      "score": 70,
+      "score": 69,
       "mal_id": 57612,
       "latest": 2,
       "origin": "anilist"
@@ -134,14 +134,6 @@
     },
     {
       "rank": 17,
-      "title": "Aoashi Season 2",
-      "score": 79,
-      "mal_id": 61603,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
-      "rank": 18,
       "title": "Dragon Ball Super: Beerus",
       "score": 81,
       "mal_id": 63367,
@@ -149,11 +141,19 @@
       "origin": "anilist"
     },
     {
+      "rank": 18,
+      "title": "Aoashi Season 2",
+      "score": 79,
+      "mal_id": 61603,
+      "latest": 3,
+      "origin": "anilist"
+    },
+    {
       "rank": 19,
       "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
       "score": 71,
       "mal_id": 63409,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -166,18 +166,18 @@
     },
     {
       "rank": 21,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 75,
-      "mal_id": 63382,
-      "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 22,
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 68,
       "mal_id": 60948,
       "latest": 3,
+      "origin": "anilist"
+    },
+    {
+      "rank": 22,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 75,
+      "mal_id": 63382,
+      "latest": 2,
       "origin": "anilist"
     },
     {
@@ -198,17 +198,17 @@
     },
     {
       "rank": 25,
-      "title": "PSYREN",
-      "score": 69,
-      "mal_id": 63098,
-      "latest": 2,
+      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+      "score": 60,
+      "mal_id": 62922,
+      "latest": 3,
       "origin": "anilist"
     },
     {
       "rank": 26,
-      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "score": 60,
-      "mal_id": 62922,
+      "title": "PSYREN",
+      "score": 69,
+      "mal_id": 63098,
       "latest": 3,
       "origin": "anilist"
     },
@@ -222,14 +222,6 @@
     },
     {
       "rank": 28,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 71,
-      "mal_id": 63181,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
-      "rank": 29,
       "title": "The Cold Sato-san is Only Sweet to Me",
       "score": 68,
       "mal_id": 63754,
@@ -237,11 +229,19 @@
       "origin": "anilist"
     },
     {
+      "rank": 29,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "score": 71,
+      "mal_id": 63181,
+      "latest": 3,
+      "origin": "anilist"
+    },
+    {
       "rank": 30,
       "title": "So What's Wrong with Getting Reborn as a Goblin?",
       "score": 66,
       "mal_id": 63712,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     }
   ]
