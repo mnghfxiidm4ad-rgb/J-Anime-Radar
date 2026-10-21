@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-20T07:25:08Z",
+  "updated_at": "2026-10-21T07:28:14Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1159,6 +1159,11 @@
           "slug": "i-m-dating-a-dark-summoner-ep2",
           "source": "gemini",
           "generated_at": "2026-10-13T09:12:02Z"
+        },
+        "3": {
+          "slug": "i-m-dating-a-dark-summoner-ep3",
+          "source": "gemini",
+          "generated_at": "2026-10-21T07:28:14Z"
         }
       }
     },
@@ -1189,6 +1194,11 @@
           "slug": "hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion-ep2",
           "source": "gemini",
           "generated_at": "2026-10-14T07:22:19Z"
+        },
+        "3": {
+          "slug": "hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion-ep3",
+          "source": "gemini",
+          "generated_at": "2026-10-21T07:26:08Z"
         }
       }
     },
@@ -1234,6 +1244,11 @@
           "slug": "the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-ep2",
           "source": "gemini",
           "generated_at": "2026-10-14T07:19:52Z"
+        },
+        "3": {
+          "slug": "the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-ep3",
+          "source": "gemini",
+          "generated_at": "2026-10-21T07:22:50Z"
         }
       }
     },

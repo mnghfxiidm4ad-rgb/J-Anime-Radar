@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-20T07:25:08Z",
+  "updated_at": "2026-10-21T07:28:14Z",
   "items": [
     {
       "rank": 1,
@@ -105,7 +105,7 @@
       "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
       "score": 74,
       "mal_id": 63431,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -126,14 +126,6 @@
     },
     {
       "rank": 16,
-      "title": "The Detective Is Already Dead Season 2",
-      "score": 72,
-      "mal_id": 52480,
-      "latest": 2,
-      "origin": "anilist"
-    },
-    {
-      "rank": 17,
       "title": "Dragon Ball Super: Beerus",
       "score": 81,
       "mal_id": 63367,
@@ -141,18 +133,26 @@
       "origin": "anilist"
     },
     {
+      "rank": 17,
+      "title": "The Detective Is Already Dead Season 2",
+      "score": 71,
+      "mal_id": 52480,
+      "latest": 2,
+      "origin": "anilist"
+    },
+    {
       "rank": 18,
-      "title": "Aoashi Season 2",
-      "score": 79,
-      "mal_id": 61603,
+      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+      "score": 71,
+      "mal_id": 63409,
       "latest": 3,
       "origin": "anilist"
     },
     {
       "rank": 19,
-      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "score": 71,
-      "mal_id": 63409,
+      "title": "Aoashi Season 2",
+      "score": 79,
+      "mal_id": 61603,
       "latest": 3,
       "origin": "anilist"
     },
@@ -177,7 +177,7 @@
       "title": "Nia Liston: The Merciless Maiden",
       "score": 75,
       "mal_id": 63382,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -222,26 +222,26 @@
     },
     {
       "rank": 28,
-      "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 68,
-      "mal_id": 63754,
-      "latest": 2,
+      "title": "So What's Wrong with Getting Reborn as a Goblin?",
+      "score": 66,
+      "mal_id": 63712,
+      "latest": 4,
       "origin": "anilist"
     },
     {
       "rank": 29,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 71,
-      "mal_id": 63181,
+      "title": "The Cold Sato-san is Only Sweet to Me",
+      "score": 68,
+      "mal_id": 63754,
       "latest": 3,
       "origin": "anilist"
     },
     {
       "rank": 30,
-      "title": "So What's Wrong with Getting Reborn as a Goblin?",
-      "score": 66,
-      "mal_id": 63712,
-      "latest": 4,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "score": 71,
+      "mal_id": 63181,
+      "latest": 3,
       "origin": "anilist"
     }
   ]
