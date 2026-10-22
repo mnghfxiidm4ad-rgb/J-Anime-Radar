@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-21T07:28:14Z",
+  "updated_at": "2026-10-22T07:21:02Z",
   "items": [
     {
       "rank": 1,
@@ -41,7 +41,7 @@
       "title": "Reincarnated as a Sword Season 2",
       "score": 75,
       "mal_id": 53913,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
@@ -54,17 +54,17 @@
     },
     {
       "rank": 7,
-      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-      "score": 86,
-      "mal_id": 61469,
+      "title": "Overgeared",
+      "score": 76,
+      "mal_id": 64340,
       "latest": 4,
       "origin": "anilist"
     },
     {
       "rank": 8,
-      "title": "Overgeared",
-      "score": 76,
-      "mal_id": 64340,
+      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+      "score": 86,
+      "mal_id": 61469,
       "latest": 4,
       "origin": "anilist"
     },
@@ -86,6 +86,14 @@
     },
     {
       "rank": 11,
+      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+      "score": 73,
+      "mal_id": 63431,
+      "latest": 3,
+      "origin": "anilist"
+    },
+    {
+      "rank": 12,
       "title": "Tokyo Revengers: War of the Three Titans Arc",
       "score": 76,
       "mal_id": 59088,
@@ -93,18 +101,10 @@
       "origin": "anilist"
     },
     {
-      "rank": 12,
+      "rank": 13,
       "title": "The Ramparts of Ice Season 2",
       "score": 81,
       "mal_id": 64534,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
-      "rank": 13,
-      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
-      "score": 74,
-      "mal_id": 63431,
       "latest": 3,
       "origin": "anilist"
     },
@@ -113,7 +113,7 @@
       "title": "A Returner's Magic Should be Special Season 2",
       "score": 69,
       "mal_id": 57612,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -134,17 +134,17 @@
     },
     {
       "rank": 17,
-      "title": "The Detective Is Already Dead Season 2",
+      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
       "score": 71,
-      "mal_id": 52480,
-      "latest": 2,
+      "mal_id": 63409,
+      "latest": 3,
       "origin": "anilist"
     },
     {
       "rank": 18,
-      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+      "title": "The Detective Is Already Dead Season 2",
       "score": 71,
-      "mal_id": 63409,
+      "mal_id": 52480,
       "latest": 3,
       "origin": "anilist"
     },
@@ -166,17 +166,17 @@
     },
     {
       "rank": 21,
-      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
-      "score": 68,
-      "mal_id": 60948,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 75,
+      "mal_id": 63382,
       "latest": 3,
       "origin": "anilist"
     },
     {
       "rank": 22,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 75,
-      "mal_id": 63382,
+      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+      "score": 69,
+      "mal_id": 60948,
       "latest": 3,
       "origin": "anilist"
     },
@@ -198,14 +198,6 @@
     },
     {
       "rank": 25,
-      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "score": 60,
-      "mal_id": 62922,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
-      "rank": 26,
       "title": "PSYREN",
       "score": 69,
       "mal_id": 63098,
@@ -213,11 +205,19 @@
       "origin": "anilist"
     },
     {
+      "rank": 26,
+      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+      "score": 60,
+      "mal_id": 62922,
+      "latest": 3,
+      "origin": "anilist"
+    },
+    {
       "rank": 27,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 67,
-      "mal_id": 64254,
-      "latest": 2,
+      "title": "The Cold Sato-san is Only Sweet to Me",
+      "score": 68,
+      "mal_id": 63754,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -230,10 +230,10 @@
     },
     {
       "rank": 29,
-      "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 68,
-      "mal_id": 63754,
-      "latest": 3,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 67,
+      "mal_id": 64254,
+      "latest": 2,
       "origin": "anilist"
     },
     {
