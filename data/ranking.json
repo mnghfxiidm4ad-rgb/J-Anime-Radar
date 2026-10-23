@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-22T07:21:02Z",
+  "updated_at": "2026-10-23T07:13:57Z",
   "items": [
     {
       "rank": 1,
@@ -33,7 +33,7 @@
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 68,
       "mal_id": 59741,
-      "latest": 16,
+      "latest": 17,
       "origin": "anilist"
     },
     {
@@ -105,7 +105,7 @@
       "title": "The Ramparts of Ice Season 2",
       "score": 81,
       "mal_id": 64534,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
@@ -233,7 +233,7 @@
       "title": "The Iceblade Sorcerer Shall Rule the World II",
       "score": 67,
       "mal_id": 64254,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
