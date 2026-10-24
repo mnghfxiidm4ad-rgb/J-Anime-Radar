@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-23T07:13:57Z",
+  "updated_at": "2026-10-24T07:09:56Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -924,6 +924,11 @@
           "slug": "steel-ball-run-jojo-s-bizarre-adventure-2nd-3rd-stage-ep4",
           "source": "gemini",
           "generated_at": "2026-10-17T06:45:50Z"
+        },
+        "5": {
+          "slug": "steel-ball-run-jojo-s-bizarre-adventure-2nd-3rd-stage-ep5",
+          "source": "gemini",
+          "generated_at": "2026-10-24T07:08:44Z"
         }
       }
     },
@@ -994,6 +999,11 @@
           "slug": "the-apothecary-diaries-season-3-ep3",
           "source": "gemini",
           "generated_at": "2026-10-17T06:45:28Z"
+        },
+        "4": {
+          "slug": "the-apothecary-diaries-season-3-ep4",
+          "source": "gemini",
+          "generated_at": "2026-10-24T07:07:19Z"
         }
       }
     },
@@ -1114,6 +1124,11 @@
           "slug": "firefly-wedding-ep2",
           "source": "gemini",
           "generated_at": "2026-10-17T06:46:09Z"
+        },
+        "3": {
+          "slug": "firefly-wedding-ep3",
+          "source": "gemini",
+          "generated_at": "2026-10-24T07:09:56Z"
         }
       }
     },

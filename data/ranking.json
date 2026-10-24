@@ -2,14 +2,14 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-23T07:13:57Z",
+  "updated_at": "2026-10-24T07:09:56Z",
   "items": [
     {
       "rank": 1,
       "title": "The Apothecary Diaries Season 3",
       "score": 85,
       "mal_id": 61987,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
@@ -31,7 +31,7 @@
     {
       "rank": 4,
       "title": "The Exiled Heavy Knight Knows How to Game the System",
-      "score": 68,
+      "score": 67,
       "mal_id": 59741,
       "latest": 17,
       "origin": "anilist"
@@ -55,7 +55,7 @@
     {
       "rank": 7,
       "title": "Overgeared",
-      "score": 76,
+      "score": 75,
       "mal_id": 64340,
       "latest": 4,
       "origin": "anilist"
@@ -63,9 +63,9 @@
     {
       "rank": 8,
       "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-      "score": 86,
+      "score": 85,
       "mal_id": 61469,
-      "latest": 4,
+      "latest": 5,
       "origin": "anilist"
     },
     {
@@ -73,7 +73,7 @@
       "title": "Firefly Wedding",
       "score": 75,
       "mal_id": 63293,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
@@ -97,7 +97,7 @@
       "title": "Tokyo Revengers: War of the Three Titans Arc",
       "score": 76,
       "mal_id": 59088,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
@@ -150,9 +150,9 @@
     },
     {
       "rank": 19,
-      "title": "Aoashi Season 2",
-      "score": 79,
-      "mal_id": 61603,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 75,
+      "mal_id": 63382,
       "latest": 3,
       "origin": "anilist"
     },
@@ -166,9 +166,9 @@
     },
     {
       "rank": 21,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 75,
-      "mal_id": 63382,
+      "title": "Aoashi Season 2",
+      "score": 79,
+      "mal_id": 61603,
       "latest": 3,
       "origin": "anilist"
     },
@@ -222,6 +222,14 @@
     },
     {
       "rank": 28,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 66,
+      "mal_id": 64254,
+      "latest": 3,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
       "title": "So What's Wrong with Getting Reborn as a Goblin?",
       "score": 66,
       "mal_id": 63712,
@@ -229,19 +237,11 @@
       "origin": "anilist"
     },
     {
-      "rank": 29,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 67,
-      "mal_id": 64254,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
       "rank": 30,
       "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
       "score": 71,
       "mal_id": 63181,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     }
   ]
