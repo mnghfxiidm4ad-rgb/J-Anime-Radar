@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-24T07:09:56Z",
+  "updated_at": "2026-10-25T07:31:36Z",
   "items": [
     {
       "rank": 1,
@@ -17,7 +17,7 @@
       "title": "Black Clover Season 2",
       "score": 87,
       "mal_id": 61967,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
@@ -81,7 +81,7 @@
       "title": "Even the Student Council Has Its Holes!",
       "score": 73,
       "mal_id": 61578,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
@@ -185,7 +185,7 @@
       "title": "A Wild Last Boss Appeared! Season 2",
       "score": 73,
       "mal_id": 63140,
-      "latest": 4,
+      "latest": 5,
       "origin": "anilist"
     },
     {
@@ -193,7 +193,7 @@
       "title": "Magical Explorer",
       "score": 68,
       "mal_id": 56733,
-      "latest": 4,
+      "latest": 5,
       "origin": "anilist"
     },
     {
@@ -209,22 +209,22 @@
       "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
       "score": 60,
       "mal_id": 62922,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
       "rank": 27,
-      "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 68,
-      "mal_id": 63754,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 66,
+      "mal_id": 64254,
       "latest": 3,
       "origin": "anilist"
     },
     {
       "rank": 28,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 66,
-      "mal_id": 64254,
+      "title": "The Cold Sato-san is Only Sweet to Me",
+      "score": 68,
+      "mal_id": 63754,
       "latest": 3,
       "origin": "anilist"
     },
@@ -239,7 +239,7 @@
     {
       "rank": 30,
       "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 71,
+      "score": 72,
       "mal_id": 63181,
       "latest": 4,
       "origin": "anilist"

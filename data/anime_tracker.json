@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-24T07:09:56Z",
+  "updated_at": "2026-10-25T07:31:36Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1024,6 +1024,11 @@
           "slug": "tokyo-revengers-war-of-the-three-titans-arc-ep3",
           "source": "gemini",
           "generated_at": "2026-10-18T07:07:29Z"
+        },
+        "4": {
+          "slug": "tokyo-revengers-war-of-the-three-titans-arc-ep4",
+          "source": "gemini",
+          "generated_at": "2026-10-25T07:31:36Z"
         }
       }
     },
@@ -1069,6 +1074,11 @@
           "slug": "black-clover-season-2-ep3",
           "source": "gemini",
           "generated_at": "2026-10-18T07:05:56Z"
+        },
+        "4": {
+          "slug": "black-clover-season-2-ep4",
+          "source": "gemini",
+          "generated_at": "2026-10-25T07:27:43Z"
         }
       }
     },
@@ -1109,6 +1119,11 @@
           "slug": "even-the-student-council-has-its-holes-ep3",
           "source": "gemini",
           "generated_at": "2026-10-18T07:06:22Z"
+        },
+        "4": {
+          "slug": "even-the-student-council-has-its-holes-ep4",
+          "source": "gemini",
+          "generated_at": "2026-10-25T07:30:37Z"
         }
       }
     },
