@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-25T07:31:36Z",
+  "updated_at": "2026-10-26T07:56:14Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -954,6 +954,11 @@
           "slug": "overgeared-ep4",
           "source": "gemini",
           "generated_at": "2026-10-19T07:31:29Z"
+        },
+        "5": {
+          "slug": "overgeared-ep5",
+          "source": "gemini",
+          "generated_at": "2026-10-26T07:43:09Z"
         }
       }
     },
@@ -1054,6 +1059,11 @@
           "slug": "as-a-reincarnated-aristocrat-i-ll-use-my-appraisal-skill-to-rise-in-the-world-se-ep4",
           "source": "gemini",
           "generated_at": "2026-10-19T07:32:07Z"
+        },
+        "5": {
+          "slug": "as-a-reincarnated-aristocrat-i-ll-use-my-appraisal-skill-to-rise-in-the-world-se-ep5",
+          "source": "gemini",
+          "generated_at": "2026-10-26T07:56:14Z"
         }
       }
     },
@@ -1099,6 +1109,11 @@
           "slug": "blue-box-season-2-ep3",
           "source": "gemini",
           "generated_at": "2026-10-19T07:30:48Z"
+        },
+        "4": {
+          "slug": "blue-box-season-2-ep4",
+          "source": "gemini",
+          "generated_at": "2026-10-26T07:39:36Z"
         }
       }
     },

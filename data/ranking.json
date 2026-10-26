@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-25T07:31:36Z",
+  "updated_at": "2026-10-26T07:56:14Z",
   "items": [
     {
       "rank": 1,
@@ -49,21 +49,21 @@
       "title": "Blue Box Season 2",
       "score": 81,
       "mal_id": 61323,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
       "rank": 7,
       "title": "Overgeared",
-      "score": 75,
+      "score": 76,
       "mal_id": 64340,
-      "latest": 4,
+      "latest": 5,
       "origin": "anilist"
     },
     {
       "rank": 8,
       "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-      "score": 85,
+      "score": 86,
       "mal_id": 61469,
       "latest": 5,
       "origin": "anilist"
@@ -121,21 +121,21 @@
       "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
       "score": 70,
       "mal_id": 60601,
-      "latest": 4,
+      "latest": 5,
       "origin": "anilist"
     },
     {
       "rank": 16,
       "title": "Dragon Ball Super: Beerus",
-      "score": 81,
+      "score": 82,
       "mal_id": 63367,
-      "latest": 2,
+      "latest": 3,
       "origin": "anilist"
     },
     {
       "rank": 17,
       "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "score": 71,
+      "score": 72,
       "mal_id": 63409,
       "latest": 3,
       "origin": "anilist"
@@ -143,7 +143,7 @@
     {
       "rank": 18,
       "title": "The Detective Is Already Dead Season 2",
-      "score": 71,
+      "score": 72,
       "mal_id": 52480,
       "latest": 3,
       "origin": "anilist"
@@ -151,7 +151,7 @@
     {
       "rank": 19,
       "title": "Nia Liston: The Merciless Maiden",
-      "score": 75,
+      "score": 76,
       "mal_id": 63382,
       "latest": 3,
       "origin": "anilist"
@@ -161,15 +161,15 @@
       "title": "I'm Dating a Dark Summoner",
       "score": 67,
       "mal_id": 63509,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
       "rank": 21,
       "title": "Aoashi Season 2",
-      "score": 79,
+      "score": 80,
       "mal_id": 61603,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
@@ -177,7 +177,7 @@
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 69,
       "mal_id": 60948,
-      "latest": 3,
+      "latest": 4,
       "origin": "anilist"
     },
     {
@@ -191,31 +191,31 @@
     {
       "rank": 24,
       "title": "Magical Explorer",
-      "score": 68,
+      "score": 69,
       "mal_id": 56733,
       "latest": 5,
       "origin": "anilist"
     },
     {
       "rank": 25,
-      "title": "PSYREN",
-      "score": 69,
-      "mal_id": 63098,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
-      "rank": 26,
       "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "score": 60,
+      "score": 61,
       "mal_id": 62922,
       "latest": 4,
       "origin": "anilist"
     },
     {
+      "rank": 26,
+      "title": "PSYREN",
+      "score": 70,
+      "mal_id": 63098,
+      "latest": 3,
+      "origin": "anilist"
+    },
+    {
       "rank": 27,
       "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 66,
+      "score": 67,
       "mal_id": 64254,
       "latest": 3,
       "origin": "anilist"
