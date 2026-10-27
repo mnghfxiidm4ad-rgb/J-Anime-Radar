@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-27T07:42:32Z",
+  "updated_at": "2026-10-27T21:42:35Z",
   "items": [
     {
       "rank": 1,
@@ -10,6 +10,9 @@
       "score": 85,
       "mal_id": 61987,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793368800,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -18,6 +21,9 @@
       "score": 87,
       "mal_id": 61967,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793455200,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -26,6 +32,9 @@
       "score": 67,
       "mal_id": 59741,
       "latest": 17,
+      "next_episode": 18,
+      "next_airing_at": 1793287560,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -34,6 +43,9 @@
       "score": 75,
       "mal_id": 53913,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793201400,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -42,6 +54,9 @@
       "score": 81,
       "mal_id": 61323,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1794123000,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -50,6 +65,9 @@
       "score": 76,
       "mal_id": 64340,
       "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1793543400,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -58,6 +76,9 @@
       "score": 86,
       "mal_id": 61469,
       "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1793347200,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -66,6 +87,9 @@
       "score": 75,
       "mal_id": 63293,
       "latest": 3,
+      "next_episode": 4,
+      "next_airing_at": 1793370600,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -74,6 +98,9 @@
       "score": 73,
       "mal_id": 61578,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793460600,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -81,7 +108,10 @@
       "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
       "score": 73,
       "mal_id": 63431,
-      "latest": 3,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793718000,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -90,6 +120,9 @@
       "score": 76,
       "mal_id": 59088,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793379180,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -98,6 +131,9 @@
       "score": 81,
       "mal_id": 64534,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793285760,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -106,30 +142,42 @@
       "score": 69,
       "mal_id": 57612,
       "latest": 3,
+      "next_episode": 4,
+      "next_airing_at": 1793202300,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
       "rank": 14,
-      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
-      "score": 70,
-      "mal_id": 60601,
-      "latest": 5,
-      "origin": "anilist"
-    },
-    {
-      "rank": 15,
       "title": "Dragon Ball Super: Beerus",
       "score": 81,
       "mal_id": 63367,
       "latest": 3,
+      "next_episode": 4,
+      "next_airing_at": 1793542560,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 15,
+      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
+      "score": 70,
+      "mal_id": 60601,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1793543400,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
       "rank": 16,
       "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "score": 71,
+      "score": 72,
       "mal_id": 63409,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793622600,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -138,6 +186,9 @@
       "score": 67,
       "mal_id": 63509,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793550000,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -146,6 +197,9 @@
       "score": 69,
       "mal_id": 60948,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793536200,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -153,39 +207,54 @@
       "title": "Nia Liston: The Merciless Maiden",
       "score": 76,
       "mal_id": 63382,
-      "latest": 3,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793708760,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
       "rank": 20,
-      "title": "The Detective Is Already Dead Season 2",
-      "score": 71,
-      "mal_id": 52480,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
-      "rank": 21,
       "title": "Aoashi Season 2",
       "score": 80,
       "mal_id": 61603,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793520000,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 21,
+      "title": "The Detective Is Already Dead Season 2",
+      "score": 71,
+      "mal_id": 52480,
+      "latest": 3,
+      "next_episode": 4,
+      "next_airing_at": 1793190600,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
       "rank": 22,
-      "title": "A Wild Last Boss Appeared! Season 2",
-      "score": 73,
-      "mal_id": 63140,
-      "latest": 5,
-      "origin": "anilist"
-    },
-    {
-      "rank": 23,
       "title": "Magical Explorer",
       "score": 69,
       "mal_id": 56733,
       "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1793458800,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 23,
+      "title": "A Wild Last Boss Appeared! Season 2",
+      "score": 73,
+      "mal_id": 63140,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1793453400,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -194,38 +263,53 @@
       "score": 61,
       "mal_id": 62922,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793464200,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
       "rank": 25,
       "title": "PSYREN",
-      "score": 70,
+      "score": 69,
       "mal_id": 63098,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1794232800,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
       "rank": 26,
       "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 67,
+      "score": 66,
       "mal_id": 64254,
       "latest": 3,
+      "next_episode": 4,
+      "next_airing_at": 1793291280,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
       "rank": 27,
-      "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 69,
-      "mal_id": 63754,
-      "latest": 3,
-      "origin": "anilist"
-    },
-    {
-      "rank": 28,
       "title": "So What's Wrong with Getting Reborn as a Goblin?",
       "score": 66,
       "mal_id": 63712,
       "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1793624400,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 28,
+      "title": "The Cold Sato-san is Only Sweet to Me",
+      "score": 69,
+      "mal_id": 63754,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793710800,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -234,6 +318,9 @@
       "score": 72,
       "mal_id": 63181,
       "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793370600,
+      "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
@@ -242,6 +329,9 @@
       "score": 70,
       "mal_id": 61153,
       "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1793451600,
+      "latest_episode_aired": null,
       "origin": "anilist"
     }
   ]
