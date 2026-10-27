@@ -808,43 +808,60 @@ def chat_with_retry(prompt: str) -> str:
     raise RuntimeError(last_error)
 
 
-def generate(title: str = "", episode: int = 0, limit: int = 5) -> None:
-    """Write at most `limit` briefings, priority first. Existing episodes are exported, not rewritten."""
+def ranking_row_for(title: str, mal_id: Any) -> dict:
+    ranking = load_json(DATA / "ranking.json", {})
+    for row in ranking.get("items") or []:
+        if mal_id and str(row.get("mal_id")) == str(mal_id):
+            return row
+        if norm(row.get("title") or "") == norm(title):
+            return row
+    return {}
+
+
+def generate(title: str = "", episode: int = 0, limit: int = 20) -> None:
+    """Export briefings for enabled titles after the latest episode has finished.
+
+    Priority titles go first, then the rest of the season desk. New HTML articles
+    are published by the episode job, which also waits for the broadcast to end.
+    """
+    from fetch_and_summarize import episode_broadcast_ended, finished_episode  # noqa: E402
+
     targets = enabled_targets()
     if title:
         needle = title.lower()
         targets = [row for row in targets if needle in (row.get("en_title") or "").lower() or needle in (row.get("jp_title") or "")]
     targets.sort(key=lambda row: int(row.get("priority") or 100))
-    targets = targets[: max(1, limit)]
-    wrote = 0
-    for index, target in enumerate(targets, 1):
+    ready = []
+    for target in targets:
         name = target.get("en_title") or ""
-        ep = episode or latest_episode_on_desk(name, target.get("mal_id")) or saved_episode(name)
-        if not ep:
-            print(f"[{index}] skip {name}: no episode number yet")
-            continue
-        post = find_post(name, ep)
-        if post:
-            write_briefing(name, ep, post)
+        row = ranking_row_for(name, target.get("mal_id"))
+        anime = {
+            "latest_episode": row.get("latest"),
+            "next_episode": row.get("next_episode"),
+            "next_airing_at": row.get("next_airing_at"),
+            "latest_episode_aired": row.get("latest_episode_aired"),
+        }
+        clocked = bool(anime.get("next_airing_at") or anime.get("latest_episode_aired"))
+        if episode:
+            ep = episode
+            if clocked and not episode_broadcast_ended(anime, ep):
+                print(f"skip {name} ep{ep}: broadcast has not ended")
+                continue
+        elif clocked:
+            ep = finished_episode(anime)
         else:
-            from editorial import GEMINI_PROMPT, GEMINI_SYSTEM_INSTRUCTION  # noqa: E402
-
-            prompt = (
-                GEMINI_SYSTEM_INSTRUCTION
-                + "\n\n"
-                + GEMINI_PROMPT
-                + market_context_block({"title_english": name, "title": name, "mal_id": target.get("mal_id")})
-                + f"\n\nWrite episode {ep} of {name}. Return the markdown article with the headings in the prompt, not JSON."
-            )
-            text = chat_with_retry(prompt)
-            BRIEFINGS.mkdir(parents=True, exist_ok=True)
-            path = BRIEFINGS / f"{slugify(name)}-ep{ep}.md"
-            path.write_text(text.strip() + "\n", encoding="utf-8")
-            print(f"wrote {path.relative_to(ROOT)} via model")
-        wrote += 1
-        if index != len(targets):
-            time.sleep(12)
-    print(f"briefings written: {wrote}")
+            ep = saved_episode(name)
+        if not ep:
+            print(f"skip {name}: latest broadcast has not ended")
+            continue
+        if not find_post(name, ep):
+            print(f"skip {name} ep{ep}: finished, waiting for the episode publisher")
+            continue
+        ready.append((name, ep))
+    ready = ready[: max(1, limit)]
+    for name, ep in ready:
+        write_briefing(name, ep)
+    print(f"briefings written: {len(ready)}")
 
 
 def main() -> int:
@@ -856,7 +873,7 @@ def main() -> int:
     parser.add_argument("--all", action="store_true")
     parser.add_argument("--title", default="")
     parser.add_argument("--ep", type=int, default=0)
-    parser.add_argument("--limit", type=int, default=5)
+    parser.add_argument("--limit", type=int, default=20)
     args = parser.parse_args()
     if args.all:
         args.sync_targets = True

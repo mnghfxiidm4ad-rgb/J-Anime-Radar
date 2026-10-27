@@ -24,10 +24,10 @@ on:
         required: false
         type: string
       limit:
-        description: How many priority titles to brief
+        description: How many finished titles to brief, priority first then the rest
         required: false
         type: string
-        default: "5"
+        default: "20"
 
 permissions:
   contents: write
@@ -92,10 +92,10 @@ jobs:
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           RADAR_TITLE: ${{ github.event_name == 'workflow_dispatch' && inputs.title || '' }}
           RADAR_EP: ${{ github.event_name == 'workflow_dispatch' && inputs.ep || '' }}
-          RADAR_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || '5' }}
+          RADAR_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || '20' }}
           TZ: Asia/Tokyo
         run: |
-          args=(--generate --limit "${RADAR_LIMIT:-5}")
+          args=(--generate --limit "${RADAR_LIMIT:-20}")
           if [ -n "$RADAR_TITLE" ]; then args+=(--title "$RADAR_TITLE"); fi
           if [ -n "$RADAR_EP" ]; then args+=(--ep "$RADAR_EP"); fi
           python scripts/anime_radar_pipeline.py "${args[@]}"

@@ -2,6 +2,13 @@ name: Daily seasonal update
 
 on:
   schedule:
+    # 23:30 JST, after the evening block
+    - cron: "30 14 * * *"
+    # 02:45 JST, after late-night slots
+    - cron: "45 17 * * *"
+    # 04:00 JST, catch-up for the latest late shows
+    - cron: "0 19 * * *"
+    # 11:00 JST, publish anything still waiting after the night
     - cron: "0 2 * * *"
   workflow_dispatch:
 
@@ -48,7 +55,7 @@ jobs:
           WP_GENRE_MEDIA_FANTASY: ${{ vars.WP_GENRE_MEDIA_FANTASY }}
           WP_GENRE_MEDIA_DEFAULT: ${{ vars.WP_GENRE_MEDIA_DEFAULT }}
           TZ: Asia/Tokyo
-        run: python scripts/fetch_and_summarize.py --max-new 3 --no-seed-extra
+        run: python scripts/fetch_and_summarize.py --max-new 8 --no-seed-extra
 
       - name: Commit and push if the desk moved
         run: |

@@ -11,7 +11,7 @@ import os
 import re
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 from urllib.error import HTTPError, URLError
@@ -50,6 +50,8 @@ TENRAI_DEFAULT = "https://api.tenrai.org/v1"
 JIKAN_PUBLIC = "https://api.jikan.moe/v4"
 DESK_SIZE = 30
 ARTICLE_PRIORITY = 20  # episode briefs: ranks 1-20; 21-30 are ranking-only unless the daily quota is short
+EPISODE_RUNTIME_SECONDS = 30 * 60  # episode length plus a short buffer after the scheduled start
+WEEK_SECONDS = 7 * 24 * 3600
 
 
 class HttpStatusError(URLError):
@@ -146,6 +148,68 @@ def latest_aired_from_episodes(eps: List[dict], now=None):
     return best_n, best_dt
 
 
+def _as_int(value) -> int:
+    try:
+        return int(value or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
+def episode_broadcast_ended(anime: dict, episode: int, now=None) -> bool:
+    """True only after the episode's timeslot has finished.
+
+    AniList's next airing is the upcoming episode. The episode before it
+    started about a week earlier; a date-only catalog stamp is not treated
+    as finished until late-night slots on that Japan date are over.
+    """
+    now = now or datetime.now(timezone.utc)
+    now_ts = now.timestamp()
+    episode = _as_int(episode)
+    if episode <= 0:
+        return False
+    nxt_ep = _as_int(anime.get("next_episode"))
+    nxt_at = _as_int(anime.get("next_airing_at"))
+    if nxt_ep and nxt_at:
+        if episode > nxt_ep:
+            return False
+        if episode == nxt_ep:
+            return now_ts >= nxt_at + EPISODE_RUNTIME_SECONDS
+        if episode == nxt_ep - 1:
+            previous_start = nxt_at - WEEK_SECONDS
+            if previous_start > now_ts + 6 * 3600:
+                return True
+            return now_ts >= previous_start + EPISODE_RUNTIME_SECONDS
+        return True
+    if _as_int(anime.get("latest_episode")) != episode:
+        return False
+    aired = parse_aired(anime.get("latest_episode_aired"))
+    if aired is None:
+        return False
+    if aired.hour == 0 and aired.minute == 0 and aired.second == 0:
+        jst = timezone(timedelta(hours=9))
+        day = aired.astimezone(jst).date()
+        end = datetime(day.year, day.month, day.day, 4, 0, tzinfo=jst) + timedelta(days=1)
+        return now >= end
+    return now >= aired + timedelta(seconds=EPISODE_RUNTIME_SECONDS)
+
+
+def finished_episode(anime: dict, now=None) -> int:
+    """Newest episode whose broadcast has ended. Zero when none is ready."""
+    candidates = []
+    latest = _as_int(anime.get("latest_episode"))
+    nxt_ep = _as_int(anime.get("next_episode"))
+    if latest:
+        candidates.append(latest)
+    if nxt_ep:
+        candidates.append(nxt_ep)
+        if nxt_ep > 1:
+            candidates.append(nxt_ep - 1)
+    for episode in sorted(set(candidates), reverse=True):
+        if episode_broadcast_ended(anime, episode, now):
+            return episode
+    return 0
+
+
 def public_score(raw):
     if raw is None or raw == "":
         return None
@@ -210,7 +274,10 @@ def ranking_rows(catalog: List[dict]) -> List[dict]:
                 "title": anime.get("title_english") or anime.get("title"),
                 "score": public_score(anime.get("score")),
                 "mal_id": anime.get("mal_id"),
-                "latest": anime.get("latest_episode"),
+                "latest": finished_episode(anime) or None,
+                "next_episode": anime.get("next_episode"),
+                "next_airing_at": anime.get("next_airing_at"),
+                "latest_episode_aired": anime.get("latest_episode_aired"),
                 "origin": anime.get("origin"),
             }
         )
@@ -1285,6 +1352,19 @@ def main() -> int:
             tr["season"] = "2026-SUMMER"
             created = 0
             ranking_meta = ranking_rows(catalog)
+            overrides = {}
+            try:
+                from anime_radar_pipeline import load_targets  # noqa: E402
+
+                doc = load_targets()
+                sid = doc.get("active_season")
+                season = next((item for item in (doc.get("seasons") or []) if item.get("id") == sid), {})
+                for row in season.get("titles") or []:
+                    if row.get("mal_id"):
+                        overrides[str(row.get("mal_id"))] = row
+            except Exception as exc:
+                log(f"  target list unavailable ({exc})")
+            pending = []
             for rank, anime in enumerate(catalog, 1):
                 if rank > ARTICLE_PRIORITY:
                     continue
@@ -1295,39 +1375,63 @@ def main() -> int:
                 if not mid:
                     log(f"skip {anime.get('title_english')} (no mal_id)")
                     continue
-                seed = not args.no_seed_extra
-                for ep in planned_episodes(anime, rank, seed=seed):
-                    if already_done(tr, mid, ep):
-                        log(f"skip {anime.get('title_english')} ep{ep}")
+                row = overrides.get(str(mid))
+                if row is not None and not row.get("enabled", True):
+                    log(f"skip {anime.get('title_english')} (disabled)")
+                    continue
+                ep = finished_episode(anime)
+                if not ep:
+                    log(f"skip {anime.get('title_english')}: latest broadcast has not ended")
+                    continue
+                episodes = [ep]
+                if not args.no_seed_extra and rank <= 5 and ep > 1:
+                    episodes.append(ep - 1)
+                priority = _as_int((row or {}).get("priority")) or (100 + rank)
+                for offset, candidate in enumerate(episodes):
+                    if not episode_broadcast_ended(anime, candidate):
+                        continue
+                    if already_done(tr, mid, candidate):
+                        log(f"skip {anime.get('title_english')} ep{candidate}")
                         continue
                     tracked = ((tr.get("anime") or {}).get(str(mid), {}).get("episodes") or {})
                     try:
                         tracked_max = max(int(k) for k in tracked) if tracked else 0
                     except ValueError:
                         tracked_max = 0
-                    if tracked_max and ep < tracked_max:
-                        log(f"skip {anime.get('title_english')} ep{ep} (already have ep{tracked_max})")
+                    if tracked_max and candidate < tracked_max:
+                        log(f"skip {anime.get('title_english')} ep{candidate} (already have ep{tracked_max})")
                         continue
-                    if created >= args.max_new:
-                        continue
-                    log(f"brief {anime.get('title_english')} ep{ep}")
-                    ensure_verified_credits(anime)
-                    review = gemini_review(anime, ep)
-                    source = "gemini"
-                    if review is None:
-                        review = compose_review(anime, ep)
-                        source = "editorial-seed"
-                        review["_source"] = source
-                        log(f"  editorial seed ({review.get('_word_count')} words)")
-                    else:
-                        review["_source"] = source
-                    post = build_post_record(anime, ep, review, rank)
-                    (POSTS_JSON / f"{post['slug']}.json").write_text(
-                        json.dumps(post, ensure_ascii=False, indent=2), encoding="utf-8"
-                    )
-                    mark_done(tr, anime, ep, post["slug"], source)
-                    new_episode_posts.append(post)
-                    created += 1
+                    pending.append((priority, offset, rank, anime, candidate))
+            pending.sort(key=lambda item: (item[0], item[1], item[2]))
+            for _priority, _offset, rank, anime, ep in pending:
+                if created >= args.max_new:
+                    log(f"daily cap {args.max_new} reached; remaining finished episodes wait for the next run")
+                    break
+                log(f"brief {anime.get('title_english')} ep{ep}")
+                ensure_verified_credits(anime)
+                review = gemini_review(anime, ep)
+                source = "gemini"
+                if review is None:
+                    review = compose_review(anime, ep)
+                    source = "editorial-seed"
+                    review["_source"] = source
+                    log(f"  editorial seed ({review.get('_word_count')} words)")
+                else:
+                    review["_source"] = source
+                post = build_post_record(anime, ep, review, rank)
+                (POSTS_JSON / f"{post['slug']}.json").write_text(
+                    json.dumps(post, ensure_ascii=False, indent=2), encoding="utf-8"
+                )
+                mark_done(tr, anime, ep, post["slug"], source)
+                new_episode_posts.append(post)
+                try:
+                    from anime_radar_pipeline import write_briefing  # noqa: E402
+
+                    write_briefing(post.get("anime_title") or anime.get("title_english") or "", ep, post)
+                except Exception as exc:
+                    log(f"  markdown briefing skipped ({exc})")
+                created += 1
+                time.sleep(12)
             desk_origin = (catalog[0].get("origin") if catalog else "tenrai") or "tenrai"
             save_ranking(ranking_meta, desk_origin)
             save_tracker(tr)
