@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-26T07:56:14Z",
+  "updated_at": "2026-10-27T07:42:32Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1224,6 +1224,11 @@
           "slug": "i-m-dating-a-dark-summoner-ep3",
           "source": "gemini",
           "generated_at": "2026-10-21T07:28:14Z"
+        },
+        "4": {
+          "slug": "i-m-dating-a-dark-summoner-ep4",
+          "source": "gemini",
+          "generated_at": "2026-10-27T07:42:32Z"
         }
       }
     },
@@ -1259,6 +1264,11 @@
           "slug": "hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion-ep3",
           "source": "gemini",
           "generated_at": "2026-10-21T07:26:08Z"
+        },
+        "4": {
+          "slug": "hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion-ep4",
+          "source": "gemini",
+          "generated_at": "2026-10-27T07:39:50Z"
         }
       }
     },
@@ -1334,6 +1344,11 @@
           "slug": "dragon-ball-super-beerus-ep2",
           "source": "gemini",
           "generated_at": "2026-10-20T07:23:23Z"
+        },
+        "3": {
+          "slug": "dragon-ball-super-beerus-ep3",
+          "source": "gemini",
+          "generated_at": "2026-10-27T07:36:40Z"
         }
       }
     }
