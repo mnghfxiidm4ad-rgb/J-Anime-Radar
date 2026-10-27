@@ -177,6 +177,55 @@ def override_key(mal_id: Any, title: str) -> str:
     return "title:" + norm(title)
 
 
+PRIORITY_PROFILES = (
+    {
+        "needle": "apothecary diaries",
+        "jp_title": "薬屋のひとりごと",
+        "track_formats": ["manga", "light_novel"],
+        "cour_info": {"is_multi_cour": True, "current_cour": 2, "total_cours": 2, "label": "Cour 2/2"},
+        "priority": 1,
+    },
+    {
+        "needle": "blue box",
+        "jp_title": "アオのハコ",
+        "track_formats": ["manga"],
+        "cour_info": {"is_multi_cour": True, "current_cour": 2, "total_cours": 2, "label": "Cour 2/2"},
+        "priority": 2,
+    },
+    {
+        "needle": "bleach",
+        "jp_title": "BLEACH",
+        "track_formats": ["manga"],
+        "cour_info": {"is_multi_cour": True, "current_cour": 3, "total_cours": 4, "label": "Cour 3/4"},
+        "priority": 3,
+    },
+    {
+        "needle": "steel ball run",
+        "jp_title": "スティール・ボール・ラン",
+        "track_formats": ["manga"],
+        "cour_info": {"is_multi_cour": True, "current_cour": 2, "total_cours": 3, "label": "Cour 2/3"},
+        "priority": 4,
+    },
+    {
+        "needle": "reincarnated aristocrat",
+        "jp_title": "転生貴族、鑑定スキルで成り上がる",
+        "track_formats": ["manga", "light_novel"],
+        "cour_info": {"is_multi_cour": False, "current_cour": 1, "total_cours": 1, "label": "Single Cour"},
+        "priority": 5,
+    },
+)
+
+SINGLE_COUR = {"is_multi_cour": False, "current_cour": 1, "total_cours": 1, "label": "Single Cour"}
+
+
+def profile_for(title: str) -> Optional[dict]:
+    lowered = (title or "").lower()
+    for profile in PRIORITY_PROFILES:
+        if profile["needle"] in lowered:
+            return profile
+    return None
+
+
 def fold_overrides(doc: dict) -> None:
     """Treat the current season list as the latest manual edits."""
     overrides = doc.setdefault("overrides", {})
@@ -190,6 +239,8 @@ def fold_overrides(doc: dict) -> None:
                 "track_formats": row.get("track_formats") or ["manga"],
                 "enabled": bool(row.get("enabled", True)),
                 "rakuten_keyword": row.get("rakuten_keyword") or row.get("jp_title") or "",
+                "cour_info": row.get("cour_info") or SINGLE_COUR,
+                "priority": row.get("priority") or 100,
             }
 
 
@@ -211,6 +262,12 @@ def sync_targets() -> dict:
         if not saved and hinted_jp:
             jp = hinted_jp
         formats = saved.get("track_formats") or formats
+        profile = profile_for(title)
+        if profile:
+            jp = profile["jp_title"]
+            formats = list(profile["track_formats"])
+        cour = (profile or {}).get("cour_info") or saved.get("cour_info") or SINGLE_COUR
+        priority = (profile or {}).get("priority") or saved.get("priority") or (100 + int(row.get("rank") or 99))
         titles.append(
             {
                 "en_title": title,
@@ -218,7 +275,9 @@ def sync_targets() -> dict:
                 "mal_id": mal,
                 "rank": row.get("rank"),
                 "track_formats": formats,
-                "rakuten_keyword": saved.get("rakuten_keyword") or jp,
+                "rakuten_keyword": jp,
+                "cour_info": cour,
+                "priority": priority,
                 "enabled": saved.get("enabled", True) if saved else True,
             }
         )
@@ -324,7 +383,7 @@ def badge_for(row: dict) -> str:
     lead = row.get("leading_format") or ""
     dual = "manga" in formats and "light_novel" in formats and books.get("manga") and books.get("light_novel")
     if dual and lead == "balanced":
-        return "Manga & LN Surge"
+        return "Dual Surge (Manga & LN)"
     if dual and lead == "novel_driven":
         return "LN Driven"
     if dual and lead == "manga_driven":
@@ -472,14 +531,26 @@ def attach_sales(posts: List[dict], ranking: List[dict]) -> dict:
         if not row.get("enabled", True):
             continue
         sales = match_sales(row, lookup)
+        formats = row.get("track_formats") or []
         titles.append(
             {
                 "en_title": row.get("en_title"),
                 "jp_title": row.get("jp_title"),
-                "format_label": " + ".join(FORMAT_LABEL.get(fmt, fmt) for fmt in (row.get("track_formats") or [])),
+                "format_label": " + ".join(FORMAT_LABEL.get(fmt, fmt) for fmt in formats),
+                "cour_label": (row.get("cour_info") or {}).get("label") or "",
+                "dual": "manga" in formats and "light_novel" in formats,
                 "badge": (sales or {}).get("badge") or "",
+                "priority": row.get("priority") or 100,
             }
         )
+    by_mal = {str(row.get("mal_id")): row for row in (season.get("titles") or [])}
+    for row in ranking:
+        target = by_mal.get(str(row.get("mal_id")))
+        if not target:
+            continue
+        formats = target.get("track_formats") or []
+        row["cour_label"] = (target.get("cour_info") or {}).get("label") or ""
+        row["dual"] = "manga" in formats and "light_novel" in formats
     return {"label": season.get("label") or sid, "titles": titles}
 
 
@@ -487,11 +558,20 @@ def market_context_block(anime: dict) -> str:
     sales = match_sales(anime or {}, sales_lookup())
     if not sales or not sales.get("market_line"):
         return ""
+    dual = ""
+    books = sales.get("books") or {}
+    if books.get("manga") and books.get("light_novel"):
+        dual = (
+            "\nIn Domestic Radar, add a Dual-Market Pulse (Manga vs. Light Novel Dynamics): "
+            "comic shelves pulling in a wider crowd versus the light novel holding the core readers. "
+            "Use only the numbers above."
+        )
     return (
         "\n\nMARKET CONTEXT (Rakuten Books, this cour only; do not invent extra chart facts):\n"
         + sales["market_line"]
         + "\nleading_format: "
         + str(sales.get("leading_format") or "")
+        + dual
     )
 
 
@@ -586,42 +666,185 @@ def find_post(title: str, episode: int) -> Optional[dict]:
     return best
 
 
-def write_briefing(title: str, episode: int) -> None:
-    sales = None
+def sales_for_title(title: str) -> Optional[dict]:
+    needle = (title or "").lower()
     for row in (load_radar().get("titles") or []):
-        if title.lower() in (row.get("en_title") or "").lower():
-            sales = row
-            break
-    post = find_post(title, episode) or {}
-    slug = post.get("slug") or f"{slugify(title)}-ep{episode}"
+        if needle and needle in (row.get("en_title") or "").lower():
+            return row
+    return None
+
+
+def markdown_briefing(title: str, episode: int, post: dict, sales: Optional[dict]) -> str:
+    subtitle = post.get("episode_title") or "Breakdown"
+    quick = post.get("quick_take") or post.get("pullquote") or ""
+    hook = "\n\n".join(post.get("synopsis_paragraphs") or [])
+    hood = "\n\n".join((post.get("sakuga_paragraphs") or []) + (post.get("voice_paragraphs") or []))
+    domestic = list(post.get("story_paragraphs") or [])
+    if sales and sales.get("market_line"):
+        domestic.append(sales["market_line"])
+    books = (sales or {}).get("books") or {}
+    if books.get("manga") and books.get("light_novel"):
+        domestic.append(
+            "Dual-Market Pulse (Manga vs. Light Novel Dynamics): "
+            + (sales.get("market_line") or "Both formats are on the shelf this cour.")
+        )
+    score = post.get("desk_score") or post.get("score") or "Unscored"
+    verdict = post.get("one_sentence_verdict") or quick
+    streaming = post.get("licensed_streaming") or ", ".join(
+        item.get("name") for item in (post.get("watch") or []) if isinstance(item, dict) and item.get("name")
+    )
     lines = [
-        f"# {title} – Episode {episode} source radar",
+        f"# {title} – Episode {episode} Breakdown: {subtitle}",
         "",
-        post.get("quick_take") or "",
+        f"> **The Quick Take:** {quick}",
         "",
-        "## Manga vs light novel",
-        (sales or {}).get("market_line") or "No Rakuten snapshot for this title yet.",
+        "### 1. The Hook: What Made This Episode Unmissable",
         "",
-        f"Leading format: {(sales or {}).get('leading_format') or 'unknown'}",
+        hook,
+        "",
+        "### 2. Under the Hood: Direction & Craft That Stole the Show",
+        "",
+        hood,
+        "",
+        "### 3. Domestic Radar: What Japanese Fans Are Screaming About",
+        "",
+        "\n\n".join(domestic),
+        "",
+        "### Verdict & Intel",
+        "",
+        f"- **Score:** {score} / 100",
+        f"- **One-Sentence Verdict:** {verdict}",
+        f"- **Streaming:** {streaming or 'Check a licensed platform in your region.'}",
         "",
     ]
+    return "\n".join(lines).strip() + "\n"
+
+
+def write_briefing(title: str, episode: int, post: Optional[dict] = None) -> Path:
+    post = post if post is not None else (find_post(title, episode) or {})
+    sales = sales_for_title(title)
+    slug = post.get("slug") or f"{slugify(title)}-ep{episode}"
     BRIEFINGS.mkdir(parents=True, exist_ok=True)
     path = BRIEFINGS / f"{slug}.md"
-    path.write_text("\n".join(lines).strip() + "\n", encoding="utf-8")
+    path.write_text(markdown_briefing(title, episode, post, sales), encoding="utf-8")
     print(f"wrote {path.relative_to(ROOT)}")
+    return path
 
 
-def generate(title: str = "", episode: int = 0) -> None:
-    payload = load_radar()
-    if not payload.get("titles"):
-        raise SystemExit("STOP no manga_sales_radar.json yet. Run --fetch first.")
-    polish_lines(payload)
-    if title and episode:
-        write_briefing(title, episode)
-        return
+def latest_episode_on_desk(title: str, mal_id: Any) -> int:
+    ranking = load_json(DATA / "ranking.json", {})
+    for row in ranking.get("items") or []:
+        if mal_id and str(row.get("mal_id")) == str(mal_id):
+            return int(row.get("latest") or 0)
+        if norm(row.get("title") or "") == norm(title):
+            return int(row.get("latest") or 0)
+    return 0
+
+
+def saved_episode(title: str) -> int:
+    best = 0
+    needle = norm(title)
+    if not POSTS.exists():
+        return 0
+    for path in POSTS.glob("*.json"):
+        try:
+            post = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if needle not in norm(post.get("anime_title") or ""):
+            continue
+        best = max(best, int(post.get("episode") or 0))
+    return best
+
+
+def chat_with_retry(prompt: str) -> str:
+    """OpenAI when a key exists, otherwise Gemini. Three tries, then a longer wait."""
+    last_error = "no model call"
+    for attempt in range(3):
+        try:
+            if env("OPENAI_API_KEY"):
+                response = requests.post(
+                    "https://api.openai.com/v1/chat/completions",
+                    headers={"Authorization": f"Bearer {env('OPENAI_API_KEY')}", "Content-Type": "application/json"},
+                    json={
+                        "model": env("OPENAI_MODEL", "gpt-4o"),
+                        "temperature": 0.7,
+                        "messages": [
+                            {"role": "system", "content": "You write J-Anime Radar episode breakdowns."},
+                            {"role": "user", "content": prompt},
+                        ],
+                    },
+                    timeout=120,
+                )
+            elif env("GEMINI_API_KEY"):
+                model = env("GEMINI_MODEL", "gemini-flash-latest")
+                response = requests.post(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                    headers={"x-goog-api-key": env("GEMINI_API_KEY"), "Content-Type": "application/json"},
+                    json={
+                        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                        "generationConfig": {"temperature": 0.7, "maxOutputTokens": 4096},
+                    },
+                    timeout=120,
+                )
+            else:
+                raise RuntimeError("no OPENAI_API_KEY or GEMINI_API_KEY")
+            if response.status_code == 429 or response.status_code >= 500:
+                wait = 12 * (2 ** attempt)
+                print(f"  retry {attempt + 1} after HTTP {response.status_code}; sleep {wait}s")
+                time.sleep(wait)
+                last_error = f"http {response.status_code}"
+                continue
+            response.raise_for_status()
+            if env("OPENAI_API_KEY"):
+                return (((response.json().get("choices") or [{}])[0].get("message") or {}).get("content") or "").strip()
+            parts = (((response.json().get("candidates") or [{}])[0].get("content") or {}).get("parts") or [])
+            return "\n".join(part.get("text") or "" for part in parts).strip()
+        except requests.RequestException as exc:
+            wait = 12 * (2 ** attempt)
+            print(f"  retry {attempt + 1} after {exc.__class__.__name__}; sleep {wait}s")
+            time.sleep(wait)
+            last_error = exc.__class__.__name__
+    raise RuntimeError(last_error)
+
+
+def generate(title: str = "", episode: int = 0, limit: int = 5) -> None:
+    """Write at most `limit` briefings, priority first. Existing episodes are exported, not rewritten."""
+    targets = enabled_targets()
     if title:
-        print("pass --ep with --title to write one briefing file")
-    print(f"market lines ready for {len(payload.get('titles') or [])} titles")
+        needle = title.lower()
+        targets = [row for row in targets if needle in (row.get("en_title") or "").lower() or needle in (row.get("jp_title") or "")]
+    targets.sort(key=lambda row: int(row.get("priority") or 100))
+    targets = targets[: max(1, limit)]
+    wrote = 0
+    for index, target in enumerate(targets, 1):
+        name = target.get("en_title") or ""
+        ep = episode or latest_episode_on_desk(name, target.get("mal_id")) or saved_episode(name)
+        if not ep:
+            print(f"[{index}] skip {name}: no episode number yet")
+            continue
+        post = find_post(name, ep)
+        if post:
+            write_briefing(name, ep, post)
+        else:
+            from editorial import GEMINI_PROMPT, GEMINI_SYSTEM_INSTRUCTION  # noqa: E402
+
+            prompt = (
+                GEMINI_SYSTEM_INSTRUCTION
+                + "\n\n"
+                + GEMINI_PROMPT
+                + market_context_block({"title_english": name, "title": name, "mal_id": target.get("mal_id")})
+                + f"\n\nWrite episode {ep} of {name}. Return the markdown article with the headings in the prompt, not JSON."
+            )
+            text = chat_with_retry(prompt)
+            BRIEFINGS.mkdir(parents=True, exist_ok=True)
+            path = BRIEFINGS / f"{slugify(name)}-ep{ep}.md"
+            path.write_text(text.strip() + "\n", encoding="utf-8")
+            print(f"wrote {path.relative_to(ROOT)} via model")
+        wrote += 1
+        if index != len(targets):
+            time.sleep(12)
+    print(f"briefings written: {wrote}")
 
 
 def main() -> int:
@@ -633,6 +856,7 @@ def main() -> int:
     parser.add_argument("--all", action="store_true")
     parser.add_argument("--title", default="")
     parser.add_argument("--ep", type=int, default=0)
+    parser.add_argument("--limit", type=int, default=5)
     args = parser.parse_args()
     if args.all:
         args.sync_targets = True
@@ -645,7 +869,7 @@ def main() -> int:
     if args.fetch:
         fetch_sales(args.title)
     if args.generate:
-        generate(args.title, args.ep)
+        generate(args.title, args.ep, args.limit)
     return 0
 
 

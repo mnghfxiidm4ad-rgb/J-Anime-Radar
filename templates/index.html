@@ -137,6 +137,23 @@
     </section>
 
     <aside class="ranking" id="top30">
+      {% if heat_ranking %}
+      <h2>This cour</h2>
+      <p class="tiny">{{ heat_ranking.method }}</p>
+      <ol class="rank-list">
+        {% for row in heat_ranking["items"][:10] %}
+        <li>
+          <strong>{{ '%02d' % row.rank }}</strong>
+          <div>
+            <span>{{ row.en_title }}</span>
+            {% if row.cour_label %}<span class="cour-badge">{{ row.cour_label }}</span>{% endif %}
+            {% if row.badge %}<span class="rank-sales">{{ row.badge }}</span>{% endif %}
+          </div>
+          <span class="score">{{ row.heat }}</span>
+        </li>
+        {% endfor %}
+      </ol>
+      {% endif %}
       <h2>Season Top 30</h2>
       <span id="top20"></span>
       <p class="tiny">{{ ranking_note }} Scores are public community averages (AniList 0–100 or MAL scaled to 100), not our editorial grades.</p>
@@ -146,8 +163,11 @@
           <strong>{{ '%02d' % row.rank }}</strong>
           <div>
             <a href="{{ row.href }}">{{ row.title }}</a>
+            {% if row.cour_label %}<span class="cour-badge">{{ row.cour_label }}</span>{% endif %}
             {% if row.sales and row.sales.badge %}
             <span class="rank-sales">{{ row.sales.badge }}</span>
+            {% elif row.dual %}
+            <span class="rank-sales">Dual Surge (Manga & LN)</span>
             {% endif %}
           </div>
           <span class="score">{% if row.score %}{{ row.score }}{% else %}—{% endif %}</span>
@@ -161,8 +181,9 @@
         {% for row in source_desk.titles %}
         <li>
           <span>{{ row.en_title }}</span>
+          {% if row.cour_label %}<span class="cour-badge">{{ row.cour_label }}</span>{% endif %}
           <span class="tag">{{ row.format_label }}</span>
-          {% if row.badge %}<span class="rank-sales">{{ row.badge }}</span>{% endif %}
+          {% if row.badge %}<span class="rank-sales">{{ row.badge }}</span>{% elif row.dual %}<span class="rank-sales">Dual Surge (Manga & LN)</span>{% endif %}
         </li>
         {% endfor %}
       </ul>

@@ -23,6 +23,11 @@ on:
         description: Optional episode number, used with title on generate
         required: false
         type: string
+      limit:
+        description: How many priority titles to brief
+        required: false
+        type: string
+        default: "5"
 
 permissions:
   contents: write
@@ -87,18 +92,20 @@ jobs:
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           RADAR_TITLE: ${{ github.event_name == 'workflow_dispatch' && inputs.title || '' }}
           RADAR_EP: ${{ github.event_name == 'workflow_dispatch' && inputs.ep || '' }}
+          RADAR_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || '5' }}
           TZ: Asia/Tokyo
         run: |
-          args=(--generate)
+          args=(--generate --limit "${RADAR_LIMIT:-5}")
           if [ -n "$RADAR_TITLE" ]; then args+=(--title "$RADAR_TITLE"); fi
           if [ -n "$RADAR_EP" ]; then args+=(--ep "$RADAR_EP"); fi
           python scripts/anime_radar_pipeline.py "${args[@]}"
+          python scripts/build_ranking.py
           python scripts/fetch_and_summarize.py --rebuild-only
       - name: Commit generated radar copy
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/manga_sales_radar.json docs
+          git add data/manga_sales_radar.json data/anime_ranking.json RANKING.md docs
           if [ -d content/briefings ]; then git add content/briefings; fi
           if git diff --cached --quiet; then
             echo "No generated changes."

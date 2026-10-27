@@ -1148,6 +1148,7 @@ def render_index(
     source_desk: Optional[dict] = None,
     season_label: str = "",
     season_short: str = "",
+    heat_ranking: Optional[dict] = None,
 ) -> None:
     year = datetime.now().year
     for post in posts:
@@ -1182,6 +1183,7 @@ def render_index(
         featured=featured,
         listing=listing,
         ranking=ranking,
+        heat_ranking=heat_ranking,
         ranking_note=ranking_note or RANKING_SOURCE_LABELS["tenrai"],
         json_ld=json.dumps(website_ld, ensure_ascii=False),
     )
@@ -1345,6 +1347,8 @@ def main() -> int:
 
     source_desk = attach_sales(posts, ranking)
     season_label, season_short = season_clock()
+    heat_path = DATA / "anime_ranking.json"
+    heat_ranking = json.loads(heat_path.read_text(encoding="utf-8")) if heat_path.exists() else None
     latest_by_mal = {}
     for p in posts:
         if p.get("kind") == "feature":
@@ -1370,6 +1374,7 @@ def main() -> int:
         source_desk=source_desk,
         season_label=season_label,
         season_short=season_short,
+        heat_ranking=heat_ranking,
     )
     render_legal(envj)
     render_sitemap(envj, posts)

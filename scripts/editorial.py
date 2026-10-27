@@ -485,14 +485,18 @@ The article shape, in English:
 
 # [Anime Title] – Episode [X] Breakdown: [clicky subtitle]
 
-> The Quick Take: [1-2 punchy sentences a person would screenshot]
+> **The Quick Take:** [1-2 punchy sentences a person would screenshot]
 
-1. The Hook — start on the feeling or the shocking moment, not a recap. 1-2 short paragraphs.
-2. Under the Hood — 2 or 3 bullets. Each bullet is **Craft point:** plain-language explanation of sound, framing, timing, or performance, and why that choice raised the emotion. Include seiyuu craft here when a verified name exists.
-3. Domestic Radar — 2 bullets shaped exactly like:
+### 1. The Hook: What Made This Episode Unmissable
+Start on the feeling or the shocking moment, not a recap. 1-2 short paragraphs.
+### 2. Under the Hood: Direction & Craft That Stole the Show
+2 or 3 bullets. Each bullet is **Craft point:** plain-language explanation of sound, framing, timing, or performance, and why that choice raised the emotion. Include seiyuu craft here when a verified name exists.
+### 3. Domestic Radar: What Japanese Fans Are Screaming About
+2 bullets shaped exactly like:
    - **「Japanese phrase」 (English gloss):** why Japanese timelines grab that line.
    If MARKET CONTEXT is present, add one more bullet comparing the manga and light-novel sales it gives you. Use only those numbers. Do not invent a chart rank, a print run, or a shop.
-4. Verdict — a score from 1 to 100 that matches how hard you would push a friend to watch, one sentence that shoves the reader to press play, and the licensed platforms from context only.
+### Verdict & Intel
+Score from 1 to 100, one sentence that shoves the reader to press play, and the licensed platforms from context only.
 
 Return ONLY compact JSON (no markdown fences, no preamble):
 

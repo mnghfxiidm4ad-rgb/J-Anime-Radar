@@ -311,6 +311,17 @@ button, input, select { font-family: inherit; }
 .rank-list strong { font-family: var(--mono); color: var(--cyan); }
 .rank-list a { color: var(--text); font-size: 0.92rem; }
 .score { color: var(--gold); font-variant-numeric: tabular-nums; font-size: 0.85rem; }
+.cour-badge {
+  display: inline-block;
+  margin-top: 3px;
+  margin-right: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(60, 240, 208, 0.45);
+  color: var(--cyan);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+}
 .sales-badge {
   position: absolute;
   top: 10px;

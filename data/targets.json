@@ -7,7 +7,14 @@
         "light_novel"
       ],
       "enabled": true,
-      "rakuten_keyword": "薬屋のひとりごと"
+      "rakuten_keyword": "薬屋のひとりごと",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "60636": {
       "jp_title": "BLEACH",
@@ -15,7 +22,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "BLEACH"
+      "rakuten_keyword": "BLEACH",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "61967": {
       "jp_title": "ブラッククローバー",
@@ -23,7 +37,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "ブラッククローバー"
+      "rakuten_keyword": "ブラッククローバー",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "59741": {
       "jp_title": "追放された転生重騎士はゲーム知識で無双する",
@@ -31,7 +52,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "追放された転生重騎士はゲーム知識で無双する"
+      "rakuten_keyword": "追放された転生重騎士はゲーム知識で無双する",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "53913": {
       "jp_title": "転生したら剣でした",
@@ -39,7 +67,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "転生したら剣でした"
+      "rakuten_keyword": "転生したら剣でした",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "61323": {
       "jp_title": "アオのハコ",
@@ -47,7 +82,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "アオのハコ"
+      "rakuten_keyword": "アオのハコ",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "61469": {
       "jp_title": "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE",
@@ -55,7 +97,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE"
+      "rakuten_keyword": "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "64340": {
       "jp_title": "テムパル〜アイテムの力〜",
@@ -63,7 +112,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "テムパル〜アイテムの力〜"
+      "rakuten_keyword": "テムパル〜アイテムの力〜",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "61578": {
       "jp_title": "生徒会にも穴はある！",
@@ -71,7 +127,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "生徒会にも穴はある！"
+      "rakuten_keyword": "生徒会にも穴はある！",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "63293": {
       "jp_title": "ホタルの嫁入り",
@@ -79,7 +142,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "ホタルの嫁入り"
+      "rakuten_keyword": "ホタルの嫁入り",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "59088": {
       "jp_title": "東京リベンジャーズ 三天戦争編",
@@ -87,7 +157,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "東京リベンジャーズ 三天戦争編"
+      "rakuten_keyword": "東京リベンジャーズ 三天戦争編",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "64534": {
       "jp_title": "氷の城壁",
@@ -95,7 +172,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "氷の城壁"
+      "rakuten_keyword": "氷の城壁",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "63431": {
       "jp_title": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。　～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
@@ -103,7 +187,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。　～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～"
+      "rakuten_keyword": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。　～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "57612": {
       "jp_title": "帰還者の魔法は特別です",
@@ -111,7 +202,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "帰還者の魔法は特別です"
+      "rakuten_keyword": "帰還者の魔法は特別です",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "60601": {
       "jp_title": "転生貴族、鑑定スキルで成り上がる",
@@ -120,7 +218,14 @@
         "light_novel"
       ],
       "enabled": true,
-      "rakuten_keyword": "転生貴族、鑑定スキルで成り上がる"
+      "rakuten_keyword": "転生貴族、鑑定スキルで成り上がる",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "52480": {
       "jp_title": "探偵はもう、死んでいる。",
@@ -128,7 +233,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "探偵はもう、死んでいる。"
+      "rakuten_keyword": "探偵はもう、死んでいる。",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "61603": {
       "jp_title": "アオアシ",
@@ -136,7 +248,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "アオアシ"
+      "rakuten_keyword": "アオアシ",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "63409": {
       "jp_title": "どうも、好きな人に惚れ薬を依頼された魔女です。",
@@ -144,7 +263,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "どうも、好きな人に惚れ薬を依頼された魔女です。"
+      "rakuten_keyword": "どうも、好きな人に惚れ薬を依頼された魔女です。",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "63367": {
       "jp_title": "ドラゴンボール超 ビルス",
@@ -152,7 +278,14 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "ドラゴンボール超 ビルス"
+      "rakuten_keyword": "ドラゴンボール超 ビルス",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     },
     "63509": {
       "jp_title": "ダークサモナーとデキている",
@@ -160,14 +293,21 @@
         "manga"
       ],
       "enabled": true,
-      "rakuten_keyword": "ダークサモナーとデキている"
+      "rakuten_keyword": "ダークサモナーとデキている",
+      "cour_info": {
+        "is_multi_cour": false,
+        "current_cour": 1,
+        "total_cours": 1,
+        "label": "Single Cour"
+      },
+      "priority": 100
     }
   },
   "seasons": [
     {
       "id": "2026-fall",
       "label": "2026 Fall",
-      "updated_at": "2026-10-18T07:52:47Z",
+      "updated_at": "2026-10-27T10:54:04Z",
       "titles": [
         {
           "en_title": "The Apothecary Diaries Season 3",
@@ -179,6 +319,13 @@
             "light_novel"
           ],
           "rakuten_keyword": "薬屋のひとりごと",
+          "cour_info": {
+            "is_multi_cour": true,
+            "current_cour": 2,
+            "total_cours": 2,
+            "label": "Cour 2/2"
+          },
+          "priority": 1,
           "enabled": true
         },
         {
@@ -190,6 +337,13 @@
             "manga"
           ],
           "rakuten_keyword": "BLEACH",
+          "cour_info": {
+            "is_multi_cour": true,
+            "current_cour": 3,
+            "total_cours": 4,
+            "label": "Cour 3/4"
+          },
+          "priority": 3,
           "enabled": true
         },
         {
@@ -201,6 +355,13 @@
             "manga"
           ],
           "rakuten_keyword": "ブラッククローバー",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -212,6 +373,13 @@
             "manga"
           ],
           "rakuten_keyword": "追放された転生重騎士はゲーム知識で無双する",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -223,6 +391,13 @@
             "manga"
           ],
           "rakuten_keyword": "転生したら剣でした",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -234,17 +409,31 @@
             "manga"
           ],
           "rakuten_keyword": "アオのハコ",
+          "cour_info": {
+            "is_multi_cour": true,
+            "current_cour": 2,
+            "total_cours": 2,
+            "label": "Cour 2/2"
+          },
+          "priority": 2,
           "enabled": true
         },
         {
           "en_title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-          "jp_title": "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE",
+          "jp_title": "スティール・ボール・ラン",
           "mal_id": 61469,
           "rank": 7,
           "track_formats": [
             "manga"
           ],
-          "rakuten_keyword": "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE",
+          "rakuten_keyword": "スティール・ボール・ラン",
+          "cour_info": {
+            "is_multi_cour": true,
+            "current_cour": 2,
+            "total_cours": 3,
+            "label": "Cour 2/3"
+          },
+          "priority": 4,
           "enabled": true
         },
         {
@@ -256,6 +445,13 @@
             "manga"
           ],
           "rakuten_keyword": "テムパル〜アイテムの力〜",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -267,6 +463,13 @@
             "manga"
           ],
           "rakuten_keyword": "ホタルの嫁入り",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -278,6 +481,13 @@
             "manga"
           ],
           "rakuten_keyword": "生徒会にも穴はある！",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -289,6 +499,13 @@
             "manga"
           ],
           "rakuten_keyword": "東京リベンジャーズ 三天戦争編",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -300,6 +517,13 @@
             "manga"
           ],
           "rakuten_keyword": "氷の城壁",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -311,6 +535,13 @@
             "manga"
           ],
           "rakuten_keyword": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。　～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -322,6 +553,13 @@
             "manga"
           ],
           "rakuten_keyword": "帰還者の魔法は特別です",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -334,6 +572,13 @@
             "light_novel"
           ],
           "rakuten_keyword": "転生貴族、鑑定スキルで成り上がる",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 5,
           "enabled": true
         },
         {
@@ -345,6 +590,13 @@
             "manga"
           ],
           "rakuten_keyword": "探偵はもう、死んでいる。",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -356,6 +608,13 @@
             "manga"
           ],
           "rakuten_keyword": "アオアシ",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -367,6 +626,13 @@
             "manga"
           ],
           "rakuten_keyword": "ドラゴンボール超 ビルス",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -378,6 +644,13 @@
             "manga"
           ],
           "rakuten_keyword": "どうも、好きな人に惚れ薬を依頼された魔女です。",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         },
         {
@@ -389,6 +662,13 @@
             "manga"
           ],
           "rakuten_keyword": "ダークサモナーとデキている",
+          "cour_info": {
+            "is_multi_cour": false,
+            "current_cour": 1,
+            "total_cours": 1,
+            "label": "Single Cour"
+          },
+          "priority": 100,
           "enabled": true
         }
       ]
@@ -396,5 +676,5 @@
   ],
   "how_to_update": "When the cour changes, run: python scripts/anime_radar_pipeline.py --sync-targets. The previous season stays in seasons[]. The active list is rebuilt from the current Top 20. jp_title, track_formats, enabled, and rakuten_keyword you already set are kept. Set enabled to false to stop tracking a title without deleting that choice.",
   "active_season": "2026-fall",
-  "updated_at": "2026-10-18T07:52:47Z"
+  "updated_at": "2026-10-27T10:54:04Z"
 }
