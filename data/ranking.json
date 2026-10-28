@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-28T08:03:59Z",
+  "updated_at": "2026-10-28T20:01:56Z",
   "items": [
     {
       "rank": 1,
@@ -42,31 +42,31 @@
       "title": "Reincarnated as a Sword Season 2",
       "score": 75,
       "mal_id": 53913,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793201400,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1793806200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
       "rank": 5,
-      "title": "Blue Box Season 2",
-      "score": 81,
-      "mal_id": 61323,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1794123000,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 6,
       "title": "Overgeared",
       "score": 76,
       "mal_id": 64340,
       "latest": 5,
       "next_episode": 6,
       "next_airing_at": 1793543400,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 6,
+      "title": "Blue Box Season 2",
+      "score": 81,
+      "mal_id": 61323,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1794123000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -141,9 +141,9 @@
       "title": "A Returner's Magic Should be Special Season 2",
       "score": 69,
       "mal_id": 57612,
-      "latest": 3,
-      "next_episode": 4,
-      "next_airing_at": 1793202300,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793807100,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -193,23 +193,23 @@
     },
     {
       "rank": 18,
-      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
-      "score": 69,
-      "mal_id": 60948,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793536200,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
       "title": "Nia Liston: The Merciless Maiden",
       "score": 76,
       "mal_id": 63382,
       "latest": 4,
       "next_episode": 5,
       "next_airing_at": 1793708760,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 19,
+      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+      "score": 69,
+      "mal_id": 60948,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793536200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -229,9 +229,9 @@
       "title": "The Detective Is Already Dead Season 2",
       "score": 71,
       "mal_id": 52480,
-      "latest": 3,
-      "next_episode": 4,
-      "next_airing_at": 1793190600,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793795400,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -281,17 +281,6 @@
     },
     {
       "rank": 26,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 66,
-      "mal_id": 64254,
-      "latest": 3,
-      "next_episode": 4,
-      "next_airing_at": 1793291280,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 27,
       "title": "So What's Wrong with Getting Reborn as a Goblin?",
       "score": 66,
       "mal_id": 63712,
@@ -302,13 +291,24 @@
       "origin": "anilist"
     },
     {
-      "rank": 28,
+      "rank": 27,
       "title": "The Cold Sato-san is Only Sweet to Me",
       "score": 69,
       "mal_id": 63754,
       "latest": 4,
       "next_episode": 5,
       "next_airing_at": 1793710800,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 28,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 67,
+      "mal_id": 64254,
+      "latest": 3,
+      "next_episode": 4,
+      "next_airing_at": 1793291280,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -325,12 +325,12 @@
     },
     {
       "rank": 30,
-      "title": "A Tale of the Secret Saint",
-      "score": 70,
-      "mal_id": 61153,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1793451600,
+      "title": "Full Clearing Another World under a Goddess with Zero Believers",
+      "score": 65,
+      "mal_id": 63292,
+      "latest": 3,
+      "next_episode": 4,
+      "next_airing_at": 1793543400,
       "latest_episode_aired": null,
       "origin": "anilist"
     }
