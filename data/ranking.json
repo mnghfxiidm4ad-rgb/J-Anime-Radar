@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-29T08:13:45Z",
+  "updated_at": "2026-10-29T19:53:30Z",
   "items": [
     {
       "rank": 1,
@@ -31,9 +31,9 @@
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 67,
       "mal_id": 59741,
-      "latest": 17,
-      "next_episode": 18,
-      "next_airing_at": 1793287560,
+      "latest": 18,
+      "next_episode": 19,
+      "next_airing_at": 1793892360,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -130,9 +130,9 @@
       "title": "The Ramparts of Ice Season 2",
       "score": 81,
       "mal_id": 64534,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793285760,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1793890560,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -194,7 +194,7 @@
     {
       "rank": 18,
       "title": "Nia Liston: The Merciless Maiden",
-      "score": 76,
+      "score": 75,
       "mal_id": 63382,
       "latest": 4,
       "next_episode": 5,
@@ -281,17 +281,6 @@
     },
     {
       "rank": 26,
-      "title": "So What's Wrong with Getting Reborn as a Goblin?",
-      "score": 66,
-      "mal_id": 63712,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1793624400,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 27,
       "title": "The Cold Sato-san is Only Sweet to Me",
       "score": 69,
       "mal_id": 63754,
@@ -302,13 +291,24 @@
       "origin": "anilist"
     },
     {
+      "rank": 27,
+      "title": "So What's Wrong with Getting Reborn as a Goblin?",
+      "score": 66,
+      "mal_id": 63712,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1793624400,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
       "rank": 28,
       "title": "The Iceblade Sorcerer Shall Rule the World II",
       "score": 67,
       "mal_id": 64254,
-      "latest": 3,
-      "next_episode": 4,
-      "next_airing_at": 1793291280,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793896080,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
