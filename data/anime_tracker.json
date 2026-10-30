@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-10-30T08:20:05Z",
+  "updated_at": "2026-10-30T20:10:52Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -939,6 +939,11 @@
           "slug": "steel-ball-run-jojo-s-bizarre-adventure-2nd-3rd-stage-ep5",
           "source": "gemini",
           "generated_at": "2026-10-24T07:08:44Z"
+        },
+        "6": {
+          "slug": "steel-ball-run-jojo-s-bizarre-adventure-2nd-3rd-stage-ep6",
+          "source": "gemini",
+          "generated_at": "2026-10-30T19:47:59Z"
         }
       }
     },
@@ -1024,6 +1029,11 @@
           "slug": "the-apothecary-diaries-season-3-ep4",
           "source": "gemini",
           "generated_at": "2026-10-24T07:07:19Z"
+        },
+        "5": {
+          "slug": "the-apothecary-diaries-season-3-ep5",
+          "source": "gemini",
+          "generated_at": "2026-10-30T19:37:56Z"
         }
       }
     },
@@ -1049,6 +1059,11 @@
           "slug": "tokyo-revengers-war-of-the-three-titans-arc-ep4",
           "source": "gemini",
           "generated_at": "2026-10-25T07:31:36Z"
+        },
+        "5": {
+          "slug": "tokyo-revengers-war-of-the-three-titans-arc-ep5",
+          "source": "gemini",
+          "generated_at": "2026-10-30T20:10:40Z"
         }
       }
     },
@@ -1174,6 +1189,11 @@
           "slug": "firefly-wedding-ep3",
           "source": "gemini",
           "generated_at": "2026-10-24T07:09:56Z"
+        },
+        "4": {
+          "slug": "firefly-wedding-ep4",
+          "source": "gemini",
+          "generated_at": "2026-10-30T20:08:52Z"
         }
       }
     },
