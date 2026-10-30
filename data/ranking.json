@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-29T23:02:12Z",
+  "updated_at": "2026-10-30T08:20:05Z",
   "items": [
     {
       "rank": 1,
@@ -75,9 +75,9 @@
       "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
       "score": 86,
       "mal_id": 61469,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1793347200,
+      "latest": null,
+      "next_episode": 7,
+      "next_airing_at": 1793952000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
