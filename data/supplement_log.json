@@ -167,7 +167,25 @@
       "slug": "recommended-from-far-away",
       "kind": "offrank",
       "posted_at": "2026-10-30T08:27:54Z"
+    },
+    {
+      "mal_id": 64326,
+      "slug": "recommended-the-seven-knights-of-the-marronnier-kingdom",
+      "kind": "offrank",
+      "posted_at": "2026-10-30T21:44:46Z"
+    },
+    {
+      "mal_id": 64505,
+      "slug": "recommended-ace-of-diamond-act-ii-season-2-part-2",
+      "kind": "offrank",
+      "posted_at": "2026-10-30T21:47:11Z"
+    },
+    {
+      "mal_id": 1,
+      "slug": "recommended-cowboy-bebop-20261030",
+      "kind": "archive",
+      "posted_at": "2026-10-30T21:47:59Z"
     }
   ],
-  "updated_at": "2026-10-30T08:27:54Z"
+  "updated_at": "2026-10-30T21:47:59Z"
 }
