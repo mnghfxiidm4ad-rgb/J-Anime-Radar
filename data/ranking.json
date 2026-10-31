@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-31T08:10:19Z",
+  "updated_at": "2026-10-31T18:51:30Z",
   "items": [
     {
       "rank": 1,
@@ -20,9 +20,9 @@
       "title": "Black Clover Season 2",
       "score": 87,
       "mal_id": 61967,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793455200,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794060000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -97,9 +97,9 @@
       "title": "Even the Student Council Has Its Holes!",
       "score": 73,
       "mal_id": 61578,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793460600,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794065400,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -240,9 +240,9 @@
       "title": "Magical Explorer",
       "score": 69,
       "mal_id": 56733,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1793458800,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794063600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -251,9 +251,9 @@
       "title": "A Wild Last Boss Appeared! Season 2",
       "score": 73,
       "mal_id": 63140,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1793453400,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794058200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -262,9 +262,9 @@
       "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
       "score": 61,
       "mal_id": 62922,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793464200,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794069000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -281,6 +281,17 @@
     },
     {
       "rank": 26,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 66,
+      "mal_id": 64254,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1793896080,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 27,
       "title": "The Cold Sato-san is Only Sweet to Me",
       "score": 69,
       "mal_id": 63754,
@@ -291,24 +302,13 @@
       "origin": "anilist"
     },
     {
-      "rank": 27,
+      "rank": 28,
       "title": "So What's Wrong with Getting Reborn as a Goblin?",
-      "score": 66,
+      "score": 65,
       "mal_id": 63712,
       "latest": 5,
       "next_episode": 6,
       "next_airing_at": 1793624400,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 28,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 66,
-      "mal_id": 64254,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793896080,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
