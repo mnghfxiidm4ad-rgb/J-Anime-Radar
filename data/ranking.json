@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-01T08:56:24Z",
+  "updated_at": "2026-11-01T19:25:05Z",
   "items": [
     {
       "rank": 1,
@@ -39,23 +39,23 @@
     },
     {
       "rank": 4,
+      "title": "Overgeared",
+      "score": 76,
+      "mal_id": 64340,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794148200,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 5,
       "title": "Reincarnated as a Sword Season 2",
       "score": 75,
       "mal_id": 53913,
       "latest": 5,
       "next_episode": 6,
       "next_airing_at": 1793806200,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 5,
-      "title": "Overgeared",
-      "score": 76,
-      "mal_id": 64340,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1793543400,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -72,23 +72,23 @@
     },
     {
       "rank": 7,
-      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-      "score": 86,
-      "mal_id": 61469,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1793952000,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 8,
       "title": "Firefly Wedding",
       "score": 75,
       "mal_id": 63293,
       "latest": 4,
       "next_episode": 5,
       "next_airing_at": 1793975400,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 8,
+      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+      "score": 86,
+      "mal_id": 61469,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1793952000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -128,7 +128,7 @@
     {
       "rank": 12,
       "title": "Tokyo Revengers: War of the Three Titans Arc",
-      "score": 76,
+      "score": 77,
       "mal_id": 59088,
       "latest": 5,
       "next_episode": 6,
@@ -152,9 +152,9 @@
       "title": "Dragon Ball Super: Beerus",
       "score": 81,
       "mal_id": 63367,
-      "latest": 3,
-      "next_episode": 4,
-      "next_airing_at": 1793542560,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1794147360,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -163,9 +163,9 @@
       "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
       "score": 69,
       "mal_id": 60601,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1793543400,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794148200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -196,9 +196,9 @@
       "title": "I'm Dating a Dark Summoner",
       "score": 67,
       "mal_id": 63509,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793550000,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794154800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -207,9 +207,9 @@
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 69,
       "mal_id": 60948,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793536200,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794141000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -248,23 +248,23 @@
     },
     {
       "rank": 23,
-      "title": "A Wild Last Boss Appeared! Season 2",
-      "score": 73,
-      "mal_id": 63140,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794058200,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 24,
       "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
       "score": 61,
       "mal_id": 62922,
       "latest": 5,
       "next_episode": 6,
       "next_airing_at": 1794069000,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 24,
+      "title": "A Wild Last Boss Appeared! Season 2",
+      "score": 73,
+      "mal_id": 63140,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794058200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -328,9 +328,9 @@
       "title": "Full Clearing Another World under a Goddess with Zero Believers",
       "score": 65,
       "mal_id": 63292,
-      "latest": 3,
-      "next_episode": 4,
-      "next_airing_at": 1793543400,
+      "latest": 4,
+      "next_episode": 5,
+      "next_airing_at": 1794148200,
       "latest_episode_aired": null,
       "origin": "anilist"
     }
