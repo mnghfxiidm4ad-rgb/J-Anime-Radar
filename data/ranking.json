@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-10-31T21:58:15Z",
+  "updated_at": "2026-11-01T08:56:24Z",
   "items": [
     {
       "rank": 1,
@@ -218,9 +218,9 @@
       "title": "Aoashi Season 2",
       "score": 80,
       "mal_id": 61603,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793520000,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794124800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
