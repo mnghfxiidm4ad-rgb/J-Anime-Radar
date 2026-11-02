@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-01T22:29:20Z",
+  "updated_at": "2026-11-02T09:04:35Z",
   "items": [
     {
       "rank": 1,
@@ -273,7 +273,7 @@
       "title": "PSYREN",
       "score": 69,
       "mal_id": 63098,
-      "latest": 4,
+      "latest": null,
       "next_episode": 5,
       "next_airing_at": 1794232800,
       "latest_episode_aired": null,
