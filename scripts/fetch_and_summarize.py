@@ -210,6 +210,35 @@ def finished_episode(anime: dict, now=None) -> int:
     return 0
 
 
+def broadcast_end_at(anime: dict, episode: int, now=None) -> int:
+    """Unix time when this episode's slot ended. Zero when the clock is unknown."""
+    now = now or datetime.now(timezone.utc)
+    now_ts = int(now.timestamp())
+    episode = _as_int(episode)
+    nxt_ep = _as_int(anime.get("next_episode"))
+    nxt_at = _as_int(anime.get("next_airing_at"))
+    if nxt_ep and nxt_at:
+        if episode == nxt_ep:
+            return nxt_at + EPISODE_RUNTIME_SECONDS
+        if episode == nxt_ep - 1:
+            previous_start = nxt_at - WEEK_SECONDS
+            if previous_start > now_ts + 6 * 3600:
+                return 0
+            return previous_start + EPISODE_RUNTIME_SECONDS
+        return 0
+    if _as_int(anime.get("latest_episode")) != episode:
+        return 0
+    aired = parse_aired(anime.get("latest_episode_aired"))
+    if aired is None:
+        return 0
+    if aired.hour == 0 and aired.minute == 0 and aired.second == 0:
+        jst = timezone(timedelta(hours=9))
+        day = aired.astimezone(jst).date()
+        end = datetime(day.year, day.month, day.day, 4, 0, tzinfo=jst) + timedelta(days=1)
+        return int(end.timestamp())
+    return int((aired + timedelta(seconds=EPISODE_RUNTIME_SECONDS)).timestamp())
+
+
 def public_score(raw):
     if raw is None or raw == "":
         return None
@@ -1401,9 +1430,10 @@ def main() -> int:
                     if tracked_max and candidate < tracked_max:
                         log(f"skip {anime.get('title_english')} ep{candidate} (already have ep{tracked_max})")
                         continue
-                    pending.append((priority, offset, rank, anime, candidate))
-            pending.sort(key=lambda item: (item[0], item[1], item[2]))
-            for _priority, _offset, rank, anime, ep in pending:
+                    pending.append((broadcast_end_at(anime, candidate), priority, offset, rank, anime, candidate))
+            # Most recently finished broadcast first. Named priority breaks a tie.
+            pending.sort(key=lambda item: (-item[0], item[1], item[2], item[3]))
+            for _ended, _priority, _offset, rank, anime, ep in pending:
                 if created >= args.max_new:
                     log(f"daily cap {args.max_new} reached; remaining finished episodes wait for the next run")
                     break
