@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-03T09:12:42Z",
+  "updated_at": "2026-11-03T20:53:16Z",
   "items": [
     {
       "rank": 1,
@@ -108,9 +108,9 @@
       "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
       "score": 73,
       "mal_id": 63431,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793718000,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794322800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -207,9 +207,9 @@
       "title": "Nia Liston: The Merciless Maiden",
       "score": 75,
       "mal_id": 63382,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793708760,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794313560,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -271,7 +271,7 @@
     {
       "rank": 25,
       "title": "PSYREN",
-      "score": 69,
+      "score": 70,
       "mal_id": 63098,
       "latest": 4,
       "next_episode": 5,
@@ -306,9 +306,9 @@
       "title": "The Cold Sato-san is Only Sweet to Me",
       "score": 69,
       "mal_id": 63754,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793710800,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794315600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
