@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-11-04T08:48:11Z",
+  "updated_at": "2026-11-04T21:01:59Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -909,6 +909,11 @@
           "slug": "reincarnated-as-a-sword-season-2-ep5",
           "source": "gemini",
           "generated_at": "2026-10-28T19:49:49Z"
+        },
+        "6": {
+          "slug": "reincarnated-as-a-sword-season-2-ep6",
+          "source": "gemini",
+          "generated_at": "2026-11-04T21:01:47Z"
         }
       }
     },
@@ -1379,6 +1384,11 @@
           "slug": "a-returner-s-magic-should-be-special-season-2-ep4",
           "source": "gemini",
           "generated_at": "2026-10-28T20:01:44Z"
+        },
+        "5": {
+          "slug": "a-returner-s-magic-should-be-special-season-2-ep5",
+          "source": "gemini",
+          "generated_at": "2026-11-04T21:01:02Z"
         }
       }
     },
