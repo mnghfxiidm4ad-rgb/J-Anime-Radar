@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-04T23:59:32Z",
+  "updated_at": "2026-11-05T09:11:38Z",
   "items": [
     {
       "rank": 1,
@@ -281,23 +281,23 @@
     },
     {
       "rank": 26,
+      "title": "The Cold Sato-san is Only Sweet to Me",
+      "score": 68,
+      "mal_id": 63754,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794315600,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 27,
       "title": "So What's Wrong with Getting Reborn as a Goblin?",
       "score": 65,
       "mal_id": 63712,
       "latest": 6,
       "next_episode": 7,
       "next_airing_at": 1794229200,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 27,
-      "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 69,
-      "mal_id": 63754,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794315600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
