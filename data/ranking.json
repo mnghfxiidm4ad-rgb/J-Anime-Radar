@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-05T09:11:38Z",
+  "updated_at": "2026-11-05T21:25:27Z",
   "items": [
     {
       "rank": 1,
@@ -31,9 +31,9 @@
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 67,
       "mal_id": 59741,
-      "latest": 18,
-      "next_episode": 19,
-      "next_airing_at": 1793892360,
+      "latest": 19,
+      "next_episode": 20,
+      "next_airing_at": 1794497160,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -119,9 +119,9 @@
       "title": "The Ramparts of Ice Season 2",
       "score": 81,
       "mal_id": 64534,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1793890560,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794495360,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -160,23 +160,23 @@
     },
     {
       "rank": 15,
-      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
-      "score": 69,
-      "mal_id": 60601,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794148200,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 16,
       "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
       "score": 72,
       "mal_id": 63409,
       "latest": 5,
       "next_episode": 6,
       "next_airing_at": 1794227400,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 16,
+      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
+      "score": 69,
+      "mal_id": 60601,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794148200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -306,9 +306,9 @@
       "title": "The Iceblade Sorcerer Shall Rule the World II",
       "score": 66,
       "mal_id": 64254,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1793896080,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794500880,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
