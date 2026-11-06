@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-11-06T09:18:25Z",
+  "updated_at": "2026-11-06T20:58:32Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1059,6 +1059,11 @@
           "slug": "the-apothecary-diaries-season-3-ep5",
           "source": "gemini",
           "generated_at": "2026-10-30T19:37:56Z"
+        },
+        "6": {
+          "slug": "the-apothecary-diaries-season-3-ep6",
+          "source": "gemini",
+          "generated_at": "2026-11-06T20:58:20Z"
         }
       }
     },
@@ -1089,6 +1094,11 @@
           "slug": "tokyo-revengers-war-of-the-three-titans-arc-ep5",
           "source": "gemini",
           "generated_at": "2026-10-30T20:10:40Z"
+        },
+        "6": {
+          "slug": "tokyo-revengers-war-of-the-three-titans-arc-ep6",
+          "source": "gemini",
+          "generated_at": "2026-11-06T20:43:32Z"
         }
       }
     },
@@ -1234,6 +1244,11 @@
           "slug": "firefly-wedding-ep4",
           "source": "gemini",
           "generated_at": "2026-10-30T20:08:52Z"
+        },
+        "5": {
+          "slug": "firefly-wedding-ep5",
+          "source": "gemini",
+          "generated_at": "2026-11-06T20:50:57Z"
         }
       }
     },
