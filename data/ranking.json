@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-08T08:52:04Z",
+  "updated_at": "2026-11-08T19:09:57Z",
   "items": [
     {
       "rank": 1,
@@ -42,9 +42,9 @@
       "title": "Overgeared",
       "score": 76,
       "mal_id": 64340,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794148200,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1794753000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -61,23 +61,23 @@
     },
     {
       "rank": 6,
-      "title": "Blue Box Season 2",
-      "score": 81,
-      "mal_id": 61323,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794727800,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 7,
       "title": "Firefly Wedding",
       "score": 75,
       "mal_id": 63293,
       "latest": 5,
       "next_episode": 6,
       "next_airing_at": 1794580200,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 7,
+      "title": "Blue Box Season 2",
+      "score": 81,
+      "mal_id": 61323,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794727800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -152,9 +152,9 @@
       "title": "Dragon Ball Super: Beerus",
       "score": 81,
       "mal_id": 63367,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1794147360,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794752160,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -174,9 +174,9 @@
       "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
       "score": 68,
       "mal_id": 60601,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794148200,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1794753000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -196,9 +196,9 @@
       "title": "I'm Dating a Dark Summoner",
       "score": 67,
       "mal_id": 63509,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794154800,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794759600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -207,9 +207,9 @@
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 69,
       "mal_id": 60948,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794141000,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794745800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -227,7 +227,7 @@
     {
       "rank": 21,
       "title": "The Detective Is Already Dead Season 2",
-      "score": 71,
+      "score": 70,
       "mal_id": 52480,
       "latest": 5,
       "next_episode": 6,
@@ -249,7 +249,7 @@
     {
       "rank": 23,
       "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "score": 61,
+      "score": 62,
       "mal_id": 62922,
       "latest": 6,
       "next_episode": 7,
@@ -260,7 +260,7 @@
     {
       "rank": 24,
       "title": "A Wild Last Boss Appeared! Season 2",
-      "score": 73,
+      "score": 74,
       "mal_id": 63140,
       "latest": 7,
       "next_episode": 8,
@@ -328,9 +328,9 @@
       "title": "Full Clearing Another World under a Goddess with Zero Believers",
       "score": 65,
       "mal_id": 63292,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1794148200,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794753000,
       "latest_episode_aired": null,
       "origin": "anilist"
     }
