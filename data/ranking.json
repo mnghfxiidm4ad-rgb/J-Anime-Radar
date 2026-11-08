@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-07T22:23:46Z",
+  "updated_at": "2026-11-08T08:52:04Z",
   "items": [
     {
       "rank": 1,
@@ -64,9 +64,9 @@
       "title": "Blue Box Season 2",
       "score": 81,
       "mal_id": 61323,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1794123000,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794727800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -218,9 +218,9 @@
       "title": "Aoashi Season 2",
       "score": 80,
       "mal_id": 61603,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794124800,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794729600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },

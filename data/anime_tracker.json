@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-11-07T22:23:46Z",
+  "updated_at": "2026-11-08T08:52:04Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1194,6 +1194,11 @@
           "slug": "blue-box-season-2-ep4",
           "source": "gemini",
           "generated_at": "2026-10-26T07:39:36Z"
+        },
+        "5": {
+          "slug": "blue-box-season-2-ep5",
+          "source": "gemini",
+          "generated_at": "2026-11-08T08:51:52Z"
         }
       }
     },
@@ -1289,6 +1294,11 @@
           "slug": "aoashi-season-2-ep5",
           "source": "gemini",
           "generated_at": "2026-11-01T08:56:12Z"
+        },
+        "6": {
+          "slug": "aoashi-season-2-ep6",
+          "source": "gemini",
+          "generated_at": "2026-11-08T08:48:50Z"
         }
       }
     },
