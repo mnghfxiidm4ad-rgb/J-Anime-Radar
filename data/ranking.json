@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-08T22:33:36Z",
+  "updated_at": "2026-11-09T09:24:53Z",
   "items": [
     {
       "rank": 1,
@@ -161,7 +161,7 @@
     {
       "rank": 15,
       "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "score": 72,
+      "score": 73,
       "mal_id": 63409,
       "latest": 5,
       "next_episode": 6,
@@ -182,23 +182,23 @@
     },
     {
       "rank": 17,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 75,
-      "mal_id": 63382,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794313560,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 18,
       "title": "I'm Dating a Dark Summoner",
       "score": 67,
       "mal_id": 63509,
       "latest": 6,
       "next_episode": 7,
       "next_airing_at": 1794759600,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 18,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 75,
+      "mal_id": 63382,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794313560,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -237,23 +237,23 @@
     },
     {
       "rank": 22,
+      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+      "score": 61,
+      "mal_id": 62922,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794673800,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 23,
       "title": "Magical Explorer",
       "score": 69,
       "mal_id": 56733,
       "latest": 7,
       "next_episode": 8,
       "next_airing_at": 1794668400,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 23,
-      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "score": 62,
-      "mal_id": 62922,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794673800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -314,23 +314,23 @@
     },
     {
       "rank": 29,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 73,
-      "mal_id": 63181,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794580200,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 30,
       "title": "Full Clearing Another World under a Goddess with Zero Believers",
       "score": 65,
       "mal_id": 63292,
       "latest": 5,
       "next_episode": 6,
       "next_airing_at": 1794753000,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 30,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "score": 73,
+      "mal_id": 63181,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794580200,
       "latest_episode_aired": null,
       "origin": "anilist"
     }
