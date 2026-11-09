@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-11-09T09:24:53Z",
+  "updated_at": "2026-11-09T23:33:14Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1429,6 +1429,11 @@
           "slug": "hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion-ep5",
           "source": "gemini",
           "generated_at": "2026-11-02T23:08:37Z"
+        },
+        "6": {
+          "slug": "hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion-ep6",
+          "source": "gemini",
+          "generated_at": "2026-11-09T23:33:02Z"
         }
       }
     },

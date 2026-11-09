@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-09T09:24:53Z",
+  "updated_at": "2026-11-09T23:33:14Z",
   "items": [
     {
       "rank": 1,
@@ -163,9 +163,9 @@
       "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
       "score": 73,
       "mal_id": 63409,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794227400,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794832200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -193,17 +193,6 @@
     },
     {
       "rank": 18,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 75,
-      "mal_id": 63382,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794313560,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 69,
       "mal_id": 60948,
@@ -214,9 +203,20 @@
       "origin": "anilist"
     },
     {
+      "rank": 19,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 75,
+      "mal_id": 63382,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794313560,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
       "rank": 20,
       "title": "Aoashi Season 2",
-      "score": 80,
+      "score": 81,
       "mal_id": 61603,
       "latest": 6,
       "next_episode": 7,
@@ -237,23 +237,23 @@
     },
     {
       "rank": 22,
-      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "score": 61,
-      "mal_id": 62922,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794673800,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 23,
       "title": "Magical Explorer",
       "score": 69,
       "mal_id": 56733,
       "latest": 7,
       "next_episode": 8,
       "next_airing_at": 1794668400,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 23,
+      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+      "score": 61,
+      "mal_id": 62922,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794673800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -273,9 +273,9 @@
       "title": "PSYREN",
       "score": 70,
       "mal_id": 63098,
-      "latest": 4,
-      "next_episode": 5,
-      "next_airing_at": 1794232800,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794837600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -297,7 +297,7 @@
       "mal_id": 63712,
       "latest": 6,
       "next_episode": 7,
-      "next_airing_at": 1794229200,
+      "next_airing_at": 1794834000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
