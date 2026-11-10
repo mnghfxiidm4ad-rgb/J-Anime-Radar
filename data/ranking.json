@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-10T09:29:14Z",
+  "updated_at": "2026-11-10T21:20:53Z",
   "items": [
     {
       "rank": 1,
@@ -83,17 +83,6 @@
     },
     {
       "rank": 8,
-      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-      "score": 86,
-      "mal_id": 61469,
-      "latest": 7,
-      "next_episode": 8,
-      "next_airing_at": 1794556800,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 9,
       "title": "Even the Student Council Has Its Holes!",
       "score": 73,
       "mal_id": 61578,
@@ -104,13 +93,24 @@
       "origin": "anilist"
     },
     {
+      "rank": 9,
+      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+      "score": 86,
+      "mal_id": 61469,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1794556800,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
       "rank": 10,
       "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
       "score": 73,
       "mal_id": 63431,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794322800,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794927600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -193,23 +193,23 @@
     },
     {
       "rank": 18,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 75,
-      "mal_id": 63382,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794313560,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 69,
       "mal_id": 60948,
       "latest": 6,
       "next_episode": 7,
       "next_airing_at": 1794745800,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 19,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 75,
+      "mal_id": 63382,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794918360,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -284,9 +284,9 @@
       "title": "The Cold Sato-san is Only Sweet to Me",
       "score": 68,
       "mal_id": 63754,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794315600,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794920400,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
