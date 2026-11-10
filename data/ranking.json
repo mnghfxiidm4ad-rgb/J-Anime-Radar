@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-10T01:47:48Z",
+  "updated_at": "2026-11-10T09:29:14Z",
   "items": [
     {
       "rank": 1,
@@ -18,7 +18,7 @@
     {
       "rank": 2,
       "title": "Black Clover Season 2",
-      "score": 87,
+      "score": 88,
       "mal_id": 61967,
       "latest": 6,
       "next_episode": 7,
@@ -149,23 +149,23 @@
     },
     {
       "rank": 14,
-      "title": "Dragon Ball Super: Beerus",
-      "score": 81,
-      "mal_id": 63367,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794752160,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 15,
       "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
       "score": 73,
       "mal_id": 63409,
       "latest": 6,
       "next_episode": 7,
       "next_airing_at": 1794832200,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 15,
+      "title": "Dragon Ball Super: Beerus",
+      "score": 81,
+      "mal_id": 63367,
+      "latest": 5,
+      "next_episode": 6,
+      "next_airing_at": 1794752160,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -193,23 +193,23 @@
     },
     {
       "rank": 18,
-      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
-      "score": 69,
-      "mal_id": 60948,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794745800,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
       "title": "Nia Liston: The Merciless Maiden",
       "score": 75,
       "mal_id": 63382,
       "latest": 5,
       "next_episode": 6,
       "next_airing_at": 1794313560,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 19,
+      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+      "score": 69,
+      "mal_id": 60948,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794745800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
