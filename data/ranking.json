@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-11T09:01:10Z",
+  "updated_at": "2026-11-11T22:06:20Z",
   "items": [
     {
       "rank": 1,
@@ -53,9 +53,9 @@
       "title": "Reincarnated as a Sword Season 2",
       "score": 75,
       "mal_id": 53913,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794411000,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1795015800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -141,9 +141,9 @@
       "title": "A Returner's Magic Should be Special Season 2",
       "score": 69,
       "mal_id": 57612,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794411900,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1795016700,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -161,7 +161,7 @@
     {
       "rank": 15,
       "title": "Dragon Ball Super: Beerus",
-      "score": 81,
+      "score": 80,
       "mal_id": 63367,
       "latest": 5,
       "next_episode": 6,
@@ -182,6 +182,17 @@
     },
     {
       "rank": 17,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 75,
+      "mal_id": 63382,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794918360,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 18,
       "title": "I'm Dating a Dark Summoner",
       "score": 67,
       "mal_id": 63509,
@@ -192,24 +203,13 @@
       "origin": "anilist"
     },
     {
-      "rank": 18,
+      "rank": 19,
       "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
       "score": 69,
       "mal_id": 60948,
       "latest": 6,
       "next_episode": 7,
       "next_airing_at": 1794745800,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 75,
-      "mal_id": 63382,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794918360,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -229,9 +229,9 @@
       "title": "The Detective Is Already Dead Season 2",
       "score": 70,
       "mal_id": 52480,
-      "latest": 5,
-      "next_episode": 6,
-      "next_airing_at": 1794400200,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1795005000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
