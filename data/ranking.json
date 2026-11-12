@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-12T01:06:08Z",
+  "updated_at": "2026-11-12T09:30:16Z",
   "items": [
     {
       "rank": 1,
@@ -106,7 +106,7 @@
     {
       "rank": 10,
       "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
-      "score": 73,
+      "score": 74,
       "mal_id": 63431,
       "latest": 6,
       "next_episode": 7,
