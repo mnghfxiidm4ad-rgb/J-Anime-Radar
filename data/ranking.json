@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-12T23:55:28Z",
+  "updated_at": "2026-11-13T09:19:59Z",
   "items": [
     {
       "rank": 1,
@@ -97,9 +97,9 @@
       "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
       "score": 86,
       "mal_id": 61469,
-      "latest": 7,
-      "next_episode": 8,
-      "next_airing_at": 1794556800,
+      "latest": 8,
+      "next_episode": 9,
+      "next_airing_at": 1795161600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -183,7 +183,7 @@
     {
       "rank": 17,
       "title": "Nia Liston: The Merciless Maiden",
-      "score": 75,
+      "score": 74,
       "mal_id": 63382,
       "latest": 6,
       "next_episode": 7,
@@ -292,23 +292,23 @@
     },
     {
       "rank": 27,
-      "title": "So What's Wrong with Getting Reborn as a Goblin?",
-      "score": 65,
-      "mal_id": 63712,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794834000,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 28,
       "title": "The Iceblade Sorcerer Shall Rule the World II",
       "score": 66,
       "mal_id": 64254,
       "latest": 6,
       "next_episode": 7,
       "next_airing_at": 1795105680,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 28,
+      "title": "So What's Wrong with Getting Reborn as a Goblin?",
+      "score": 65,
+      "mal_id": 63712,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794834000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -325,12 +325,12 @@
     },
     {
       "rank": 30,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "score": 73,
-      "mal_id": 63181,
+      "title": "The World's Strongest Witch",
+      "score": 70,
+      "mal_id": 64084,
       "latest": 6,
       "next_episode": 7,
-      "next_airing_at": 1794580200,
+      "next_airing_at": 1795006800,
       "latest_episode_aired": null,
       "origin": "anilist"
     }
