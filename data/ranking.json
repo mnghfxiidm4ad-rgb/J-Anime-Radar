@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-15T23:13:29Z",
+  "updated_at": "2026-11-16T09:13:31Z",
   "items": [
     {
       "rank": 1,
@@ -117,7 +117,7 @@
     {
       "rank": 11,
       "title": "The Ramparts of Ice Season 2",
-      "score": 81,
+      "score": 82,
       "mal_id": 64534,
       "latest": 7,
       "next_episode": 8,
@@ -282,7 +282,7 @@
     {
       "rank": 26,
       "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 68,
+      "score": 67,
       "mal_id": 63754,
       "latest": 6,
       "next_episode": 7,
