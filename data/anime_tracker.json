@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-11-17T10:23:51Z",
+  "updated_at": "2026-11-17T22:44:31Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1604,6 +1604,11 @@
           "slug": "the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-ep6",
           "source": "gemini",
           "generated_at": "2026-11-10T21:13:13Z"
+        },
+        "7": {
+          "slug": "the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-ep7",
+          "source": "gemini",
+          "generated_at": "2026-11-17T22:36:28Z"
         }
       }
     },
@@ -1659,6 +1664,11 @@
           "slug": "nia-liston-the-merciless-maiden-ep6",
           "source": "gemini",
           "generated_at": "2026-11-10T21:20:41Z"
+        },
+        "7": {
+          "slug": "nia-liston-the-merciless-maiden-ep7",
+          "source": "gemini",
+          "generated_at": "2026-11-17T22:44:19Z"
         }
       }
     }
