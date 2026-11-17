@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-17T02:10:30Z",
+  "updated_at": "2026-11-17T10:23:51Z",
   "items": [
     {
       "rank": 1,
@@ -193,23 +193,23 @@
     },
     {
       "rank": 18,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 74,
-      "mal_id": 63382,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794918360,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
       "title": "I'm Dating a Dark Summoner",
       "score": 67,
       "mal_id": 63509,
       "latest": 7,
       "next_episode": 8,
       "next_airing_at": 1795364400,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 19,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 74,
+      "mal_id": 63382,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1794918360,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -226,23 +226,23 @@
     },
     {
       "rank": 21,
-      "title": "Magical Explorer",
-      "score": 69,
-      "mal_id": 56733,
-      "latest": 8,
-      "next_episode": 9,
-      "next_airing_at": 1795273200,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 22,
       "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
       "score": 62,
       "mal_id": 62922,
       "latest": 7,
       "next_episode": 8,
       "next_airing_at": 1795278600,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 22,
+      "title": "Magical Explorer",
+      "score": 69,
+      "mal_id": 56733,
+      "latest": 8,
+      "next_episode": 9,
+      "next_airing_at": 1795273200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -281,17 +281,6 @@
     },
     {
       "rank": 26,
-      "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 67,
-      "mal_id": 63754,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1794920400,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 27,
       "title": "Full Clearing Another World under a Goddess with Zero Believers",
       "score": 65,
       "mal_id": 63292,
@@ -302,24 +291,35 @@
       "origin": "anilist"
     },
     {
-      "rank": 28,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 66,
-      "mal_id": 64254,
+      "rank": 27,
+      "title": "The Cold Sato-san is Only Sweet to Me",
+      "score": 67,
+      "mal_id": 63754,
       "latest": 6,
       "next_episode": 7,
-      "next_airing_at": 1795105680,
+      "next_airing_at": 1794920400,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
     {
-      "rank": 29,
+      "rank": 28,
       "title": "So What's Wrong with Getting Reborn as a Goblin?",
       "score": 65,
       "mal_id": 63712,
       "latest": 7,
       "next_episode": 8,
       "next_airing_at": 1795438800,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 29,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "score": 66,
+      "mal_id": 64254,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1795105680,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
