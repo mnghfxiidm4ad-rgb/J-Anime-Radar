@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-18T01:23:51Z",
+  "updated_at": "2026-11-18T09:54:07Z",
   "items": [
     {
       "rank": 1,
@@ -182,6 +182,17 @@
     },
     {
       "rank": 17,
+      "title": "Nia Liston: The Merciless Maiden",
+      "score": 74,
+      "mal_id": 63382,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1795523160,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 18,
       "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
       "score": 68,
       "mal_id": 60601,
@@ -192,24 +203,13 @@
       "origin": "anilist"
     },
     {
-      "rank": 18,
+      "rank": 19,
       "title": "I'm Dating a Dark Summoner",
       "score": 67,
       "mal_id": 63509,
       "latest": 7,
       "next_episode": 8,
       "next_airing_at": 1795364400,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 19,
-      "title": "Nia Liston: The Merciless Maiden",
-      "score": 74,
-      "mal_id": 63382,
-      "latest": 7,
-      "next_episode": 8,
-      "next_airing_at": 1795523160,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -271,7 +271,7 @@
     {
       "rank": 25,
       "title": "PSYREN",
-      "score": 70,
+      "score": 69,
       "mal_id": 63098,
       "latest": 6,
       "next_episode": 7,
