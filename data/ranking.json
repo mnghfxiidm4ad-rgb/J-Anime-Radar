@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-18T09:54:07Z",
+  "updated_at": "2026-11-18T22:43:38Z",
   "items": [
     {
       "rank": 1,
@@ -53,9 +53,9 @@
       "title": "Reincarnated as a Sword Season 2",
       "score": 75,
       "mal_id": 53913,
-      "latest": 7,
-      "next_episode": 8,
-      "next_airing_at": 1795015800,
+      "latest": 8,
+      "next_episode": 9,
+      "next_airing_at": 1795620600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -141,9 +141,9 @@
       "title": "A Returner's Magic Should be Special Season 2",
       "score": 69,
       "mal_id": 57612,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1795016700,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1795621500,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -251,9 +251,9 @@
       "title": "The Detective Is Already Dead Season 2",
       "score": 70,
       "mal_id": 52480,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1795005000,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1795609800,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -328,9 +328,9 @@
       "title": "The World's Strongest Witch",
       "score": 70,
       "mal_id": 64084,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1795006800,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1795611600,
       "latest_episode_aired": null,
       "origin": "anilist"
     }
