@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-19T00:48:46Z",
+  "updated_at": "2026-11-19T10:01:20Z",
   "items": [
     {
       "rank": 1,
@@ -50,23 +50,23 @@
     },
     {
       "rank": 5,
-      "title": "Reincarnated as a Sword Season 2",
-      "score": 75,
-      "mal_id": 53913,
-      "latest": 8,
-      "next_episode": 9,
-      "next_airing_at": 1795620600,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 6,
       "title": "Firefly Wedding",
       "score": 75,
       "mal_id": 63293,
       "latest": 6,
       "next_episode": 7,
       "next_airing_at": 1795185000,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 6,
+      "title": "Reincarnated as a Sword Season 2",
+      "score": 75,
+      "mal_id": 53913,
+      "latest": 8,
+      "next_episode": 9,
+      "next_airing_at": 1795620600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -117,7 +117,7 @@
     {
       "rank": 11,
       "title": "The Ramparts of Ice Season 2",
-      "score": 82,
+      "score": 81,
       "mal_id": 64534,
       "latest": 7,
       "next_episode": 8,
@@ -171,23 +171,23 @@
     },
     {
       "rank": 16,
-      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
-      "score": 69,
-      "mal_id": 60948,
-      "latest": 7,
-      "next_episode": 8,
-      "next_airing_at": 1795350600,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 17,
       "title": "Nia Liston: The Merciless Maiden",
       "score": 74,
       "mal_id": 63382,
       "latest": 7,
       "next_episode": 8,
       "next_airing_at": 1795523160,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 17,
+      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+      "score": 69,
+      "mal_id": 60948,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1795350600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
