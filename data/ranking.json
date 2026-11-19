@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-19T10:01:20Z",
+  "updated_at": "2026-11-19T22:26:10Z",
   "items": [
     {
       "rank": 1,
@@ -31,9 +31,9 @@
       "title": "The Exiled Heavy Knight Knows How to Game the System",
       "score": 67,
       "mal_id": 59741,
-      "latest": 20,
-      "next_episode": 21,
-      "next_airing_at": 1795101960,
+      "latest": 21,
+      "next_episode": 22,
+      "next_airing_at": 1795706760,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -50,23 +50,23 @@
     },
     {
       "rank": 5,
-      "title": "Firefly Wedding",
-      "score": 75,
-      "mal_id": 63293,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1795185000,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 6,
       "title": "Reincarnated as a Sword Season 2",
       "score": 75,
       "mal_id": 53913,
       "latest": 8,
       "next_episode": 9,
       "next_airing_at": 1795620600,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 6,
+      "title": "Firefly Wedding",
+      "score": 75,
+      "mal_id": 63293,
+      "latest": 6,
+      "next_episode": 7,
+      "next_airing_at": 1795185000,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -119,9 +119,9 @@
       "title": "The Ramparts of Ice Season 2",
       "score": 81,
       "mal_id": 64534,
-      "latest": 7,
-      "next_episode": 8,
-      "next_airing_at": 1795100160,
+      "latest": 8,
+      "next_episode": 9,
+      "next_airing_at": 1795704960,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -317,9 +317,9 @@
       "title": "The Iceblade Sorcerer Shall Rule the World II",
       "score": 66,
       "mal_id": 64254,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1795105680,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1795710480,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
