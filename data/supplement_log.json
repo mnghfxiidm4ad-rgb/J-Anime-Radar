@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "mal_id": 63382,
-      "slug": "recommended-nia-liston-the-merciless-maiden",
-      "kind": "offrank",
-      "posted_at": "2026-10-16T06:54:15Z"
-    },
-    {
       "mal_id": 56733,
       "slug": "recommended-magical-explorer",
       "kind": "offrank",
@@ -341,7 +335,13 @@
       "slug": "recommended-a-wild-last-boss-appeared-season-2",
       "kind": "offrank",
       "posted_at": "2026-11-12T09:38:37Z"
+    },
+    {
+      "mal_id": 52480,
+      "slug": "recommended-the-detective-is-already-dead-season-2",
+      "kind": "offrank",
+      "posted_at": "2026-11-21T09:45:23Z"
     }
   ],
-  "updated_at": "2026-11-12T09:38:37Z"
+  "updated_at": "2026-11-21T09:45:23Z"
 }

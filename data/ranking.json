@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-21T00:23:50Z",
+  "updated_at": "2026-11-21T09:24:51Z",
   "items": [
     {
       "rank": 1,
@@ -51,7 +51,7 @@
     {
       "rank": 5,
       "title": "Firefly Wedding",
-      "score": 75,
+      "score": 76,
       "mal_id": 63293,
       "latest": 7,
       "next_episode": 8,
@@ -275,7 +275,7 @@
       "mal_id": 63098,
       "latest": 6,
       "next_episode": 7,
-      "next_airing_at": 1795442400,
+      "next_airing_at": 1796047200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
