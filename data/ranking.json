@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-21T23:37:00Z",
+  "updated_at": "2026-11-22T10:04:06Z",
   "items": [
     {
       "rank": 1,
@@ -86,9 +86,9 @@
       "title": "Blue Box Season 2",
       "score": 81,
       "mal_id": 61323,
-      "latest": 6,
-      "next_episode": 7,
-      "next_airing_at": 1795332600,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1795937400,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -218,9 +218,9 @@
       "title": "Aoashi Season 2",
       "score": 81,
       "mal_id": 61603,
-      "latest": 7,
-      "next_episode": 8,
-      "next_airing_at": 1795334400,
+      "latest": 8,
+      "next_episode": 9,
+      "next_airing_at": 1795939200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -304,7 +304,7 @@
     {
       "rank": 28,
       "title": "So What's Wrong with Getting Reborn as a Goblin?",
-      "score": 65,
+      "score": 64,
       "mal_id": 63712,
       "latest": 7,
       "next_episode": 8,
