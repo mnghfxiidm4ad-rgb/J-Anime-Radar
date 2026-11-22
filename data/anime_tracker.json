@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-11-22T10:04:06Z",
+  "updated_at": "2026-11-22T21:48:39Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -1034,6 +1034,11 @@
           "slug": "overgeared-ep8",
           "source": "gemini",
           "generated_at": "2026-11-15T20:02:31Z"
+        },
+        "9": {
+          "slug": "overgeared-ep9",
+          "source": "gemini",
+          "generated_at": "2026-11-22T21:33:11Z"
         }
       }
     },
@@ -1214,6 +1219,11 @@
           "slug": "as-a-reincarnated-aristocrat-i-ll-use-my-appraisal-skill-to-rise-in-the-world-se-ep8",
           "source": "gemini",
           "generated_at": "2026-11-15T19:59:14Z"
+        },
+        "9": {
+          "slug": "as-a-reincarnated-aristocrat-i-ll-use-my-appraisal-skill-to-rise-in-the-world-se-ep9",
+          "source": "gemini",
+          "generated_at": "2026-11-22T21:15:49Z"
         }
       }
     },
@@ -1494,6 +1504,11 @@
           "slug": "i-m-dating-a-dark-summoner-ep7",
           "source": "gemini",
           "generated_at": "2026-11-15T19:56:36Z"
+        },
+        "8": {
+          "slug": "i-m-dating-a-dark-summoner-ep8",
+          "source": "gemini",
+          "generated_at": "2026-11-22T21:00:20Z"
         }
       }
     },
@@ -1529,6 +1544,11 @@
           "slug": "reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-ep7",
           "source": "gemini",
           "generated_at": "2026-11-15T20:04:36Z"
+        },
+        "8": {
+          "slug": "reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-ep8",
+          "source": "gemini",
+          "generated_at": "2026-11-22T21:48:27Z"
         }
       }
     },
@@ -1704,6 +1724,11 @@
           "slug": "dragon-ball-super-beerus-ep6",
           "source": "gemini",
           "generated_at": "2026-11-15T20:03:33Z"
+        },
+        "7": {
+          "slug": "dragon-ball-super-beerus-ep7",
+          "source": "gemini",
+          "generated_at": "2026-11-22T21:40:47Z"
         }
       }
     },
