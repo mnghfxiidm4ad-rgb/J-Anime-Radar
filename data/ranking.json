@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-24T04:07:22Z",
+  "updated_at": "2026-11-24T12:11:25Z",
   "items": [
     {
       "rank": 1,
@@ -83,23 +83,23 @@
     },
     {
       "rank": 8,
-      "title": "Blue Box Season 2",
-      "score": 81,
-      "mal_id": 61323,
-      "latest": 7,
-      "next_episode": 8,
-      "next_airing_at": 1795937400,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 9,
       "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
       "score": 74,
       "mal_id": 63431,
       "latest": 7,
       "next_episode": 8,
       "next_airing_at": 1795532400,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 9,
+      "title": "Blue Box Season 2",
+      "score": 81,
+      "mal_id": 61323,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1795937400,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -128,11 +128,11 @@
     {
       "rank": 12,
       "title": "Tokyo Revengers: War of the Three Titans Arc",
-      "score": 77,
+      "score": 78,
       "mal_id": 59088,
       "latest": 8,
       "next_episode": 9,
-      "next_airing_at": 1795798380,
+      "next_airing_at": 1795796580,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -150,7 +150,7 @@
     {
       "rank": 14,
       "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "score": 74,
+      "score": 75,
       "mal_id": 63409,
       "latest": 8,
       "next_episode": 9,
@@ -165,7 +165,7 @@
       "mal_id": 63367,
       "latest": 7,
       "next_episode": 8,
-      "next_airing_at": 1795961760,
+      "next_airing_at": 1795961700,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -176,7 +176,7 @@
       "mal_id": 63382,
       "latest": 7,
       "next_episode": 8,
-      "next_airing_at": 1795523160,
+      "next_airing_at": 1795523100,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -194,7 +194,7 @@
     {
       "rank": 18,
       "title": "I'm Dating a Dark Summoner",
-      "score": 67,
+      "score": 66,
       "mal_id": 63509,
       "latest": 8,
       "next_episode": 9,
