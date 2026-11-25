@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-25T02:50:54Z",
+  "updated_at": "2026-11-25T10:59:54Z",
   "items": [
     {
       "rank": 1,
@@ -160,23 +160,23 @@
     },
     {
       "rank": 15,
-      "title": "Dragon Ball Super: Beerus",
-      "score": 80,
-      "mal_id": 63367,
-      "latest": 7,
-      "next_episode": 8,
-      "next_airing_at": 1795961700,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 16,
       "title": "Nia Liston: The Merciless Maiden",
       "score": 74,
       "mal_id": 63382,
       "latest": 8,
       "next_episode": 9,
       "next_airing_at": 1796127900,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 16,
+      "title": "Dragon Ball Super: Beerus",
+      "score": 80,
+      "mal_id": 63367,
+      "latest": 7,
+      "next_episode": 8,
+      "next_airing_at": 1795961700,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -194,7 +194,7 @@
     {
       "rank": 18,
       "title": "I'm Dating a Dark Summoner",
-      "score": 66,
+      "score": 67,
       "mal_id": 63509,
       "latest": 8,
       "next_episode": 9,
