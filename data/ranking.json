@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-26T01:58:50Z",
+  "updated_at": "2026-11-26T10:37:09Z",
   "items": [
     {
       "rank": 1,
@@ -73,7 +73,7 @@
     {
       "rank": 7,
       "title": "Even the Student Council Has Its Holes!",
-      "score": 74,
+      "score": 75,
       "mal_id": 61578,
       "latest": 8,
       "next_episode": 9,
@@ -205,7 +205,7 @@
     {
       "rank": 19,
       "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
-      "score": 68,
+      "score": 69,
       "mal_id": 60601,
       "latest": 9,
       "next_episode": 10,
@@ -293,7 +293,7 @@
     {
       "rank": 27,
       "title": "The Cold Sato-san is Only Sweet to Me",
-      "score": 67,
+      "score": 66,
       "mal_id": 63754,
       "latest": 8,
       "next_episode": 9,
@@ -315,7 +315,7 @@
     {
       "rank": 29,
       "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 66,
+      "score": 65,
       "mal_id": 64254,
       "latest": 7,
       "next_episode": 8,
