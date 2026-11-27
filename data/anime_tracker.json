@@ -1,6 +1,6 @@
 {
   "season": "2026-SUMMER",
-  "updated_at": "2026-11-27T01:58:22Z",
+  "updated_at": "2026-11-27T10:44:22Z",
   "anime": {
     "59193": {
       "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -999,6 +999,11 @@
           "slug": "steel-ball-run-jojo-s-bizarre-adventure-2nd-3rd-stage-ep9",
           "source": "gemini",
           "generated_at": "2026-11-20T10:14:21Z"
+        },
+        "10": {
+          "slug": "steel-ball-run-jojo-s-bizarre-adventure-2nd-3rd-stage-ep10",
+          "source": "gemini",
+          "generated_at": "2026-11-27T10:44:10Z"
         }
       }
     },

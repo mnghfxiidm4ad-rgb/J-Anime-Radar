@@ -1,24 +1,6 @@
 {
   "entries": [
     {
-      "mal_id": 63712,
-      "slug": "recommended-so-what-s-wrong-with-getting-reborn-as-a-goblin",
-      "kind": "offrank",
-      "posted_at": "2026-10-28T08:14:31Z"
-    },
-    {
-      "mal_id": 63754,
-      "slug": "recommended-the-cold-sato-san-is-only-sweet-to-me",
-      "kind": "offrank",
-      "posted_at": "2026-10-28T08:26:53Z"
-    },
-    {
-      "mal_id": 61153,
-      "slug": "recommended-a-tale-of-the-secret-saint",
-      "kind": "offrank",
-      "posted_at": "2026-10-28T08:33:09Z"
-    },
-    {
       "mal_id": 63292,
       "slug": "recommended-full-clearing-another-world-under-a-goddess-with-zero-believers",
       "kind": "offrank",
@@ -341,7 +323,19 @@
       "slug": "recommended-the-iceblade-sorcerer-shall-rule-the-world-ii-20261127",
       "kind": "offrank",
       "posted_at": "2026-11-27T01:13:36Z"
+    },
+    {
+      "mal_id": 63754,
+      "slug": "recommended-the-cold-sato-san-is-only-sweet-to-me-20261127",
+      "kind": "offrank",
+      "posted_at": "2026-11-27T10:55:27Z"
+    },
+    {
+      "mal_id": 63712,
+      "slug": "recommended-so-what-s-wrong-with-getting-reborn-as-a-goblin-20261127",
+      "kind": "offrank",
+      "posted_at": "2026-11-27T11:03:02Z"
     }
   ],
-  "updated_at": "2026-11-27T01:13:36Z"
+  "updated_at": "2026-11-27T11:03:02Z"
 }

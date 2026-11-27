@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-27T01:58:22Z",
+  "updated_at": "2026-11-27T10:44:22Z",
   "items": [
     {
       "rank": 1,
@@ -108,9 +108,9 @@
       "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
       "score": 86,
       "mal_id": 61469,
-      "latest": 9,
-      "next_episode": 10,
-      "next_airing_at": 1795766400,
+      "latest": 10,
+      "next_episode": 11,
+      "next_airing_at": 1796371200,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -128,7 +128,7 @@
     {
       "rank": 12,
       "title": "Tokyo Revengers: War of the Three Titans Arc",
-      "score": 78,
+      "score": 77,
       "mal_id": 59088,
       "latest": 8,
       "next_episode": 9,
@@ -139,7 +139,7 @@
     {
       "rank": 13,
       "title": "A Returner's Magic Should be Special Season 2",
-      "score": 69,
+      "score": 70,
       "mal_id": 57612,
       "latest": 8,
       "next_episode": 9,
@@ -194,7 +194,7 @@
     {
       "rank": 18,
       "title": "I'm Dating a Dark Summoner",
-      "score": 67,
+      "score": 66,
       "mal_id": 63509,
       "latest": 8,
       "next_episode": 9,
@@ -326,7 +326,7 @@
     {
       "rank": 30,
       "title": "The World's Strongest Witch",
-      "score": 70,
+      "score": 71,
       "mal_id": 64084,
       "latest": 8,
       "next_episode": 9,
