@@ -1,48 +1,6 @@
 {
   "entries": [
     {
-      "mal_id": 63292,
-      "slug": "recommended-full-clearing-another-world-under-a-goddess-with-zero-believers",
-      "kind": "offrank",
-      "posted_at": "2026-10-28T20:05:58Z"
-    },
-    {
-      "mal_id": 58518,
-      "slug": "recommended-sasaki-and-peeps-season-2",
-      "kind": "offrank",
-      "posted_at": "2026-10-28T21:56:38Z"
-    },
-    {
-      "mal_id": 63337,
-      "slug": "recommended-fx-fighter-kurumi-chan",
-      "kind": "offrank",
-      "posted_at": "2026-10-28T21:57:50Z"
-    },
-    {
-      "mal_id": 62484,
-      "slug": "recommended-chitose-is-in-the-ramune-bottle-part-2",
-      "kind": "offrank",
-      "posted_at": "2026-10-28T22:03:31Z"
-    },
-    {
-      "mal_id": 59787,
-      "slug": "recommended-romelia-war-chronicle",
-      "kind": "offrank",
-      "posted_at": "2026-10-28T22:55:43Z"
-    },
-    {
-      "mal_id": 61014,
-      "slug": "recommended-a-certain-dark-item",
-      "kind": "offrank",
-      "posted_at": "2026-10-28T23:00:02Z"
-    },
-    {
-      "mal_id": 61999,
-      "slug": "recommended-the-vermilion-mask",
-      "kind": "offrank",
-      "posted_at": "2026-10-28T23:07:10Z"
-    },
-    {
       "mal_id": 64084,
       "slug": "recommended-the-world-s-strongest-witch",
       "kind": "offrank",
@@ -335,7 +293,25 @@
       "slug": "recommended-so-what-s-wrong-with-getting-reborn-as-a-goblin-20261127",
       "kind": "offrank",
       "posted_at": "2026-11-27T11:03:02Z"
+    },
+    {
+      "mal_id": 63292,
+      "slug": "recommended-full-clearing-another-world-under-a-goddess-with-zero-believers-20261128",
+      "kind": "offrank",
+      "posted_at": "2026-11-28T00:48:16Z"
+    },
+    {
+      "mal_id": 59787,
+      "slug": "recommended-romelia-war-chronicle-20261128",
+      "kind": "offrank",
+      "posted_at": "2026-11-28T00:49:12Z"
+    },
+    {
+      "mal_id": 58518,
+      "slug": "recommended-sasaki-and-peeps-season-2-20261128",
+      "kind": "offrank",
+      "posted_at": "2026-11-28T00:50:41Z"
     }
   ],
-  "updated_at": "2026-11-27T11:03:02Z"
+  "updated_at": "2026-11-28T00:50:41Z"
 }
