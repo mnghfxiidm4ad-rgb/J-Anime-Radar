@@ -2,7 +2,7 @@
   "source": "anilist",
   "source_label": "AniList popularity among currently airing TV/ONA, including 2-cour titles that started last season. Not a Japanese TV ratings chart.",
   "desk_size": 30,
-  "updated_at": "2026-11-28T01:42:15Z",
+  "updated_at": "2026-11-28T09:58:05Z",
   "items": [
     {
       "rank": 1,
@@ -40,7 +40,7 @@
     {
       "rank": 4,
       "title": "Overgeared",
-      "score": 77,
+      "score": 78,
       "mal_id": 64340,
       "latest": 9,
       "next_episode": 10,
@@ -61,23 +61,23 @@
     },
     {
       "rank": 6,
+      "title": "Even the Student Council Has Its Holes!",
+      "score": 75,
+      "mal_id": 61578,
+      "latest": null,
+      "next_episode": 9,
+      "next_airing_at": 1796484600,
+      "latest_episode_aired": null,
+      "origin": "anilist"
+    },
+    {
+      "rank": 7,
       "title": "Reincarnated as a Sword Season 2",
       "score": 75,
       "mal_id": 53913,
       "latest": 9,
       "next_episode": 10,
       "next_airing_at": 1796225400,
-      "latest_episode_aired": null,
-      "origin": "anilist"
-    },
-    {
-      "rank": 7,
-      "title": "Even the Student Council Has Its Holes!",
-      "score": 75,
-      "mal_id": 61578,
-      "latest": 8,
-      "next_episode": 9,
-      "next_airing_at": 1796484600,
       "latest_episode_aired": null,
       "origin": "anilist"
     },
@@ -315,7 +315,7 @@
     {
       "rank": 29,
       "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "score": 65,
+      "score": 66,
       "mal_id": 64254,
       "latest": 8,
       "next_episode": 9,
